@@ -111,3 +111,40 @@ Sumber masukan: stress test lanjutan yang mengklaim 6 blindspots tersembunyi.
 - Theme toggle icon logic yang sudah benar sekarang akan hilang jika file diganti mentah.
 - `renderStatCards()` versi usulan membuang dukungan `decimals`, `prefix`, dan `suffix`.
 - Beberapa bagian usulan mengasumsikan elemen baru seperti progress bar yang belum ada di HTML, sehingga raw replace justru bisa membuat fitur patah.
+
+## Micro-Aesthetics Triage
+
+Sumber masukan: batch deepthink lanjutan yang fokus ke micro-aesthetics dan presentational polish.
+
+### Accepted and patched
+
+- Hero gradient text
+  Status: diterima.
+  Tindakan: judul hero sekarang memakai gradient text yang tetap aman di dark dan light theme.
+- Tooltip Chart.js yang lebih halus
+  Status: diterima.
+  Tindakan: tooltip default dipoles dengan background semi-transparan, radius membulat, tipografi yang lebih konsisten, dan warna yang ikut menyesuaikan tema.
+- Horizontal scroll affordance
+  Status: diterima.
+  Tindakan: `tabs-nav`, `scoring-wrapper`, dan `gantt-shell` sekarang punya fading edge di sisi kanan serta scrollbar yang lebih rapi.
+- Ambient orb motion yang sangat subtil
+  Status: diterima dengan guardrail.
+  Tindakan: glow background sekarang bergerak perlahan, tetapi hanya sebagai ambient motion ringan dan dimatikan untuk `prefers-reduced-motion`.
+
+### Deferred
+
+- Domino / staggered fade-in penuh per kartu
+  Status: ditunda.
+  Alasan: menarik secara visual, tetapi perlu restrukturisasi animation model agar tidak bentrok dengan section-level fade yang sudah ada.
+- Scroll progress indicator
+  Status: tetap ditunda.
+  Alasan: masih opsional, dan nilai tambahnya belum sebesar biaya kompleksitas tambahan di navbar.
+- Film noise overlay global
+  Status: ditunda.
+  Alasan: berpotensi menurunkan clarity teks dan hasil print jika dipasang terlalu agresif.
+
+### Rejected
+
+- Magnetic 3D spotlight / card hologram
+  Status: ditolak.
+  Alasan: tidak sejalan dengan keputusan sebelumnya soal performa, mobile UX, dan fokus akademik-eksekutif.

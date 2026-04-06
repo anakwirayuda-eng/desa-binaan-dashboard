@@ -174,8 +174,8 @@ function getChartColors() {
     return {
         text: isLight ? '#475569' : '#8892b0',
         grid: isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)',
-        tooltipBg: isLight ? '#fff' : '#1e293b',
-        tooltipText: isLight ? '#1e293b' : '#e2e8f0'
+        tooltipBg: isLight ? 'rgba(255,255,255,0.95)' : 'rgba(15,23,42,0.85)',
+        tooltipText: isLight ? '#0f172a' : '#f8fafc'
     };
 }
 
@@ -183,6 +183,9 @@ function updateChartColors() {
     const c = getChartColors();
     Chart.defaults.color = c.text;
     Chart.defaults.borderColor = c.grid;
+    Chart.defaults.plugins.tooltip.backgroundColor = c.tooltipBg;
+    Chart.defaults.plugins.tooltip.titleColor = c.tooltipText;
+    Chart.defaults.plugins.tooltip.bodyColor = c.tooltipText;
     // Force re-render all charts
     getAllCharts().forEach(chart => {
         if (chart.options.scales?.r) {
@@ -199,6 +202,14 @@ function updateChartColors() {
             chart.options.scales.y.ticks.color = c.text;
             chart.options.scales.y.grid = { ...chart.options.scales.y.grid, color: c.grid };
         }
+        if (chart.options.plugins?.legend?.labels) {
+            chart.options.plugins.legend.labels.color = c.text;
+        }
+        if (chart.options.plugins?.tooltip) {
+            chart.options.plugins.tooltip.backgroundColor = c.tooltipBg;
+            chart.options.plugins.tooltip.titleColor = c.tooltipText;
+            chart.options.plugins.tooltip.bodyColor = c.tooltipText;
+        }
         chart.update('none');
     });
 }
@@ -214,6 +225,21 @@ function initChartDefaults() {
     Chart.defaults.font.size = 12;
     Chart.defaults.plugins.legend.labels.usePointStyle = true;
     Chart.defaults.plugins.legend.labels.pointStyleWidth = 10;
+    Chart.defaults.plugins.tooltip = {
+        backgroundColor: c.tooltipBg,
+        titleColor: c.tooltipText,
+        bodyColor: c.tooltipText,
+        titleFont: { family: "'Plus Jakarta Sans', sans-serif", size: 13, weight: 'bold' },
+        bodyFont: { family: "'Space Grotesk', sans-serif", size: 12 },
+        padding: 12,
+        cornerRadius: 12,
+        borderColor: 'rgba(255, 255, 255, 0.1)',
+        borderWidth: 1,
+        displayColors: true,
+        boxPadding: 6,
+        caretSize: 0,
+        animation: { duration: 150 }
+    };
 }
 
 const COLORS = {

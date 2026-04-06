@@ -117,12 +117,26 @@ body::after {
   opacity: 0.22;
 }
 
+@keyframes floatAurora {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(2vw, 3vh) scale(1.03) rotate(1.5deg);
+  }
+  100% {
+    transform: translate(-2vw, 2vh) scale(0.98) rotate(-1.5deg);
+  }
+}
+
 body::before {
   top: -10rem;
   left: -8rem;
   width: 22rem;
   height: 22rem;
   background: rgba(59, 130, 246, 0.24);
+  animation: floatAurora 20s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 body::after {
@@ -131,6 +145,8 @@ body::after {
   width: 20rem;
   height: 20rem;
   background: rgba(239, 68, 68, 0.16);
+  animation: floatAurora 25s ease-in-out infinite alternate-reverse;
+  will-change: transform;
 }
 
 /* ─── TYPOGRAPHY ─── */
@@ -146,6 +162,20 @@ h4 {
 h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
+}
+
+.hero-content h1 {
+  background: linear-gradient(135deg, #ffffff 20%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 30px rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="light"] .hero-content h1 {
+  background: linear-gradient(135deg, var(--text-heading) 20%, var(--accent-blue) 100%);
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }
 
 h2 {
@@ -1350,6 +1380,32 @@ body.print-prep .tab-content[hidden] {
   display: none;
 }
 
+.tabs-nav,
+.scoring-wrapper,
+.gantt-shell {
+  mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  padding-right: 1.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
 .pkm-highlights li::before {
   content: '>';
 }
@@ -2341,6 +2397,12 @@ body.print-prep .tab-content[hidden] {
     color: #000000 !important;
   }
 
+  .hero-content h1 {
+    background: none !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+  }
+
   .tab-content {
     display: block !important;
   }
@@ -2352,6 +2414,14 @@ body.print-prep .tab-content[hidden] {
   .tabs-nav,
   .pkm-cards-grid {
     display: none !important;
+  }
+
+  .tabs-nav,
+  .scoring-wrapper,
+  .gantt-shell {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    padding-right: 0 !important;
   }
 
   .gantt-shell {
@@ -2371,5 +2441,12 @@ body.print-prep .tab-content[hidden] {
 
   canvas {
     max-width: 100% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none !important;
   }
 }
