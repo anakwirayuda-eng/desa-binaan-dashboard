@@ -65,13 +65,13 @@ Sumber masukan: stress test lanjutan yang mengklaim 6 blindspots tersembunyi.
   Tindakan: scriptable `backgroundColor` dan `borderColor` sekarang aman ketika `context.type` bukan `data`.
 - Print race condition untuk chart
   Status: diterima.
-  Tindakan: `preparePrintView()` sekarang melakukan `resize()` dan `update('none')` secara sinkron, bukan bergantung pada `setTimeout`.
+  Tindakan: `preparePrintView()` sekarang melakukan `resize()` dan `update('none')` secara sinkron, bukan bergantung pada `setTimeout`, lalu chart sementara dipindah ke light theme agar hasil print lebih terbaca.
 - Safari / mobile button reset untuk kartu PKM
   Status: diterima.
   Tindakan: `.pkm-card` sekarang menetralkan style default button seperti `appearance`, `text-align`, `font`, dan `width`.
 - Mobile anchor offset
   Status: diterima sebagian.
-  Tindakan: `scroll-padding-top` mobile dinaikkan agar judul section tidak tertutup navbar yang membungkus.
+  Tindakan: offset navbar sekarang disinkronkan dinamis dari tinggi navbar aktual, jadi anchor scroll tidak bergantung pada angka statis desktop / mobile.
 - Sticky scoring seam
   Status: diterima.
   Tindakan: header sticky dan kolom pertama diperkeras dengan `z-index` dan `border-right`.
@@ -82,6 +82,14 @@ Sumber masukan: stress test lanjutan yang mengklaim 6 blindspots tersembunyi.
   Status: diterima dengan modifikasi ringan.
   Tindakan: link aktif di navbar mobile akan di-scroll ke tengah saat section aktif berubah.
   Catatan: saya sengaja tidak menambah progress bar atau sistem scroll state yang lebih agresif agar tidak menambah noise visual.
+
+- Keyboard access untuk gantt shell
+  Status: diterima.
+  Tindakan: area gantt sekarang bisa difokus dengan keyboard agar horizontal scroll-nya lebih accessible.
+
+- Puskesmas tabs mobile and keyboard polish
+  Status: diterima.
+  Tindakan: tab aktif sekarang auto-scroll ke tengah dan bisa dinavigasi dengan panah kiri / kanan serta Home / End.
 
 ### Rejected or reframed
 

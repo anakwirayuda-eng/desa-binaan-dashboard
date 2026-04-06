@@ -6,6 +6,8 @@
 
 const D = DASHBOARD_DATA;
 let activePKMId = null;
+let prePrintTheme = 'dark';
+let prePrintAnimation = null;
 
 function getAllCharts() {
     if (typeof Chart === 'undefined' || !Chart.instances) return [];
@@ -87,9 +89,13 @@ function renderStatCards(containerId, stats) {
 }
 
 function queueChartResize() {
+    getAllCharts().forEach(chart => chart.resize());
     window.setTimeout(() => {
         getAllCharts().forEach(chart => chart.resize());
     }, 60);
+    window.setTimeout(() => {
+        getAllCharts().forEach(chart => chart.resize());
+    }, 420);
 }
 
 function setThemeToggleIcon(isLight) {
@@ -100,6 +106,14 @@ function setThemeToggleIcon(isLight) {
 }
 
 function preparePrintView() {
+    prePrintTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    prePrintAnimation = Chart.defaults.animation;
+    if (prePrintTheme !== 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setThemeToggleIcon(true);
+    }
+    Chart.defaults.animation = false;
+    updateChartColors();
     document.body.classList.add('print-prep');
     document.querySelectorAll('.tab-content').forEach(content => {
         content.hidden = false;
@@ -114,6 +128,15 @@ function preparePrintView() {
 
 function cleanupPrintView() {
     document.body.classList.remove('print-prep');
+    Chart.defaults.animation = prePrintAnimation;
+    if (prePrintTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setThemeToggleIcon(true);
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        setThemeToggleIcon(false);
+    }
+    updateChartColors();
     switchTab(activePKMId || D.puskesmas[0]?.id);
 }
 
@@ -567,6 +590,21 @@ function renderPKMCards() {
         btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
         btn.tabIndex = i === 0 ? 0 : -1;
         btn.addEventListener('click', () => switchTab(pkm.id));
+        btn.addEventListener('keydown', event => {
+            const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+            const currentIndex = tabButtons.indexOf(btn);
+            if (currentIndex === -1) return;
+            let targetIndex = null;
+            if (event.key === 'ArrowRight') targetIndex = (currentIndex + 1) % tabButtons.length;
+            if (event.key === 'ArrowLeft') targetIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+            if (event.key === 'Home') targetIndex = 0;
+            if (event.key === 'End') targetIndex = tabButtons.length - 1;
+            if (targetIndex === null) return;
+            event.preventDefault();
+            const nextButton = tabButtons[targetIndex];
+            nextButton.focus();
+            switchTab(nextButton.dataset.tab);
+        });
         tabs.appendChild(btn);
 
         const content = document.createElement('div');
@@ -591,6 +629,13 @@ function switchTab(pkmId) {
         button.classList.toggle('active', isActive);
         button.setAttribute('aria-selected', String(isActive));
         button.tabIndex = isActive ? 0 : -1;
+        if (isActive) {
+            button.scrollIntoView({
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
     });
 
     document.querySelectorAll('.tab-content').forEach(content => {
@@ -1072,6 +1117,7 @@ function renderCommunityMedicine() {
       <a href="${item.url}" target="_blank" rel="noreferrer">${item.url}</a>
     </article>
   `).join('');
+    document.querySelector('.gantt-shell')?.setAttribute('tabindex', '0');
 }
 
 function renderRecommendation() {
@@ -1218,6 +1264,10 @@ function initNavbar() {
         .map(link => document.getElementById(link.getAttribute('href').slice(1)))
         .filter(Boolean);
     let activeSectionId = null;
+    const syncNavbarOffset = () => {
+        const offset = (navbar?.offsetHeight || 56) + 16;
+        document.documentElement.style.setProperty('--navbar-offset', `${offset}px`);
+    };
 
     const setActiveLink = sectionId => {
         if (!sectionId || sectionId === activeSectionId) return;
@@ -1247,6 +1297,8 @@ function initNavbar() {
     });
 
     sections.forEach(section => sectionObserver.observe(section));
+    syncNavbarOffset();
+    window.addEventListener('resize', syncNavbarOffset, { passive: true });
     setActiveLink('hero');
 
     window.addEventListener('scroll', () => {

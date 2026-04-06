@@ -10,6 +10,7 @@
   --font-body: 'Inter', system-ui, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
   --font-numeric: 'Space Grotesk', 'Inter', sans-serif;
+  --navbar-offset: 70px;
 
   --bg-primary: #0a0f1a;
   --bg-secondary: #0f1629;
@@ -91,7 +92,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  scroll-padding-top: 70px;
+  scroll-padding-top: var(--navbar-offset);
 }
 
 body {
@@ -1682,6 +1683,11 @@ body.print-prep .tab-content[hidden] {
   margin-top: 1rem;
 }
 
+.gantt-shell:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 4px;
+}
+
 .gantt-week-bands,
 .gantt-day-header,
 .gantt-track-row,
@@ -2198,10 +2204,6 @@ body.print-prep .tab-content[hidden] {
 }
 
 @media (max-width: 640px) {
-  html {
-    scroll-padding-top: 112px;
-  }
-
   #cmWorkstreams,
   #cmPanelPrinciples {
     grid-template-columns: 1fr;
