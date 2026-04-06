@@ -1,0 +1,397 @@
+{
+  "generated_at": "2026-04-06",
+  "timezone": "Asia/Jakarta",
+  "summary": {
+    "current_project_source_of_truth": "app/js/data.js",
+    "current_online_enrichment_status": "prepared",
+    "recommended_join_strategy": "Prefer kelurahan-level aggregation into the current puskesmas catchment map. Use kecamatan-level data only for context.",
+    "priority_legend": {
+      "P1": "Strong official source; safe to use after light cleaning.",
+      "P2": "Official source, but needs transformation or careful mapping.",
+      "P3": "Supporting context only; useful for narrative, history, or cross-checking."
+    },
+    "warnings": [
+      "Do not compare Blooto vs Mentikan directly from Prajuritkulon-level datasets.",
+      "Do not compare Wates vs Gedongan directly from Magersari-level datasets.",
+      "Official puskesmas websites are best for profile and narrative; numeric values still need cross-checking.",
+      "Kranggan remains the weakest local dataset and should be enriched first from official web sources."
+    ]
+  },
+  "catchment_map": [
+    {
+      "id": "blooto",
+      "nama": "Puskesmas Blooto",
+      "kecamatan": "Prajuritkulon",
+      "kelurahan": ["Blooto", "Surodinawan", "Prajuritkulon"]
+    },
+    {
+      "id": "mentikan",
+      "nama": "Puskesmas Mentikan",
+      "kecamatan": "Prajuritkulon",
+      "kelurahan": ["Mentikan", "Kauman", "Miji", "Pulorejo"]
+    },
+    {
+      "id": "wates",
+      "nama": "Puskesmas Wates",
+      "kecamatan": "Magersari",
+      "kelurahan": ["Wates"]
+    },
+    {
+      "id": "gedongan",
+      "nama": "Puskesmas Gedongan",
+      "kecamatan": "Magersari",
+      "kelurahan": ["Magersari", "Gedongan", "Balongsari", "Kedundung", "Jagalan", "Purwotengah"]
+    },
+    {
+      "id": "kranggan",
+      "nama": "Puskesmas Kranggan",
+      "kecamatan": "Prajuritkulon",
+      "kelurahan": ["Meri", "Kranggan"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "profil-kesehatan-kota-2024",
+      "title": "Profil Kesehatan Kota Mojokerto 2024",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/profil-kesehatan-kota-mojokerto-tahun-2024",
+      "owner": "Dinkes P2KB / Satikomo",
+      "category": "health_profile",
+      "granularity": "city",
+      "priority": "P1",
+      "best_for": [
+        "city health baseline",
+        "program context",
+        "cross-checking public health indicators"
+      ],
+      "integration_rule": "Use as city baseline and table-by-table cross-check. Do not assume every table is per-puskesmas."
+    },
+    {
+      "id": "satikomo-kesehatan-index",
+      "title": "Kategori data kesehatan Satikomo",
+      "url": "https://satikomo.mojokertokota.go.id/group/kesehatankotamojokerto/s/title_string%2Basc",
+      "owner": "Satikomo",
+      "category": "dataset_index",
+      "granularity": "mixed",
+      "priority": "P1",
+      "best_for": [
+        "dataset discovery",
+        "finding newer CSV or XLSX assets"
+      ],
+      "integration_rule": "Use this index to locate structured datasets before relying on PDFs."
+    },
+    {
+      "id": "penduduk-kelurahan-jenis-kelamin",
+      "title": "Jumlah penduduk per kelurahan dan jenis kelamin",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/jumlah_penduduk_kota_mojokerto_per_kelurahan_dan_jenis_kelamin",
+      "owner": "Dispendukcapil / Satikomo",
+      "category": "demography",
+      "granularity": "kelurahan",
+      "priority": "P1",
+      "best_for": [
+        "population denominators",
+        "aggregating current puskesmas catchment populations"
+      ],
+      "integration_rule": "Strong candidate for direct aggregation into the current five-puskesmas mapping."
+    },
+    {
+      "id": "profil-kependudukan-2024",
+      "title": "Profil Perkembangan Kependudukan Kota Mojokerto 2024",
+      "url": "https://dispenduk.mojokertokota.go.id/public/doc/gisa/2025-06-17_11-58-18_Profil%20Perkembangan%20Kependudukan%20Kota%20Mojokerto%20Tahun%202024.pdf",
+      "owner": "Dispendukcapil",
+      "category": "demography_profile",
+      "granularity": "city_plus_kelurahan_tables",
+      "priority": "P1",
+      "best_for": [
+        "age structure",
+        "mobility",
+        "household context",
+        "SDoH narrative"
+      ],
+      "integration_rule": "Extract table-by-table and tie the values back to kelurahan whenever possible."
+    },
+    {
+      "id": "penyakit-menular-kecamatan",
+      "title": "Jumlah kasus penyakit menular menurut kecamatan",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/jumlah-kasus-penyakit-menular-menurut-kecamatan",
+      "owner": "Dinkes P2KB / Satikomo",
+      "category": "disease_context",
+      "granularity": "kecamatan",
+      "priority": "P2",
+      "best_for": [
+        "infectious disease context",
+        "city and kecamatan comparisons"
+      ],
+      "integration_rule": "Use for context only. Do not rank multiple puskesmas within the same kecamatan from this source."
+    },
+    {
+      "id": "penyakit-tidak-menular-kecamatan",
+      "title": "Jumlah kasus penyakit tidak menular menurut kecamatan",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/jumlah-kasus-penyakit-tidak-menular-menurut-kecamatan",
+      "owner": "Dinkes P2KB / Satikomo",
+      "category": "disease_context",
+      "granularity": "kecamatan",
+      "priority": "P2",
+      "best_for": [
+        "NCD context",
+        "health burden narrative"
+      ],
+      "integration_rule": "Use as kecamatan context only, not as direct puskesmas counts."
+    },
+    {
+      "id": "operasional-pelayanan-puskesmas-2019-2024",
+      "title": "Operasional pelayanan puskesmas 2019-2024",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/umlah-perasional-elayanan-uskesmas-ahun-20192024",
+      "owner": "Dinkes P2KB / Satikomo",
+      "category": "service_operations",
+      "granularity": "mixed_or_unknown_until_downloaded",
+      "priority": "P2",
+      "best_for": [
+        "historical operational trend",
+        "service workload context"
+      ],
+      "integration_rule": "Inspect the actual file schema before merge because the portal slug is malformed."
+    },
+    {
+      "id": "jumlah-posyandu-kecamatan",
+      "title": "Jumlah posyandu menurut kecamatan",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/jumlah-posyandu-menurut-kecamatan",
+      "owner": "Dinkes P2KB / Satikomo",
+      "category": "community_health_infrastructure",
+      "granularity": "kecamatan",
+      "priority": "P2",
+      "best_for": [
+        "community health support capacity",
+        "preventive care narrative"
+      ],
+      "integration_rule": "Useful for infrastructure context, but still needs interpretation before attaching to a single puskesmas."
+    },
+    {
+      "id": "kepadatan-penduduk-2019-2024",
+      "title": "Kepadatan penduduk 2019-2024",
+      "url": "https://satikomo.mojokertokota.go.id/dataset/data/kepadatan-penduduk-ahun-20192024",
+      "owner": "Dispendukcapil / Satikomo",
+      "category": "demography_density",
+      "granularity": "city_or_kecamatan_until_downloaded",
+      "priority": "P2",
+      "best_for": [
+        "density pressure",
+        "urban service load"
+      ],
+      "integration_rule": "Check the actual file level and unit before merging."
+    },
+    {
+      "id": "bps-podes-2024",
+      "title": "Statistik Potensi Desa Kota Mojokerto 2024",
+      "url": "https://mojokertokota.bps.go.id/id/publication/2024/12/24/007e3bc4b966212e0c624bcc/statistik-potensi-desa-kota-mojokerto-2024.html",
+      "owner": "BPS Kota Mojokerto",
+      "category": "infrastructure_context",
+      "granularity": "kelurahan_or_village_facilities",
+      "priority": "P2",
+      "best_for": [
+        "non-clinical environment context",
+        "local facility ecosystem"
+      ],
+      "integration_rule": "Use to enrich kelurahan-level context around each puskesmas catchment."
+    },
+    {
+      "id": "bps-prajuritkulon-2024",
+      "title": "Kecamatan Prajurit Kulon Dalam Angka 2024",
+      "url": "https://mojokertokota.bps.go.id/id/publication/2024/09/26/42bf098a251c6c77be77bfda/kecamatan-prajurit-kulon-dalam-angka-2024.html",
+      "owner": "BPS Kota Mojokerto",
+      "category": "district_context",
+      "granularity": "kecamatan",
+      "priority": "P2",
+      "best_for": [
+        "context for Blooto, Mentikan, and Kranggan"
+      ],
+      "integration_rule": "Use only for district context, not direct puskesmas counts."
+    },
+    {
+      "id": "bps-magersari-2024",
+      "title": "Kecamatan Magersari Dalam Angka 2024",
+      "url": "https://mojokertokota.bps.go.id/id/publication/2024/09/26/a0707fb4fd6cc7742fca5aea/kecamatan-magersari-dalam-angka-2024.html",
+      "owner": "BPS Kota Mojokerto",
+      "category": "district_context",
+      "granularity": "kecamatan",
+      "priority": "P2",
+      "best_for": [
+        "context for Wates and Gedongan"
+      ],
+      "integration_rule": "Use only for district context, not direct puskesmas counts."
+    },
+    {
+      "id": "bps-kranggan-2024",
+      "title": "Kecamatan Kranggan Dalam Angka 2024",
+      "url": "https://mojokertokota.bps.go.id/id/publication/2024/09/26/72d84f69d281c1e05b8a51b8/kecamatan-kranggan-dalam-angka-2024.html",
+      "owner": "BPS Kota Mojokerto",
+      "category": "district_context",
+      "granularity": "kecamatan",
+      "priority": "P2",
+      "best_for": [
+        "checking Kranggan administrative context"
+      ],
+      "integration_rule": "Use as a special cross-check because the current project maps Kranggan inside Prajuritkulon catchment."
+    },
+    {
+      "id": "pkm-blooto-profile",
+      "title": "Puskesmas Blooto profile",
+      "url": "https://puskesmasblooto.mojokertokota.go.id/halaman/profil",
+      "owner": "Official Puskesmas Blooto site",
+      "category": "puskesmas_profile",
+      "granularity": "puskesmas",
+      "priority": "P2",
+      "best_for": [
+        "services",
+        "profile narrative",
+        "identity and contact"
+      ],
+      "integration_rule": "Trust for service profile; cross-check numeric data elsewhere."
+    },
+    {
+      "id": "pkm-mentikan-profile",
+      "title": "Puskesmas Mentikan profile",
+      "url": "https://puskesmasmentikan.mojokertokota.go.id/halaman/profil",
+      "owner": "Official Puskesmas Mentikan site",
+      "category": "puskesmas_profile",
+      "granularity": "puskesmas",
+      "priority": "P2",
+      "best_for": [
+        "services",
+        "profile narrative",
+        "identity and contact"
+      ],
+      "integration_rule": "Use for qualitative enrichment first."
+    },
+    {
+      "id": "pkm-wates-profile",
+      "title": "Puskesmas Wates profile",
+      "url": "https://puskesmaswates.mojokertokota.go.id/halaman/profil",
+      "owner": "Official Puskesmas Wates site",
+      "category": "puskesmas_profile",
+      "granularity": "puskesmas",
+      "priority": "P2",
+      "best_for": [
+        "services",
+        "profile narrative",
+        "identity and contact"
+      ],
+      "integration_rule": "Useful for profile and service information; verify sensitive counts elsewhere."
+    },
+    {
+      "id": "pkm-gedongan-profile",
+      "title": "Puskesmas Gedongan profile",
+      "url": "https://puskesmasgedongan.mojokertokota.go.id/profil",
+      "owner": "Official Puskesmas Gedongan site",
+      "category": "puskesmas_profile",
+      "granularity": "puskesmas",
+      "priority": "P2",
+      "best_for": [
+        "services",
+        "profile narrative",
+        "identity and contact"
+      ],
+      "integration_rule": "Verify carefully because parts of the site may be templated or uneven."
+    },
+    {
+      "id": "pkm-kranggan-profile",
+      "title": "Puskesmas Kranggan profile",
+      "url": "https://puskesmaskranggan.mojokertokota.go.id/halaman/profil",
+      "owner": "Official Puskesmas Kranggan site",
+      "category": "puskesmas_profile",
+      "granularity": "puskesmas",
+      "priority": "P2",
+      "best_for": [
+        "current official identity",
+        "local scope",
+        "contact and service profile"
+      ],
+      "integration_rule": "One of the strongest online sources for Kranggan because local parsed PDF quality is low."
+    },
+    {
+      "id": "pkm-kranggan-ikm-2025-sem1",
+      "title": "IKM Puskesmas Kranggan Semester I 2025",
+      "url": "https://puskesmaskranggan.mojokertokota.go.id/kegiatan/hasil-survey-indeks-kepuasan-puskesmas-kranggan-semester-1-tahun-2025-thu-sep-25-2025-000000-gmt0700",
+      "owner": "Official Puskesmas Kranggan site",
+      "category": "service_quality",
+      "granularity": "puskesmas",
+      "priority": "P2",
+      "best_for": [
+        "quality signal",
+        "recent service satisfaction context"
+      ],
+      "integration_rule": "Useful recent signal, but not a replacement for population, SDM, or disease counts."
+    },
+    {
+      "id": "bps-kesra-2024",
+      "title": "Statistik Kesejahteraan Rakyat 2024",
+      "url": "https://mojokertokota.bps.go.id/id/publication/2024/12/13/a69b88eff144e3a7280989af/statistik-kesejahteraan-rakyat-kota-mojokerto-2024.html",
+      "owner": "BPS Kota Mojokerto",
+      "category": "welfare_context",
+      "granularity": "city",
+      "priority": "P3",
+      "best_for": [
+        "city benchmark",
+        "household welfare framing"
+      ],
+      "integration_rule": "Use for citywide benchmark and narrative only."
+    },
+    {
+      "id": "bps-kemiskinan-2024",
+      "title": "Profil Kemiskinan Kota Mojokerto Maret 2024",
+      "url": "https://mojokertokota.bps.go.id/id/pressrelease/2024/11/22/91/profil-kemiskinan-kota-mojokerto-maret-2024.html",
+      "owner": "BPS Kota Mojokerto",
+      "category": "poverty_context",
+      "granularity": "city",
+      "priority": "P3",
+      "best_for": [
+        "poverty narrative",
+        "macro risk context"
+      ],
+      "integration_rule": "Supporting context for intervention rationale, not site-level proof."
+    },
+    {
+      "id": "lkjip-dinkes-2021",
+      "title": "LKjIP Dinkes 2021",
+      "url": "https://ppid.mojokertokota.go.id/userfiles/2022/08/26a88c5c165c468ac14d4dd5b86ff60a.pdf",
+      "owner": "PPID Kota Mojokerto",
+      "category": "historical_governance",
+      "granularity": "historical_puskesmas_references",
+      "priority": "P3",
+      "best_for": [
+        "historical IKM",
+        "governance context"
+      ],
+      "integration_rule": "Useful for trend history and narrative only."
+    },
+    {
+      "id": "calk-dinkes-2022",
+      "title": "Catatan atas laporan keuangan Dinkes 2022",
+      "url": "https://ppid.mojokertokota.go.id/userfiles/2023/04/16b4d307404f116aad4a312921dfaa68.pdf",
+      "owner": "PPID Kota Mojokerto",
+      "category": "historical_finance",
+      "granularity": "historical_finance_context",
+      "priority": "P3",
+      "best_for": [
+        "BLUD and finance context"
+      ],
+      "integration_rule": "Supporting operational context, not clinical ranking."
+    }
+  ],
+  "recommended_next_artifact": {
+    "path": "output/ENRICHED_PUSKESMAS_DATA.json",
+    "sections": [
+      "catchment_map",
+      "demography_by_kelurahan",
+      "health_context_by_level",
+      "puskesmas_profile_online",
+      "field_provenance",
+      "validation_flags"
+    ],
+    "first_merge_targets": [
+      "population per kelurahan",
+      "current official puskesmas profile metadata",
+      "Kranggan enrichment",
+      "disease context classified by level"
+    ]
+  }
+}

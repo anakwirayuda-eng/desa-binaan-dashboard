@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-04-06",
+  "timezone": "Asia/Jakarta",
+  "status": "scaffold",
+  "source_of_truth_local": "app/js/data.js",
+  "notes": [
+    "This file is a merge scaffold for future online enrichment.",
+    "No external dataset values have been imported yet.",
+    "Current dashboard data remains the curated presentation layer."
+  ],
+  "catchment_map": [
+    {
+      "id": "blooto",
+      "nama": "Puskesmas Blooto",
+      "kecamatan": "Prajuritkulon",
+      "kelurahan": ["Blooto", "Surodinawan", "Prajuritkulon"],
+      "online_profile_url": "https://puskesmasblooto.mojokertokota.go.id/halaman/profil"
+    },
+    {
+      "id": "mentikan",
+      "nama": "Puskesmas Mentikan",
+      "kecamatan": "Prajuritkulon",
+      "kelurahan": ["Mentikan", "Kauman", "Miji", "Pulorejo"],
+      "online_profile_url": "https://puskesmasmentikan.mojokertokota.go.id/halaman/profil"
+    },
+    {
+      "id": "wates",
+      "nama": "Puskesmas Wates",
+      "kecamatan": "Magersari",
+      "kelurahan": ["Wates"],
+      "online_profile_url": "https://puskesmaswates.mojokertokota.go.id/halaman/profil"
+    },
+    {
+      "id": "gedongan",
+      "nama": "Puskesmas Gedongan",
+      "kecamatan": "Magersari",
+      "kelurahan": ["Magersari", "Gedongan", "Balongsari", "Kedundung", "Jagalan", "Purwotengah"],
+      "online_profile_url": "https://puskesmasgedongan.mojokertokota.go.id/profil"
+    },
+    {
+      "id": "kranggan",
+      "nama": "Puskesmas Kranggan",
+      "kecamatan": "Prajuritkulon",
+      "kelurahan": ["Meri", "Kranggan"],
+      "online_profile_url": "https://puskesmaskranggan.mojokertokota.go.id/halaman/profil"
+    }
+  ],
+  "demography_by_kelurahan": [],
+  "health_context_by_level": {
+    "city": [],
+    "kecamatan": [],
+    "kelurahan": [],
+    "puskesmas": []
+  },
+  "puskesmas_profile_online": [
+    {
+      "id": "blooto",
+      "status": "pending_extraction",
+      "fields_target": ["alamat", "telepon", "layanan", "inovasi", "catatan_profil"]
+    },
+    {
+      "id": "mentikan",
+      "status": "pending_extraction",
+      "fields_target": ["alamat", "telepon", "layanan", "inovasi", "catatan_profil"]
+    },
+    {
+      "id": "wates",
+      "status": "pending_extraction",
+      "fields_target": ["alamat", "telepon", "layanan", "inovasi", "catatan_profil"]
+    },
+    {
+      "id": "gedongan",
+      "status": "pending_extraction",
+      "fields_target": ["alamat", "telepon", "layanan", "inovasi", "catatan_profil"]
+    },
+    {
+      "id": "kranggan",
+      "status": "pending_extraction",
+      "fields_target": ["alamat", "telepon", "layanan", "inovasi", "catatan_profil", "ikm"]
+    }
+  ],
+  "field_provenance": [],
+  "validation_flags": [
+    {
+      "id": "no_external_data_imported_yet",
+      "severity": "info",
+      "message": "Scaffold only. Remote datasets still need to be downloaded and normalized."
+    },
+    {
+      "id": "kecamatan_level_data_not_site_counts",
+      "severity": "warning",
+      "message": "Kecamatan-level datasets must not be treated as direct puskesmas counts."
+    },
+    {
+      "id": "kranggan_needs_priority_enrichment",
+      "severity": "warning",
+      "message": "Kranggan remains the thinnest profile in local data and should be enriched first from official web sources."
+    },
+    {
+      "id": "roster_and_boundary_recheck_needed",
+      "severity": "warning",
+      "message": "Recheck the latest official puskesmas roster and catchment boundaries before a full numeric refresh."
+    }
+  ],
+  "next_actions": [
+    "Import kelurahan population counts from Satikomo.",
+    "Normalize source levels into city, kecamatan, kelurahan, and puskesmas buckets.",
+    "Extract current profile metadata from official puskesmas websites.",
+    "Record provenance for every imported field."
+  ]
+}

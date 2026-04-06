@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Dashboard analisis Desa Binaan FKK ITS - Profil 5 Puskesmas Kota Mojokerto, framework White Paper, dan rencana implementasi Community Medicine berbasis data.">
+  <title>Desa Binaan FKK ITS - Dashboard Kota Mojokerto</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-brand">Desa Binaan</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#fondasi">Fondasi</a></li>
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#nasional">Nasional</a></li>
+        <li><a href="#mojokerto">Mojokerto</a></li>
+        <li><a href="#puskesmas">Puskesmas</a></li>
+        <li><a href="#komparatif">Komparatif</a></li>
+        <li><a href="#blueprint">Blueprint</a></li>
+        <li><a href="#implementasi">CM Plan</a></li>
+        <li><a href="#kurikulum">Kurikulum</a></li>
+        <li><a href="#proyeksi">Proyeksi</a></li>
+        <li><a href="#rekomendasi">Rekomendasi</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">ðŸŒ™</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image:url('assets/wp_image1.png')"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">FKK ITS x Kota Mojokerto 2025</span>
+        <h1>Dashboard Desa Binaan</h1>
+        <p>Analisis profil 5 Puskesmas, framework intervensi berbasis evidence dari White Paper global, dan rekomendasi target Desa Binaan yang dibawa dari teori ke aksi.</p>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </section>
+
+  <section id="fondasi" class="fade-in">
+    <div class="container">
+      <span class="section-tag">White Paper</span>
+      <h2>Mengapa Desa Binaan?</h2>
+      <p class="section-subtitle" id="fondasiSubtitle"></p>
+
+      <div class="paradigm-flow" id="paradigmFlow"></div>
+
+      <div class="grid-2 fade-in" style="margin-top:2.5rem;" id="twoModels"></div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;font-size:1.1rem;">Studi Kasus Global</h3>
+      <div class="case-studies" id="caseStudies"></div>
+    </div>
+  </section>
+
+  <section id="framework" class="fade-in">
+    <div class="container">
+      <span class="section-tag">White Paper</span>
+      <h2>Framework Intervensi</h2>
+      <p class="section-subtitle">Tiga kerangka ilmiah yang menjadi fondasi desain intervensi Desa Binaan: diagnosis perilaku, tuas perubahan, dan evaluasi dampak.</p>
+      <div class="framework-grid" style="margin-top:2rem;" id="frameworkGrid"></div>
+    </div>
+  </section>
+
+  <section id="nasional" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Konteks</span>
+      <h2>Puskesmas di Indonesia</h2>
+      <p class="section-subtitle">Posisi Kota Mojokerto dalam lanskap kesehatan primer nasional.</p>
+      <div class="grid-3 fade-in" style="margin-top:2rem" id="nasionalStats"></div>
+
+      <div class="glass-card fade-in" style="margin-top:2rem;border-left:3px solid var(--accent-blue);">
+        <h3 style="margin-bottom:0.5rem">Konteks Desa Binaan</h3>
+        <p id="konteksParagraph" style="font-size:0.9rem;line-height:1.7;"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mojokerto" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Profil Wilayah Kerja</span>
+      <h2>5 Puskesmas Kota Mojokerto</h2>
+      <p class="section-subtitle">Perbandingan kapasitas, sumber daya, dan kinerja dari 5 unit pelayanan kesehatan primer.</p>
+
+      <div class="grid-2 fade-in" style="margin-top:2rem">
+        <div class="chart-container">
+          <div class="chart-title">Jumlah Penduduk per Wilayah Kerja</div><canvas id="chartPenduduk"></canvas>
+        </div>
+        <div class="chart-container">
+          <div class="chart-title">Sumber Daya Manusia (SDM)</div><canvas id="chartSDM"></canvas>
+        </div>
+      </div>
+      <div class="grid-2 fade-in" style="margin-top:1rem">
+        <div class="chart-container">
+          <div class="chart-title">Kunjungan Rawat Jalan per Tahun</div><canvas id="chartKunjungan"></canvas>
+        </div>
+        <div class="chart-container">
+          <div class="chart-title">Rasio Kunjungan per Penduduk</div><canvas id="chartRasio"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="penyakit" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Epidemiologi</span>
+      <h2>10 Besar Penyakit Kolektif</h2>
+      <p class="section-subtitle">Agregat data 10 penyakit terbanyak dari semua Puskesmas.</p>
+      <div class="chart-container fade-in" style="margin-top:2rem"><canvas id="chartPenyakit" height="320"></canvas></div>
+    </div>
+  </section>
+
+  <section id="puskesmas" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Deep Dive</span>
+      <h2>Profil Per Puskesmas</h2>
+      <p class="section-subtitle">Klik kartu untuk melihat detail profil, analisis SWOT, komposisi SDM, pola penyakit, dan inovasi unggulan.</p>
+
+      <div class="pkm-cards-grid" id="pkmCardsGrid"></div>
+
+      <div class="tabs-container">
+        <div class="tabs-nav" id="pkmTabs"></div>
+        <div id="pkmTabContents"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="komparatif" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Analisis</span>
+      <h2>Perbandingan Kinerja</h2>
+      <p class="section-subtitle">Overlay radar dan indikator utama 4 Puskesmas operasional penuh.</p>
+
+      <div class="grid-2 fade-in" style="margin-top:2rem">
+        <div class="chart-container">
+          <div class="chart-title">Radar Perbandingan Multi-Indikator</div><canvas id="chartRadar"></canvas>
+          <p class="chart-note">Metrik rasio dinormalisasi ke skala 0-100 agar dapat dibandingkan dengan indikator persentase.</p>
+        </div>
+        <div class="chart-container">
+          <div class="chart-title">SPM & N/D Balita</div><canvas id="chartSPM"></canvas>
+        </div>
+      </div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;">SWOT Kolektif - 5 Puskesmas</h3>
+      <div class="swot-grid" id="swotKolektif"></div>
+    </div>
+  </section>
+
+  <section id="blueprint" class="fade-in">
+    <div class="container">
+      <span class="section-tag">White Paper</span>
+      <h2>Blueprint Aksi</h2>
+      <p class="section-subtitle" id="blueprintSubtitle"></p>
+
+      <div class="blueprint-steps" id="blueprintSteps"></div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;" id="cplTitle"></h3>
+      <p class="section-subtitle" id="cplSubtitle" style="margin-bottom:1.5rem;"></p>
+      <div class="cpl-grid" id="cplGrid"></div>
+    </div>
+  </section>
+
+  <section id="implementasi" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Community Medicine</span>
+      <h2>Implementation Plan - Mentikan</h2>
+      <p class="section-subtitle" id="cmPlanSubtitle"></p>
+
+      <div class="glass-card fade-in" style="margin-top:2rem">
+        <h3 style="margin-bottom:0.8rem;">Asumsi Kerja</h3>
+        <ul class="compact-list" id="cmAssumptions"></ul>
+      </div>
+
+      <div class="grid-4 fade-in" id="cmWorkstreams" style="margin-top:1.5rem"></div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;">Rencana Minggu per Minggu</h3>
+      <div class="week-plan-grid" id="cmWeekPlan"></div>
+    </div>
+  </section>
+
+  <section id="kurikulum" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Community Medicine</span>
+      <h2>Kurikulum CM Koas</h2>
+      <p class="section-subtitle" id="cmCurriculumSubtitle"></p>
+
+      <div class="standard-badges" id="cmStandards" style="margin-top:1.5rem"></div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <div class="curriculum-grid" id="cmCompetencyMap"></div>
+      </div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.8rem;">Model Supervisi & Penilaian</h3>
+        <ul class="compact-list" id="cmSupervision"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyeksi" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Community Medicine</span>
+      <h2>Proyeksi Kerja Mahasiswa</h2>
+      <p class="section-subtitle" id="cmProjectionSubtitle"></p>
+
+      <div class="grid-2 fade-in" style="margin-top:2rem">
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Pembagian Peran Tim</h3>
+          <div class="role-grid" id="cmRoles"></div>
+        </div>
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Deliverable yang Harus Pulang</h3>
+          <ul class="compact-list" id="cmDeliverables"></ul>
+        </div>
+      </div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.8rem;">Guardrails Implementasi</h3>
+        <ul class="compact-list" id="cmGuardrails"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="rekomendasi" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Rekomendasi</span>
+      <h2>Scoring Matrix & Keputusan Implementasi</h2>
+      <p class="section-subtitle">Penilaian tertimbang tetap dipakai untuk memilih lokasi, tetapi keputusan akhir kini diterjemahkan menjadi paket kerja CM koas yang konkret.</p>
+
+      <div class="glass-card fade-in" style="margin-top:2rem">
+        <div class="scoring-wrapper">
+          <table id="scoringTable"></table>
+        </div>
+      </div>
+
+      <div class="grid-2 fade-in" style="margin-top:1.5rem">
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Cara Baca Matrix</h3>
+          <p id="scoringLegendSubtitle" style="font-size:0.86rem;line-height:1.7;margin-bottom:1rem;"></p>
+          <div class="scale-band-grid" id="scoringScaleBands"></div>
+        </div>
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Rumus dan Interpretasi</h3>
+          <p id="scoringFormula" style="font-size:0.86rem;line-height:1.7;"></p>
+        </div>
+      </div>
+
+      <div class="rubric-grid fade-in" id="scoringRubricGrid" style="margin-top:1.5rem"></div>
+
+      <div class="glass-card fade-in recommendation-card" style="margin-top:1.5rem;border-left:3px solid var(--accent-red);">
+        <h3 id="cmRecommendationTitle"></h3>
+        <p id="cmRecommendationSummary" style="font-size:0.9rem;line-height:1.7;margin-top:0.5rem;"></p>
+
+        <div class="recommendation-grid" style="margin-top:1.25rem;">
+          <div>
+            <div class="recommendation-label">Mengapa Mentikan</div>
+            <ul class="compact-list" id="cmRecommendationRationale"></ul>
+          </div>
+          <div>
+            <div class="recommendation-label">Ringkas 4 Minggu</div>
+            <ul class="compact-list" id="cmRecommendationWeeks"></ul>
+          </div>
+        </div>
+
+        <div id="cmRecommendationBadges" style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Dashboard Desa Binaan - <a href="#">FKK ITS</a> x Kota Mojokerto 2025</p>
+      <p style="margin-top:0.3rem;">Data dari profil Puskesmas, White Paper FKK ITS ver 4, dan web research. Dikurasi dan divisualisasi dengan Chart.js.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
+
