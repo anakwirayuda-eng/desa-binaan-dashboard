@@ -852,15 +852,115 @@ function renderCommunityMedicine() {
     const plan = cm.implementationPlan;
     const curriculum = cm.curriculum;
     const projection = cm.projection;
+    const toolkit = cm.visualToolkit;
 
     document.getElementById('cmPlanSubtitle').textContent = plan.subtitle;
+    document.getElementById('cmOperatingNarrative').textContent = plan.operatingModel.narrative;
+    document.getElementById('cmOperatingBadges').innerHTML = plan.operatingModel.badges.map(item => `<span class="inovasi-tag">${item}</span>`).join('');
+    document.getElementById('cmOperatingBullets').innerHTML = plan.operatingModel.bullets.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmAssumptions').innerHTML = plan.assumptions.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmTargetSummary').innerHTML = [
+        { label: 'Target lokasi', value: cm.target.puskesmas },
+        { label: 'Alamat', value: cm.target.lokasi },
+        { label: 'Durasi', value: cm.target.durasi_rotasi },
+        { label: 'Pendekatan', value: cm.target.pendekatan }
+    ].map(item => `
+    <div class="target-summary-item">
+      <span class="recommendation-label">${item.label}</span>
+      <strong>${item.value}</strong>
+    </div>
+  `).join('');
 
     document.getElementById('cmWorkstreams').innerHTML = plan.workstreams.map(item => `
     <div class="workstream-card">
       <h3>${item.title}</h3>
       <p>${item.desc}</p>
     </div>
+  `).join('');
+
+    document.getElementById('cmGanttNote').textContent = plan.ganttNote;
+    document.getElementById('cmGanttWeekBands').innerHTML = `
+    <div class="gantt-row-label muted">Timeline</div>
+    ${plan.gantt.weekBands.map(item => `
+      <div class="gantt-week-band" style="grid-column:${item.start + 1} / ${item.end + 2}">
+        <strong>${item.label}</strong>
+        <span>${item.focus}</span>
+      </div>
+    `).join('')}
+  `;
+    document.getElementById('cmGanttDays').innerHTML = `
+    <div class="gantt-row-label">Workstream</div>
+    ${plan.gantt.dayLabels.map(label => `<div class="gantt-day-cell">${label}</div>`).join('')}
+  `;
+    document.getElementById('cmGanttTracks').innerHTML = plan.gantt.tracks.map(track => `
+    <div class="gantt-track-row">
+      <div class="gantt-row-label">
+        <strong>${track.title}</strong>
+        <span>${track.owner}</span>
+        <p>${track.detail}</p>
+      </div>
+      <div class="gantt-track-timeline">
+        ${plan.gantt.dayLabels.map(() => '<div class="gantt-grid-cell"></div>').join('')}
+        ${track.blocks.map(block => `
+          <div class="gantt-block tone-${track.tone}" style="grid-column:${block.start} / ${block.end + 1}">
+            <span>${block.label}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+    document.getElementById('cmGanttMilestones').innerHTML = `
+    <div class="gantt-row-label">
+      <strong>Milestone</strong>
+      <span>Checkpoint mingguan</span>
+    </div>
+    <div class="gantt-track-timeline gantt-milestone-line">
+      ${plan.gantt.dayLabels.map(() => '<div class="gantt-grid-cell"></div>').join('')}
+      ${plan.gantt.milestones.map(item => `
+        <div class="gantt-milestone tone-${item.tone}" style="grid-column:${item.day} / ${item.day + 1}">
+          <div class="gantt-milestone-dot"></div>
+          <span>${item.label}</span>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+    document.getElementById('cmDailyForecastNote').textContent = plan.dailyForecastNote;
+    document.getElementById('cmDailyForecast').innerHTML = plan.dailyForecast.map(week => `
+    <section class="daily-week-group">
+      <div class="daily-week-header">
+        <div>
+          <div class="week-pill">${week.week}</div>
+          <h3>${week.theme}</h3>
+        </div>
+      </div>
+      <div class="daily-card-grid">
+        ${week.days.map(day => `
+          <article class="daily-card">
+            <div class="daily-card-top">
+              <div>
+                <span class="daily-label">${day.label}</span>
+                <h4>${day.day}</h4>
+              </div>
+              <span class="daily-owner">${day.owner}</span>
+            </div>
+            <div class="daily-block">
+              <div class="curriculum-label">Pagi</div>
+              <p>${day.am}</p>
+            </div>
+            <div class="daily-block">
+              <div class="curriculum-label">Siang</div>
+              <p>${day.pm}</p>
+            </div>
+            <div class="daily-block">
+              <div class="curriculum-label">Output</div>
+              <p>${day.output}</p>
+            </div>
+            <div class="daily-checkpoint">${day.checkpoint}</div>
+          </article>
+        `).join('')}
+      </div>
+    </section>
   `).join('');
 
     document.getElementById('cmWeekPlan').innerHTML = plan.weeks.map(week => `
@@ -881,6 +981,13 @@ function renderCommunityMedicine() {
 
     document.getElementById('cmCurriculumSubtitle').textContent = curriculum.subtitle;
     document.getElementById('cmStandards').innerHTML = curriculum.standards.map(item => `<span class="standard-badge">${item}</span>`).join('');
+    document.getElementById('cmReferenceStandards').innerHTML = curriculum.referenceStandards.map(item => `
+    <div class="reference-standard-card">
+      <h3>${item.title}</h3>
+      <p><span class="curriculum-label">Mengapa dipakai</span>${item.why}</p>
+      <p><span class="curriculum-label">Implementasi di dashboard / rotasi</span>${item.application}</p>
+    </div>
+  `).join('');
     document.getElementById('cmCompetencyMap').innerHTML = curriculum.competencyMap.map(item => `
     <div class="curriculum-card">
       <h3>${item.domain}</h3>
@@ -900,16 +1007,88 @@ function renderCommunityMedicine() {
   `).join('');
     document.getElementById('cmDeliverables').innerHTML = projection.deliverables.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmGuardrails').innerHTML = projection.guardrails.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmDailyLoad').innerHTML = projection.dailyLoad.map(item => `
+    <div class="daily-load-card">
+      <h3>${item.title}</h3>
+      <p>${item.desc}</p>
+    </div>
+  `).join('');
+
+    document.getElementById('cmToolkitSubtitle').textContent = toolkit.subtitle;
+    document.getElementById('cmPanelPrinciples').innerHTML = toolkit.panelPrinciples.map(item => `
+    <div class="workstream-card">
+      <h3>${item.title}</h3>
+      <p>${item.desc}</p>
+    </div>
+  `).join('');
+    document.getElementById('cmFigureRecommendations').innerHTML = toolkit.recommendedFigures.map(item => `
+    <div class="figure-card">
+      <h4>${item.title}</h4>
+      <p><span class="curriculum-label">Fungsi</span>${item.use}</p>
+      <p><span class="curriculum-label">Paling cocok untuk</span>${item.fit}</p>
+    </div>
+  `).join('');
+    document.getElementById('cmDriverAim').textContent = toolkit.driverDiagram.aim;
+    document.getElementById('cmDriverDiagram').innerHTML = toolkit.driverDiagram.drivers.map(item => `
+    <div class="driver-card">
+      <h4>${item.title}</h4>
+      <ul class="compact-list">${item.actions.map(action => `<li>${action}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+    document.getElementById('cmDeepthinkAccepted').innerHTML = toolkit.deepthinkTriage.accepted.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmDeepthinkDeferred').innerHTML = toolkit.deepthinkTriage.deferred.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmDeepthinkRejected').innerHTML = toolkit.deepthinkTriage.rejected.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmPhotoReferences').innerHTML = toolkit.photoReferences.map(item => `
+    <article class="photo-reference-card">
+      ${item.image
+            ? `<img src="${item.image}" alt="${item.title}" loading="lazy">`
+            : `<div class="photo-reference-fallback"><span>${item.title}</span></div>`}
+      <div class="photo-reference-body">
+        <div class="recommendation-label">${item.source}</div>
+        <h3>${item.title}</h3>
+        <p>${item.note}</p>
+        <a href="${item.url}" target="_blank" rel="noreferrer">Buka sumber resmi</a>
+        <span class="photo-credit">${item.credit}</span>
+      </div>
+    </article>
+  `).join('');
+    document.getElementById('cmBibliography').innerHTML = toolkit.bibliography.map(item => `
+    <article class="bibliography-item">
+      <div class="bibliography-meta">
+        <span>${item.type}</span>
+        <strong>${item.year}</strong>
+      </div>
+      <h4>${item.title}</h4>
+      <p><strong>${item.org}</strong> - ${item.note}</p>
+      <a href="${item.url}" target="_blank" rel="noreferrer">${item.url}</a>
+    </article>
+  `).join('');
 }
 
 function renderRecommendation() {
     const recommendation = D.communityMedicine.recommendation;
+    const scoring = D.scoring;
+    const names = {
+        blooto: 'Blooto',
+        mentikan: 'Mentikan',
+        wates: 'Wates',
+        gedongan: 'Gedongan',
+        kranggan: 'Kranggan'
+    };
 
     document.getElementById('cmRecommendationTitle').textContent = recommendation.title;
     document.getElementById('cmRecommendationSummary').textContent = recommendation.summary;
     document.getElementById('cmRecommendationRationale').innerHTML = recommendation.rationale.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmRecommendationWeeks').innerHTML = recommendation.weekSummary.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmRecommendationBadges').innerHTML = recommendation.badges.map(item => `<span class="inovasi-tag">${item}</span>`).join('');
+    document.getElementById('cmRecommendationClosingLoop').textContent = recommendation.closingLoop;
+
+    document.getElementById('scoringWinnerNarrative').innerHTML = Object.entries(scoring.winnerNarrative).map(([id, text]) => `
+    <div class="winner-narrative-item">
+      <h4>${names[id]}</h4>
+      <p>${text}</p>
+    </div>
+  `).join('');
 }
 
 function renderScoringTable() {
@@ -953,12 +1132,44 @@ function renderScoringExplainability() {
 
     document.getElementById('scoringLegendSubtitle').textContent = scoring.legend.subtitle;
     document.getElementById('scoringFormula').textContent = scoring.legend.formula;
+    document.getElementById('scoringDecisionGuide').innerHTML = scoring.decisionGuide.map(item => `
+    <div class="decision-guide-item">
+      <strong>${item.title}</strong>
+      <p>${item.desc}</p>
+    </div>
+  `).join('');
     document.getElementById('scoringScaleBands').innerHTML = scoring.legend.bands.map(band => `
     <div class="scale-band">
       <strong>${band.label} - ${band.meaning}</strong>
       <p>${band.desc}</p>
     </div>
   `).join('');
+
+    document.getElementById('scoringContributionGrid').innerHTML = ids.map(id => {
+        const total = scoring.criteria.reduce((sum, criterion, ci) => sum + (scoring.scores[id][ci] * criterion.bobot / 100), 0);
+        const rows = scoring.criteria.map((criterion, ci) => {
+            const weighted = scoring.scores[id][ci] * criterion.bobot / 100;
+            return `
+          <div class="contribution-row">
+            <span>${criterion.nama}</span>
+            <div class="contribution-bar-track">
+              <div class="contribution-bar" style="width:${scoring.scores[id][ci] * 10}%; background:${COLORS[id]};"></div>
+            </div>
+            <strong>${weighted.toFixed(2)}</strong>
+          </div>
+        `;
+        }).join('');
+
+        return `
+      <div class="score-contribution-card">
+        <div class="score-contribution-header">
+          <h4>${names[id]}</h4>
+          <span class="score-badge">${total.toFixed(1)}</span>
+        </div>
+        ${rows}
+      </div>
+    `;
+    }).join('');
 
     document.getElementById('scoringRubricGrid').innerHTML = scoring.criteria.map((criterion, ci) => `
     <div class="rubric-card">

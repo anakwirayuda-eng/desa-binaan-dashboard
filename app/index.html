@@ -14,7 +14,13 @@
 
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
-      <a href="#" class="nav-brand">Desa Binaan</a>
+      <a href="#" class="nav-brand">
+        <img src="assets/its-logo.svg" alt="Logo ITS" class="nav-brand-logo">
+        <span class="nav-brand-copy">
+          <strong>Desa Binaan</strong>
+          <small>FKK ITS x Kota Mojokerto</small>
+        </span>
+      </a>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#fondasi">Fondasi</a></li>
@@ -27,6 +33,7 @@
         <li><a href="#implementasi">CM Plan</a></li>
         <li><a href="#kurikulum">Kurikulum</a></li>
         <li><a href="#proyeksi">Proyeksi</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
         <li><a href="#rekomendasi">Rekomendasi</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#127769;</button>
@@ -40,6 +47,13 @@
         <span class="hero-badge">FKK ITS x Kota Mojokerto 2025</span>
         <h1>Dashboard Desa Binaan</h1>
         <p>Analisis profil 5 Puskesmas, framework intervensi berbasis evidence dari White Paper global, dan rekomendasi target Desa Binaan yang dibawa dari teori ke aksi.</p>
+        <div class="hero-brand-strip">
+          <img src="assets/its-logo.svg" alt="ITS">
+          <div>
+            <strong>Institut Teknologi Sepuluh Nopember</strong>
+            <span>Community Medicine x Implementation Dashboard</span>
+          </div>
+        </div>
       </div>
       <div class="hero-stats" id="heroStats"></div>
     </div>
@@ -173,14 +187,44 @@
       <h2>Implementation Plan - Mentikan</h2>
       <p class="section-subtitle" id="cmPlanSubtitle"></p>
 
-      <div class="glass-card fade-in" style="margin-top:2rem">
-        <h3 style="margin-bottom:0.8rem;">Asumsi Kerja</h3>
-        <ul class="compact-list" id="cmAssumptions"></ul>
+      <div class="grid-2 fade-in cm-overview-grid" style="margin-top:2rem">
+        <div class="glass-card cm-target-card">
+          <h3 style="margin-bottom:0.8rem;">Model Operasi Rotasi</h3>
+          <p id="cmOperatingNarrative" style="font-size:0.9rem;line-height:1.7;"></p>
+          <div class="cm-badge-row" id="cmOperatingBadges" style="margin-top:1rem;"></div>
+          <ul class="compact-list" id="cmOperatingBullets" style="margin-top:1rem;"></ul>
+        </div>
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Asumsi Kerja</h3>
+          <ul class="compact-list" id="cmAssumptions"></ul>
+          <div class="target-summary-grid" id="cmTargetSummary" style="margin-top:1rem;"></div>
+        </div>
       </div>
 
       <div class="grid-4 fade-in" id="cmWorkstreams" style="margin-top:1.5rem"></div>
 
-      <h3 style="margin-top:3rem;margin-bottom:1rem;">Rencana Minggu per Minggu</h3>
+      <div class="glass-card fade-in gantt-card" style="margin-top:1.5rem">
+        <div class="section-header-inline">
+          <div>
+            <h3>Gantt 20 Hari</h3>
+            <p id="cmGanttNote" style="font-size:0.84rem;line-height:1.6;margin-top:0.4rem;"></p>
+          </div>
+        </div>
+        <div class="gantt-shell">
+          <div class="gantt-week-bands" id="cmGanttWeekBands"></div>
+          <div class="gantt-day-header" id="cmGanttDays"></div>
+          <div class="gantt-track-grid" id="cmGanttTracks"></div>
+          <div class="gantt-milestones" id="cmGanttMilestones"></div>
+        </div>
+      </div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.5rem;">Forecast Harian</h3>
+        <p id="cmDailyForecastNote" style="font-size:0.84rem;line-height:1.6;margin-bottom:1rem;"></p>
+        <div id="cmDailyForecast"></div>
+      </div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;">Milestone Minggu per Minggu</h3>
       <div class="week-plan-grid" id="cmWeekPlan"></div>
     </div>
   </section>
@@ -192,6 +236,11 @@
       <p class="section-subtitle" id="cmCurriculumSubtitle"></p>
 
       <div class="standard-badges" id="cmStandards" style="margin-top:1.5rem"></div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.8rem;">Acuan Kurikulum dan Standar Pelengkap</h3>
+        <div class="reference-standards-grid" id="cmReferenceStandards"></div>
+      </div>
 
       <div class="glass-card fade-in" style="margin-top:1.5rem">
         <div class="curriculum-grid" id="cmCompetencyMap"></div>
@@ -225,6 +274,56 @@
         <h3 style="margin-bottom:0.8rem;">Guardrails Implementasi</h3>
         <ul class="compact-list" id="cmGuardrails"></ul>
       </div>
+
+      <div class="daily-load-grid fade-in" id="cmDailyLoad" style="margin-top:1.5rem"></div>
+    </div>
+  </section>
+
+  <section id="toolkit" class="fade-in">
+    <div class="container">
+      <span class="section-tag">Visual Toolkit</span>
+      <h2>Panel, Diagram, dan Referensi</h2>
+      <p class="section-subtitle" id="cmToolkitSubtitle"></p>
+
+      <div class="grid-4 fade-in" id="cmPanelPrinciples" style="margin-top:1.5rem"></div>
+
+      <div class="grid-2 fade-in" style="margin-top:1.5rem">
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Figur yang Paling Cocok</h3>
+          <div class="figure-recommendation-grid" id="cmFigureRecommendations"></div>
+        </div>
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.5rem;">Driver Diagram Mentikan</h3>
+          <p id="cmDriverAim" style="font-size:0.86rem;line-height:1.7;margin-bottom:1rem;"></p>
+          <div class="driver-diagram-grid" id="cmDriverDiagram"></div>
+        </div>
+      </div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.8rem;">Deepthink Triage</h3>
+        <div class="grid-3 deepthink-triage-grid">
+          <div>
+            <div class="recommendation-label">Dipakai</div>
+            <ul class="compact-list" id="cmDeepthinkAccepted"></ul>
+          </div>
+          <div>
+            <div class="recommendation-label">Ditunda</div>
+            <ul class="compact-list" id="cmDeepthinkDeferred"></ul>
+          </div>
+          <div>
+            <div class="recommendation-label">Ditolak</div>
+            <ul class="compact-list" id="cmDeepthinkRejected"></ul>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;">Foto dan Visual Referensi Resmi</h3>
+      <div class="photo-reference-grid fade-in" id="cmPhotoReferences"></div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.8rem;">Daftar Pustaka Terkait</h3>
+        <div class="bibliography-list" id="cmBibliography"></div>
+      </div>
     </div>
   </section>
 
@@ -249,6 +348,18 @@
         <div class="glass-card">
           <h3 style="margin-bottom:0.8rem;">Rumus dan Interpretasi</h3>
           <p id="scoringFormula" style="font-size:0.86rem;line-height:1.7;"></p>
+          <div class="score-decision-guide" id="scoringDecisionGuide" style="margin-top:1rem;"></div>
+        </div>
+      </div>
+
+      <div class="grid-2 fade-in" style="margin-top:1.5rem">
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Contribution Breakdown</h3>
+          <div class="score-contribution-grid" id="scoringContributionGrid"></div>
+        </div>
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Narasi Keputusan</h3>
+          <div class="winner-narrative-grid" id="scoringWinnerNarrative"></div>
         </div>
       </div>
 
@@ -270,14 +381,20 @@
         </div>
 
         <div id="cmRecommendationBadges" style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;"></div>
+        <p id="cmRecommendationClosingLoop" style="font-size:0.84rem;line-height:1.7;margin-top:1rem;"></p>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>Dashboard Desa Binaan - <a href="#">FKK ITS</a> x Kota Mojokerto 2025</p>
-      <p style="margin-top:0.3rem;">Data dari profil Puskesmas, White Paper FKK ITS ver 4, dan web research. Dikurasi dan divisualisasi dengan Chart.js.</p>
+      <div class="footer-brand">
+        <img src="assets/its-logo.svg" alt="ITS">
+        <div>
+          <p>Dashboard Desa Binaan - <a href="#">FKK ITS</a> x Kota Mojokerto 2025</p>
+          <p style="margin-top:0.3rem;">Data dari profil Puskesmas, White Paper FKK ITS ver 4, dan web research. Dikurasi dan divisualisasi dengan Chart.js.</p>
+        </div>
+      </div>
     </div>
   </footer>
 

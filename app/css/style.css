@@ -101,6 +101,35 @@ body {
   line-height: 1.6;
   transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: auto;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.22;
+}
+
+body::before {
+  top: -10rem;
+  left: -8rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(59, 130, 246, 0.24);
+}
+
+body::after {
+  right: -8rem;
+  bottom: -10rem;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(239, 68, 68, 0.16);
 }
 
 /* ─── TYPOGRAPHY ─── */
@@ -227,11 +256,38 @@ section {
 }
 
 .nav-brand {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   color: var(--text-heading);
   text-decoration: none;
+  min-width: 0;
+}
+
+.nav-brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.nav-brand-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.nav-brand-copy strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.nav-brand-copy small {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.15;
 }
 
 .nav-links {
@@ -356,6 +412,53 @@ section {
   background: var(--accent-gradient);
   color: #fff;
   margin-bottom: 1.2rem;
+}
+
+.hero-brand-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-brand-strip img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hero-brand-strip strong,
+.hero-brand-strip span {
+  display: block;
+}
+
+.hero-brand-strip strong {
+  color: #fff;
+  font-size: 0.86rem;
+}
+
+.hero-brand-strip span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.76rem;
+}
+
+[data-theme="light"] .hero-brand-strip {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .hero-brand-strip strong {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .hero-brand-strip span {
+  color: var(--text-secondary);
 }
 
 .hero-stats {
@@ -1060,6 +1163,20 @@ footer {
   background: var(--bg-secondary);
 }
 
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.footer-brand img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 footer a {
   color: var(--accent-blue);
   text-decoration: none;
@@ -1105,11 +1222,52 @@ footer a {
     order: 3;
     width: 100%;
     padding-bottom: 0.2rem;
+    scroll-snap-type: x proximity;
   }
 
   .nav-links a {
     font-size: 0.68rem;
     padding: 0.32rem 0.45rem;
+    scroll-snap-align: start;
+  }
+
+  .nav-brand {
+    gap: 0.55rem;
+  }
+
+  .nav-brand-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-brand-copy small {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 7.2rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-brand-strip {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-brand-strip img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-stats {
@@ -1441,13 +1599,647 @@ body.print-prep .tab-content[hidden] {
   background: var(--accent-red);
 }
 
+.cm-badge-row,
+.target-summary-grid,
+.reference-standards-grid,
+.daily-load-grid,
+.photo-reference-grid,
+.bibliography-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.cm-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.target-summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.target-summary-item,
+.reference-standard-card,
+.daily-load-card,
+.figure-card,
+.driver-card,
+.photo-reference-card,
+.bibliography-item,
+.score-contribution-card,
+.winner-narrative-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.target-summary-item strong {
+  color: var(--text-heading);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.reference-standards-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reference-standard-card,
+.daily-load-card,
+.figure-card,
+.driver-card {
+  background: var(--bg-glass);
+}
+
+.reference-standard-card p + p,
+.figure-card p + p {
+  margin-top: 0.6rem;
+}
+
+.gantt-card {
+  overflow: hidden;
+}
+
+.section-header-inline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.gantt-shell {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.gantt-week-bands,
+.gantt-day-header,
+.gantt-track-row,
+.gantt-milestones {
+  min-width: 1080px;
+}
+
+.gantt-week-bands,
+.gantt-day-header {
+  display: grid;
+  grid-template-columns: minmax(230px, 1.2fr) repeat(20, minmax(36px, 1fr));
+  gap: 0.35rem;
+}
+
+.gantt-week-band {
+  grid-row: 1;
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  text-align: center;
+}
+
+.gantt-week-band strong,
+.gantt-week-band span {
+  display: block;
+}
+
+.gantt-week-band strong {
+  font-size: 0.76rem;
+  color: var(--text-heading);
+}
+
+.gantt-week-band span {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.gantt-row-label {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  padding: 0.85rem 0.9rem;
+  border-radius: 14px;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  color: var(--text-heading);
+}
+
+.gantt-row-label.muted {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gantt-row-label strong,
+.gantt-row-label span,
+.gantt-row-label p {
+  display: block;
+}
+
+.gantt-row-label strong {
+  font-size: 0.84rem;
+}
+
+.gantt-row-label span {
+  margin-top: 0.18rem;
+  font-size: 0.72rem;
+  color: var(--accent-blue);
+}
+
+.gantt-row-label p {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.gantt-day-cell {
+  padding: 0.55rem 0;
+  border-radius: 10px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.gantt-track-row,
+.gantt-milestones {
+  display: grid;
+  grid-template-columns: minmax(230px, 1.2fr) minmax(0, 1fr);
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.gantt-track-timeline {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(36px, 1fr));
+  gap: 0.3rem;
+  position: relative;
+}
+
+.gantt-grid-cell {
+  min-height: 3.1rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+  border: 1px dashed var(--border);
+  grid-row: 1;
+}
+
+.gantt-block {
+  grid-row: 1;
+  align-self: center;
+  z-index: 2;
+  min-height: 2.2rem;
+  border-radius: 12px;
+  padding: 0.45rem 0.55rem;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.gantt-block span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.tone-blue {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+
+.tone-cyan {
+  background: linear-gradient(135deg, #0891b2, #22d3ee);
+}
+
+.tone-purple {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+}
+
+.tone-amber {
+  background: linear-gradient(135deg, #d97706, #fbbf24);
+}
+
+.tone-red {
+  background: linear-gradient(135deg, #dc2626, #f87171);
+}
+
+.tone-green {
+  background: linear-gradient(135deg, #059669, #34d399);
+}
+
+.gantt-milestone-line .gantt-grid-cell {
+  min-height: 4.2rem;
+}
+
+.gantt-milestone {
+  grid-row: 1;
+  align-self: stretch;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 0.1rem;
+  background: transparent !important;
+}
+
+.gantt-milestone-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.gantt-milestone span {
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  max-width: 6rem;
+}
+
+.gantt-milestone.tone-blue .gantt-milestone-dot {
+  background: #2563eb;
+}
+
+.gantt-milestone.tone-purple .gantt-milestone-dot {
+  background: #7c3aed;
+}
+
+.gantt-milestone.tone-red .gantt-milestone-dot {
+  background: #dc2626;
+}
+
+.gantt-milestone.tone-green .gantt-milestone-dot {
+  background: #059669;
+}
+
+.daily-week-group + .daily-week-group {
+  margin-top: 1.5rem;
+}
+
+.daily-week-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.daily-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.daily-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.daily-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.daily-label {
+  display: inline-flex;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--accent-blue);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.daily-card h4 {
+  margin-top: 0.45rem;
+  font-size: 0.94rem;
+}
+
+.daily-owner {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.daily-block + .daily-block {
+  margin-top: 0.7rem;
+}
+
+.daily-block p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.daily-checkpoint {
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.daily-load-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.daily-load-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
+}
+
+.daily-load-card p,
+.reference-standard-card p,
+.figure-card p,
+.driver-card p,
+.bibliography-item p,
+.winner-narrative-item p {
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.figure-recommendation-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.figure-card h4,
+.driver-card h4,
+.winner-narrative-item h4,
+.bibliography-item h4 {
+  font-size: 0.92rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-heading);
+}
+
+.driver-diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.photo-reference-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.photo-reference-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.photo-reference-card img,
+.photo-reference-fallback {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.photo-reference-card img {
+  object-fit: cover;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.photo-reference-card:first-child img {
+  object-fit: contain;
+  padding: 1.25rem;
+  background: linear-gradient(160deg, rgba(59, 130, 246, 0.08), rgba(15, 23, 42, 0.02));
+}
+
+.photo-reference-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(160deg, rgba(59, 130, 246, 0.15), rgba(15, 23, 42, 0.04));
+  color: var(--text-heading);
+  text-align: center;
+  font-family: var(--font-display);
+}
+
+.photo-reference-body {
+  padding: 1rem;
+}
+
+.photo-reference-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.photo-reference-body p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.photo-reference-body a,
+.bibliography-item a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-size: 0.82rem;
+  word-break: break-word;
+}
+
+.photo-credit {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.bibliography-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bibliography-item strong {
+  color: var(--text-heading);
+}
+
+.deepthink-triage-grid .compact-list li::before {
+  background: var(--accent-purple);
+}
+
+.score-decision-guide {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.decision-guide-item {
+  border-top: 1px solid var(--border);
+  padding-top: 0.8rem;
+}
+
+.decision-guide-item strong {
+  color: var(--text-heading);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.84rem;
+}
+
+.decision-guide-item p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.score-contribution-grid,
+.winner-narrative-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.score-contribution-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.contribution-row {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) minmax(0, 2fr) auto;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.contribution-row + .contribution-row {
+  margin-top: 0.55rem;
+}
+
+.contribution-row span,
+.contribution-row strong {
+  font-size: 0.76rem;
+}
+
+.contribution-bar-track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-glass);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.contribution-bar {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.winner-narrative-item h4 {
+  margin-bottom: 0.4rem;
+}
+
 @media (max-width: 900px) {
+  #cmWorkstreams,
+  #cmPanelPrinciples {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .deepthink-triage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .target-summary-grid,
+  .reference-standards-grid,
+  .photo-reference-grid,
+  .daily-load-grid,
+  .driver-diagram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .week-plan-grid,
   .curriculum-grid,
   .recommendation-grid,
   .rubric-grid,
   .scale-band-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  #cmWorkstreams,
+  #cmPanelPrinciples {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container,
+  .glass-card,
+  .workstream-card,
+  .week-card,
+  .curriculum-card,
+  .role-card,
+  .daily-card,
+  .reference-standard-card,
+  .daily-load-card,
+  .figure-card,
+  .driver-card,
+  .photo-reference-card,
+  .bibliography-item,
+  .score-contribution-card,
+  .winner-narrative-item {
+    padding: 0.95rem;
+  }
+
+  .daily-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gantt-row-label {
+    min-width: 168px;
+    padding: 0.75rem;
+  }
+
+  .gantt-week-bands,
+  .gantt-day-header,
+  .gantt-track-row,
+  .gantt-milestones {
+    min-width: 980px;
+  }
+
+  .photo-reference-card {
+    padding: 0;
+  }
+
+  .photo-reference-card img,
+  .photo-reference-fallback {
+    height: 170px;
+  }
+
+  .contribution-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .contribution-row strong {
+    justify-self: flex-start;
   }
 }
 
@@ -1459,6 +2251,11 @@ body.print-prep .tab-content[hidden] {
   body {
     background: #ffffff !important;
     color: #000000 !important;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
   }
 
   .navbar,
@@ -1488,7 +2285,17 @@ body.print-prep .tab-content[hidden] {
   .week-card,
   .curriculum-card,
   .role-card,
-  .swot-box {
+  .swot-box,
+  .daily-card,
+  .reference-standard-card,
+  .daily-load-card,
+  .figure-card,
+  .driver-card,
+  .photo-reference-card,
+  .bibliography-item,
+  .score-contribution-card,
+  .winner-narrative-item,
+  .target-summary-item {
     background: #ffffff !important;
     border: 1px solid #d6d6d6 !important;
     box-shadow: none !important;
@@ -1521,6 +2328,21 @@ body.print-prep .tab-content[hidden] {
   .tabs-nav,
   .pkm-cards-grid {
     display: none !important;
+  }
+
+  .gantt-shell {
+    overflow: visible !important;
+  }
+
+  .gantt-week-bands,
+  .gantt-day-header,
+  .gantt-track-row,
+  .gantt-milestones {
+    min-width: 0 !important;
+  }
+
+  .gantt-track-timeline {
+    grid-template-columns: repeat(20, minmax(0, 1fr));
   }
 
   canvas {
