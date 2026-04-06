@@ -571,6 +571,13 @@ section {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1.2rem;
+  width: 100%;
+  display: block;
+  text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  color: inherit;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -801,6 +808,7 @@ section {
   font-size: 0.78rem;
   position: sticky;
   top: 0;
+  z-index: 3;
 }
 
 .scoring-wrapper td:first-child {
@@ -1350,6 +1358,7 @@ body.print-prep .tab-content[hidden] {
   position: sticky;
   left: 0;
   background: var(--bg-card-solid);
+  border-right: 1px solid var(--border);
 }
 
 .scoring-wrapper th:first-child {
@@ -1683,8 +1692,12 @@ body.print-prep .tab-content[hidden] {
 .gantt-week-bands,
 .gantt-day-header {
   display: grid;
-  grid-template-columns: minmax(230px, 1.2fr) repeat(20, minmax(36px, 1fr));
-  gap: 0.35rem;
+  grid-template-columns: minmax(230px, 1.2fr) minmax(0, 1fr);
+  gap: 0.6rem;
+}
+
+.gantt-track-timeline-header {
+  align-items: stretch;
 }
 
 .gantt-week-band {
@@ -2185,6 +2198,10 @@ body.print-prep .tab-content[hidden] {
 }
 
 @media (max-width: 640px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+
   #cmWorkstreams,
   #cmPanelPrinciples {
     grid-template-columns: 1fr;
@@ -2256,6 +2273,11 @@ body.print-prep .tab-content[hidden] {
   body::before,
   body::after {
     display: none !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   .navbar,

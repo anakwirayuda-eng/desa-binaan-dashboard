@@ -106,9 +106,10 @@ function preparePrintView() {
         content.classList.add('active');
     });
     D.puskesmas.forEach(initPKMCharts);
-    window.setTimeout(() => {
-        getAllCharts().forEach(chart => chart.resize());
-    }, 80);
+    getAllCharts().forEach(chart => {
+        chart.resize();
+        chart.update('none');
+    });
 }
 
 function cleanupPrintView() {
@@ -236,10 +237,14 @@ function createBarDataset(label, data, colors = COLORS_ARR) {
         label,
         data,
         backgroundColor: context => {
-            const color = Array.isArray(colors) ? colors[context.dataIndex % colors.length] : colors;
+            const color = context.type === 'data'
+                ? (Array.isArray(colors) ? colors[context.dataIndex % colors.length] : colors)
+                : (Array.isArray(colors) ? colors[0] : colors);
             return createBarGradient(context, color);
         },
-        borderColor: context => Array.isArray(colors) ? colors[context.dataIndex % colors.length] : colors,
+        borderColor: context => context.type === 'data'
+            ? (Array.isArray(colors) ? colors[context.dataIndex % colors.length] : colors)
+            : (Array.isArray(colors) ? colors[0] : colors),
         borderWidth: 1.5,
         borderRadius: 8,
         borderSkipped: false
@@ -881,16 +886,20 @@ function renderCommunityMedicine() {
     document.getElementById('cmGanttNote').textContent = plan.ganttNote;
     document.getElementById('cmGanttWeekBands').innerHTML = `
     <div class="gantt-row-label muted">Timeline</div>
-    ${plan.gantt.weekBands.map(item => `
-      <div class="gantt-week-band" style="grid-column:${item.start + 1} / ${item.end + 2}">
-        <strong>${item.label}</strong>
-        <span>${item.focus}</span>
-      </div>
-    `).join('')}
+    <div class="gantt-track-timeline gantt-track-timeline-header">
+      ${plan.gantt.weekBands.map(item => `
+        <div class="gantt-week-band" style="grid-column:${item.start} / ${item.end + 1}">
+          <strong>${item.label}</strong>
+          <span>${item.focus}</span>
+        </div>
+      `).join('')}
+    </div>
   `;
     document.getElementById('cmGanttDays').innerHTML = `
     <div class="gantt-row-label">Workstream</div>
-    ${plan.gantt.dayLabels.map(label => `<div class="gantt-day-cell">${label}</div>`).join('')}
+    <div class="gantt-track-timeline gantt-track-timeline-header">
+      ${plan.gantt.dayLabels.map(label => `<div class="gantt-day-cell">${label}</div>`).join('')}
+    </div>
   `;
     document.getElementById('cmGanttTracks').innerHTML = plan.gantt.tracks.map(track => `
     <div class="gantt-track-row">
@@ -1208,10 +1217,21 @@ function initNavbar() {
     const sections = links
         .map(link => document.getElementById(link.getAttribute('href').slice(1)))
         .filter(Boolean);
+    let activeSectionId = null;
 
     const setActiveLink = sectionId => {
+        if (!sectionId || sectionId === activeSectionId) return;
+        activeSectionId = sectionId;
         links.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+            const isActive = link.getAttribute('href') === `#${sectionId}`;
+            link.classList.toggle('active', isActive);
+            if (isActive && window.innerWidth <= 640) {
+                link.scrollIntoView({
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                    block: 'nearest',
+                    inline: 'center'
+                });
+            }
         });
     };
 

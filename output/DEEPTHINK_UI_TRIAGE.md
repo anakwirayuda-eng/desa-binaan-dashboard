@@ -50,3 +50,56 @@ Dashboard ini sekarang memakai panel yang berbeda untuk fungsi yang berbeda:
 - evidence panel untuk kredibilitas presentasi
 
 Ini lebih cocok untuk konteks CM koas daripada satu grid kartu yang seragam dari awal sampai akhir.
+
+## Stress Test Triage
+
+Sumber masukan: stress test lanjutan yang mengklaim 6 blindspots tersembunyi.
+
+### Accepted and patched
+
+- Gantt chart drifting
+  Status: diterima.
+  Tindakan: header minggu dan header hari sekarang memakai struktur dua kolom yang konsisten dengan track timeline, sehingga alignment lebih presisi.
+- Chart.js legend / scriptable color context
+  Status: diterima.
+  Tindakan: scriptable `backgroundColor` dan `borderColor` sekarang aman ketika `context.type` bukan `data`.
+- Print race condition untuk chart
+  Status: diterima.
+  Tindakan: `preparePrintView()` sekarang melakukan `resize()` dan `update('none')` secara sinkron, bukan bergantung pada `setTimeout`.
+- Safari / mobile button reset untuk kartu PKM
+  Status: diterima.
+  Tindakan: `.pkm-card` sekarang menetralkan style default button seperti `appearance`, `text-align`, `font`, dan `width`.
+- Mobile anchor offset
+  Status: diterima sebagian.
+  Tindakan: `scroll-padding-top` mobile dinaikkan agar judul section tidak tertutup navbar yang membungkus.
+- Sticky scoring seam
+  Status: diterima.
+  Tindakan: header sticky dan kolom pertama diperkeras dengan `z-index` dan `border-right`.
+
+### Accepted with modification
+
+- Auto-scroll nav chips mobile
+  Status: diterima dengan modifikasi ringan.
+  Tindakan: link aktif di navbar mobile akan di-scroll ke tengah saat section aktif berubah.
+  Catatan: saya sengaja tidak menambah progress bar atau sistem scroll state yang lebih agresif agar tidak menambah noise visual.
+
+### Rejected or reframed
+
+- Replace-all `app.js` dan `style.css`
+  Status: ditolak.
+  Alasan: paket itu membawa banyak perubahan di luar scope bugfix dan berisiko merusak fitur yang sudah stabil.
+- 3D spotlight / hover hologram engine
+  Status: ditolak.
+  Alasan: bertentangan dengan prinsip mobile-first, aksesibilitas, dan performa yang sudah dipilih.
+- Aurora animation dan noise overlay agresif
+  Status: ditolak.
+  Alasan: terlalu dekoratif untuk dashboard presentasi akademik dan berisiko menurunkan keterbacaan.
+- Scroll progress bar
+  Status: ditunda / di-reframe.
+  Alasan: tidak ada elemen HTML pendukung saat ini dan manfaatnya kecil dibanding kompleksitas tambahan.
+
+### Regressions avoided from the proposed replacement
+
+- Theme toggle icon logic yang sudah benar sekarang akan hilang jika file diganti mentah.
+- `renderStatCards()` versi usulan membuang dukungan `decimals`, `prefix`, dan `suffix`.
+- Beberapa bagian usulan mengasumsikan elemen baru seperti progress bar yang belum ada di HTML, sehingga raw replace justru bisa membuat fitur patah.
