@@ -257,6 +257,15 @@ section {
   background: var(--bg-glass);
 }
 
+.nav-links a:focus-visible,
+.theme-toggle:focus-visible,
+.pkm-card:focus-visible,
+.tab-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+}
+
 /* Theme Toggle */
 .theme-toggle {
   background: var(--toggle-bg);
@@ -1078,8 +1087,29 @@ footer a {
 }
 
 @media (max-width: 640px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+
+  .navbar-inner {
+    height: auto;
+    min-height: 56px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.55rem 0;
+  }
+
   .nav-links {
-    display: none;
+    display: flex;
+    order: 3;
+    width: 100%;
+    padding-bottom: 0.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.68rem;
+    padding: 0.32rem 0.45rem;
   }
 
   .hero-stats {
@@ -1139,6 +1169,11 @@ footer a {
   color: var(--text-muted);
 }
 
+body.print-prep .tab-content,
+body.print-prep .tab-content[hidden] {
+  display: block !important;
+}
+
 .nav-links {
   overflow-x: auto;
   scrollbar-width: none;
@@ -1146,6 +1181,10 @@ footer a {
 
 .nav-links::-webkit-scrollbar {
   display: none;
+}
+
+.pkm-highlights li::before {
+  content: '>';
 }
 
 .scoring-wrapper th:first-child,

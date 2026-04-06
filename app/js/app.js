@@ -5,6 +5,7 @@
  */
 
 const D = DASHBOARD_DATA;
+let activePKMId = null;
 
 function getAllCharts() {
     if (typeof Chart === 'undefined' || !Chart.instances) return [];
@@ -91,6 +92,30 @@ function queueChartResize() {
     }, 60);
 }
 
+function setThemeToggleIcon(isLight) {
+    const button = document.getElementById('themeToggle');
+    if (!button) return;
+    button.innerHTML = isLight ? '&#9728;&#65039;' : '&#127769;';
+    button.setAttribute('aria-label', isLight ? 'Aktifkan dark mode' : 'Aktifkan light mode');
+}
+
+function preparePrintView() {
+    document.body.classList.add('print-prep');
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.hidden = false;
+        content.classList.add('active');
+    });
+    D.puskesmas.forEach(initPKMCharts);
+    window.setTimeout(() => {
+        getAllCharts().forEach(chart => chart.resize());
+    }, 80);
+}
+
+function cleanupPrintView() {
+    document.body.classList.remove('print-prep');
+    switchTab(activePKMId || D.puskesmas[0]?.id);
+}
+
 // ═══════════════════════════════════════════
 // 0. THEME TOGGLE
 // ═══════════════════════════════════════════
@@ -99,8 +124,10 @@ function initTheme() {
     const saved = localStorage.getItem('desa-binaan-theme');
     if (saved === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
-        document.getElementById('themeToggle').textContent = '☀️';
+        setThemeToggleIcon(true);
+        return;
     }
+    setThemeToggleIcon(false);
 }
 
 function toggleTheme() {
@@ -108,11 +135,11 @@ function toggleTheme() {
     const isLight = html.getAttribute('data-theme') === 'light';
     if (isLight) {
         html.removeAttribute('data-theme');
-        document.getElementById('themeToggle').textContent = '🌙';
+        setThemeToggleIcon(false);
         localStorage.setItem('desa-binaan-theme', 'dark');
     } else {
         html.setAttribute('data-theme', 'light');
-        document.getElementById('themeToggle').textContent = '☀️';
+        setThemeToggleIcon(true);
         localStorage.setItem('desa-binaan-theme', 'light');
     }
     updateChartColors();
@@ -547,10 +574,13 @@ function renderPKMCards() {
         contents.appendChild(content);
     });
 
+    activePKMId = D.puskesmas[0]?.id || null;
     initPKMCharts(D.puskesmas[0]);
 }
 
 function switchTab(pkmId) {
+    if (!pkmId) return;
+    activePKMId = pkmId;
     document.querySelectorAll('.tab-btn').forEach(button => {
         const isActive = button.dataset.tab === pkmId;
         button.classList.toggle('active', isActive);
@@ -1001,6 +1031,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initChartDefaults();
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+    window.addEventListener('beforeprint', preparePrintView);
+    window.addEventListener('afterprint', cleanupPrintView);
 
     renderHeroStats();
     renderFondasi();
