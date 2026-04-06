@@ -35,6 +35,7 @@
         <li><a href="#proyeksi">Proyeksi</a></li>
         <li><a href="#toolkit">Toolkit</a></li>
         <li><a href="#rekomendasi">Rekomendasi</a></li>
+        <li id="appendixNavItem" hidden><a href="#appendix">Appendix</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#127769;</button>
     </div>
@@ -59,6 +60,46 @@
     </div>
   </section>
 
+  <div class="presentation-toolbar-shell executive-print-hide">
+    <div class="container">
+      <div class="glass-card presentation-toolbar">
+        <div class="presentation-toolbar-copy">
+          <span class="section-tag">View Mode</span>
+          <h3>Mode Presentasi dan PDF</h3>
+          <p id="appendixStatusText">Mode utama aktif. Lampiran teknis masih disembunyikan agar alur presentasi tetap ringkas.</p>
+        </div>
+        <div class="presentation-toolbar-actions">
+          <button type="button" class="mode-toggle-btn" id="appendixToggle" aria-pressed="false" aria-expanded="false" aria-controls="appendix">
+            <span class="mode-toggle-label">Appendix Mode</span>
+            <span class="mode-toggle-state" id="appendixToggleState">Off</span>
+          </button>
+          <button type="button" class="mode-action-btn" id="printExecutiveBtn">Cetak PDF Eksekutif</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="executive-print-only" aria-hidden="true">
+    <div class="container">
+      <div class="executive-print-brief">
+        <span class="section-tag">Executive PDF</span>
+        <h2>Ringkasan Eksekutif</h2>
+        <p class="section-subtitle" id="execPrintSubtitle"></p>
+        <div class="grid-4" id="execPrintCards" style="margin-top:1.25rem"></div>
+        <div class="grid-2" style="margin-top:1.25rem">
+          <div class="glass-card">
+            <h3 style="margin-bottom:0.8rem;">Fokus Isi PDF</h3>
+            <ul class="compact-list" id="execPrintIncluded"></ul>
+          </div>
+          <div class="glass-card">
+            <h3 style="margin-bottom:0.8rem;">Disimpan di Appendix</h3>
+            <ul class="compact-list" id="execPrintDeferred"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="fondasi" class="fade-in">
     <div class="container">
       <span class="section-tag">White Paper</span>
@@ -69,8 +110,8 @@
 
       <div class="grid-2 fade-in" style="margin-top:2.5rem;" id="twoModels"></div>
 
-      <h3 style="margin-top:3rem;margin-bottom:1rem;font-size:1.1rem;">Studi Kasus Global</h3>
-      <div class="case-studies" id="caseStudies"></div>
+      <h3 class="executive-print-hide" style="margin-top:3rem;margin-bottom:1rem;font-size:1.1rem;">Studi Kasus Global</h3>
+      <div class="case-studies executive-print-hide" id="caseStudies"></div>
     </div>
   </section>
 
@@ -131,7 +172,7 @@
     </div>
   </section>
 
-  <section id="puskesmas" class="fade-in">
+  <section id="puskesmas" class="fade-in executive-print-hide">
     <div class="container">
       <span class="section-tag">Deep Dive</span>
       <h2>Profil Per Puskesmas</h2>
@@ -218,7 +259,7 @@
         </div>
       </div>
 
-      <div class="glass-card fade-in" style="margin-top:1.5rem">
+      <div class="glass-card fade-in executive-print-hide" style="margin-top:1.5rem">
         <h3 style="margin-bottom:0.5rem;">Forecast Harian</h3>
         <p id="cmDailyForecastNote" style="font-size:0.84rem;line-height:1.6;margin-bottom:1rem;"></p>
         <div id="cmDailyForecast"></div>
@@ -279,7 +320,7 @@
     </div>
   </section>
 
-  <section id="toolkit" class="fade-in">
+  <section id="toolkit" class="fade-in executive-print-hide">
     <div class="container">
       <span class="section-tag">Visual Toolkit</span>
       <h2>Panel, Diagram, dan Referensi</h2>
@@ -352,7 +393,7 @@
         </div>
       </div>
 
-      <div class="grid-2 fade-in" style="margin-top:1.5rem">
+      <div class="grid-2 fade-in executive-print-hide" style="margin-top:1.5rem">
         <div class="glass-card">
           <h3 style="margin-bottom:0.8rem;">Contribution Breakdown</h3>
           <div class="score-contribution-grid" id="scoringContributionGrid"></div>
@@ -363,7 +404,7 @@
         </div>
       </div>
 
-      <div class="rubric-grid fade-in" id="scoringRubricGrid" style="margin-top:1.5rem"></div>
+      <div class="rubric-grid fade-in executive-print-hide" id="scoringRubricGrid" style="margin-top:1.5rem"></div>
 
       <div class="glass-card fade-in recommendation-card" style="margin-top:1.5rem;border-left:3px solid var(--accent-red);">
         <h3 id="cmRecommendationTitle"></h3>
@@ -383,6 +424,48 @@
         <div id="cmRecommendationBadges" style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;"></div>
         <p id="cmRecommendationClosingLoop" style="font-size:0.84rem;line-height:1.7;margin-top:1rem;"></p>
       </div>
+    </div>
+  </section>
+
+  <section id="appendix" class="fade-in appendix-section executive-print-hide" hidden>
+    <div class="container">
+      <span class="section-tag">Appendix</span>
+      <h2>RACI, Swimlane, Asumsi, dan Metodologi</h2>
+      <p class="section-subtitle" id="cmAppendixSubtitle"></p>
+
+      <div class="grid-2 fade-in" style="margin-top:2rem">
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Mengapa Appendix Mode</h3>
+          <p id="cmAppendixIntro" style="font-size:0.9rem;line-height:1.7;"></p>
+          <div class="appendix-legend" id="cmAppendixLegend" style="margin-top:1rem;"></div>
+        </div>
+        <div class="glass-card">
+          <h3 style="margin-bottom:0.8rem;">Isi Lampiran Teknis</h3>
+          <ul class="compact-list" id="cmAppendixSummary"></ul>
+        </div>
+      </div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.8rem;">RACI Matrix per Fase</h3>
+        <div class="raci-wrapper">
+          <table id="cmRaciTable"></table>
+        </div>
+      </div>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem">
+        <h3 style="margin-bottom:0.5rem;">Swimlane 4 Minggu</h3>
+        <p id="cmSwimlaneNote" style="font-size:0.84rem;line-height:1.6;margin-top:0.4rem;"></p>
+        <div class="swimlane-shell">
+          <div class="swimlane-header" id="cmSwimlaneHeader"></div>
+          <div class="swimlane-grid" id="cmSwimlaneGrid"></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;">Asumsi Operasional yang Dipakai</h3>
+      <div class="grid-3 fade-in" id="cmAppendixAssumptions"></div>
+
+      <h3 style="margin-top:3rem;margin-bottom:1rem;">Detail Metodologi</h3>
+      <div class="grid-2 fade-in" id="cmMethodology"></div>
     </div>
   </section>
 

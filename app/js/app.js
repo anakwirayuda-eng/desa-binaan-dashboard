@@ -6,8 +6,10 @@
 
 const D = DASHBOARD_DATA;
 let activePKMId = null;
+let appendixMode = false;
 let prePrintTheme = 'dark';
 let prePrintAnimation = null;
+const APPENDIX_STORAGE_KEY = 'desa-binaan-appendix-mode';
 
 function getAllCharts() {
     if (typeof Chart === 'undefined' || !Chart.instances) return [];
@@ -1146,6 +1148,112 @@ function renderCommunityMedicine() {
     document.querySelector('.gantt-shell')?.setAttribute('tabindex', '0');
 }
 
+function renderExecutivePrintSummary() {
+    const executive = D.communityMedicine.executivePrint;
+    document.getElementById('execPrintSubtitle').textContent = executive.subtitle;
+    document.getElementById('execPrintCards').innerHTML = executive.cards.map(item => `
+    <div class="target-summary-item executive-print-card">
+      <span class="recommendation-label">${item.label}</span>
+      <strong>${item.value}</strong>
+    </div>
+  `).join('');
+    document.getElementById('execPrintIncluded').innerHTML = executive.included.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('execPrintDeferred').innerHTML = executive.deferred.map(item => `<li>${item}</li>`).join('');
+}
+
+function getRaciCellClass(value) {
+    if (value.includes('A') && value.includes('R')) return 'raci-ar';
+    if (value === 'R') return 'raci-r';
+    if (value === 'A') return 'raci-a';
+    if (value === 'C') return 'raci-c';
+    return 'raci-i';
+}
+
+function renderAppendix() {
+    const appendix = D.communityMedicine.appendix;
+
+    document.getElementById('cmAppendixSubtitle').textContent = appendix.subtitle;
+    document.getElementById('cmAppendixIntro').textContent = appendix.intro;
+    document.getElementById('cmAppendixSummary').innerHTML = appendix.summary.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmAppendixLegend').innerHTML = appendix.raciLegend.map(item => `
+    <div class="appendix-legend-chip">
+      <strong>${item.code}</strong>
+      <span>${item.label}</span>
+      <small>${item.desc}</small>
+    </div>
+  `).join('');
+
+    document.getElementById('cmRaciTable').innerHTML = `
+    <thead>
+      <tr>
+        <th>Fase</th>
+        <th>Aktivitas</th>
+        ${appendix.raciActors.map(actor => `<th>${actor.short}</th>`).join('')}
+      </tr>
+    </thead>
+    <tbody>
+      ${appendix.raciRows.map(row => `
+        <tr>
+          <td><span class="week-pill">${row.phase}</span></td>
+          <td class="raci-task-cell">
+            <strong>${row.task}</strong>
+            <p>${row.note}</p>
+          </td>
+          ${appendix.raciActors.map(actor => `
+            <td>
+              <span class="raci-chip ${getRaciCellClass(row.cells[actor.id])}">${row.cells[actor.id]}</span>
+            </td>
+          `).join('')}
+        </tr>
+      `).join('')}
+    </tbody>
+  `;
+
+    document.getElementById('cmSwimlaneNote').textContent = appendix.swimlane.note;
+    document.getElementById('cmSwimlaneHeader').innerHTML = `
+    <div class="swimlane-row swimlane-row-header">
+      <div class="swimlane-actor-label muted">Aktor</div>
+      <div class="swimlane-track swimlane-track-header">
+        ${appendix.swimlane.weeks.map(item => `<div class="swimlane-week-cell">${item}</div>`).join('')}
+      </div>
+    </div>
+  `;
+    document.getElementById('cmSwimlaneGrid').innerHTML = appendix.swimlane.lanes.map(lane => `
+    <div class="swimlane-row">
+      <div class="swimlane-actor-label">
+        <strong>${lane.actor}</strong>
+        <span>${lane.desc}</span>
+      </div>
+      <div class="swimlane-track">
+        ${appendix.swimlane.weeks.map(() => '<div class="swimlane-grid-cell"></div>').join('')}
+        ${lane.blocks.map(block => `
+          <div class="swimlane-block tone-${lane.tone}" style="grid-column:${block.start} / ${block.end + 1}">
+            <span>${block.label}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+
+    document.getElementById('cmAppendixAssumptions').innerHTML = appendix.assumptions.map(item => `
+    <div class="glass-card appendix-card">
+      <h3>${item.title}</h3>
+      <p class="appendix-card-summary">${item.why}</p>
+      <ul class="compact-list">${item.points.map(point => `<li>${point}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+
+    document.getElementById('cmMethodology').innerHTML = appendix.methodology.map(item => `
+    <div class="glass-card appendix-card">
+      <h3>${item.title}</h3>
+      <p class="appendix-card-summary">${item.summary}</p>
+      <ul class="compact-list">${item.steps.map(step => `<li>${step}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+
+    document.querySelector('.swimlane-shell')?.setAttribute('tabindex', '0');
+}
+
 function renderRecommendation() {
     const recommendation = D.communityMedicine.recommendation;
     const scoring = D.scoring;
@@ -1276,6 +1384,62 @@ function renderScoringExplainability() {
   `).join('');
 }
 
+function setAppendixMode(isActive, { persist = true, scroll = false } = {}) {
+    appendixMode = Boolean(isActive);
+    const section = document.getElementById('appendix');
+    const navItem = document.getElementById('appendixNavItem');
+    const toggle = document.getElementById('appendixToggle');
+    const toggleState = document.getElementById('appendixToggleState');
+    const statusText = document.getElementById('appendixStatusText');
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+    document.body.classList.toggle('appendix-mode', appendixMode);
+
+    if (section) {
+        section.hidden = !appendixMode;
+        if (appendixMode && scroll) {
+            section.scrollIntoView({ behavior, block: 'start' });
+        }
+    }
+
+    if (!appendixMode && scroll) {
+        document.getElementById('rekomendasi')?.scrollIntoView({ behavior, block: 'start' });
+    }
+
+    if (navItem) navItem.hidden = !appendixMode;
+
+    if (toggle) {
+        toggle.setAttribute('aria-pressed', String(appendixMode));
+        toggle.setAttribute('aria-expanded', String(appendixMode));
+        toggle.classList.toggle('is-active', appendixMode);
+    }
+
+    if (toggleState) toggleState.textContent = appendixMode ? 'On' : 'Off';
+
+    if (statusText) {
+        statusText.textContent = appendixMode
+            ? 'Appendix Mode aktif. RACI, swimlane, asumsi, dan metodologi teknis sekarang dibuka di bagian akhir halaman.'
+            : 'Mode utama aktif. Lampiran teknis masih disembunyikan agar alur presentasi tetap ringkas.';
+    }
+
+    if (persist) {
+        localStorage.setItem(APPENDIX_STORAGE_KEY, appendixMode ? 'true' : 'false');
+    }
+}
+
+function initPresentationControls() {
+    const saved = localStorage.getItem(APPENDIX_STORAGE_KEY) === 'true';
+    setAppendixMode(saved, { persist: false });
+
+    document.getElementById('appendixToggle')?.addEventListener('click', () => {
+        setAppendixMode(!appendixMode, { scroll: true });
+    });
+
+    document.getElementById('printExecutiveBtn')?.addEventListener('click', () => {
+        window.print();
+    });
+}
+
 function initScrollAnimations() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -1354,10 +1518,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSWOTKolektif();
     renderBlueprint();
     renderCommunityMedicine();
+    renderExecutivePrintSummary();
+    renderAppendix();
     renderScoringTable();
     renderScoringExplainability();
     renderRecommendation();
     initCounterAnimations();
     initScrollAnimations();
     initNavbar();
+    initPresentationControls();
 });

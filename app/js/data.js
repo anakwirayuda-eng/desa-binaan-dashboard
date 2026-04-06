@@ -1244,6 +1244,243 @@ const DASHBOARD_DATA = {
             }
         },
 
+        executivePrint: {
+            subtitle: "Versi cetak eksekutif disaring untuk menjawab pertanyaan pimpinan secara cepat: mengapa Mentikan, apa paket kerjanya, berapa lama rotasinya, dan produk apa yang pulang dari CM koas.",
+            cards: [
+                { label: "Target Implementasi", value: "Puskesmas Mentikan" },
+                { label: "Durasi Rotasi", value: "4 minggu / 20 hari" },
+                { label: "Fokus Masalah", value: "Perilaku keluarga balita + bottleneck layanan" },
+                { label: "Output Akhir", value: "Toolkit handover + dashboard mini + brief" }
+            ],
+            included: [
+                "Konteks singkat, komparatif utama, dan alasan pemilihan Mentikan.",
+                "Implementation plan mingguan, gantt 20 hari, dan milestone supervisi.",
+                "Ringkasan kurikulum CM koas, proyeksi peran mahasiswa, dan guardrails.",
+                "Scoring matrix inti serta narasi keputusan yang explainable."
+            ],
+            deferred: [
+                "Deep dive penuh per puskesmas dan forecast harian 20 hari.",
+                "Toolkit visual, referensi foto, bibliografi panjang, dan deepthink triage.",
+                "Rubrik scoring detail per kriteria dan breakdown contribution penuh.",
+                "Lampiran teknis: RACI, swimlane aktor, asumsi operasional, dan detail metodologi."
+            ]
+        },
+
+        appendix: {
+            subtitle: "Appendix Mode membuka layer teknis untuk pembimbing, reviewer, dan mitra operasional yang perlu melihat pembagian peran, asumsi kerja, dan cara berpikir di balik dashboard ini.",
+            intro: "Lampiran ini sengaja dipisahkan dari narasi utama agar presentasi tetap cepat dan mudah diikuti. Saat diperlukan, ia menjelaskan siapa mengerjakan apa, asumsi apa yang dipakai, dan bagaimana keputusan skor serta timeline dibentuk.",
+            summary: [
+                "RACI matrix untuk membedakan penanggung jawab, pihak yang harus di-approve, dan siapa yang wajib diajak konsultasi.",
+                "Swimlane 4 minggu untuk menunjukkan ritme kerja koas, puskesmas, preseptor, dan kader tanpa harus membuka breakdown harian penuh.",
+                "Asumsi operasional agar reviewer tahu batasan yang sedang diterima dashboard ini.",
+                "Metodologi pemilihan lokasi, penyusunan plan, scoring, dan evaluasi agar keputusan terasa audit-able."
+            ],
+            raciLegend: [
+                { code: "R", label: "Responsible", desc: "Pelaksana utama pekerjaan." },
+                { code: "A", label: "Accountable", desc: "Pihak yang mengesahkan keputusan akhir." },
+                { code: "C", label: "Consulted", desc: "Pihak yang wajib dimintai masukan." },
+                { code: "I", label: "Informed", desc: "Pihak yang harus diberi update." }
+            ],
+            raciActors: [
+                { id: "coord", label: "Koordinator", short: "Koas Coord" },
+                { id: "data", label: "PIC Data", short: "PIC Data" },
+                { id: "edu", label: "PIC Edukasi", short: "PIC Edu" },
+                { id: "flow", label: "PIC Alur", short: "PIC Alur" },
+                { id: "preceptor", label: "Preseptor", short: "Preseptor" },
+                { id: "program", label: "PJ Program", short: "PJ Program" },
+                { id: "kader", label: "Kader / Champion", short: "Kader" }
+            ],
+            raciRows: [
+                {
+                    phase: "Minggu 1",
+                    task: "Kick-off, kontrak kerja, dan penetapan PIC lapangan",
+                    note: "Menetapkan ritme supervisi dan jalur komunikasi 4 minggu.",
+                    cells: { coord: "A/R", data: "I", edu: "I", flow: "I", preceptor: "C", program: "C", kader: "I" }
+                },
+                {
+                    phase: "Minggu 1",
+                    task: "Baseline audit, diagnosis komunitas, dan problem tree",
+                    note: "Menarik data awal dan memilih masalah prioritas yang feasible.",
+                    cells: { coord: "C", data: "A/R", edu: "C", flow: "C", preceptor: "C", program: "C", kader: "C" }
+                },
+                {
+                    phase: "Minggu 2",
+                    task: "COM-B diagnosis, MINDSPACE design, dan draft pilot kit",
+                    note: "Mengubah diagnosis menjadi paket intervensi versi 1.",
+                    cells: { coord: "C", data: "C", edu: "A/R", flow: "R", preceptor: "C", program: "C", kader: "C" }
+                },
+                {
+                    phase: "Minggu 2",
+                    task: "Persetujuan alur, SOP mini, dan checklist fidelity",
+                    note: "Membekukan desain sebelum masuk pilot lapangan.",
+                    cells: { coord: "R", data: "C", edu: "C", flow: "R", preceptor: "A", program: "C", kader: "I" }
+                },
+                {
+                    phase: "Minggu 3",
+                    task: "Pilot gelombang 1-2 dan pencatatan log implementasi",
+                    note: "Menjaga reach, fidelity, dan hambatan tercatat setiap hari.",
+                    cells: { coord: "A", data: "R", edu: "R", flow: "R", preceptor: "C", program: "I", kader: "R" }
+                },
+                {
+                    phase: "Minggu 3",
+                    task: "Review go / adjust / stop dan PDSA cepat",
+                    note: "Menyederhanakan intervensi berdasarkan realitas lapangan.",
+                    cells: { coord: "A/R", data: "R", edu: "R", flow: "R", preceptor: "C", program: "C", kader: "C" }
+                },
+                {
+                    phase: "Minggu 4",
+                    task: "Rapid evaluation RE-AIM, dashboard handover, dan brief",
+                    note: "Merangkum pembelajaran, hasil proses, dan keputusan tindak lanjut.",
+                    cells: { coord: "A", data: "R", edu: "C", flow: "C", preceptor: "C", program: "C", kader: "I" }
+                },
+                {
+                    phase: "Minggu 4",
+                    task: "Training PIC lokal dan serah terima toolkit",
+                    note: "Memastikan ada pihak lokal yang siap melanjutkan pasca-koas.",
+                    cells: { coord: "R", data: "C", edu: "R", flow: "R", preceptor: "A", program: "C", kader: "R" }
+                }
+            ],
+            swimlane: {
+                note: "Swimlane ini merangkum ritme mingguan antar aktor. Ia bukan jadwal jam-ke-jam, tetapi peta koordinasi agar reviewer cepat melihat siapa paling aktif pada fase tertentu.",
+                weeks: ["Minggu 1", "Minggu 2", "Minggu 3", "Minggu 4"],
+                lanes: [
+                    {
+                        actor: "Koordinator Lapangan",
+                        desc: "Stakeholder sync, ritme supervisi, dan decision gate.",
+                        tone: "blue",
+                        blocks: [
+                            { label: "Kick-off + kontrak", start: 1, end: 1 },
+                            { label: "Weekly review", start: 2, end: 2 },
+                            { label: "Go / adjust / stop", start: 3, end: 3 },
+                            { label: "Diseminasi + handover", start: 4, end: 4 }
+                        ]
+                    },
+                    {
+                        actor: "PIC Data dan Evaluasi",
+                        desc: "Baseline, indikator, logbook, dan evaluasi proses.",
+                        tone: "cyan",
+                        blocks: [
+                            { label: "Audit baseline", start: 1, end: 1 },
+                            { label: "Freeze indikator", start: 2, end: 2 },
+                            { label: "Log + rapid review", start: 3, end: 3 },
+                            { label: "Dashboard handover", start: 4, end: 4 }
+                        ]
+                    },
+                    {
+                        actor: "PIC Edukasi dan Perubahan Perilaku",
+                        desc: "Diagnosis perilaku, script, nudge, dan training.",
+                        tone: "purple",
+                        blocks: [
+                            { label: "Insight perilaku", start: 1, end: 1 },
+                            { label: "Co-design pesan", start: 2, end: 2 },
+                            { label: "PDSA bahasa pesan", start: 3, end: 3 },
+                            { label: "Training champion", start: 4, end: 4 }
+                        ]
+                    },
+                    {
+                        actor: "PIC Alur Layanan / Digital",
+                        desc: "SOP mini, form, touchpoint, dan simplifikasi workflow.",
+                        tone: "amber",
+                        blocks: [
+                            { label: "Touchpoint mapping", start: 1, end: 1 },
+                            { label: "SOP + form draft", start: 2, end: 2 },
+                            { label: "Perbaikan alat", start: 3, end: 3 },
+                            { label: "Freeze toolkit", start: 4, end: 4 }
+                        ]
+                    },
+                    {
+                        actor: "Preseptor / PJ Program",
+                        desc: "Alignment klinis-operasional dan approval perubahan utama.",
+                        tone: "green",
+                        blocks: [
+                            { label: "Scope alignment", start: 1, end: 1 },
+                            { label: "Pilot approval", start: 2, end: 2 },
+                            { label: "Mid-pilot review", start: 3, end: 3 },
+                            { label: "Handover sign-off", start: 4, end: 4 }
+                        ]
+                    },
+                    {
+                        actor: "Kader / Champion Lokal",
+                        desc: "Sumber insight lapangan, user testing, dan sustainment awal.",
+                        tone: "red",
+                        blocks: [
+                            { label: "Masukan lapangan", start: 1, end: 1 },
+                            { label: "User testing", start: 2, end: 2 },
+                            { label: "Pilot support", start: 3, end: 3 },
+                            { label: "Champion lanjutan", start: 4, end: 4 }
+                        ]
+                    }
+                ]
+            },
+            assumptions: [
+                {
+                    title: "Asumsi operasional rotasi",
+                    why: "Menjaga agar timeline 20 hari tidak dibaca sebagai janji absolut, melainkan prakiraan kerja minimum.",
+                    points: [
+                        "Satu tim koas bekerja 4 minggu efektif dengan pembagian PIC internal yang stabil.",
+                        "Akses ke Kapus, preseptor, PJ program, dan minimal satu champion lokal tersedia sejak minggu pertama.",
+                        "Agenda luar kampus atau kegiatan seremonial tidak mendominasi hari kerja inti rotasi."
+                    ]
+                },
+                {
+                    title: "Asumsi data dan evidensi",
+                    why: "Membatasi dashboard agar hanya memakai indikator yang bisa dijelaskan definisinya.",
+                    points: [
+                        "Data rutin puskesmas cukup untuk membangun baseline sederhana, meski tidak selalu sempurna.",
+                        "Keputusan tidak bertumpu pada satu angka tunggal, tetapi pada kombinasi data rutin, observasi, dan diskusi lapangan.",
+                        "Setiap angka di output akhir harus punya sumber, definisi, dan tanggal rujukan yang jelas."
+                    ]
+                },
+                {
+                    title: "Asumsi intervensi dan handover",
+                    why: "Mencegah proyek berubah menjadi intervensi besar yang berhenti ketika koas selesai.",
+                    points: [
+                        "Intervensi dipilih yang ringan, murah, dan dapat dipakai ulang oleh petugas atau kader.",
+                        "Toolkit akhir tidak bergantung pada aplikasi baru atau sistem digital kompleks.",
+                        "Pihak lokal yang menerima handover disiapkan sebelum minggu terakhir agar sustainment lebih realistis."
+                    ]
+                }
+            ],
+            methodology: [
+                {
+                    title: "Pemilihan target puskesmas",
+                    summary: "Target lokasi ditentukan lewat kombinasi scoring matrix, feasibility lapangan, dan peluang belajar CM koas.",
+                    steps: [
+                        "Bandingkan lima puskesmas dengan bobot kriteria yang eksplisit.",
+                        "Baca skor bersama narasi kontekstual dan keterbatasan data tiap lokasi.",
+                        "Pilih target yang paling kuat untuk intervensi kecil yang bisa selesai dalam 20 hari."
+                    ]
+                },
+                {
+                    title: "Perancangan plan 20 hari",
+                    summary: "Timeline tidak dimulai dari estetika gantt, tetapi dari deliverable minimum yang wajib pulang dari rotasi.",
+                    steps: [
+                        "Tetapkan milestone mingguan dan output harian minimum.",
+                        "Turunkan milestone menjadi workstream, PIC, dan checkpoint supervisi.",
+                        "Padatkan menjadi gantt agar ritme kerja mudah diaudit oleh dosen dan puskesmas."
+                    ]
+                },
+                {
+                    title: "Scoring matrix explainable",
+                    summary: "Matrix dipakai untuk pengambilan keputusan, bukan untuk memberi label baik-buruk pada institusi.",
+                    steps: [
+                        "Tetapkan definisi skor rendah dan tinggi untuk setiap kriteria.",
+                        "Hitung skor tertimbang dengan bobot yang sudah diumumkan di halaman utama.",
+                        "Lengkapi angka dengan breakdown naratif agar reviewer bisa menelusuri alasan skor."
+                    ]
+                },
+                {
+                    title: "Monitoring, evaluasi, dan handover",
+                    summary: "Evaluasi memakai pendekatan ringan: cukup untuk pengambilan keputusan, tidak berlebihan secara statistik.",
+                    steps: [
+                        "Pantau reach, fidelity, hambatan, dan penerimaan sasaran selama pilot.",
+                        "Gunakan rapid review dan PDSA untuk memperbaiki desain sebelum minggu 4.",
+                        "Tutup rotasi dengan dashboard mini, toolkit, brief, dan penanggung jawab lokal yang jelas."
+                    ]
+                }
+            ]
+        },
+
         recommendation: {
             title: "Mentikan sebagai Wahana Implementasi CM Koas",
             summary: "Mentikan tetap menjadi target utama, tetapi keputusan itu kini diterjemahkan menjadi paket kerja yang operasional, audit-able, dan mudah dipitch: timeline 20 hari, breakdown harian, toolkit handover, serta matrix scoring yang explainable.",
