@@ -1427,9 +1427,16 @@ function setAppendixMode(isActive, { persist = true, scroll = false } = {}) {
     }
 }
 
+function syncAppendixHash() {
+    if (window.location.hash === '#appendix') {
+        setAppendixMode(true, { persist: false, scroll: true });
+    }
+}
+
 function initPresentationControls() {
     const saved = localStorage.getItem(APPENDIX_STORAGE_KEY) === 'true';
     setAppendixMode(saved, { persist: false });
+    syncAppendixHash();
 
     document.getElementById('appendixToggle')?.addEventListener('click', () => {
         setAppendixMode(!appendixMode, { scroll: true });
@@ -1438,6 +1445,8 @@ function initPresentationControls() {
     document.getElementById('printExecutiveBtn')?.addEventListener('click', () => {
         window.print();
     });
+
+    window.addEventListener('hashchange', syncAppendixHash);
 }
 
 function initScrollAnimations() {

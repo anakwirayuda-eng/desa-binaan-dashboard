@@ -14,7 +14,7 @@
 
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
-      <a href="#" class="nav-brand">
+      <a href="#hero" class="nav-brand" aria-label="Kembali ke bagian utama dashboard">
         <img src="assets/its-logo.svg" alt="Logo ITS" class="nav-brand-logo">
         <span class="nav-brand-copy">
           <strong>Desa Binaan</strong>
@@ -73,7 +73,7 @@
             <span class="mode-toggle-label">Appendix Mode</span>
             <span class="mode-toggle-state" id="appendixToggleState">Off</span>
           </button>
-          <button type="button" class="mode-action-btn" id="printExecutiveBtn">Cetak PDF Eksekutif</button>
+          <button type="button" class="mode-action-btn" id="printExecutiveBtn" aria-label="Buka dialog cetak atau simpan PDF eksekutif">Cetak / Save PDF Eksekutif</button>
         </div>
       </div>
     </div>
@@ -393,8 +393,8 @@
         </div>
       </div>
 
-      <div class="grid-2 fade-in executive-print-hide" style="margin-top:1.5rem">
-        <div class="glass-card">
+      <div class="grid-2 fade-in" style="margin-top:1.5rem">
+        <div class="glass-card executive-print-hide">
           <h3 style="margin-bottom:0.8rem;">Contribution Breakdown</h3>
           <div class="score-contribution-grid" id="scoringContributionGrid"></div>
         </div>
