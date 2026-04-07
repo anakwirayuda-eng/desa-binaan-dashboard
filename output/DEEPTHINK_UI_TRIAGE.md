@@ -204,9 +204,15 @@ Sumber masukan: deepthink khusus untuk menaikkan efek presentasi dan interaktivi
 - Macro-to-micro sync dari Gantt ke forecast harian
   Status: diterima.
   Tindakan: balok Gantt sekarang bisa diklik atau diakses dengan keyboard untuk melompat ke kartu harian terkait dan menyorotnya sementara.
-- Detail-on-demand ringan pada balok Gantt
-  Status: diterima dengan modifikasi.
-  Tindakan: setiap balok sekarang membawa `title` dan `aria-label` yang menjelaskan rentang hari dan PIC, tanpa menambah custom tooltip engine yang berat.
+- Smart tooltip instan pada desktop
+  Status: diterima dengan guardrail.
+  Tindakan: tooltip custom sekarang muncul cepat pada pointer desktop, tetapi `aria-label` tetap dipertahankan agar aksesibilitas tidak hilang.
+- Tombol boomerang kembali ke timeline
+  Status: diterima.
+  Tindakan: setelah presenter melompat ke forecast harian, sekarang ada tombol kembali ke Gantt agar alur demo tidak buntu.
+- Drag-to-scroll untuk area horizontal
+  Status: diterima.
+  Tindakan: gantt, swimlane, RACI, scoring, dan tab sekarang bisa digeser dengan klik-tahan di desktop tanpa harus mencari scrollbar tipis.
 - Hover dan focus affordance pada balok Gantt
   Status: diterima.
   Tindakan: hover/focus sekarang lebih jelas sehingga audiens dan presenter mendapat sinyal bahwa blok memang interaktif.
@@ -216,9 +222,6 @@ Sumber masukan: deepthink khusus untuk menaikkan efek presentasi dan interaktivi
 - Spotlight mode yang meredupkan baris lain
   Status: ditunda.
   Alasan: efek ini menarik saat demo, tetapi berisiko mengurangi keterbacaan timeline lain di layar proyektor dan terasa terlalu teatrikal untuk forum akademik-birokratik.
-- Floating glass tooltip penuh yang mengikuti mouse
-  Status: ditunda.
-  Alasan: secara visual menarik, tetapi menambah kompleksitas pointer handling, risiko overlap di layar kecil, dan tidak terlalu bernilai dibanding tooltip native + click sync.
 
 ### Rejected or reframed
 

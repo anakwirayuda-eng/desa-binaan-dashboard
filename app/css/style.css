@@ -1491,6 +1491,31 @@ body.print-prep .tab-content[hidden] {
   padding-right: 1.5rem;
 }
 
+.tabs-nav,
+.scoring-wrapper,
+.gantt-shell,
+.swimlane-shell,
+.raci-wrapper {
+  touch-action: pan-y;
+}
+
+.tabs-nav.drag-scroll-enabled,
+.scoring-wrapper.drag-scroll-enabled,
+.gantt-shell.drag-scroll-enabled,
+.swimlane-shell.drag-scroll-enabled,
+.raci-wrapper.drag-scroll-enabled {
+  cursor: grab;
+}
+
+.tabs-nav.is-dragging,
+.scoring-wrapper.is-dragging,
+.gantt-shell.is-dragging,
+.swimlane-shell.is-dragging,
+.raci-wrapper.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -2275,6 +2300,95 @@ body.print-prep .tab-content[hidden] {
   line-height: 1.3;
 }
 
+.gantt-smart-tooltip {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+  max-width: 18rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.gantt-smart-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.gantt-smart-tooltip .tt-day {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 0.35rem;
+}
+
+.gantt-smart-tooltip .tt-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
+}
+
+.gantt-smart-tooltip .tt-owner {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+}
+
+.gantt-smart-tooltip .tt-hint {
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-amber);
+}
+
+.back-to-gantt-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%) translateY(1rem);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: var(--bg-card-solid);
+  color: var(--accent-blue);
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.18);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.back-to-gantt-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.back-to-gantt-btn:hover {
+  background: var(--accent-blue);
+  color: #fff;
+}
+
 .tone-blue {
   background: linear-gradient(135deg, #2563eb, #60a5fa);
 }
@@ -2375,9 +2489,17 @@ body.print-prep .tab-content[hidden] {
 }
 
 .daily-card.gantt-target-highlight {
-  transform: translateY(-2px) scale(1.01);
-  border-color: rgba(59, 130, 246, 0.55);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12), var(--shadow-lg);
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18), var(--shadow-lg);
+  background: linear-gradient(160deg, rgba(59, 130, 246, 0.05), transparent) var(--bg-card);
+  position: relative;
+  z-index: 2;
+}
+
+.daily-card-grid.has-highlight .daily-card:not(.gantt-target-highlight) {
+  opacity: 0.45;
+  filter: grayscale(40%);
 }
 
 .daily-card-top {
@@ -2758,6 +2880,14 @@ body.print-prep .tab-content[hidden] {
     justify-self: flex-start;
   }
 
+  .back-to-gantt-btn {
+    width: calc(100% - 2rem);
+    max-width: 24rem;
+    bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
   .presentation-toolbar-shell {
     margin-top: -1rem;
   }
@@ -2789,7 +2919,9 @@ body.print-prep .tab-content[hidden] {
   }
 
   .navbar,
-  .theme-toggle {
+  .theme-toggle,
+  .gantt-smart-tooltip,
+  .back-to-gantt-btn {
     display: none !important;
   }
 

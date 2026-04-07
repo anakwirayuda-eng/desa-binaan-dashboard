@@ -932,14 +932,23 @@ function renderCommunityMedicine() {
     const projection = cm.projection;
     const toolkit = cm.visualToolkit;
 
+    document.getElementById('cmEpidemiologyBridge').textContent = cm.epidemiologyBridge;
     document.getElementById('cmPlanSubtitle').textContent = plan.subtitle;
+    document.getElementById('cmDecisionTitle').textContent = plan.decisionSnapshot.title;
+    document.getElementById('cmDecisionSummary').textContent = plan.decisionSnapshot.summary;
+    document.getElementById('cmDecisionItems').innerHTML = plan.decisionSnapshot.items.map(item => `
+    <div class="target-summary-item">
+      <span class="recommendation-label">${item.label}</span>
+      <strong>${item.value}</strong>
+    </div>
+  `).join('');
     document.getElementById('cmOperatingNarrative').textContent = plan.operatingModel.narrative;
     document.getElementById('cmOperatingBadges').innerHTML = plan.operatingModel.badges.map(item => `<span class="inovasi-tag">${item}</span>`).join('');
     document.getElementById('cmOperatingBullets').innerHTML = plan.operatingModel.bullets.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmAssumptions').innerHTML = plan.assumptions.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmTargetSummary').innerHTML = [
-        { label: 'Target lokasi', value: cm.target.puskesmas },
-        { label: 'Alamat', value: cm.target.lokasi },
+        { label: 'Puskesmas target', value: cm.target.puskesmas },
+        { label: 'Wilayah kerja', value: cm.target.wilayah_kerja },
         { label: 'Durasi', value: cm.target.durasi_rotasi },
         { label: 'Pendekatan', value: cm.target.pendekatan }
     ].map(item => `
@@ -1297,7 +1306,7 @@ function renderRecommendation() {
     document.getElementById('cmMeetingPrereqs').innerHTML = readiness.prerequisites.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmMeetingEvidence').innerHTML = readiness.evidenceToBring.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmInnovationReasons').innerHTML = readiness.innovationReasons.map(item => `<li>${item}</li>`).join('');
-    document.getElementById('cmStillNeeded').innerHTML = readiness.stillNeeded.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmTodayAsk').innerHTML = readiness.todayAsk.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmMeetingAssurances').innerHTML = readiness.assurances.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmPitchPlaybook').innerHTML = readiness.pitchPlaybook.map(item => `<li>${item}</li>`).join('');
 }
@@ -1472,15 +1481,76 @@ function initPresentationControls() {
 }
 
 function initGanttInteractions() {
+    const ganttShell = document.querySelector('.gantt-shell');
+    const ganttCard = document.querySelector('.gantt-card');
+    const dailyArea = document.getElementById('cmDailyForecast');
     const blocks = document.querySelectorAll('.gantt-block[data-day-start]');
-    if (!blocks.length) return;
+    if (!ganttShell || !dailyArea || !blocks.length) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    let lastActivatedBlock = null;
+
+    let tooltip = document.querySelector('.gantt-smart-tooltip');
+    if (!tooltip && hasFinePointer) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'gantt-smart-tooltip';
+        document.body.appendChild(tooltip);
+    }
+
+    let backBtn = document.querySelector('.back-to-gantt-btn');
+    if (!backBtn) {
+        backBtn = document.createElement('button');
+        backBtn.type = 'button';
+        backBtn.className = 'back-to-gantt-btn';
+        backBtn.textContent = 'Kembali ke Timeline';
+        document.body.appendChild(backBtn);
+    }
+
+    const clearDailyHighlights = () => {
+        document.querySelectorAll('.daily-card.gantt-target-highlight').forEach(card => {
+            card.classList.remove('gantt-target-highlight');
+        });
+        document.querySelectorAll('.daily-card-grid.has-highlight').forEach(grid => {
+            grid.classList.remove('has-highlight');
+        });
+    };
+
+    const hideTooltip = () => {
+        if (!tooltip) return;
+        tooltip.classList.remove('visible');
+        window.setTimeout(() => {
+            if (!tooltip.classList.contains('visible')) {
+                tooltip.style.display = 'none';
+            }
+        }, 160);
+    };
+
+    const showBackButton = () => {
+        backBtn.classList.add('visible');
+    };
+
+    const hideBackButton = () => {
+        backBtn.classList.remove('visible');
+    };
+
+    backBtn.addEventListener('click', () => {
+        clearDailyHighlights();
+        hideBackButton();
+        (ganttCard || ganttShell).scrollIntoView({
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            block: 'center'
+        });
+        lastActivatedBlock?.focus({ preventScroll: true });
+    });
 
     const highlightDailyCard = dayNumber => {
         if (!dayNumber) return;
         const target = document.querySelector(`.daily-card[data-day-number="${dayNumber}"]`);
         if (!target) return;
+
+        const grid = target.closest('.daily-card-grid');
+        clearDailyHighlights();
 
         target.setAttribute('tabindex', '-1');
         target.scrollIntoView({
@@ -1489,19 +1559,57 @@ function initGanttInteractions() {
         });
         target.focus({ preventScroll: true });
 
-        document.querySelectorAll('.daily-card.gantt-target-highlight').forEach(card => {
-            if (card !== target) card.classList.remove('gantt-target-highlight');
-        });
-
+        grid?.classList.add('has-highlight');
         target.classList.add('gantt-target-highlight');
         window.clearTimeout(target.ganttHighlightTimeout);
         target.ganttHighlightTimeout = window.setTimeout(() => {
             target.classList.remove('gantt-target-highlight');
-        }, prefersReducedMotion ? 1200 : 2200);
+            grid?.classList.remove('has-highlight');
+        }, prefersReducedMotion ? 1500 : 3500);
+
+        window.setTimeout(showBackButton, prefersReducedMotion ? 0 : 300);
     };
 
     blocks.forEach(block => {
-        const activate = () => highlightDailyCard(block.dataset.dayStart);
+        const start = block.dataset.dayStart;
+        const end = block.dataset.dayEnd;
+        const dayText = start === end ? `Hari ${start}` : `Hari ${start} - ${end}`;
+        const taskName = block.querySelector('span')?.textContent || '';
+        const owner = block.dataset.owner || 'Tim Koas';
+
+        block.removeAttribute('title');
+
+        if (tooltip) {
+            block.addEventListener('mouseenter', () => {
+                tooltip.innerHTML = `
+                    <div class="tt-day">${dayText}</div>
+                    <div class="tt-title">${taskName}</div>
+                    <div class="tt-owner">${owner}</div>
+                    <div class="tt-hint">Klik untuk melihat rincian output harian</div>
+                `;
+                tooltip.style.display = 'block';
+                void tooltip.offsetWidth;
+                tooltip.classList.add('visible');
+            });
+
+            block.addEventListener('mousemove', event => {
+                let x = event.clientX + 14;
+                let y = event.clientY + 14;
+                const rect = tooltip.getBoundingClientRect();
+                if (x + rect.width > window.innerWidth) x = event.clientX - rect.width - 10;
+                if (y + rect.height > window.innerHeight) y = event.clientY - rect.height - 10;
+                tooltip.style.left = `${x}px`;
+                tooltip.style.top = `${y}px`;
+            });
+
+            block.addEventListener('mouseleave', hideTooltip);
+        }
+
+        const activate = () => {
+            lastActivatedBlock = block;
+            hideTooltip();
+            highlightDailyCard(block.dataset.dayStart);
+        };
 
         block.addEventListener('click', activate);
         block.addEventListener('keydown', event => {
@@ -1509,6 +1617,81 @@ function initGanttInteractions() {
             event.preventDefault();
             activate();
         });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!backBtn.classList.contains('visible')) return;
+        const rect = dailyArea.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) {
+            hideBackButton();
+        }
+    }, { passive: true });
+}
+
+function initDragToScroll() {
+    const sliders = document.querySelectorAll('.gantt-shell, .swimlane-shell, .raci-wrapper, .scoring-wrapper, .tabs-nav');
+
+    sliders.forEach(slider => {
+        if (slider.scrollWidth <= slider.clientWidth + 8) return;
+
+        let pointerDown = false;
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        const endDrag = () => {
+            if (!pointerDown) return;
+            pointerDown = false;
+            slider.classList.remove('is-dragging');
+
+            if (isDragging) {
+                slider.dataset.dragJustHappened = 'true';
+                window.setTimeout(() => {
+                    delete slider.dataset.dragJustHappened;
+                }, 80);
+            }
+
+            isDragging = false;
+        };
+
+        slider.addEventListener('pointerdown', event => {
+            if (event.pointerType === 'touch' || event.button !== 0) return;
+            pointerDown = true;
+            isDragging = false;
+            startX = event.clientX;
+            startScrollLeft = slider.scrollLeft;
+            slider.classList.add('drag-scroll-enabled');
+            try {
+                slider.setPointerCapture(event.pointerId);
+            } catch {
+                // no-op
+            }
+        });
+
+        slider.addEventListener('pointermove', event => {
+            if (!pointerDown) return;
+            const delta = event.clientX - startX;
+
+            if (!isDragging && Math.abs(delta) > 6) {
+                isDragging = true;
+                slider.classList.add('is-dragging');
+            }
+
+            if (!isDragging) return;
+            slider.scrollLeft = startScrollLeft - delta;
+            if (event.cancelable) event.preventDefault();
+        });
+
+        slider.addEventListener('pointerup', endDrag);
+        slider.addEventListener('pointercancel', endDrag);
+        slider.addEventListener('lostpointercapture', endDrag);
+        slider.addEventListener('pointerleave', endDrag);
+
+        slider.addEventListener('click', event => {
+            if (slider.dataset.dragJustHappened !== 'true') return;
+            event.preventDefault();
+            event.stopPropagation();
+        }, true);
     });
 }
 
@@ -1600,4 +1783,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initPresentationControls();
     initGanttInteractions();
+    initDragToScroll();
 });

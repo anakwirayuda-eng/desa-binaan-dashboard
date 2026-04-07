@@ -536,13 +536,16 @@ const DASHBOARD_DATA = {
     communityMedicine: {
         target: {
             puskesmas: "Puskesmas Mentikan",
+            wilayah_kerja: "4 kelurahan, 3 PUSTU, dan titik layanan keluarga balita",
             lokasi: "Jl. Prapanca No. 55, Kel. Mentikan",
             durasi_rotasi: "4 minggu efektif / 20 hari kerja",
-            pendekatan: "community diagnosis -> co-design -> pilot -> evaluation -> handover"
+            pendekatan: "diagnosis komunitas -> desain bersama -> pilot -> evaluasi -> handover"
         },
 
+        epidemiologyBridge: "Grafik 10 besar penyakit dipakai sebagai konteks beban layanan kota. Namun target CM koas 20 hari tidak otomatis mengikuti penyakit dengan volume tertinggi; fokus dipilih pada masalah yang paling mungkin diubah cepat di Mentikan, yaitu perilaku keluarga balita dan bottleneck alur layanan yang bisa diperbaiki serta di-handover.",
+
         implementationPlan: {
-            subtitle: "Rencana kerja blok Community Medicine (CM) koas difokuskan ke intervensi kecil yang bisa selesai, diukur, disupervisi, lalu diserahterimakan ke Puskesmas Mentikan dalam satu siklus rotasi.",
+            subtitle: "Rencana kerja blok Community Medicine (CM) koas difokuskan ke intervensi kecil yang bisa selesai, diukur, disupervisi, lalu diserahterimakan di wilayah kerja Puskesmas Mentikan dalam satu siklus rotasi.",
             assumptions: [
                 "Asumsi 1 tim koas CM bekerja selama 4 minggu efektif dengan supervisi dosen pembimbing dan preseptor puskesmas.",
                 "Masalah prioritas awal: N/D balita rendah, beban kunjungan tinggi, gap edukasi keluarga, dan kebutuhan penguatan alur data sederhana.",
@@ -550,18 +553,36 @@ const DASHBOARD_DATA = {
             ],
             operatingModel: {
                 title: "Model Operasi Rotasi",
-                narrative: "Panel terbaik untuk CM koas bukan satu grid seragam, tetapi panel hybrid: ringkasan eksekutif untuk orientasi, gantt operasional untuk ritme kerja, lalu breakdown harian untuk akuntabilitas aktivitas dan output.",
-                badges: ["20 hari kerja", "1 target masalah utama", "1 bottleneck operasional", "PDSA mingguan", "Handover wajib"],
+                narrative: "Rotasi dijalankan sebagai siklus kerja 4 minggu: minggu 1 diagnosis, minggu 2 desain bersama, minggu 3 pilot dan perbaikan cepat, lalu minggu 4 evaluasi serta handover. Fokusnya bukan membuat proyek besar, tetapi menyelesaikan paket kerja kecil yang benar-benar bisa dipakai lokal.",
+                badges: ["20 hari kerja", "1 target masalah utama", "1 bottleneck operasional", "perbaikan cepat mingguan", "Handover wajib"],
                 bullets: [
                     "Setiap minggu ditutup dengan checkpoint supervisi dan keputusan go / adjust / stop.",
                     "Setiap hari memiliki output minimum agar rotasi tidak berubah menjadi observasi pasif.",
                     "Ritme kerja dirancang agar cocok untuk pitching, audit, dan handover ke puskesmas."
                 ]
             },
+            decisionSnapshot: {
+                title: "Decision Snapshot sebelum Masuk ke Timeline",
+                summary: "Sebelum melihat rincian 20 hari, ada tiga keputusan kunci yang menjelaskan kenapa timeline ini dimulai dari Mentikan dan bukan dari semua masalah kota sekaligus.",
+                items: [
+                    {
+                        label: "Lokasi terpilih",
+                        value: "Mentikan dipilih sebagai wahana implementasi awal karena kombinasi kebutuhan inovasi sederhana, kepadatan titik layanan, dan ruang serah terima paling kuat."
+                    },
+                    {
+                        label: "Fokus 20 hari",
+                        value: "Intervensi diarahkan ke perilaku keluarga balita dan bottleneck layanan yang paling realistis diperbaiki dalam satu rotasi pendek."
+                    },
+                    {
+                        label: "Unit kerja",
+                        value: "Program berjalan di wilayah kerja Mentikan: 4 kelurahan, 3 PUSTU, dan titik layanan keluarga sasaran, bukan hanya satu ruangan di puskesmas."
+                    }
+                ]
+            },
             workstreams: [
                 { title: "Diagnostik Komunitas", desc: "Memetakan masalah prioritas, aktor lokal, wilayah mikro sasaran, dan bottleneck layanan yang paling feasible." },
                 { title: "Desain Perubahan Perilaku", desc: "Menerjemahkan COM-B dan MINDSPACE menjadi paket intervensi, script, reminder, dan media lapangan." },
-                { title: "Penguatan Alur Pelayanan", desc: "Menyederhanakan touchpoint edukasi, reminder, pencatatan, triase ringan, atau dashboard mini yang realistis." },
+                { title: "Penguatan Alur Pelayanan", desc: "Menyederhanakan titik edukasi, reminder, pencatatan, triase ringan, atau dashboard mini yang realistis." },
                 { title: "Evaluasi dan Handover", desc: "Mengukur hasil proses, menutup loop umpan balik, dan menyerahkan toolkit ke puskesmas." }
             ],
             weeks: [
@@ -572,7 +593,7 @@ const DASHBOARD_DATA = {
                     kegiatan: [
                         "Audiensi awal dengan kepala puskesmas, PJ program, kelurahan, dan kader wilayah sasaran.",
                         "Review data rutin: SPM, N/D balita, kunjungan, family folder, dan capaian program prioritas.",
-                        "Rapid community diagnosis: windshield survey, transect walk, observasi posyandu/PUSTU, dan mini FGD.",
+                        "Diagnosis cepat komunitas: observasi wilayah, penelusuran jalur layanan, observasi posyandu/PUSTU, dan FGD singkat.",
                         "Menyusun problem tree dan memilih 1 masalah primer serta 1 bottleneck operasional yang paling feasible."
                     ],
                     output: [
@@ -583,7 +604,7 @@ const DASHBOARD_DATA = {
                 },
                 {
                     minggu: "Minggu 2",
-                    tema: "Co-design intervensi dan perencanaan implementasi",
+                    tema: "Desain bersama intervensi dan perencanaan implementasi",
                     fokus: "Mengubah hasil diagnosis menjadi paket intervensi kecil yang realistis selama rotasi.",
                     kegiatan: [
                         "Mendiagnosis perilaku target dengan COM-B: capability, opportunity, motivation.",
@@ -604,7 +625,7 @@ const DASHBOARD_DATA = {
                     kegiatan: [
                         "Melaksanakan pilot di posyandu, PUSTU, atau klaster keluarga yang sudah ditentukan.",
                         "Mencatat reach, hambatan, respons sasaran, dan fidelity pelaksanaan setiap sesi.",
-                        "Melakukan PDSA harian atau dua harian untuk memperbaiki bahasa pesan, alur edukasi, dan form pencatatan.",
+                        "Melakukan siklus perbaikan cepat harian atau dua harian untuk memperbaiki bahasa pesan, alur edukasi, dan form pencatatan.",
                         "Koordinasi mingguan dengan pembimbing dan PJ program untuk menjaga keselarasan target."
                     ],
                     output: [
@@ -619,7 +640,7 @@ const DASHBOARD_DATA = {
                     fokus: "Menutup siklus intervensi dengan evaluasi proses, rekomendasi lanjut, dan serah terima produk kerja.",
                     kegiatan: [
                         "Mengevaluasi hasil dengan kerangka RE-AIM sederhana: reach, effectiveness awal, adoption, implementation, maintenance.",
-                        "Menyusun policy brief mini dan presentasi penutupan untuk puskesmas dan mitra lokal.",
+                        "Menyusun brief kebijakan mini dan presentasi penutupan untuk puskesmas dan mitra lokal.",
                         "Melatih kader atau petugas PIC agar toolkit bisa dipakai setelah koas selesai.",
                         "Melakukan handover file, SOP, media edukasi, dashboard mini, dan daftar tindak lanjut."
                     ],
@@ -635,8 +656,8 @@ const DASHBOARD_DATA = {
                 dayLabels: ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "D12", "D13", "D14", "D15", "D16", "D17", "D18", "D19", "D20"],
                 weekBands: [
                     { label: "Minggu 1", focus: "Diagnosis", start: 1, end: 5 },
-                    { label: "Minggu 2", focus: "Co-design", start: 6, end: 10 },
-                    { label: "Minggu 3", focus: "Pilot + PDSA", start: 11, end: 15 },
+                    { label: "Minggu 2", focus: "Desain bersama", start: 6, end: 10 },
+                    { label: "Minggu 3", focus: "Pilot + perbaikan cepat", start: 11, end: 15 },
                     { label: "Minggu 4", focus: "Evaluasi + Handover", start: 16, end: 20 }
                 ],
                 tracks: [
@@ -653,24 +674,24 @@ const DASHBOARD_DATA = {
                         ]
                     },
                     {
-                        title: "Baseline dan community diagnosis",
+                        title: "Baseline dan diagnosis komunitas",
                         owner: "PIC Data dan Evaluasi",
                         tone: "cyan",
                         detail: "Menyusun baseline, memetakan wilayah, dan memilih prioritas masalah.",
                         blocks: [
                             { label: "Audit data rutin", start: 1, end: 3 },
-                            { label: "Windshield + transect", start: 3, end: 4 },
+                            { label: "Observasi wilayah", start: 3, end: 4 },
                             { label: "Problem tree", start: 4, end: 5 }
                         ]
                     },
                     {
-                        title: "COM-B dan MINDSPACE design",
+                        title: "Desain COM-B dan MINDSPACE",
                         owner: "PIC Edukasi dan Perubahan Perilaku",
                         tone: "purple",
                         detail: "Menerjemahkan diagnosis menjadi target perilaku, pesan, dan nudge yang dapat diuji.",
                         blocks: [
                             { label: "Diagnosis perilaku", start: 6, end: 7 },
-                            { label: "Design sprint", start: 8, end: 9 },
+                            { label: "Sprint desain", start: 8, end: 9 },
                             { label: "User testing", start: 10, end: 10 }
                         ]
                     },
@@ -681,20 +702,20 @@ const DASHBOARD_DATA = {
                         detail: "Merancang form, script, SOP mini, reminder, dan dashboard ringkas yang feasible.",
                         blocks: [
                             { label: "Draft SOP + media", start: 7, end: 9 },
-                            { label: "Freeze pilot kit", start: 10, end: 10 },
+                            { label: "Finalisasi paket pilot", start: 10, end: 10 },
                             { label: "Perbaikan alat", start: 12, end: 17 }
                         ]
                     },
                     {
-                        title: "Pilot lapangan dan PDSA",
+                        title: "Pilot lapangan dan perbaikan cepat",
                         owner: "Semua PIC",
                         tone: "red",
                         detail: "Menjalankan intervensi terbatas sambil mengecek reach, fidelity, dan hambatan lapangan.",
                         blocks: [
                             { label: "Pilot gelombang 1", start: 11, end: 12 },
-                            { label: "PDSA 1", start: 12, end: 13 },
+                            { label: "Perbaikan cepat 1", start: 12, end: 13 },
                             { label: "Pilot gelombang 2", start: 13, end: 14 },
-                            { label: "PDSA 2", start: 14, end: 15 }
+                            { label: "Perbaikan cepat 2", start: 14, end: 15 }
                         ]
                     },
                     {
@@ -703,7 +724,7 @@ const DASHBOARD_DATA = {
                         tone: "green",
                         detail: "Menyimpulkan hasil, menyiapkan laporan, melatih PIC lokal, dan menutup loop rotasi.",
                         blocks: [
-                            { label: "RE-AIM rapid review", start: 16, end: 17 },
+                            { label: "Review hasil cepat", start: 16, end: 17 },
                             { label: "Toolkit final", start: 17, end: 18 },
                             { label: "Training PIC", start: 18, end: 19 },
                             { label: "Final handover", start: 20, end: 20 }
@@ -712,7 +733,7 @@ const DASHBOARD_DATA = {
                 ],
                 milestones: [
                     { day: 5, label: "Masalah prioritas dan baseline disepakati", tone: "blue" },
-                    { day: 10, label: "Pilot kit siap pakai", tone: "purple" },
+                    { day: 10, label: "Paket pilot siap pakai", tone: "purple" },
                     { day: 15, label: "Versi 2 intervensi selesai", tone: "red" },
                     { day: 20, label: "Toolkit dan tindak lanjut diserahterimakan", tone: "green" }
                 ]
@@ -744,11 +765,11 @@ const DASHBOARD_DATA = {
                         {
                             day: "Rabu",
                             label: "Hari 3",
-                            am: "Windshield survey dan transect walk wilayah Mentikan - PUSTU - kantong sasaran.",
-                            pm: "Catat hambatan akses, touchpoint edukasi, dan titik layanan yang paling ramai.",
+                            am: "Observasi cepat wilayah Mentikan - PUSTU - kantong sasaran.",
+                            pm: "Catat hambatan akses, titik edukasi, dan titik layanan yang paling ramai.",
                             owner: "Koordinator + PIC Alur",
-                            output: "Peta mikro dan daftar touchpoint prioritas.",
-                            checkpoint: "Minimal 1 lokasi high-traffic dan 1 lokasi komunitas terpilih."
+                            output: "Peta mikro dan daftar titik layanan prioritas.",
+                            checkpoint: "Minimal 1 lokasi ramai dan 1 lokasi komunitas terpilih."
                         },
                         {
                             day: "Kamis",
@@ -772,12 +793,12 @@ const DASHBOARD_DATA = {
                 },
                 {
                     week: "Minggu 2",
-                    theme: "Co-design dan finalisasi perangkat pilot",
+                    theme: "Desain bersama dan finalisasi perangkat pilot",
                     days: [
                         {
                             day: "Senin",
                             label: "Hari 6",
-                            am: "Diagnosis COM-B untuk keluarga sasaran, kader, dan petugas touchpoint.",
+                            am: "Diagnosis COM-B untuk keluarga sasaran, kader, dan petugas titik layanan.",
                             pm: "Pilih 1-2 target perilaku inti yang paling realistis diubah dalam 2 minggu.",
                             owner: "PIC Edukasi dan Perubahan Perilaku",
                             output: "Matriks COM-B prioritas.",
@@ -789,7 +810,7 @@ const DASHBOARD_DATA = {
                             am: "Pilih lever MINDSPACE yang paling cocok: salience, messenger, prompt, defaults, commitment.",
                             pm: "Sketch alur pesan, script kader, dan trigger follow-up.",
                             owner: "PIC Edukasi + Koordinator",
-                            output: "Design brief intervensi versi 1.",
+                            output: "Brief intervensi versi 1.",
                             checkpoint: "Setiap intervensi terhubung langsung dengan hambatan perilaku."
                         },
                         {
@@ -798,7 +819,7 @@ const DASHBOARD_DATA = {
                             am: "Buat media edukasi, form log, SOP mini, dan template dashboard sederhana.",
                             pm: "Rapikan peran siapa melakukan apa pada hari pilot.",
                             owner: "PIC Alur Layanan / Digital",
-                            output: "Pilot kit draft.",
+                            output: "Draft paket pilot.",
                             checkpoint: "Semua alat cukup sederhana untuk dipakai tanpa pelatihan panjang."
                         },
                         {
@@ -807,16 +828,16 @@ const DASHBOARD_DATA = {
                             am: "User testing cepat dengan kader, ibu sasaran, atau petugas layanan.",
                             pm: "Perbaiki bahasa pesan, urutan alur, dan beban pencatatan.",
                             owner: "PIC Edukasi + PIC Alur",
-                            output: "Pilot kit revisi.",
+                            output: "Revisi paket pilot.",
                             checkpoint: "Minimal ada umpan balik dari pengguna nyata."
                         },
                         {
                             day: "Jumat",
                             label: "Hari 10",
                             am: "Training singkat PIC lapangan dan simulasi jalannya intervensi.",
-                            pm: "Freeze pilot protocol dan checklist fidelity.",
+                            pm: "Finalisasi protokol pilot dan checklist mutu pelaksanaan.",
                             owner: "Koordinator + Semua PIC",
-                            output: "Pilot kit final dan checklist implementasi.",
+                            output: "Paket pilot final dan checklist implementasi.",
                             checkpoint: "Minggu 3 siap masuk lapangan tanpa desain yang masih menggantung."
                         }
                     ]
@@ -828,7 +849,7 @@ const DASHBOARD_DATA = {
                         {
                             day: "Senin",
                             label: "Hari 11",
-                            am: "Laksanakan pilot gelombang 1 di touchpoint prioritas pertama.",
+                            am: "Laksanakan pilot gelombang 1 di titik layanan prioritas pertama.",
                             pm: "Catat reach, hambatan, durasi, dan penerimaan sasaran.",
                             owner: "Semua PIC",
                             output: "Log implementasi hari pertama.",
@@ -837,7 +858,7 @@ const DASHBOARD_DATA = {
                         {
                             day: "Selasa",
                             label: "Hari 12",
-                            am: "Analisis cepat hasil hari 11 dan lakukan PDSA mini.",
+                            am: "Analisis cepat hasil hari 11 dan lakukan perbaikan cepat mini.",
                             pm: "Perbaiki script, form, layout media, atau alur petugas.",
                             owner: "PIC Data + PIC Edukasi",
                             output: "Intervensi versi 1.1.",
@@ -850,12 +871,12 @@ const DASHBOARD_DATA = {
                             pm: "Lakukan follow-up keluarga sasaran dan cek keterpakaian alat bantu.",
                             owner: "Semua PIC",
                             output: "Data reach dan fidelity gelombang 2.",
-                            checkpoint: "Bandingkan hasil antar touchpoint, bukan hanya total output."
+                            checkpoint: "Bandingkan hasil antar titik layanan, bukan hanya total output."
                         },
                         {
                             day: "Kamis",
                             label: "Hari 14",
-                            am: "PDSA kedua berdasarkan hambatan lapangan terbaru.",
+                            am: "Perbaikan cepat kedua berdasarkan hambatan lapangan terbaru.",
                             pm: "Rapikan toolkit agar siap dipakai ulang oleh puskesmas.",
                             owner: "PIC Alur + PIC Edukasi",
                             output: "Intervensi versi 2.",
@@ -879,7 +900,7 @@ const DASHBOARD_DATA = {
                         {
                             day: "Senin",
                             label: "Hari 16",
-                            am: "Rapid evaluation dengan RE-AIM ringkas dan audit data hasil pilot.",
+                            am: "Evaluasi cepat dengan RE-AIM ringkas dan audit data hasil pilot.",
                             pm: "Analisis reach, acceptance, adoption awal, dan implementation gap.",
                             owner: "PIC Data dan Evaluasi",
                             output: "Tabel evaluasi proses.",
@@ -888,7 +909,7 @@ const DASHBOARD_DATA = {
                         {
                             day: "Selasa",
                             label: "Hari 17",
-                            am: "Rapikan dashboard mini, logbook, dan evidentiary appendix.",
+                            am: "Rapikan dashboard mini, logbook, dan lampiran bukti kerja.",
                             pm: "Tulis ringkasan temuan, insight perilaku, dan bottleneck sistem.",
                             owner: "PIC Data + Koordinator",
                             output: "Draft laporan akhir dan dashboard handover.",
@@ -907,7 +928,7 @@ const DASHBOARD_DATA = {
                             day: "Kamis",
                             label: "Hari 19",
                             am: "Latih PIC puskesmas / kader untuk memakai toolkit dan monitoring sederhana.",
-                            pm: "Simulasi presentasi diseminasi serta revisi policy brief mini.",
+                            pm: "Simulasi presentasi diseminasi serta revisi brief kebijakan mini.",
                             owner: "Koordinator + Semua PIC",
                             output: "PIC lokal terlatih dan slide final siap.",
                             checkpoint: "Ada pihak lokal yang siap menjadi champion."
@@ -1483,20 +1504,20 @@ const DASHBOARD_DATA = {
 
         recommendation: {
             title: "Mentikan sebagai Wahana Implementasi CM Koas",
-            summary: "Mentikan tetap menjadi target utama, tetapi keputusan itu kini diterjemahkan menjadi paket kerja yang operasional, audit-able, dan mudah dipitch: timeline 20 hari, breakdown harian, toolkit handover, serta matrix scoring yang explainable.",
+            summary: "Mentikan tetap menjadi target utama, tetapi keputusan itu kini diterjemahkan menjadi paket kerja yang operasional, mudah diaudit, dan mudah dipitch: timeline 20 hari, breakdown harian, toolkit handover, serta matrix scoring yang transparan.",
             rationale: [
-                "Beban kunjungan tinggi memberi banyak touchpoint untuk observasi sistem dan edukasi.",
+                "Beban kunjungan tinggi memberi banyak titik layanan untuk observasi sistem dan edukasi.",
                 "Kekurangan tenaga strategis membuat intervensi frugal dan perbaikan alur kerja menjadi sangat relevan.",
                 "Tiga PUSTU aktif memberi ruang pembelajaran komunitas yang nyata dan terdistribusi.",
                 "Masalah perilaku keluarga dan capaian N/D balita cocok untuk pendekatan COM-B dan MINDSPACE."
             ],
             weekSummary: [
                 "Minggu 1: diagnosis komunitas dan kontrak kerja.",
-                "Minggu 2: co-design intervensi dan perangkat kerja.",
+                "Minggu 2: desain bersama intervensi dan perangkat kerja.",
                 "Minggu 3: pilot implementasi dan perbaikan cepat.",
                 "Minggu 4: evaluasi, diseminasi, dan handover."
             ],
-            badges: ["20 hari kerja", "3 PUSTU aktif", "55.150 kunjungan/tahun", "Feasible untuk CM koas", "Berbasis handover"],
+            badges: ["20 hari kerja", "3 PUSTU aktif", "55.150 kunjungan/tahun", "Layak untuk CM koas", "Berbasis handover"],
             closingLoop: "Mentikan adalah kanvas implementasi yang kuat: isu perilaku keluarga bisa dibedah dengan COM-B, nudges pelayanan bisa diturunkan lewat MINDSPACE, lalu hasil pilot ditutup dengan evaluasi RE-AIM dan handover terstruktur."
         },
 
@@ -1528,9 +1549,9 @@ const DASHBOARD_DATA = {
             ],
             innovationReasons: [
                 "Inovasinya bukan gimmick UI, tetapi kemampuan menerjemahkan teori global menjadi paket kerja koas yang executable.",
-                "Ada benang merah dari White Paper -> scoring -> implementation plan -> evaluasi -> handover.",
+                "Ada benang merah dari fondasi konseptual, pemilihan lokasi, rencana kerja, evaluasi, hingga handover.",
                 "Dashboard ini memadukan kebutuhan akademik, operasional puskesmas, dan bahasa eksekutif dalam satu artefak.",
-                "Explainable scoring dan appendix mode membuatnya lebih audit-able daripada slide presentasi biasa."
+                "Explainable scoring dan appendix mode membuatnya lebih mudah diaudit daripada slide presentasi biasa."
             ],
             stillNeeded: [
                 "Satu halaman keputusan rapat: siapa menyetujui apa hari ini.",
@@ -1549,6 +1570,12 @@ const DASHBOARD_DATA = {
                 "Rapat Dinkes: lompat cepat ke scoring Mentikan, implementation plan 20 hari, zero-cost, zero-disruption, dan apa yang benar-benar ditinggalkan ke puskesmas setelah rotasi selesai.",
                 "Gunakan light mode saat proyektor ruang rapat kurang kontras, terutama ketika menampilkan Gantt, readiness pack, dan executive print narrative.",
                 "Bawa contoh fisik kecil ke meja rapat: mockup leaflet, logbook, checklist, atau SOP mini, agar janji frugal innovation terasa konkret dan tidak berhenti di layar."
+            ],
+            todayAsk: [
+                "Setujui Mentikan sebagai pilot awal blok CM koas dengan fokus masalah yang sudah dipersempit.",
+                "Tetapkan PIC akademik FKK, liaison Dinkes, dan preseptor / PJ program yang menjadi jalur keputusan mingguan.",
+                "Sepakati batas data, mekanisme supervisi, serta bentuk handover yang diterima puskesmas di akhir rotasi.",
+                "Izinkan tim menyiapkan deliverable fisik sebelum turun lapangan agar rapat berikutnya membahas eksekusi, bukan konsep ulang."
             ]
         }
     }

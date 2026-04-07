@@ -169,6 +169,10 @@
       <h2>10 Besar Penyakit Kolektif</h2>
       <p class="section-subtitle">Agregat data 10 penyakit terbanyak dari semua Puskesmas.</p>
       <div class="chart-container fade-in" style="margin-top:2rem"><canvas id="chartPenyakit" height="320"></canvas></div>
+      <div class="glass-card fade-in" style="margin-top:1rem;border-left:3px solid var(--accent-blue);">
+        <div class="recommendation-label">Jembatan ke Fokus Intervensi</div>
+        <p id="cmEpidemiologyBridge" style="font-size:0.88rem;line-height:1.7;"></p>
+      </div>
     </div>
   </section>
 
@@ -227,6 +231,12 @@
       <span class="section-tag">Community Medicine</span>
       <h2>Implementation Plan - Mentikan</h2>
       <p class="section-subtitle" id="cmPlanSubtitle"></p>
+
+      <div class="glass-card fade-in" style="margin-top:1.5rem;border-left:3px solid var(--accent-cyan);">
+        <h3 id="cmDecisionTitle"></h3>
+        <p id="cmDecisionSummary" style="font-size:0.9rem;line-height:1.7;margin-top:0.5rem;"></p>
+        <div class="grid-3" id="cmDecisionItems" style="margin-top:1rem;"></div>
+      </div>
 
       <div class="grid-2 fade-in cm-overview-grid" style="margin-top:2rem">
         <div class="glass-card cm-target-card">
@@ -457,8 +467,8 @@
             <ul class="compact-list" id="cmInnovationReasons"></ul>
           </div>
           <div>
-            <div class="recommendation-label">Yang Masih Perlu Ditambah</div>
-            <ul class="compact-list" id="cmStillNeeded"></ul>
+            <div class="recommendation-label">Keputusan yang Kami Butuhkan Hari Ini</div>
+            <ul class="compact-list" id="cmTodayAsk"></ul>
           </div>
         </div>
 
