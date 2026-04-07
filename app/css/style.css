@@ -2252,6 +2252,20 @@ body.print-prep .tab-content[hidden] {
   display: flex;
   align-items: center;
   box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gantt-block:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: var(--shadow-lg);
+}
+
+.gantt-block:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.92);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.22), var(--shadow-lg);
 }
 
 .gantt-block span {
@@ -2357,6 +2371,13 @@ body.print-prep .tab-content[hidden] {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.daily-card.gantt-target-highlight {
+  transform: translateY(-2px) scale(1.01);
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12), var(--shadow-lg);
 }
 
 .daily-card-top {

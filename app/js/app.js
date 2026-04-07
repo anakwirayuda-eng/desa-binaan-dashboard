@@ -984,7 +984,18 @@ function renderCommunityMedicine() {
       <div class="gantt-track-timeline">
         ${plan.gantt.dayLabels.map(() => '<div class="gantt-grid-cell"></div>').join('')}
         ${track.blocks.map(block => `
-          <div class="gantt-block tone-${track.tone}" style="grid-column:${block.start} / ${block.end + 1}">
+          <div
+            class="gantt-block tone-${track.tone}"
+            style="grid-column:${block.start} / ${block.end + 1}"
+            data-day-start="${block.start}"
+            data-day-end="${block.end}"
+            data-owner="${track.owner}"
+            data-track-title="${track.title}"
+            role="button"
+            tabindex="0"
+            title="${block.label} | Hari ${block.start}${block.end > block.start ? `-${block.end}` : ''} | ${track.owner}"
+            aria-label="${block.label}. Hari ${block.start}${block.end > block.start ? ` sampai ${block.end}` : ''}. PIC ${track.owner}. Tekan untuk melihat forecast harian."
+          >
             <span>${block.label}</span>
           </div>
         `).join('')}
@@ -1018,7 +1029,7 @@ function renderCommunityMedicine() {
       </div>
       <div class="daily-card-grid">
         ${week.days.map(day => `
-          <article class="daily-card">
+          <article class="daily-card" data-day-number="${day.label.replace(/\D+/g, '')}" id="daily-${day.label.replace(/\s+/g, '-').toLowerCase()}">
             <div class="daily-card-top">
               <div>
                 <span class="daily-label">${day.label}</span>
@@ -1460,6 +1471,47 @@ function initPresentationControls() {
     window.addEventListener('hashchange', syncAppendixHash);
 }
 
+function initGanttInteractions() {
+    const blocks = document.querySelectorAll('.gantt-block[data-day-start]');
+    if (!blocks.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const highlightDailyCard = dayNumber => {
+        if (!dayNumber) return;
+        const target = document.querySelector(`.daily-card[data-day-number="${dayNumber}"]`);
+        if (!target) return;
+
+        target.setAttribute('tabindex', '-1');
+        target.scrollIntoView({
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            block: 'center'
+        });
+        target.focus({ preventScroll: true });
+
+        document.querySelectorAll('.daily-card.gantt-target-highlight').forEach(card => {
+            if (card !== target) card.classList.remove('gantt-target-highlight');
+        });
+
+        target.classList.add('gantt-target-highlight');
+        window.clearTimeout(target.ganttHighlightTimeout);
+        target.ganttHighlightTimeout = window.setTimeout(() => {
+            target.classList.remove('gantt-target-highlight');
+        }, prefersReducedMotion ? 1200 : 2200);
+    };
+
+    blocks.forEach(block => {
+        const activate = () => highlightDailyCard(block.dataset.dayStart);
+
+        block.addEventListener('click', activate);
+        block.addEventListener('keydown', event => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            activate();
+        });
+    });
+}
+
 function initScrollAnimations() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -1547,4 +1599,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initNavbar();
     initPresentationControls();
+    initGanttInteractions();
 });

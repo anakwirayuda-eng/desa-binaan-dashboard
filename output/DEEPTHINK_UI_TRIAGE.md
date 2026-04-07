@@ -194,3 +194,34 @@ Sumber masukan: deepthink strategis untuk persiapan rapat pimpinan FKK dan showc
 - Saran presentasi light mode versus dark mode
   Status: diterima sebagai strategi penggunaan, bukan sebagai perubahan produk.
   Alasan: ini lebih tepat diposisikan sebagai playbook presenter daripada logika aplikasi permanen.
+
+## Gantt Interaction Triage
+
+Sumber masukan: deepthink khusus untuk menaikkan efek presentasi dan interaktivitas pada Gantt 20 Hari.
+
+### Accepted and implemented
+
+- Macro-to-micro sync dari Gantt ke forecast harian
+  Status: diterima.
+  Tindakan: balok Gantt sekarang bisa diklik atau diakses dengan keyboard untuk melompat ke kartu harian terkait dan menyorotnya sementara.
+- Detail-on-demand ringan pada balok Gantt
+  Status: diterima dengan modifikasi.
+  Tindakan: setiap balok sekarang membawa `title` dan `aria-label` yang menjelaskan rentang hari dan PIC, tanpa menambah custom tooltip engine yang berat.
+- Hover dan focus affordance pada balok Gantt
+  Status: diterima.
+  Tindakan: hover/focus sekarang lebih jelas sehingga audiens dan presenter mendapat sinyal bahwa blok memang interaktif.
+
+### Deferred
+
+- Spotlight mode yang meredupkan baris lain
+  Status: ditunda.
+  Alasan: efek ini menarik saat demo, tetapi berisiko mengurangi keterbacaan timeline lain di layar proyektor dan terasa terlalu teatrikal untuk forum akademik-birokratik.
+- Floating glass tooltip penuh yang mengikuti mouse
+  Status: ditunda.
+  Alasan: secara visual menarik, tetapi menambah kompleksitas pointer handling, risiko overlap di layar kecil, dan tidak terlalu bernilai dibanding tooltip native + click sync.
+
+### Rejected or reframed
+
+- Mengubah Gantt menjadi area interaksi yang terlalu "hidup"
+  Status: direframe.
+  Alasan: nilai terbaik Gantt di dashboard ini adalah auditability dan ritme kerja. Interaksi tambahan hanya dipakai jika memperjelas relasi makro-ke-mikro, bukan sekadar memberi efek wow.
