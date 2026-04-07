@@ -1498,6 +1498,46 @@ const DASHBOARD_DATA = {
             ],
             badges: ["20 hari kerja", "3 PUSTU aktif", "55.150 kunjungan/tahun", "Feasible untuk CM koas", "Berbasis handover"],
             closingLoop: "Mentikan adalah kanvas implementasi yang kuat: isu perilaku keluarga bisa dibedah dengan COM-B, nudges pelayanan bisa diturunkan lewat MINDSPACE, lalu hasil pilot ditutup dengan evaluasi RE-AIM dan handover terstruktur."
+        },
+
+        meetingReadiness: {
+            summary: "Untuk rapat pimpinan FKK dan showcase ke Kadinkes, dashboard ini sudah cukup kuat sebagai alat presentasi. Namun persetujuan lapangan biasanya tidak ditentukan oleh tampilan dashboard saja, melainkan oleh kejelasan keputusan yang diminta, prasyarat operasional, dan bukti bahwa tim koas siap disupervisi dan diserahterimakan dengan aman.",
+            fkkDecisions: [
+                "Setujui Mentikan sebagai wahana implementasi awal blok CM koas.",
+                "Tetapkan dosen pembimbing / koordinator akademik yang menjadi decision owner tiap minggu.",
+                "Pastikan format logbook, penilaian, dan output akhir CM koas diakui sebagai evidence resmi pembelajaran.",
+                "Setujui bahwa model intervensi bersifat frugal: toolkit, alur, dan dashboard mini, bukan pembangunan sistem besar."
+            ],
+            dinkesDecisions: [
+                "Konfirmasi dukungan Dinkes untuk penempatan awal di Mentikan dan akses koordinasi dengan Kapus / PJ program.",
+                "Sepakati bahwa data yang dipakai bersifat operasional-terbatas dan tidak melampaui kebutuhan program serta pendidikan.",
+                "Tetapkan kanal komunikasi jika perlu penyesuaian lokasi, jadwal, atau isu etik selama rotasi.",
+                "Pastikan hasil akhir boleh diserahterimakan ke Puskesmas sebagai toolkit kerja lokal."
+            ],
+            prerequisites: [
+                "Nama PIC puskesmas, preseptor, dan champion lokal harus jelas sebelum minggu pertama.",
+                "Masalah prioritas harus dikunci cepat agar rotasi tidak melebar jadi terlalu banyak program.",
+                "Format data baseline minimum harus disepakati sebelum hari kedua atau ketiga.",
+                "Template handover, supervisi mingguan, dan batasan etik harus dibawa sejak rapat awal."
+            ],
+            evidenceToBring: [
+                "Executive PDF versi ringkas dan print-ready.",
+                "Lampiran appendix untuk dosen/reviewer bila ditanya lebih teknis.",
+                "Contoh deliverable konkret: dashboard mini, SOP mini, media edukasi, dan checklist fidelity.",
+                "Skema supervisi mingguan dan siapa yang accountable di FKK maupun puskesmas."
+            ],
+            innovationReasons: [
+                "Inovasinya bukan gimmick UI, tetapi kemampuan menerjemahkan teori global menjadi paket kerja koas yang executable.",
+                "Ada benang merah dari White Paper -> scoring -> implementation plan -> evaluasi -> handover.",
+                "Dashboard ini memadukan kebutuhan akademik, operasional puskesmas, dan bahasa eksekutif dalam satu artefak.",
+                "Explainable scoring dan appendix mode membuatnya lebih audit-able daripada slide presentasi biasa."
+            ],
+            stillNeeded: [
+                "Satu halaman keputusan rapat: siapa menyetujui apa hari ini.",
+                "Nama orang/role nyata yang akan menjadi PIC FKK, preseptor, dan liaison Dinkes.",
+                "Skenario cadangan jika lokasi, jadwal, atau data awal berubah.",
+                "Output leave-behind yang benar-benar siap ditunjukkan saat meeting, bukan hanya direncanakan."
+            ]
         }
     }
 };

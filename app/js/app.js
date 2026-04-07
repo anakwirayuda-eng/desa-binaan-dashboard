@@ -1256,6 +1256,7 @@ function renderAppendix() {
 
 function renderRecommendation() {
     const recommendation = D.communityMedicine.recommendation;
+    const readiness = D.communityMedicine.meetingReadiness;
     const scoring = D.scoring;
     const names = {
         blooto: 'Blooto',
@@ -1278,6 +1279,14 @@ function renderRecommendation() {
       <p>${text}</p>
     </div>
   `).join('');
+
+    document.getElementById('cmMeetingReadinessSummary').textContent = readiness.summary;
+    document.getElementById('cmMeetingFKK').innerHTML = readiness.fkkDecisions.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmMeetingDinkes').innerHTML = readiness.dinkesDecisions.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmMeetingPrereqs').innerHTML = readiness.prerequisites.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmMeetingEvidence').innerHTML = readiness.evidenceToBring.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmInnovationReasons').innerHTML = readiness.innovationReasons.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmStillNeeded').innerHTML = readiness.stillNeeded.map(item => `<li>${item}</li>`).join('');
 }
 
 function renderScoringTable() {
