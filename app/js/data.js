@@ -668,8 +668,8 @@ const DASHBOARD_DATA = {
                         detail: "Menjaga kontrak kerja, sinkronisasi PIC, supervisi, dan forum handover.",
                         blocks: [
                             { label: "Kick-off dan kontrak", start: 1, end: 2 },
-                            { label: "Review mingguan", start: 5, end: 5 },
-                            { label: "Mid-pilot review", start: 15, end: 15 },
+                            { label: "Review mingguan", shortLabel: "Review", start: 5, end: 5 },
+                            { label: "Mid-pilot review", shortLabel: "Mid-review", start: 15, end: 15 },
                             { label: "Diseminasi dan handover", start: 19, end: 20 }
                         ]
                     },
@@ -692,7 +692,7 @@ const DASHBOARD_DATA = {
                         blocks: [
                             { label: "Diagnosis perilaku", start: 6, end: 7 },
                             { label: "Sprint desain", start: 8, end: 9 },
-                            { label: "User testing", start: 10, end: 10 }
+                            { label: "User testing", shortLabel: "Uji awal", start: 10, end: 10 }
                         ]
                     },
                     {
@@ -702,7 +702,7 @@ const DASHBOARD_DATA = {
                         detail: "Merancang form, script, SOP mini, reminder, dan dashboard ringkas yang feasible.",
                         blocks: [
                             { label: "Draft SOP + media", start: 7, end: 9 },
-                            { label: "Finalisasi paket pilot", start: 10, end: 10 },
+                            { label: "Finalisasi paket pilot", shortLabel: "Paket final", start: 10, end: 10 },
                             { label: "Perbaikan alat", start: 12, end: 17 }
                         ]
                     },
@@ -726,8 +726,8 @@ const DASHBOARD_DATA = {
                         blocks: [
                             { label: "Review hasil cepat", start: 16, end: 17 },
                             { label: "Toolkit final", start: 17, end: 18 },
-                            { label: "Training PIC", start: 18, end: 19 },
-                            { label: "Final handover", start: 20, end: 20 }
+                            { label: "Training PIC", shortLabel: "Latih PIC", start: 18, end: 19 },
+                            { label: "Final handover", shortLabel: "Handover", start: 20, end: 20 }
                         ]
                     }
                 ],

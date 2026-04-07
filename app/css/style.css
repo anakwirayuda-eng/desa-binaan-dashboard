@@ -2254,13 +2254,13 @@ body.print-prep .tab-content[hidden] {
 
 .gantt-track-timeline {
   display: grid;
-  grid-template-columns: repeat(20, minmax(36px, 1fr));
-  gap: 0.3rem;
+  grid-template-columns: repeat(20, minmax(54px, 1fr));
+  gap: 0.4rem;
   position: relative;
 }
 
 .gantt-grid-cell {
-  min-height: 3.1rem;
+  min-height: 3.35rem;
   border-radius: 10px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
   border: 1px dashed var(--border);
@@ -2271,14 +2271,20 @@ body.print-prep .tab-content[hidden] {
   grid-row: 1;
   align-self: center;
   z-index: 2;
-  min-height: 2.2rem;
+  min-height: 2.45rem;
   border-radius: 12px;
-  padding: 0.45rem 0.55rem;
+  padding: 0.5rem 0.65rem;
   display: flex;
   align-items: center;
   box-shadow: var(--shadow);
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gantt-block[data-day-span="1"] {
+  justify-content: center;
+  text-align: center;
+  padding: 0.45rem 0.4rem;
 }
 
 .gantt-block:hover {
@@ -2294,10 +2300,18 @@ body.print-prep .tab-content[hidden] {
 }
 
 .gantt-block span {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #fff;
-  line-height: 1.3;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.gantt-block[data-day-span="1"] span {
+  font-size: 0.68rem;
 }
 
 .gantt-smart-tooltip {
@@ -2841,7 +2855,7 @@ body.print-prep .tab-content[hidden] {
   .gantt-day-header,
   .gantt-track-row,
   .gantt-milestones {
-    min-width: 980px;
+    min-width: 1260px;
   }
 
   .raci-wrapper table {

@@ -998,14 +998,16 @@ function renderCommunityMedicine() {
             style="grid-column:${block.start} / ${block.end + 1}"
             data-day-start="${block.start}"
             data-day-end="${block.end}"
+            data-day-span="${block.end - block.start + 1}"
             data-owner="${track.owner}"
             data-track-title="${track.title}"
+            data-full-label="${block.label}"
             role="button"
             tabindex="0"
             title="${block.label} | Hari ${block.start}${block.end > block.start ? `-${block.end}` : ''} | ${track.owner}"
             aria-label="${block.label}. Hari ${block.start}${block.end > block.start ? ` sampai ${block.end}` : ''}. PIC ${track.owner}. Tekan untuk melihat forecast harian."
           >
-            <span>${block.label}</span>
+            <span>${block.shortLabel || block.label}</span>
           </div>
         `).join('')}
       </div>
@@ -1574,7 +1576,7 @@ function initGanttInteractions() {
         const start = block.dataset.dayStart;
         const end = block.dataset.dayEnd;
         const dayText = start === end ? `Hari ${start}` : `Hari ${start} - ${end}`;
-        const taskName = block.querySelector('span')?.textContent || '';
+        const taskName = block.dataset.fullLabel || block.querySelector('span')?.textContent || '';
         const owner = block.dataset.owner || 'Tim Koas';
 
         block.removeAttribute('title');
