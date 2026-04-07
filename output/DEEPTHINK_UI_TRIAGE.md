@@ -148,3 +148,49 @@ Sumber masukan: batch deepthink lanjutan yang fokus ke micro-aesthetics dan pres
 - Magnetic 3D spotlight / card hologram
   Status: ditolak.
   Alasan: tidak sejalan dengan keputusan sebelumnya soal performa, mobile UX, dan fokus akademik-eksekutif.
+
+## Strategic Meeting Readiness Triage
+
+Sumber masukan: deepthink strategis untuk persiapan rapat pimpinan FKK dan showcase ke Kadinkes Mojokerto.
+
+### Accepted and integrated
+
+- Blindspot non-teknis di luar layar
+  Status: diterima.
+  Tindakan: readiness pack sekarang menegaskan bahwa persetujuan lapangan tidak hanya ditentukan oleh dashboard, tetapi juga oleh keputusan yang diminta, prasyarat operasional, dan bukti kesiapan supervisi.
+- Jaminan privasi data dan batas etika
+  Status: diterima.
+  Tindakan: ditambahkan sebagai assurance eksplisit untuk dibawa ke rapat, agar isu anonimitas pasien, etika rekam medis, dan batas data operasional tidak ambigu.
+- Zero-cost dan zero-disruption narrative
+  Status: diterima.
+  Tindakan: ditambahkan sebagai assurance utama untuk Dinkes supaya program tidak dibaca sebagai beban baru bagi puskesmas.
+- Bukti fisik yang harus dibawa
+  Status: diterima.
+  Tindakan: readiness pack sekarang mendorong prototype kecil yang konkret seperti leaflet, SOP mini, checklist, logbook, dan dashboard handover.
+- Playbook presentasi per audiens
+  Status: diterima.
+  Tindakan: ditambahkan panduan ringkas membedakan alur bicara untuk FKK versus Dinkes, termasuk kapan appendix dan light mode lebih tepat dipakai.
+
+### Deferred
+
+- Interactive geospatial map / peta Leaflet
+  Status: ditunda.
+  Alasan: potensial kuat untuk audiens teritorial seperti Dinkes, tetapi butuh basis koordinat, boundary, dan source data spasial yang lebih disiplin agar tidak terasa kosmetik.
+- What-if impact simulator
+  Status: ditunda.
+  Alasan: menarik sebagai decision support system, tetapi proyeksinya harus ditopang model asumsi dan sensitivitas yang defensible sebelum dipertontonkan ke pimpinan.
+- Focus mode khusus presentasi
+  Status: ditunda.
+  Alasan: idenya bagus untuk proyektor, tetapi manfaatnya belum lebih besar daripada menjaga UI tetap sederhana, stabil, dan print-friendly.
+- Visual before-after patient journey
+  Status: ditunda.
+  Alasan: cocok sebagai materi pendamping atau one-pager, tetapi belum wajib masuk ke dashboard utama yang sekarang sudah padat informasi.
+
+### Reframed
+
+- Klaim "cukup inovatif"
+  Status: diterima dengan reframing.
+  Alasan: inovasi utama dashboard ini bukan efek visual, melainkan kemampuan mengubah white paper konseptual menjadi artefak operasional yang bisa dipresentasikan, diaudit, dijalankan, dan di-handover.
+- Saran presentasi light mode versus dark mode
+  Status: diterima sebagai strategi penggunaan, bukan sebagai perubahan produk.
+  Alasan: ini lebih tepat diposisikan sebagai playbook presenter daripada logika aplikasi permanen.

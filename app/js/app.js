@@ -1287,6 +1287,8 @@ function renderRecommendation() {
     document.getElementById('cmMeetingEvidence').innerHTML = readiness.evidenceToBring.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmInnovationReasons').innerHTML = readiness.innovationReasons.map(item => `<li>${item}</li>`).join('');
     document.getElementById('cmStillNeeded').innerHTML = readiness.stillNeeded.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmMeetingAssurances').innerHTML = readiness.assurances.map(item => `<li>${item}</li>`).join('');
+    document.getElementById('cmPitchPlaybook').innerHTML = readiness.pitchPlaybook.map(item => `<li>${item}</li>`).join('');
 }
 
 function renderScoringTable() {

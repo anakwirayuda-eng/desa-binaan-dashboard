@@ -1537,6 +1537,18 @@ const DASHBOARD_DATA = {
                 "Nama orang/role nyata yang akan menjadi PIC FKK, preseptor, dan liaison Dinkes.",
                 "Skenario cadangan jika lokasi, jadwal, atau data awal berubah.",
                 "Output leave-behind yang benar-benar siap ditunjukkan saat meeting, bukan hanya direncanakan."
+            ],
+            assurances: [
+                "Tegaskan bahwa koas bekerja dengan data operasional minimum, anonim, dan tunduk pada etika rekam medis, privasi pasien, serta prinsip SatuSehat yang relevan.",
+                "Nyatakan sejak awal bahwa program ini bersifat zero-cost bagi puskesmas: transport, cetak media, dan kebutuhan mahasiswa tidak membebani BOK atau anggaran layanan rutin.",
+                "Tekankan model zero-disruption: koas tidak datang untuk membuat proyek besar, tetapi membantu alur edukasi, monitoring, dan handover dengan gangguan seminimal mungkin.",
+                "Pastikan ada kalimat eksplisit bahwa semua output akan ditinggalkan dalam bentuk yang bisa dipakai lokal: SOP mini, media edukasi, logbook, checklist, dan dashboard handover."
+            ],
+            pitchPlaybook: [
+                "Rapat FKK: mulai dari keselamatan pembelajaran, guardrails, CPL/SKDI, sistem supervisi mingguan, lalu buka appendix bila ada pertanyaan detail operasional.",
+                "Rapat Dinkes: lompat cepat ke scoring Mentikan, implementation plan 20 hari, zero-cost, zero-disruption, dan apa yang benar-benar ditinggalkan ke puskesmas setelah rotasi selesai.",
+                "Gunakan light mode saat proyektor ruang rapat kurang kontras, terutama ketika menampilkan Gantt, readiness pack, dan executive print narrative.",
+                "Bawa contoh fisik kecil ke meja rapat: mockup leaflet, logbook, checklist, atau SOP mini, agar janji frugal innovation terasa konkret dan tidak berhenti di layar."
             ]
         }
     }
