@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Slideshow eksekutif Desa Binaan FKK ITS x Kota Mojokerto.">
+  <title>Desa Binaan FKK ITS - Slideshow Eksekutif</title>
+  <link rel="stylesheet" href="css/slides.css?v=20260410j">
+</head>
+<body class="slides-body">
+  <div class="deck-noise" aria-hidden="true"></div>
+  <div class="deck-blackout" id="blackoutLayer" hidden aria-hidden="true"></div>
+
+  <header class="deck-topbar">
+    <a href="index.html" class="deck-brand" aria-label="Kembali ke dashboard utama">
+      <img src="assets/its-logo.svg" alt="Logo ITS">
+      <span>
+        <strong>Desa Binaan</strong>
+        <small>FKK ITS x Kota Mojokerto</small>
+      </span>
+    </a>
+
+    <div class="deck-topbar-actions">
+      <button type="button" class="deck-action" id="fullscreenBtn">Presentasi</button>
+      <button type="button" class="deck-action deck-action-primary" id="appendixBtn" aria-expanded="false" aria-controls="appendixDrawer">Lampiran</button>
+      <a href="index.html" class="deck-action">Versi Lengkap</a>
+    </div>
+  </header>
+
+  <div class="deck-progress" aria-hidden="true">
+    <div class="deck-progress-bar" id="deckProgressBar"></div>
+  </div>
+
+  <div class="deck-shell">
+    <aside class="deck-rail" id="slideRail" aria-label="Daftar slide"></aside>
+
+    <main class="deck-stage" id="deckStage" aria-live="polite">
+      <section class="slide is-active" id="slide-cover" data-label="Pembuka" aria-hidden="false">
+        <div class="slide-surface slide-cover">
+          <div class="cover-media" aria-hidden="true">
+            <img src="assets/mojokerto-city-banner.jpg" alt="">
+          </div>
+          <div class="cover-overlay" aria-hidden="true"></div>
+          <div class="cover-copy">
+            <span class="slide-kicker slide-kicker-light">FKK ITS x Dinkes Kota Mojokerto</span>
+            <h1>Usulan pilot blok kedokteran komunitas koas yang terukur, aman, dan siap dijalankan</h1>
+            <p class="slide-lead slide-lead-light">Presentasi ini merangkum alasan pemilihan lokasi, fokus intervensi, rencana kerja 20 hari, serta bentuk kontribusi mahasiswa FKK ITS yang siap dijalankan bersama puskesmas dan Pemerintah Kota Mojokerto.</p>
+            <div class="cover-badges" id="coverBadges"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-summary" data-label="Ringkasan" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Ringkasan Eksekutif</span>
+            <h2>Tiga pesan utama yang perlu disepakati</h2>
+            <p class="slide-lead">Program ini disusun sebagai penugasan lapangan yang terukur, berorientasi hasil, dan langsung menjawab kebutuhan akademik FKK sekaligus kebutuhan operasional puskesmas.</p>
+          </div>
+          <div class="slide-grid slide-grid-3" id="summaryCards"></div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-context" data-label="Konteks" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Konteks Program</span>
+            <h2>Mojokerto siap sebagai lokasi tahap awal dengan cakupan studi yang jelas</h2>
+            <p class="slide-lead">Kota Mojokerto memiliki 6 puskesmas. Presentasi ini menelaah 5 wilayah kajian blok kedokteran komunitas, lalu menetapkan 1 lokasi implementasi awal yang paling layak diselesaikan dalam satu rotasi.</p>
+          </div>
+          <div class="stat-ribbon" id="cityStats"></div>
+          <div class="slide-grid slide-grid-2" id="contextPanels"></div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-study" data-label="Wilayah Studi" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Wilayah Studi</span>
+            <h2>Lima wilayah kerja yang ditelaah sebelum lokasi tahap awal ditetapkan</h2>
+            <p class="slide-lead">Kelima wilayah ini merupakan cakupan studi blok kedokteran komunitas pada presentasi ini. Kedundung tidak dimasukkan ke komparatif utama karena bukan bagian dari objek kajian rotasi. Dari lima wilayah tersebut, Mentikan dipilih sebagai lokasi awal karena paling sesuai untuk penugasan 20 hari yang harus selesai, terukur, dan meninggalkan hasil.</p>
+          </div>
+          <div class="study-grid" id="studyGrid"></div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-decision" data-label="Mentikan" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Keputusan Lokasi</span>
+            <h2>Mentikan dipilih sebagai lokasi implementasi awal</h2>
+            <p class="slide-lead">Keputusan ini berbasis kebutuhan lapangan, kelayakan implementasi dalam rotasi pendek, dan peluang menghasilkan paket kerja yang benar-benar dapat dipakai setelah program selesai.</p>
+          </div>
+          <div class="slide-grid slide-grid-2 decision-layout">
+            <div class="rank-card">
+              <div class="panel-label">Skor komparatif</div>
+              <div id="rankingList" class="ranking-list"></div>
+            </div>
+            <div class="reason-stack">
+              <div class="reason-card">
+                <div class="panel-label">Kenapa Mentikan unggul</div>
+                <ul class="story-list" id="decisionReasons"></ul>
+              </div>
+              <div class="reason-card">
+                <div class="panel-label">Posisi keputusan</div>
+                <ul class="story-list" id="decisionFraming"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-focus" data-label="Fokus" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Fokus Intervensi</span>
+            <h2>Masalah kota dibaca luas, intervensi rotasi dibuat terfokus</h2>
+            <p class="slide-lead">Beban penyakit kota dipakai sebagai konteks. Fokus rotasi 20 hari di Mentikan diarahkan pada titik yang paling mungkin diperbaiki cepat: perilaku keluarga balita dan alur layanan yang dapat disederhanakan.</p>
+          </div>
+          <div class="slide-grid slide-grid-2">
+            <div class="panel-card">
+              <div class="panel-label">Top 5 penyakit kolektif</div>
+              <div id="diseaseBars" class="disease-bars"></div>
+            </div>
+            <div class="panel-card">
+              <div class="panel-label">Fokus 20 hari di Mentikan</div>
+              <p class="bridge-copy" id="bridgeCopy"></p>
+              <div class="focus-pills" id="focusPills"></div>
+              <div class="mini-gloss">
+                <strong>Catatan istilah</strong>
+                <p>N/D Balita = jumlah balita naik berat badan (N) dibanding jumlah balita yang ditimbang (D). Bukan sama dengan D/S.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-diagram" data-label="Diagram" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Diagram Kerja</span>
+            <h2>Kerangka aksi dari diagnosis sampai perubahan perilaku</h2>
+            <p class="slide-lead">Temuan lapangan diterjemahkan menjadi aksi yang dapat diukur, mudah diawasi, dan relevan bagi layanan rutin puskesmas.</p>
+          </div>
+          <div class="slide-grid slide-grid-2 diagram-layout">
+            <div class="panel-card diagram-driver-card">
+              <div class="panel-label">Driver diagram Mentikan</div>
+              <div id="diagramAim" class="diagram-aim"></div>
+              <div id="driverGrid" class="driver-grid"></div>
+            </div>
+            <div class="panel-card">
+              <div class="panel-label">Alur perubahan yang diharapkan</div>
+              <div id="serviceFlow" class="service-flow"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-evidence" data-label="Visual" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Bukti dan Rujukan</span>
+            <h2>Konteks tempat, institusi, dan bukti rujukan resmi</h2>
+            <p class="slide-lead">Presentasi ini ditopang oleh sumber resmi Kota Mojokerto, Puskesmas Mentikan, dan acuan pendidikan profesi dokter. Visual dipakai untuk memperjelas konteks tempat dan institusi tanpa menggeser fokus dari keputusan program.</p>
+          </div>
+          <div class="evidence-layout">
+            <div class="evidence-photo-grid" id="evidencePhotos"></div>
+            <article class="panel-card evidence-source-card">
+              <div class="panel-label">Sumber visual dan rujukan</div>
+              <div id="evidenceSources" class="evidence-sources"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-gantt" data-label="Gantt" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Rencana 20 Hari</span>
+            <h2>Rencana kerja 20 hari yang rapi, terukur, dan mudah diaudit</h2>
+            <p class="slide-lead">Setiap workstream memiliki PIC, rentang waktu, dan milestone yang jelas. Ritme kerja utamanya sudah dapat dibaca utuh di satu layar ini.</p>
+          </div>
+          <div class="gantt-board">
+            <div class="gantt-week-row">
+              <div class="gantt-spacer"></div>
+              <div id="ganttWeekBands" class="gantt-week-grid"></div>
+            </div>
+            <div class="gantt-day-row">
+              <div class="gantt-sidehead">Workstream dan PIC</div>
+              <div id="ganttDayLabels" class="gantt-day-grid"></div>
+            </div>
+            <div id="ganttRows" class="gantt-rows"></div>
+            <div class="gantt-milestone-wrap">
+              <div class="gantt-sidehead gantt-sidehead-muted">Milestone utama</div>
+              <div id="ganttMilestones" class="gantt-milestones-grid"></div>
+            </div>
+          </div>
+          <div class="gantt-detail-card" id="ganttDetailCard" aria-live="polite">
+            <div class="gantt-detail-top">
+              <div class="gantt-detail-copy">
+                <span class="gantt-detail-kicker">Fokus fase</span>
+                <strong id="ganttDetailTitle">Arahkan kursor atau klik balok untuk melihat rincian lengkap</strong>
+              </div>
+              <span class="gantt-detail-chip" id="ganttDetailDays">Hari kerja</span>
+            </div>
+            <ul class="gantt-detail-subtasks" id="ganttDetailSubtasks" hidden></ul>
+            <div class="gantt-detail-meta">
+              <span id="ganttDetailOwner">PIC akan muncul di sini.</span>
+              <span id="ganttDetailTrack">Workstream akan muncul di sini.</span>
+            </div>
+          </div>
+          <div class="gantt-mobile" id="ganttMobile"></div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-output" data-label="Hasil" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Kontribusi dan Serah Terima</span>
+            <h2>Mahasiswa bekerja sebagai tim pelaksana kecil yang meninggalkan hasil</h2>
+            <p class="slide-lead">Kontribusi mahasiswa dirancang agar relevan untuk penilaian akademik FKK sekaligus memberi manfaat operasional yang nyata bagi puskesmas dan kader di lapangan.</p>
+          </div>
+          <div class="slide-grid slide-grid-2 compact-top output-layout">
+            <div class="panel-card">
+              <div class="panel-label">Struktur peran inti</div>
+              <div id="rolePanel" class="role-panel"></div>
+            </div>
+            <div class="output-stack">
+              <div class="panel-card">
+                <div class="panel-label">Produk yang wajib keluar</div>
+                <ul class="story-list" id="deliverableList"></ul>
+              </div>
+              <div class="panel-card">
+                <div class="panel-label">Batas aman pelaksanaan</div>
+                <ul class="story-list" id="guardrailList"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-readiness" data-label="Persetujuan" aria-hidden="true">
+        <div class="slide-surface">
+          <div class="slide-header">
+            <span class="slide-kicker">Persetujuan Rapat</span>
+            <h2>Persetujuan yang dibutuhkan agar eksekusi dapat dimulai</h2>
+            <p class="slide-lead">Dengan persetujuan ini, pembahasan dapat langsung bergeser dari perencanaan ke persiapan eksekusi lapangan.</p>
+          </div>
+          <div class="slide-grid slide-grid-3">
+            <div class="panel-card">
+              <div class="panel-label">Persetujuan dari FKK ITS</div>
+              <ul class="story-list" id="fkkAsk"></ul>
+            </div>
+            <div class="panel-card">
+              <div class="panel-label">Kesepakatan dengan Dinkes / Puskesmas</div>
+              <ul class="story-list" id="dinkesAsk"></ul>
+            </div>
+            <div class="panel-card">
+              <div class="panel-label">Jaminan pelaksanaan</div>
+              <ul class="story-list" id="assuranceList"></ul>
+            </div>
+          </div>
+          <div class="callout-band" id="todayAskBand"></div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-closing" data-label="Penutup" aria-hidden="true">
+        <div class="slide-surface slide-closing">
+          <div class="closing-copy">
+            <span class="slide-kicker slide-kicker-light">Penutup</span>
+            <h2>FKK ITS siap memulai tahap awal blok kedokteran komunitas bersama Dinkes Kota Mojokerto.</h2>
+            <p class="slide-lead slide-lead-light">Program ini dirancang untuk memulai langkah yang kecil tetapi pasti: lokasi jelas, masalah terfokus, rencana kerja terukur, dan hasil akhir siap dipakai di lapangan.</p>
+            <div class="closing-values" id="closingValues"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <button type="button" class="focus-exit-btn" id="focusExitBtn" hidden>Keluar Presentasi</button>
+
+  <footer class="deck-controls">
+    <div class="deck-controls-left">
+      <button type="button" class="nav-btn" id="prevBtn" aria-label="Slide sebelumnya">Kembali</button>
+      <button type="button" class="nav-btn nav-btn-primary" id="nextBtn" aria-label="Slide berikutnya">Lanjut</button>
+    </div>
+    <div class="deck-counter" id="deckCounter">1 / 12</div>
+    <div class="deck-hint">Gunakan panah kiri/kanan, spasi, gulir, atau geser untuk berpindah slide</div>
+  </footer>
+
+  <aside class="appendix-drawer" id="appendixDrawer" hidden>
+    <div class="appendix-backdrop" id="appendixBackdrop"></div>
+    <div class="appendix-panel" role="dialog" aria-modal="true" aria-labelledby="appendixTitle">
+      <div class="appendix-head">
+        <div>
+          <span class="slide-kicker">Lampiran</span>
+          <h3 id="appendixTitle">Glosarium, RPS OBE, sumber, dan catatan fakta</h3>
+        </div>
+        <button type="button" class="deck-action" id="appendixClose">Tutup</button>
+      </div>
+      <div class="appendix-content">
+        <section class="appendix-block">
+          <div class="panel-label">Definisi istilah</div>
+          <div id="glossaryList" class="glossary-list"></div>
+        </section>
+        <section class="appendix-block">
+          <div class="panel-label">Sumber utama</div>
+          <div id="sourceList" class="source-list"></div>
+        </section>
+        <section class="appendix-block">
+          <div class="panel-label">Catatan pembacaan</div>
+          <ul class="story-list" id="factNotes"></ul>
+        </section>
+        <section class="appendix-block">
+          <div class="panel-label">RPS OBE CM Koas</div>
+          <div class="rps-obe-panel">
+            <p class="rps-obe-intro" id="rpsObeIntro"></p>
+            <div class="rps-identity-chips" id="rpsIdentity"></div>
+            <div class="rps-grid">
+              <article class="rps-card">
+                <div class="panel-label">CPL terpilih</div>
+                <div class="rps-cpl-grid" id="rpsCplList"></div>
+              </article>
+              <article class="rps-card">
+                <div class="panel-label">CPMK esensial</div>
+                <div class="rps-cpmk-list" id="rpsCpmkList"></div>
+              </article>
+            </div>
+            <article class="rps-card">
+              <div class="panel-label">RAE - Rencana Asesmen dan Evaluasi</div>
+              <div class="rps-rae-list" id="rpsRaeList"></div>
+            </article>
+            <article class="rps-card">
+              <div class="panel-label">Kongruensi aktivitas CM</div>
+              <div class="rps-alignment-list" id="rpsAlignmentList"></div>
+            </article>
+            <p class="rps-obe-note" id="rpsObeNote"></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="media-lightbox" id="mediaLightbox" hidden>
+    <div class="media-lightbox-backdrop" id="mediaLightboxBackdrop"></div>
+    <div class="media-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="mediaLightboxTitle">
+      <button type="button" class="media-lightbox-close" id="mediaLightboxClose" aria-label="Tutup tampilan visual penuh">Tutup</button>
+      <figure class="media-lightbox-figure">
+        <img id="mediaLightboxImage" src="" alt="">
+        <figcaption class="media-lightbox-caption">
+          <strong id="mediaLightboxTitle"></strong>
+          <span id="mediaLightboxCaption"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </aside>
+
+  <script src="js/data.js?v=20260410j"></script>
+  <script src="js/slides.js?v=20260410j"></script>
+</body>
+</html>

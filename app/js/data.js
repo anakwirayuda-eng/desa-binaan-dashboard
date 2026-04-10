@@ -10,7 +10,7 @@ const DASHBOARD_DATA = {
     nasional: {
         jumlah_puskesmas_nasional: 10431,
         jumlah_puskesmas_jatim: 968,
-        jumlah_puskesmas_mojokerto_kota: 5,
+        jumlah_puskesmas_mojokerto_kota: 6,
         penduduk_kota_mojokerto: 139853,
         luas_kota_mojokerto_km2: 16.47,
         provinsi: "Jawa Timur",
@@ -164,7 +164,7 @@ const DASHBOARD_DATA = {
                 { nama: "Konjungtivitis", jumlah: 320 }
             ],
             sdm_detail: { dokter_umum: 4, dokter_gigi: 2, perawat: 22, bidan: 18, farmasi: 4, kesling: 3, gizi: 3, analis: 3, lainnya: 28 },
-            indicators: { spm: 97, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 38200, nd_balita: 62.1, sanitasi_dasar: 88 },
+            indicators: { spm: 97, pantau_balita: 100.51, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 38200, nd_balita: 62.1, sanitasi_dasar: 88 },
             swot: {
                 s: ["PONED 24 jam operasional penuh", "SDM paling besar: 87 orang", "Fasilitas sudah mapan"],
                 w: ["N/D balita belum optimal (62.1%)", "Layanan persalinan sempat terganggu pasca-kebakaran 2023"],
@@ -218,7 +218,7 @@ const DASHBOARD_DATA = {
                 { nama: "Faringitis Akut", jumlah: 410 }
             ],
             sdm_detail: { dokter_umum: 3, dokter_gigi: 1, perawat: 16, bidan: 12, farmasi: 3, kesling: 2, gizi: 2, analis: 2, lainnya: 20 },
-            indicators: { spm: 96, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 55150, nd_balita: 58.3, sanitasi_dasar: 82 },
+            indicators: { spm: 96, pantau_balita: 100.0, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 55150, nd_balita: 58.3, sanitasi_dasar: 82 },
             swot: {
                 s: ["Contact rate 2× populasi — kepercayaan sangat tinggi", "SPM tetap 96% meski understaffed", "3 PUSTU memperluas jangkauan"],
                 w: ["Kekurangan 11 tenaga (dokter, IT, rekam medis, sopir ambulans)", "Diskrepansi data SIHA (HIV): data PKM ≠ Dinas", "Poskestren partisipasi rendah"],
@@ -270,7 +270,7 @@ const DASHBOARD_DATA = {
                 { nama: "ISK", jumlah: 290 }
             ],
             sdm_detail: { dokter_umum: 3, dokter_gigi: 1, perawat: 14, bidan: 11, farmasi: 3, kesling: 2, gizi: 2, analis: 2, lainnya: 19 },
-            indicators: { spm: 99, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 28400, nd_balita: 65.8, sanitasi_dasar: 94 },
+            indicators: { spm: 99, pantau_balita: 100.8, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 28400, nd_balita: 65.8, sanitasi_dasar: 94 },
             swot: {
                 s: ["Akreditasi Paripurna — benchmark nasional", "Densitas manajemen tinggi (1 kelurahan)", "Program kesehatan kerja unik di Mojokerto"],
                 w: ["Coverage terbatas (1 kelurahan saja)", "SDM relatif kecil (57 orang)"],
@@ -328,7 +328,7 @@ const DASHBOARD_DATA = {
                 { nama: "Konjungtivitis", jumlah: 300 }
             ],
             sdm_detail: { dokter_umum: 4, dokter_gigi: 2, perawat: 18, bidan: 14, farmasi: 3, kesling: 3, gizi: 2, analis: 2, lainnya: 19 },
-            indicators: { spm: 98, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 32100, nd_balita: 53.7, sanitasi_dasar: 86 },
+            indicators: { spm: 98, pantau_balita: 90.69, imunisasi_idl: 100, obat_esensial: 100, kunjungan_rj: 32100, nd_balita: 53.7, sanitasi_dasar: 86 },
             swot: {
                 s: ["8 inovasi akar rumput yang sangat kreatif", "6 kelurahan — jangkauan terluas", "Kader posyandu sangat aktif", "Chatbot & antar obat keliling = digital pioneer"],
                 w: ["N/D balita terendah (53.7%)", "Koordinasi investigasi kontak TBC dgn RS lemah", "Kepatuhan cuci tangan petugas menurun"],
@@ -339,39 +339,63 @@ const DASHBOARD_DATA = {
         {
             id: "kranggan",
             nama: "Puskesmas Kranggan",
-            kategori: "Non-Rawat Inap (Baru)",
-            alamat: "Kel. Kranggan, Kec. Prajuritkulon",
-            kecamatan: "Kec. Prajuritkulon",
+            kategori: "Perkotaan Non Rawat Inap",
+            alamat: "Jl. Raya Meri, Kel. Meri, Kec. Kranggan",
+            kecamatan: "Kec. Kranggan",
             telepon: null,
-            website: null,
+            website: "https://puskesmaskranggan.mojokertokota.go.id/",
             kelurahan: ["Meri", "Kranggan"],
             jumlah_kelurahan: 2,
-            jumlah_penduduk: null,
-            total_sdm: null,
-            luas_wilayah_km2: null,
-            akreditasi: "Proses Registrasi",
+            jumlah_penduduk: 22826,
+            total_sdm: 65,
+            luas_wilayah_km2: 3.2056,
+            akreditasi: "Terakreditasi",
             tahun_profil: 2024,
             warna: "#8b5cf6",
             gradient: "linear-gradient(135deg, #3b0764, #8b5cf6)",
             icon: "🆕",
-            motto: null,
+            motto: "Keselamatan dan Kepuasan Anda adalah Keselamatan Kami",
             layanan: [],
             pustu: [],
+            jejaring: {
+                pustu: 3,
+                poskesdes: 2,
+                posyandu_balita: 22,
+                posyandu_lansia: 10,
+                bps: 4,
+                dpm: 2
+            },
             highlights: [
-                "Ditetapkan SK Walikota No. 188.45/1141/2017",
-                "Izin Operasional: SK No. 188.45/1140/2017",
-                "Dibuka fisik: 16 April 2021",
-                "Data profil lengkap belum tersedia (draf 14 halaman)"
+                "Wilayah kerja 2 kelurahan: Kranggan dan Meri",
+                "Didukung 3 pustu, 2 poskesdes, 22 posyandu balita, dan 10 posyandu lansia",
+                "Kunjungan rawat jalan 2024: 40.874",
+                "SDM 2024 terhitung 65 orang"
             ],
-            inovasi: [],
+            inovasi: [
+                {
+                    nama: "Si Momo Nekat",
+                    desc: "Inovasi edukasi emotional demonstration dengan boneka tangan untuk meningkatkan capaian D/S posyandu balita pada lokus stunting."
+                }
+            ],
             top_penyakit: [],
-            sdm_detail: null,
-            indicators: { spm: null, imunisasi_idl: null, obat_esensial: null, kunjungan_rj: null, nd_balita: null, sanitasi_dasar: null },
+            sdm_detail: {
+                dokter_umum: 3,
+                dokter_gigi: 2,
+                perawat: 10,
+                bidan: 11,
+                kesmas: 2,
+                kesling: 1,
+                gizi: 1,
+                analis: 1,
+                farmasi: 4,
+                lainnya: 30
+            },
+            indicators: { spm: null, pantau_balita: 99.36, imunisasi_idl: null, obat_esensial: null, kunjungan_rj: 40874, nd_balita: null, sanitasi_dasar: null },
             swot: {
-                s: ["Kesempatan membangun dari nol dengan standar terbaru", "SK Walikota dan izin operasional sudah terbit"],
-                w: ["Belum memiliki data profil lengkap", "SDM belum terdata resmi"],
-                o: ["Clean slate — langsung terapkan ILP penuh", "Pilot project data-driven PKM dari awal"],
-                t: ["Kurang pengalaman operasional", "Risiko under-resourced di tahun-tahun awal"]
+                s: ["Wilayah kerja fokus hanya 2 kelurahan", "Sudah terakreditasi dan memiliki jejaring 3 pustu"],
+                w: ["Sebagian indikator program detail belum mudah diakses publik", "Data historis komparatif belum selengkap 4 puskesmas lain"],
+                o: ["Lokus stunting dan posyandu memberi ruang intervensi CM yang jelas", "Skala wilayah relatif ringkas untuk pilot cepat dan terukur"],
+                t: ["Ketimpangan data publik dapat memperlambat monitoring", "Beban layanan rutin tetap bisa mengurangi ruang inovasi bila koordinasi lemah"]
             }
         }
     ],
@@ -379,14 +403,47 @@ const DASHBOARD_DATA = {
     // ─── ANALISIS KOMPARATIF ───
     perbandingan: {
         labels: ["Blooto", "Mentikan", "Wates", "Gedongan", "Kranggan"],
-        penduduk: [25281, 26888, 20379, 22127, null],
-        sdm: [87, 61, 57, 67, null],
+        penduduk: [25281, 26888, 20379, 22127, 22826],
+        sdm: [87, 61, 57, 67, 65],
         kelurahan: [3, 4, 1, 6, 2],
-        kunjungan: [38200, 55150, 28400, 32100, null],
+        kunjungan: [38200, 55150, 28400, 32100, 40874],
+        pantau_balita: [100.51, 100.0, 100.8, 90.69, 99.36],
         spm: [97, 96, 99, 98, null],
         nd_balita: [62.1, 58.3, 65.8, 53.7, null],
-        rasio_sdm_per_1000: [3.44, 2.27, 2.80, 3.03, null],
-        rasio_kunjungan_per_penduduk: [1.51, 2.05, 1.39, 1.45, null]
+        rasio_sdm_per_1000: [3.44, 2.27, 2.80, 3.03, 2.85],
+        rasio_kunjungan_per_penduduk: [1.51, 2.05, 1.39, 1.45, 1.79]
+    },
+
+    indikatorGlosarium: {
+        title: "Legenda & Definisi Indikator",
+        note: "Pada chart komparatif ini, indikator hijau memakai data resmi Profil Kesehatan Kota Mojokerto 2024 tentang balita yang dipantau pertumbuhan dan perkembangannya. Nilai Kranggan untuk N/D balita sengaja dibiarkan kosong karena angka 2024 yang benar-benar sebanding belum ditemukan di sumber publik resmi. Nilai pemantauan balita dapat sedikit melebihi 100% pada laporan resmi karena dinamika denominator administrasi sasaran.",
+        items: [
+            {
+                code: "Pantau Balita",
+                label: "Balita dipantau pertumbuhan & perkembangan",
+                desc: "Persentase sasaran balita yang dipantau pertumbuhan dan perkembangannya pada periode pelaporan."
+            },
+            {
+                code: "N/D Balita",
+                label: "Balita naik berat badan di antara yang ditimbang",
+                desc: "N = jumlah balita yang naik berat badan; D = jumlah balita yang ditimbang pada periode pemantauan posyandu."
+            },
+            {
+                code: "SPM",
+                label: "Standar Pelayanan Minimal",
+                desc: "Indikator pelayanan dasar yang wajib dipenuhi sesuai domain layanan yang diukur; tidak selalu identik dengan indikator balita pada chart ini."
+            },
+            {
+                code: "Kunjungan RJ",
+                label: "Kunjungan rawat jalan",
+                desc: "Jumlah kunjungan rawat jalan puskesmas selama tahun pelaporan."
+            },
+            {
+                code: "Rasio Kunjungan",
+                label: "Kunjungan per penduduk",
+                desc: "Jumlah kunjungan rawat jalan dibagi jumlah penduduk wilayah kerja puskesmas."
+            }
+        ]
     },
 
     radar: {
@@ -1020,11 +1077,11 @@ const DASHBOARD_DATA = {
                 { title: "PIC Alur Layanan / Digital", desc: "Merapikan form, reminder, triase ringan, dan alur pencatatan yang feasible di puskesmas." }
             ],
             deliverables: [
-                "Baseline brief per masalah prioritas.",
-                "Paket intervensi mini berbasis COM-B dan MINDSPACE.",
+                "Ringkasan baseline per masalah prioritas.",
+                "Paket intervensi mini dan alur kerja singkat.",
                 "Media edukasi siap pakai untuk petugas atau kader.",
                 "Dashboard mini atau form monitoring sederhana.",
-                "Laporan akhir, slide diseminasi, dan toolkit handover."
+                "Laporan akhir, slide diseminasi, dan paket serah terima."
             ],
             guardrails: [
                 "Tidak membangun aplikasi baru jika puskesmas belum siap memelihara.",
@@ -1046,6 +1103,136 @@ const DASHBOARD_DATA = {
                     desc: "Rotasi ditutup dengan toolkit, policy brief mini, dan pihak lokal yang siap melanjutkan."
                 }
             ]
+        },
+
+        rpsObe: {
+            title: "RPS OBE Ringkas Blok CM Koas",
+            subtitle: "Panel ini menunjukkan bahwa aktivitas CM di Mentikan terhubung langsung dengan CPL FKK ITS, CPMK blok, dan Rencana Asesmen dan Evaluasi (RAE), sehingga jalur akademik dan jalur operasional tetap koheren.",
+            identity: [
+                "Wilayah kerja Puskesmas Mentikan",
+                "4 minggu efektif / 20 hari kerja",
+                "Diagnosis komunitas -> desain bersama -> pilot -> handover",
+                "Supervisi dosen pembimbing dan preseptor puskesmas"
+            ],
+            cplSelected: [
+                {
+                    code: "CPL 1",
+                    area: "Profesionalitas yang luhur",
+                    outcome: "Menunjukkan etika, integritas, kepedulian sosial, dan tanggung jawab profesional selama kerja lapangan."
+                },
+                {
+                    code: "CPL 4",
+                    area: "Komunikasi efektif",
+                    outcome: "Berkomunikasi efektif dengan staf puskesmas, kader, keluarga, dan pemangku kepentingan lokal."
+                },
+                {
+                    code: "CPL 6",
+                    area: "Pengelolaan masalah kesehatan",
+                    outcome: "Mendiagnosis masalah kesehatan komunitas dan menyusun prioritas intervensi promotif-preventif."
+                },
+                {
+                    code: "CPL 7",
+                    area: "Pengelolaan masalah kesehatan / sistem",
+                    outcome: "Bekerja kolaboratif dalam sistem layanan primer dan pemberdayaan masyarakat."
+                },
+                {
+                    code: "CPL 11",
+                    area: "Landasan ilmiah ilmu kedokteran",
+                    outcome: "Menggunakan data lapangan dan penalaran ilmiah untuk menjelaskan masalah serta memilih intervensi."
+                },
+                {
+                    code: "CPL 12",
+                    area: "Pengelolaan informasi / digital health",
+                    outcome: "Mengelola data, logbook, monitoring sederhana, dan produk digital ringan secara aman dan relevan."
+                }
+            ],
+            cpmk: [
+                {
+                    code: "CPMK 1",
+                    text: "Memvalidasi satu masalah prioritas komunitas dan satu bottleneck layanan berdasarkan data dan observasi lapangan."
+                },
+                {
+                    code: "CPMK 2",
+                    text: "Merancang intervensi mikro promotif-preventif berbasis perilaku dan konteks lokal yang feasible dalam satu rotasi."
+                },
+                {
+                    code: "CPMK 3",
+                    text: "Berkomunikasi, bernegosiasi, dan bekerja kolaboratif dengan staf puskesmas, kader, keluarga, dan pembimbing."
+                },
+                {
+                    code: "CPMK 4",
+                    text: "Menjalankan pilot, monitoring, evaluasi proses, dan perbaikan cepat secara etis serta aman."
+                },
+                {
+                    code: "CPMK 5",
+                    text: "Menghasilkan output akhir berupa toolkit, logbook, dashboard ringkas, dan handover yang dapat dipakai lokal."
+                }
+            ],
+            rae: [
+                {
+                    component: "Profesionalisme, disiplin, dan etik lapangan",
+                    weight: "10%",
+                    evidence: "Checklist pembimbing, catatan supervisi, dan kepatuhan pada kerahasiaan data.",
+                    cpmk: "CPMK 3-4"
+                },
+                {
+                    component: "Diagnosis komunitas dan baseline brief",
+                    weight: "20%",
+                    evidence: "Baseline brief, problem tree, peta sasaran, dan justifikasi prioritas.",
+                    cpmk: "CPMK 1"
+                },
+                {
+                    component: "Paket intervensi dan rancangan implementasi",
+                    weight: "20%",
+                    evidence: "Brief COM-B, pilihan lever MINDSPACE, SOP mini, media edukasi, dan alur kerja.",
+                    cpmk: "CPMK 2-3"
+                },
+                {
+                    component: "Pilot, monitoring, dan logbook",
+                    weight: "20%",
+                    evidence: "Log harian, checklist fidelity, analisis hambatan, dan keputusan lanjut / sesuaikan / hentikan.",
+                    cpmk: "CPMK 4"
+                },
+                {
+                    component: "Presentasi akhir, dashboard ringkas, dan handover",
+                    weight: "20%",
+                    evidence: "Slide diseminasi, dashboard mini, toolkit handover, dan daftar tindak lanjut.",
+                    cpmk: "CPMK 5"
+                },
+                {
+                    component: "Refleksi individu dan pembelajaran tim",
+                    weight: "10%",
+                    evidence: "Refleksi singkat berbasis eviden lapangan dan umpan balik pembimbing.",
+                    cpmk: "CPMK 3-5"
+                }
+            ],
+            alignment: [
+                {
+                    phase: "Minggu 1 - diagnosis komunitas",
+                    activity: "Audiensi awal, audit data, observasi wilayah, observasi PUSTU / posyandu, FGD mini, dan problem tree.",
+                    cpmk: "CPMK 1 dan CPMK 3",
+                    rae: "Diagnosis komunitas 20% + profesionalisme 10%"
+                },
+                {
+                    phase: "Minggu 2 - desain bersama",
+                    activity: "Diagnosis COM-B, pemilihan tuas MINDSPACE, penyusunan SOP mini, media edukasi, dan uji cepat.",
+                    cpmk: "CPMK 2 dan CPMK 3",
+                    rae: "Paket intervensi 20%"
+                },
+                {
+                    phase: "Minggu 3 - pilot dan perbaikan cepat",
+                    activity: "Pelaksanaan pilot terbatas, monitoring reach dan fidelity, review hambatan, dan revisi cepat.",
+                    cpmk: "CPMK 4",
+                    rae: "Pilot, monitoring, dan logbook 20%"
+                },
+                {
+                    phase: "Minggu 4 - evaluasi dan handover",
+                    activity: "Rapid review RE-AIM, dashboard ringkas, pelatihan PIC lokal, diseminasi, dan serah terima toolkit.",
+                    cpmk: "CPMK 5",
+                    rae: "Presentasi akhir dan handover 20% + refleksi 10%"
+                }
+            ],
+            note: "RAE pada panel ini dimaknai sebagai Rencana Asesmen dan Evaluasi blok CM koas, agar dosen, reviewer, dan mitra lapangan dapat melihat hubungan langsung antara capaian belajar, aktivitas, dan evidence yang dikumpulkan."
         },
 
         visualToolkit: {
@@ -1139,6 +1326,14 @@ const DASHBOARD_DATA = {
                     note: "Visual kota yang relevan untuk konteks kemitraan dengan pemda dan Dinkes.",
                     url: "https://web.mojokertokota.go.id/",
                     image: "assets/mojokerto-city-banner.jpg",
+                    credit: "web.mojokertokota.go.id"
+                },
+                {
+                    title: "Kepadatan kawasan perkotaan Mojokerto",
+                    source: "Portal Pemerintah Kota Mojokerto",
+                    note: "Memberi konteks kawasan padat yang membuat edukasi keluarga, posyandu, dan pustu perlu dibaca secara dekat.",
+                    url: "https://web.mojokertokota.go.id/",
+                    image: "assets/mojokerto_hero.png",
                     credit: "web.mojokertokota.go.id"
                 },
                 {
@@ -1507,7 +1702,7 @@ const DASHBOARD_DATA = {
             summary: "Mentikan tetap menjadi target utama, tetapi keputusan itu kini diterjemahkan menjadi paket kerja yang operasional, mudah diaudit, dan mudah dipitch: timeline 20 hari, breakdown harian, toolkit handover, serta matrix scoring yang transparan.",
             rationale: [
                 "Beban kunjungan tinggi memberi banyak titik layanan untuk observasi sistem dan edukasi.",
-                "Kekurangan tenaga strategis membuat intervensi frugal dan perbaikan alur kerja menjadi sangat relevan.",
+                "Kekurangan tenaga strategis membuat intervensi sederhana dan perbaikan alur kerja menjadi sangat relevan.",
                 "Tiga PUSTU aktif memberi ruang pembelajaran komunitas yang nyata dan terdistribusi.",
                 "Masalah perilaku keluarga dan capaian N/D balita cocok untuk pendekatan COM-B dan MINDSPACE."
             ],
@@ -1524,13 +1719,13 @@ const DASHBOARD_DATA = {
         meetingReadiness: {
             summary: "Untuk rapat pimpinan FKK dan showcase ke Kadinkes, dashboard ini sudah cukup kuat sebagai alat presentasi. Namun persetujuan lapangan biasanya tidak ditentukan oleh tampilan dashboard saja, melainkan oleh kejelasan keputusan yang diminta, prasyarat operasional, dan bukti bahwa tim koas siap disupervisi dan diserahterimakan dengan aman.",
             fkkDecisions: [
-                "Setujui Mentikan sebagai wahana implementasi awal blok CM koas.",
-                "Tetapkan dosen pembimbing / koordinator akademik yang menjadi decision owner tiap minggu.",
+                "Setujui Mentikan sebagai wahana implementasi awal blok kedokteran komunitas (CM) koas.",
+                "Tetapkan dosen pembimbing / koordinator akademik yang menjadi penanggung jawab keputusan tiap minggu.",
                 "Pastikan format logbook, penilaian, dan output akhir CM koas diakui sebagai evidence resmi pembelajaran.",
                 "Setujui bahwa model intervensi bersifat frugal: toolkit, alur, dan dashboard mini, bukan pembangunan sistem besar."
             ],
             dinkesDecisions: [
-                "Konfirmasi dukungan Dinkes untuk penempatan awal di Mentikan dan akses koordinasi dengan Kapus / PJ program.",
+                "Konfirmasi dukungan Dinkes untuk penempatan awal di Mentikan dan akses koordinasi dengan kepala puskesmas / PJ program.",
                 "Sepakati bahwa data yang dipakai bersifat operasional-terbatas dan tidak melampaui kebutuhan program serta pendidikan.",
                 "Tetapkan kanal komunikasi jika perlu penyesuaian lokasi, jadwal, atau isu etik selama rotasi.",
                 "Pastikan hasil akhir boleh diserahterimakan ke Puskesmas sebagai toolkit kerja lokal."
@@ -1561,7 +1756,7 @@ const DASHBOARD_DATA = {
             ],
             assurances: [
                 "Tegaskan bahwa koas bekerja dengan data operasional minimum, anonim, dan tunduk pada etika rekam medis, privasi pasien, serta prinsip SatuSehat yang relevan.",
-                "Nyatakan sejak awal bahwa program ini bersifat zero-cost bagi puskesmas: transport, cetak media, dan kebutuhan mahasiswa tidak membebani BOK atau anggaran layanan rutin.",
+                "Nyatakan sejak awal bahwa program ini tidak membebani anggaran puskesmas: transport, cetak media, dan kebutuhan mahasiswa tidak memakai BOK atau anggaran layanan rutin.",
                 "Tekankan model zero-disruption: koas tidak datang untuk membuat proyek besar, tetapi membantu alur edukasi, monitoring, dan handover dengan gangguan seminimal mungkin.",
                 "Pastikan ada kalimat eksplisit bahwa semua output akan ditinggalkan dalam bentuk yang bisa dipakai lokal: SOP mini, media edukasi, logbook, checklist, dan dashboard handover."
             ],
@@ -1572,8 +1767,8 @@ const DASHBOARD_DATA = {
                 "Bawa contoh fisik kecil ke meja rapat: mockup leaflet, logbook, checklist, atau SOP mini, agar janji frugal innovation terasa konkret dan tidak berhenti di layar."
             ],
             todayAsk: [
-                "Setujui Mentikan sebagai pilot awal blok CM koas dengan fokus masalah yang sudah dipersempit.",
-                "Tetapkan PIC akademik FKK, liaison Dinkes, dan preseptor / PJ program yang menjadi jalur keputusan mingguan.",
+                "Setujui Mentikan sebagai lokasi tahap awal blok kedokteran komunitas (CM) koas dengan fokus masalah yang sudah dipersempit.",
+                "Tetapkan PIC akademik FKK, penghubung Dinkes, dan preseptor / PJ program yang menjadi jalur keputusan mingguan.",
                 "Sepakati batas data, mekanisme supervisi, serta bentuk handover yang diterima puskesmas di akhir rotasi.",
                 "Izinkan tim menyiapkan deliverable fisik sebelum turun lapangan agar rapat berikutnya membahas eksekusi, bukan konsep ulang."
             ]
