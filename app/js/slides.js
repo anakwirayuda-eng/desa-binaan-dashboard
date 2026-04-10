@@ -2,10 +2,25 @@
   const D = window.DASHBOARD_DATA || (typeof DASHBOARD_DATA !== "undefined" ? DASHBOARD_DATA : null);
   if (!D) return;
 
+  const AUDIENCE_STORAGE_KEY = "desa-binaan-slide-audience";
+  const audienceParam = new URLSearchParams(window.location.search).get("audience");
+  const storedAudience = (() => {
+    try {
+      return window.localStorage.getItem(AUDIENCE_STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  })();
+
   const state = {
     index: 0,
     wheelLock: false,
     touchStartX: 0,
+    audience: audienceParam === "fkk" || audienceParam === "dinkes"
+      ? audienceParam
+      : storedAudience === "fkk"
+        ? "fkk"
+        : "dinkes",
   };
 
   const slides = Array.from(document.querySelectorAll(".slide"));
@@ -20,6 +35,7 @@
   const appendixBackdrop = document.getElementById("appendixBackdrop");
   const fullscreenBtn = document.getElementById("fullscreenBtn");
   const focusExitBtn = document.getElementById("focusExitBtn");
+  const audienceButtons = Array.from(document.querySelectorAll("[data-audience-mode]"));
   const mediaLightbox = document.getElementById("mediaLightbox");
   const mediaLightboxBackdrop = document.getElementById("mediaLightboxBackdrop");
   const mediaLightboxClose = document.getElementById("mediaLightboxClose");
@@ -44,6 +60,233 @@
     amber: "var(--amber)",
     red: "var(--red)",
     green: "var(--green)",
+  };
+
+  const AUDIENCE_COPY = {
+    dinkes: {
+      buttonLabel: "Mode Dinkes",
+      coverBadge: {
+        value: "zero-disruption",
+        label: "ringan untuk puskesmas dan tidak menambah proyek baru",
+      },
+      summary: {
+        title: "Tiga hal yang perlu diyakini sebelum penempatan dimulai",
+        lead: "Fokus mode ini adalah memastikan koas masuk sebagai bantuan operasional yang ringan, aman, dan meninggalkan hasil yang bisa dipakai puskesmas.",
+        cards: [
+          {
+            accent: "var(--green)",
+            title: "Nilai untuk Dinkes dan Puskesmas",
+            body: "Koas membantu baseline, edukasi, monitoring ringan, dan perapian alur sederhana tanpa meminta puskesmas memulai proyek baru.",
+          },
+          {
+            accent: "var(--blue)",
+            title: "Jaminan pelaksanaan",
+            body: "Data minimum, zero-disruption, zero-cost bagi puskesmas, dan seluruh output ditutup dengan handover yang bisa dipakai lokal.",
+          },
+          {
+            accent: "var(--red)",
+            title: "Keputusan yang dibutuhkan",
+            body: "Rapat ini perlu mengunci Mentikan sebagai lokasi awal, PIC operasional, jalur koordinasi, dan bentuk paket akhir yang diterima mitra.",
+          },
+        ],
+      },
+      output: {
+        kicker: "Kontribusi untuk Layanan",
+        title: "Tim koas datang membawa bantuan operasional kecil yang selesai dan ditinggalkan",
+        lead: "Yang dijanjikan bukan proyek besar baru, melainkan paket kerja ringkas yang memperingan edukasi, monitoring, dan tindak lanjut keluarga balita di lapangan.",
+        band: {
+          kicker: "Mode Dinkes",
+          title: "Rotasi dianggap berhasil bila puskesmas menerima alat kerja yang langsung bisa dipakai pada akhir minggu ke-4.",
+          body: "Fokusnya adalah pekerjaan ringan, adaptif, dan tidak membebani ritme layanan yang sudah berjalan.",
+          chips: ["baseline brief", "toolkit mini", "handover lokal"],
+        },
+        roleLabel: "Tim kecil pelaksana",
+        roles: [
+          {
+            accent: "var(--blue)",
+            title: "Koordinator Lapangan",
+            desc: "Menjaga ritme, komunikasi lintas pihak, dan batas scope kerja.",
+          },
+          {
+            accent: "#0c99b8",
+            title: "Data, Baseline, dan Monitoring",
+            desc: "Menarik baseline minimum, menjaga logbook, dan menutup rotasi dengan brief singkat.",
+          },
+          {
+            accent: "var(--purple)",
+            title: "Edukasi, Alur, dan Toolkit",
+            desc: "Menyiapkan script edukasi, form ringkas, dan alat kerja yang realistis bagi petugas.",
+          },
+        ],
+        deliverableLabel: "Yang diterima puskesmas",
+        deliverables: [
+          "Baseline brief masalah prioritas yang bisa dipakai untuk briefing internal.",
+          "SOP mini, form ringkas, dan media edukasi yang siap dijalankan.",
+          "Paket handover beserta log monitoring sederhana untuk tindak lanjut.",
+        ],
+        guardrailLabel: "Jaminan untuk mitra layanan",
+        guardrails: [
+          "Tidak membangun sistem baru yang perlu biaya pemeliharaan.",
+          "Semua materi dan alur disetujui PIC puskesmas sebelum dipakai luas.",
+        ],
+      },
+      readiness: {
+        kicker: "Kesepakatan Operasional",
+        title: "Kesepakatan yang dibutuhkan agar penempatan dapat dimulai dengan aman",
+        lead: "Setelah poin ini disetujui, pembahasan dapat langsung bergeser dari konsep ke penjadwalan, penunjukan PIC, dan penyiapan toolkit lapangan.",
+        primaryLabel: "Yang perlu Dinkes / puskesmas sepakati",
+        primaryItems: [
+          "Konfirmasi Mentikan sebagai lokasi tahap awal dan tunjuk PIC operasional di puskesmas.",
+          "Sepakati batas data dan jalur koordinasi bila ada penyesuaian lapangan.",
+          "Izinkan paket akhir diserahterimakan sebagai alat kerja lokal.",
+        ],
+        secondaryLabel: "Yang perlu FKK tetapkan",
+        secondaryItems: [
+          "Tetapkan pembimbing akademik dan decision gate mingguan.",
+          "Sahkan logbook, monitoring, dan output akhir sebagai evidence pembelajaran.",
+          "Pastikan mahasiswa turun dengan scope yang sudah dipersempit.",
+        ],
+        tertiaryLabel: "Jaminan untuk mitra layanan",
+        tertiaryItems: [
+          "Zero-cost bagi puskesmas; kebutuhan mahasiswa tidak memakai anggaran layanan.",
+          "Zero-disruption; koas membantu alur yang ada, bukan menambah proyek baru.",
+          "Data minimum dan semua materi diverifikasi PIC sebelum dipakai luas.",
+        ],
+        band: {
+          kicker: "Keputusan hari ini",
+          title: "Setujui Mentikan, kunci PIC lintas pihak, dan izinkan tim menyiapkan paket handover sebelum turun lapangan.",
+          body: "Jika ini selesai di meja rapat, pertemuan berikutnya sudah cukup membahas kalender eksekusi dan artefak yang dibawa tim.",
+          chips: ["PIC jelas", "batas data jelas", "handover disetujui"],
+        },
+        supportLabel: "Yang perlu sudah ada di meja rapat",
+        supportItems: [
+          "Mockup SOP mini atau media edukasi yang akan ditinggalkan.",
+          "Skema supervisi mingguan dan contoh format dashboard handover.",
+        ],
+      },
+      closing: {
+        title: "FKK ITS siap masuk ke Mentikan sebagai mitra kerja kecil yang tertib, ringan, dan meninggalkan hasil.",
+        lead: "Jika disetujui, tahap berikutnya bukan merumuskan ulang konsep, melainkan menyiapkan PIC, kalender kerja, dan paket lapangan yang langsung dipakai di Mentikan.",
+        values: [
+          { value: "Ringan", label: "tidak menambah proyek baru bagi puskesmas" },
+          { value: "Terukur", label: "20 hari, milestone jelas, dan handover nyata" },
+          { value: "Aman", label: "data minimum, patient safety, dan zero-disruption" },
+          { value: "Tinggal pakai", label: "SOP mini, media, logbook, dan dashboard ringkas" },
+        ],
+      },
+    },
+    fkk: {
+      buttonLabel: "Mode Dekanat FKK",
+      coverBadge: {
+        value: "CPL dan RAE jelas",
+        label: "evidence pembelajaran terhubung dari lapangan sampai handover",
+      },
+      summary: {
+        title: "Tiga hal yang perlu disahkan sebelum rotasi dijalankan",
+        lead: "Fokus mode ini adalah memastikan blok CM koas memiliki wahana belajar yang valid, aman disupervisi, dan menghasilkan evidence akademik yang jelas.",
+        cards: [
+          {
+            accent: "var(--blue)",
+            title: "Nilai akademik untuk Dekanat",
+            body: "Rotasi memberi wahana diagnosis komunitas, desain intervensi, implementasi, dan handover yang selaras dengan CPL, CPMK, dan RAE.",
+          },
+          {
+            accent: "var(--purple)",
+            title: "Keamanan supervisi",
+            body: "Scope dipersempit, keputusan mingguan jelas, data minimum terjaga, dan seluruh kerja lapangan dibatasi oleh guardrails etik serta patient safety.",
+          },
+          {
+            accent: "var(--red)",
+            title: "Pengesahan yang dibutuhkan",
+            body: "Rapat ini perlu mengesahkan Mentikan, pembimbing akademik, format evidence pembelajaran, dan garis koordinasi dengan Dinkes.",
+          },
+        ],
+      },
+      output: {
+        kicker: "Nilai Pembelajaran dan Serah Terima",
+        title: "Rotasi ini menghasilkan evidence pembelajaran sekaligus produk lapangan yang kredibel",
+        lead: "Setiap peran mahasiswa dipetakan menjadi evidence proses, produk, dan refleksi yang dapat dinilai tanpa melepaskan relevansi operasional di lapangan.",
+        band: {
+          kicker: "Mode Dekanat FKK",
+          title: "Nilai akademik tidak berhenti pada kehadiran lapangan; ia ditutup dengan produk, evaluasi, dan serah terima yang bisa diverifikasi.",
+          body: "FKK memperoleh bukti CPL dan CPMK, sementara mitra lapangan tetap menerima hasil yang konkret.",
+          chips: ["logbook", "produk intervensi", "dashboard handover"],
+        },
+        roleLabel: "Peran belajar-profesi",
+        roles: [
+          {
+            accent: "var(--blue)",
+            title: "Koordinator Lapangan",
+            desc: "Menjaga ritme mingguan dan decision gate sebagai evidence kepemimpinan klinis-komunitas.",
+          },
+          {
+            accent: "#0c99b8",
+            title: "Data, Baseline, dan Evaluasi",
+            desc: "Menyusun baseline brief, logbook, dan ringkasan outcome sebagai bukti penalaran ilmiah.",
+          },
+          {
+            accent: "var(--purple)",
+            title: "Intervensi, Alur, dan Handover",
+            desc: "Menerjemahkan diagnosis menjadi media, SOP mini, dan paket handover yang bisa diuji dan dinilai.",
+          },
+        ],
+        deliverableLabel: "Evidence yang keluar",
+        deliverables: [
+          "Baseline brief dan justifikasi masalah prioritas.",
+          "Paket intervensi mikro: SOP mini, media, dan script lapangan.",
+          "Logbook pilot, dashboard ringkas, dan paket handover.",
+        ],
+        guardrailLabel: "Batas akademik dan etik",
+        guardrails: [
+          "Scope rotasi dipersempit pada intervensi mikro yang dapat ditutup tuntas.",
+          "Data minimum, anonimitas, dan patient safety tidak dinegosiasikan.",
+        ],
+      },
+      readiness: {
+        kicker: "Pengesahan Akademik",
+        title: "Pengesahan yang dibutuhkan agar rotasi sah sebagai wahana belajar profesi",
+        lead: "Setelah poin ini disetujui, FKK dapat menutup fase perencanaan dan masuk ke persiapan supervisi, penugasan mahasiswa, serta evidence pembelajaran.",
+        primaryLabel: "Yang perlu Dekanat / FKK sahkan",
+        primaryItems: [
+          "Tetapkan Mentikan sebagai wahana implementasi awal blok CM koas.",
+          "Tunjuk pembimbing akademik yang memegang decision gate mingguan.",
+          "Akui logbook, output lapangan, dan handover sebagai evidence resmi blok.",
+        ],
+        secondaryLabel: "Yang perlu Dinkes fasilitasi",
+        secondaryItems: [
+          "Buka jalur koordinasi dengan Kapus, PJ program, dan champion lokal.",
+          "Sepakati batas data operasional yang boleh dipakai mahasiswa.",
+          "Pastikan produk akhir dapat diterima dan dipakai lokal.",
+        ],
+        tertiaryLabel: "Jaminan akademik dan etik",
+        tertiaryItems: [
+          "Intervensi bersifat frugal dan terukur, bukan proyek besar yang sulit ditutup.",
+          "Data minimum, anonimitas, dan patient safety dijaga sepanjang rotasi.",
+          "Perubahan lapangan melalui preseptor, PJ program, dan pembimbing.",
+        ],
+        band: {
+          kicker: "Pengesahan hari ini",
+          title: "Sahkan Mentikan, tetapkan pembimbing, dan kunci format evidence sekarang agar rotasi tidak kehilangan arah saat turun lapangan.",
+          body: "Dengan itu, presentasi berikutnya sudah tidak lagi berdebat soal konsep, melainkan memeriksa kesiapan eksekusi dan supervisi.",
+          chips: ["wahana sah", "pembimbing jelas", "evidence terkunci"],
+        },
+        supportLabel: "Yang perlu siap sebelum briefing pertama",
+        supportItems: [
+          "Nama pembimbing, preseptor, dan PIC lokal yang akan muncul di logbook.",
+          "Template logbook, monitoring, dan rubrik evidence yang disepakati.",
+        ],
+      },
+      closing: {
+        title: "FKK ITS siap menjalankan blok kedokteran komunitas dengan wahana belajar yang jelas, aman, dan bernilai.",
+        lead: "Jika disetujui, tahap berikutnya adalah mengunci supervisi, evidence pembelajaran, dan kesiapan artefak lapangan agar rotasi berjalan koheren dari awal sampai handover.",
+        values: [
+          { value: "Koheren", label: "selaras dengan CPL, CPMK, dan RAE" },
+          { value: "Tersupervisi", label: "decision gate mingguan dan jalur pembimbing jelas" },
+          { value: "Etis", label: "data minimum, patient safety, dan batas intervensi terjaga" },
+          { value: "Terbukti", label: "logbook, produk, diseminasi, dan handover" },
+        ],
+      },
+    },
   };
 
   const RAIL_SUBLABELS = {
@@ -94,12 +337,60 @@
     return TONE_VARS[tone] || "var(--blue)";
   }
 
+  function getAudienceCopy() {
+    return AUDIENCE_COPY[state.audience] || AUDIENCE_COPY.dinkes;
+  }
+
+  function syncAudienceButtons() {
+    audienceButtons.forEach((button) => {
+      const isActive = button.dataset.audienceMode === state.audience;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  function setAudience(audience) {
+    if (!AUDIENCE_COPY[audience] || audience === state.audience) return;
+    state.audience = audience;
+    try {
+      window.localStorage.setItem(AUDIENCE_STORAGE_KEY, audience);
+      const url = new URL(window.location.href);
+      url.searchParams.set("audience", audience);
+      window.history.replaceState({}, "", url.toString());
+    } catch (error) {
+      console.error(error);
+    }
+    renderCoverBadges();
+    renderSummary();
+    renderOutput();
+    renderReadiness();
+    renderClosing();
+    syncAudienceButtons();
+  }
+
+  function renderExecutiveBand(element, content) {
+    if (!element || !content) return;
+    element.innerHTML = `
+      <div class="executive-band-copy">
+        <span class="executive-band-kicker">${escapeHtml(content.kicker || "")}</span>
+        <strong>${escapeHtml(content.title || "")}</strong>
+        <span>${escapeHtml(content.body || "")}</span>
+      </div>
+      ${(content.chips || []).length ? `
+        <div class="executive-chip-row">
+          ${(content.chips || []).map((chip) => `<span class="executive-chip">${escapeHtml(chip)}</span>`).join("")}
+        </div>
+      ` : ""}
+    `;
+  }
+
   function renderCoverBadges() {
     const el = document.getElementById("coverBadges");
+    const audience = getAudienceCopy();
     const badges = [
       { value: "20 hari kerja", label: "rotasi efektif yang terukur" },
       { value: "Mentikan", label: "lokasi tahap awal" },
-      { value: "tanpa membebani layanan", label: "prinsip kerja dengan mitra" },
+      audience.coverBadge,
     ];
     el.innerHTML = badges.map((badge) => `
       <div class="cover-badge">
@@ -110,23 +401,15 @@
   }
 
   function renderSummary() {
+    const audience = getAudienceCopy();
+    const summaryTitle = document.getElementById("summaryTitle");
+    const summaryLead = document.getElementById("summaryLead");
     const container = document.getElementById("summaryCards");
-    const cards = [
-      {
-        title: "Nilai untuk Dekanat FKK",
-        body: "Program ini menghadirkan wahana belajar kedokteran komunitas yang terstruktur, aman disupervisi, dan layak dinilai sebagai bukti capaian pembelajaran berbasis CPL dan SKDI.",
-      },
-      {
-        title: "Nilai untuk Dinkes dan Puskesmas",
-        body: "Mahasiswa memberi dukungan operasional yang ringan namun nyata: edukasi, perbaikan alur sederhana, monitoring, dan paket kerja yang siap dipakai di akhir rotasi.",
-      },
-      {
-        title: "Keputusan yang dibutuhkan",
-        body: "Rapat ini ditujukan untuk mengesahkan Mentikan sebagai lokasi tahap awal, menetapkan PIC lintas pihak, dan menyepakati bentuk serah terima pada akhir rotasi.",
-      },
-    ];
+    if (summaryTitle) summaryTitle.textContent = audience.summary.title;
+    if (summaryLead) summaryLead.textContent = audience.summary.lead;
+    const cards = audience.summary.cards;
     container.innerHTML = cards.map((card) => `
-      <article class="summary-card">
+      <article class="summary-card" style="--accent:${escapeHtml(card.accent || "var(--blue)")}">
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.body)}</p>
       </article>
@@ -681,79 +964,80 @@
   }
 
   function renderOutput() {
+    const audience = getAudienceCopy().output;
+    const outputKicker = document.getElementById("outputKicker");
+    const outputTitle = document.getElementById("outputTitle");
+    const outputLead = document.getElementById("outputLead");
+    const outputFocusBand = document.getElementById("outputFocusBand");
+    const rolePanelLabel = document.getElementById("rolePanelLabel");
+    const deliverablePanelLabel = document.getElementById("deliverablePanelLabel");
+    const guardrailPanelLabel = document.getElementById("guardrailPanelLabel");
     const rolePanel = document.getElementById("rolePanel");
     const deliverableList = document.getElementById("deliverableList");
     const guardrailList = document.getElementById("guardrailList");
 
-    const roles = [
-      {
-        title: "Koordinator Lapangan",
-        desc: "Menjaga ritme mingguan, koordinasi stakeholder, dan keputusan lanjut, sesuaikan, atau hentikan.",
-      },
-      {
-        title: "PIC Data dan Evaluasi",
-        desc: "Menyiapkan baseline, mengelola logbook, dan menyusun ringkasan serah terima.",
-      },
-      {
-        title: "PIC Edukasi dan Perubahan Perilaku",
-        desc: "Menyusun materi, naskah edukasi singkat, dan checklist pelaksanaan yang layak dijalankan oleh petugas maupun kader.",
-      },
-    ];
-    rolePanel.innerHTML = roles.map((role) => `
-      <article class="role-row">
+    if (outputKicker) outputKicker.textContent = audience.kicker;
+    if (outputTitle) outputTitle.textContent = audience.title;
+    if (outputLead) outputLead.textContent = audience.lead;
+    if (rolePanelLabel) rolePanelLabel.textContent = audience.roleLabel;
+    if (deliverablePanelLabel) deliverablePanelLabel.textContent = audience.deliverableLabel;
+    if (guardrailPanelLabel) guardrailPanelLabel.textContent = audience.guardrailLabel;
+    renderExecutiveBand(outputFocusBand, audience.band);
+
+    rolePanel.innerHTML = audience.roles.map((role) => `
+      <article class="role-row" style="--role-accent:${escapeHtml(role.accent || "var(--blue)")}">
         <strong>${escapeHtml(role.title)}</strong>
         <p>${escapeHtml(role.desc)}</p>
       </article>
     `).join("");
 
-    deliverableList.innerHTML = D.communityMedicine.projection.deliverables
-      .slice(0, 3)
+    deliverableList.innerHTML = audience.deliverables
       .map((item) => `<li>${escapeHtml(item)}</li>`)
       .join("");
 
-    guardrailList.innerHTML = D.communityMedicine.projection.guardrails
-      .slice(0, 2)
+    guardrailList.innerHTML = audience.guardrails
       .map((item) => `<li>${escapeHtml(item)}</li>`)
       .join("");
   }
 
   function renderReadiness() {
+    const audience = getAudienceCopy().readiness;
+    const readinessKicker = document.getElementById("readinessKicker");
+    const readinessTitle = document.getElementById("readinessTitle");
+    const readinessLead = document.getElementById("readinessLead");
+    const readinessPrimaryLabel = document.getElementById("readinessPrimaryLabel");
+    const readinessSecondaryLabel = document.getElementById("readinessSecondaryLabel");
+    const readinessTertiaryLabel = document.getElementById("readinessTertiaryLabel");
+    const readinessSupportLabel = document.getElementById("readinessSupportLabel");
     const fkkAsk = document.getElementById("fkkAsk");
     const dinkesAsk = document.getElementById("dinkesAsk");
     const assuranceList = document.getElementById("assuranceList");
     const todayAskBand = document.getElementById("todayAskBand");
-    const readiness = D.communityMedicine.meetingReadiness;
+    const readinessSupportList = document.getElementById("readinessSupportList");
 
-    fkkAsk.innerHTML = readiness.fkkDecisions
-      .slice(0, 2)
-      .map((item) => `<li>${escapeHtml(item)}</li>`)
-      .join("");
+    if (readinessKicker) readinessKicker.textContent = audience.kicker;
+    if (readinessTitle) readinessTitle.textContent = audience.title;
+    if (readinessLead) readinessLead.textContent = audience.lead;
+    if (readinessPrimaryLabel) readinessPrimaryLabel.textContent = audience.primaryLabel;
+    if (readinessSecondaryLabel) readinessSecondaryLabel.textContent = audience.secondaryLabel;
+    if (readinessTertiaryLabel) readinessTertiaryLabel.textContent = audience.tertiaryLabel;
+    if (readinessSupportLabel) readinessSupportLabel.textContent = audience.supportLabel;
 
-    dinkesAsk.innerHTML = readiness.dinkesDecisions
-      .slice(0, 2)
-      .map((item) => `<li>${escapeHtml(item)}</li>`)
-      .join("");
-
-    assuranceList.innerHTML = readiness.assurances
-      .slice(0, 2)
-      .map((item) => `<li>${escapeHtml(item)}</li>`)
-      .join("");
-
-    todayAskBand.innerHTML = `
-      <strong>${escapeHtml(readiness.todayAsk[0])}</strong>
-      <span>${escapeHtml(readiness.todayAsk[1])}</span>
-    `;
+    fkkAsk.innerHTML = audience.primaryItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    dinkesAsk.innerHTML = audience.secondaryItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    assuranceList.innerHTML = audience.tertiaryItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    readinessSupportList.innerHTML = audience.supportItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    renderExecutiveBand(todayAskBand, audience.band);
   }
 
   function renderClosing() {
+    const audience = getAudienceCopy().closing;
+    const closingTitle = document.getElementById("closingTitle");
+    const closingLead = document.getElementById("closingLead");
     const closingValues = document.getElementById("closingValues");
-    const items = [
-      { value: "Akademik", label: "sesuai CPL, SKDI, dan supervisi profesi" },
-      { value: "Operasional", label: "ringan bagi puskesmas dan mudah dipantau" },
-      { value: "Etis", label: "data minimum, aman, dan tidak mengganggu layanan" },
-      { value: "Berkelanjutan", label: "hasil akhir disiapkan untuk dipakai lokal" },
-    ];
-    closingValues.innerHTML = items.map((item) => `
+    if (closingTitle) closingTitle.textContent = audience.title;
+    if (closingLead) closingLead.textContent = audience.lead;
+    closingValues.innerHTML = audience.values.map((item) => `
       <div class="closing-value">
         <strong>${escapeHtml(item.value)}</strong>
         <span>${escapeHtml(item.label)}</span>
@@ -994,7 +1278,7 @@
   async function enterPresentationMode() {
     document.body.classList.add("is-presentation-mode");
     focusExitBtn.hidden = false;
-    fullscreenBtn.textContent = "Keluar Presentasi";
+    fullscreenBtn.textContent = "Keluar Layar Penuh";
     try {
       if (!document.fullscreenElement) {
         await document.documentElement.requestFullscreen();
@@ -1007,7 +1291,7 @@
   async function exitPresentationMode() {
     document.body.classList.remove("is-presentation-mode");
     focusExitBtn.hidden = true;
-    fullscreenBtn.textContent = "Presentasi";
+    fullscreenBtn.textContent = "Layar Penuh";
     setBlackout(false);
     try {
       if (document.fullscreenElement) {
@@ -1029,6 +1313,11 @@
   function initControls() {
     prevBtn.addEventListener("click", previousSlide);
     nextBtn.addEventListener("click", nextSlide);
+    audienceButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setAudience(button.dataset.audienceMode);
+      });
+    });
 
     stage.addEventListener("wheel", (event) => {
       if (appendixDrawer.hidden === false || state.wheelLock) return;
@@ -1096,6 +1385,14 @@
         if (appendixDrawer.hidden) openAppendix();
         else closeAppendix();
       }
+      if (event.key.toLowerCase() === "d") {
+        event.preventDefault();
+        setAudience("dinkes");
+      }
+      if (event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setAudience("fkk");
+      }
       if (event.key.toLowerCase() === "f") {
         event.preventDefault();
         togglePresentationMode();
@@ -1137,7 +1434,7 @@
       if (!document.fullscreenElement && document.body.classList.contains("is-presentation-mode")) {
         document.body.classList.remove("is-presentation-mode");
         focusExitBtn.hidden = true;
-        fullscreenBtn.textContent = "Presentasi";
+        fullscreenBtn.textContent = "Layar Penuh";
         setBlackout(false);
       }
     });
@@ -1168,6 +1465,7 @@
     renderClosing();
     renderAppendix();
     buildRail();
+    syncAudienceButtons();
     initControls();
     initFromHash();
   }

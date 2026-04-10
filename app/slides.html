@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Slideshow eksekutif Desa Binaan FKK ITS x Kota Mojokerto.">
   <title>Desa Binaan FKK ITS - Slideshow Eksekutif</title>
-  <link rel="stylesheet" href="css/slides.css?v=20260410j">
+  <link rel="stylesheet" href="css/slides.css?v=20260411a">
 </head>
 <body class="slides-body">
   <div class="deck-noise" aria-hidden="true"></div>
@@ -21,9 +21,15 @@
     </a>
 
     <div class="deck-topbar-actions">
-      <button type="button" class="deck-action" id="fullscreenBtn">Presentasi</button>
-      <button type="button" class="deck-action deck-action-primary" id="appendixBtn" aria-expanded="false" aria-controls="appendixDrawer">Lampiran</button>
-      <a href="index.html" class="deck-action">Versi Lengkap</a>
+      <div class="deck-audience-switch" role="group" aria-label="Mode audiens">
+        <button type="button" class="deck-action deck-mode-btn" id="audienceDinkesBtn" data-audience-mode="dinkes" aria-pressed="true">Mode Dinkes</button>
+        <button type="button" class="deck-action deck-mode-btn" id="audienceFkkBtn" data-audience-mode="fkk" aria-pressed="false">Mode Dekanat FKK</button>
+      </div>
+      <div class="deck-utility-actions">
+        <button type="button" class="deck-action" id="fullscreenBtn">Layar Penuh</button>
+        <button type="button" class="deck-action deck-action-primary" id="appendixBtn" aria-expanded="false" aria-controls="appendixDrawer">Lampiran</button>
+        <a href="index.html" class="deck-action">Versi Lengkap</a>
+      </div>
     </div>
   </header>
 
@@ -54,8 +60,8 @@
         <div class="slide-surface">
           <div class="slide-header">
             <span class="slide-kicker">Ringkasan Eksekutif</span>
-            <h2>Tiga pesan utama yang perlu disepakati</h2>
-            <p class="slide-lead">Program ini disusun sebagai penugasan lapangan yang terukur, berorientasi hasil, dan langsung menjawab kebutuhan akademik FKK sekaligus kebutuhan operasional puskesmas.</p>
+            <h2 id="summaryTitle">Tiga pesan utama yang perlu disepakati</h2>
+            <p class="slide-lead" id="summaryLead">Program ini disusun sebagai penugasan lapangan yang terukur, berorientasi hasil, dan langsung menjawab kebutuhan akademik FKK sekaligus kebutuhan operasional puskesmas.</p>
           </div>
           <div class="slide-grid slide-grid-3" id="summaryCards"></div>
         </div>
@@ -66,7 +72,7 @@
           <div class="slide-header">
             <span class="slide-kicker">Konteks Program</span>
             <h2>Mojokerto siap sebagai lokasi tahap awal dengan cakupan studi yang jelas</h2>
-            <p class="slide-lead">Kota Mojokerto memiliki 6 puskesmas. Presentasi ini menelaah 5 wilayah kajian blok kedokteran komunitas, lalu menetapkan 1 lokasi implementasi awal yang paling layak diselesaikan dalam satu rotasi.</p>
+            <p class="slide-lead">Kota Mojokerto memiliki 6 puskesmas. Presentasi ini membaca 5 wilayah yang memang menjadi objek studi blok kedokteran komunitas, lalu memilih 1 lokasi tahap awal yang paling realistis dituntaskan dalam satu rotasi.</p>
           </div>
           <div class="stat-ribbon" id="cityStats"></div>
           <div class="slide-grid slide-grid-2" id="contextPanels"></div>
@@ -78,7 +84,7 @@
           <div class="slide-header">
             <span class="slide-kicker">Wilayah Studi</span>
             <h2>Lima wilayah kerja yang ditelaah sebelum lokasi tahap awal ditetapkan</h2>
-            <p class="slide-lead">Kelima wilayah ini merupakan cakupan studi blok kedokteran komunitas pada presentasi ini. Kedundung tidak dimasukkan ke komparatif utama karena bukan bagian dari objek kajian rotasi. Dari lima wilayah tersebut, Mentikan dipilih sebagai lokasi awal karena paling sesuai untuk penugasan 20 hari yang harus selesai, terukur, dan meninggalkan hasil.</p>
+            <p class="slide-lead">Kelima wilayah ini adalah cakupan studi blok kedokteran komunitas pada presentasi ini. Kedundung tidak masuk komparatif karena bukan objek kajian rotasi. Dari lima wilayah tersebut, Mentikan dipilih karena paling siap untuk penugasan 20 hari yang harus selesai, terukur, dan meninggalkan hasil.</p>
           </div>
           <div class="study-grid" id="studyGrid"></div>
         </div>
@@ -161,7 +167,7 @@
           <div class="slide-header">
             <span class="slide-kicker">Bukti dan Rujukan</span>
             <h2>Konteks tempat, institusi, dan bukti rujukan resmi</h2>
-            <p class="slide-lead">Presentasi ini ditopang oleh sumber resmi Kota Mojokerto, Puskesmas Mentikan, dan acuan pendidikan profesi dokter. Visual dipakai untuk memperjelas konteks tempat dan institusi tanpa menggeser fokus dari keputusan program.</p>
+            <p class="slide-lead">Semua visual dan angka inti ditopang sumber resmi Kota Mojokerto, Puskesmas Mentikan, dan acuan pendidikan profesi dokter. Visual dipakai untuk memperkuat kredibilitas keputusan, bukan sekadar mempercantik slide.</p>
           </div>
           <div class="evidence-layout">
             <div class="evidence-photo-grid" id="evidencePhotos"></div>
@@ -216,22 +222,23 @@
       <section class="slide" id="slide-output" data-label="Hasil" aria-hidden="true">
         <div class="slide-surface">
           <div class="slide-header">
-            <span class="slide-kicker">Kontribusi dan Serah Terima</span>
-            <h2>Mahasiswa bekerja sebagai tim pelaksana kecil yang meninggalkan hasil</h2>
-            <p class="slide-lead">Kontribusi mahasiswa dirancang agar relevan untuk penilaian akademik FKK sekaligus memberi manfaat operasional yang nyata bagi puskesmas dan kader di lapangan.</p>
+            <span class="slide-kicker" id="outputKicker">Kontribusi dan Serah Terima</span>
+            <h2 id="outputTitle">Mahasiswa bekerja sebagai tim pelaksana kecil yang meninggalkan hasil</h2>
+            <p class="slide-lead" id="outputLead">Kontribusi mahasiswa dirancang agar relevan untuk penilaian akademik FKK sekaligus memberi manfaat operasional yang nyata bagi puskesmas dan kader di lapangan.</p>
           </div>
+          <div class="executive-band executive-band-light" id="outputFocusBand"></div>
           <div class="slide-grid slide-grid-2 compact-top output-layout">
             <div class="panel-card">
-              <div class="panel-label">Struktur peran inti</div>
+              <div class="panel-label" id="rolePanelLabel">Struktur peran inti</div>
               <div id="rolePanel" class="role-panel"></div>
             </div>
             <div class="output-stack">
               <div class="panel-card">
-                <div class="panel-label">Produk yang wajib keluar</div>
+                <div class="panel-label" id="deliverablePanelLabel">Produk yang wajib keluar</div>
                 <ul class="story-list" id="deliverableList"></ul>
               </div>
               <div class="panel-card">
-                <div class="panel-label">Batas aman pelaksanaan</div>
+                <div class="panel-label" id="guardrailPanelLabel">Batas aman pelaksanaan</div>
                 <ul class="story-list" id="guardrailList"></ul>
               </div>
             </div>
@@ -242,25 +249,31 @@
       <section class="slide" id="slide-readiness" data-label="Persetujuan" aria-hidden="true">
         <div class="slide-surface">
           <div class="slide-header">
-            <span class="slide-kicker">Persetujuan Rapat</span>
-            <h2>Persetujuan yang dibutuhkan agar eksekusi dapat dimulai</h2>
-            <p class="slide-lead">Dengan persetujuan ini, pembahasan dapat langsung bergeser dari perencanaan ke persiapan eksekusi lapangan.</p>
+            <span class="slide-kicker" id="readinessKicker">Persetujuan Rapat</span>
+            <h2 id="readinessTitle">Persetujuan yang dibutuhkan agar eksekusi dapat dimulai</h2>
+            <p class="slide-lead" id="readinessLead">Dengan persetujuan ini, pembahasan dapat langsung bergeser dari perencanaan ke persiapan eksekusi lapangan.</p>
           </div>
-          <div class="slide-grid slide-grid-3">
+          <div class="slide-grid slide-grid-3 readiness-grid">
             <div class="panel-card">
-              <div class="panel-label">Persetujuan dari FKK ITS</div>
+              <div class="panel-label" id="readinessPrimaryLabel">Persetujuan dari FKK ITS</div>
               <ul class="story-list" id="fkkAsk"></ul>
             </div>
             <div class="panel-card">
-              <div class="panel-label">Kesepakatan dengan Dinkes / Puskesmas</div>
+              <div class="panel-label" id="readinessSecondaryLabel">Kesepakatan dengan Dinkes / Puskesmas</div>
               <ul class="story-list" id="dinkesAsk"></ul>
             </div>
             <div class="panel-card">
-              <div class="panel-label">Jaminan pelaksanaan</div>
+              <div class="panel-label" id="readinessTertiaryLabel">Jaminan pelaksanaan</div>
               <ul class="story-list" id="assuranceList"></ul>
             </div>
           </div>
-          <div class="callout-band" id="todayAskBand"></div>
+          <div class="readiness-bottom">
+            <div class="executive-band executive-band-dark" id="todayAskBand"></div>
+            <article class="panel-card readiness-support-card">
+              <div class="panel-label" id="readinessSupportLabel">Yang perlu sudah ada di meja rapat</div>
+              <ul class="story-list" id="readinessSupportList"></ul>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -268,8 +281,8 @@
         <div class="slide-surface slide-closing">
           <div class="closing-copy">
             <span class="slide-kicker slide-kicker-light">Penutup</span>
-            <h2>FKK ITS siap memulai tahap awal blok kedokteran komunitas bersama Dinkes Kota Mojokerto.</h2>
-            <p class="slide-lead slide-lead-light">Program ini dirancang untuk memulai langkah yang kecil tetapi pasti: lokasi jelas, masalah terfokus, rencana kerja terukur, dan hasil akhir siap dipakai di lapangan.</p>
+            <h2 id="closingTitle">FKK ITS siap memulai tahap awal blok kedokteran komunitas bersama Dinkes Kota Mojokerto.</h2>
+            <p class="slide-lead slide-lead-light" id="closingLead">Program ini dirancang untuk memulai langkah yang kecil tetapi pasti: lokasi jelas, masalah terfokus, rencana kerja terukur, dan hasil akhir siap dipakai di lapangan.</p>
             <div class="closing-values" id="closingValues"></div>
           </div>
         </div>
@@ -277,7 +290,7 @@
     </main>
   </div>
 
-  <button type="button" class="focus-exit-btn" id="focusExitBtn" hidden>Keluar Presentasi</button>
+  <button type="button" class="focus-exit-btn" id="focusExitBtn" hidden>Keluar Layar Penuh</button>
 
   <footer class="deck-controls">
     <div class="deck-controls-left">
@@ -355,7 +368,7 @@
     </div>
   </aside>
 
-  <script src="js/data.js?v=20260410j"></script>
-  <script src="js/slides.js?v=20260410j"></script>
+  <script src="js/data.js?v=20260411a"></script>
+  <script src="js/slides.js?v=20260411a"></script>
 </body>
 </html>
