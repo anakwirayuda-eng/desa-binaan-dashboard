@@ -533,14 +533,56 @@ h2 {
   line-height: 1.55;
 }
 
+#slide-diagram .slide-surface {
+  padding: 26px 30px 20px;
+}
+
+#slide-diagram h2 {
+  margin-top: 8px;
+  font-size: clamp(1.54rem, 2.06vw, 2.08rem);
+  line-height: 1.04;
+}
+
+#slide-diagram .slide-lead {
+  margin-top: 6px;
+  max-width: 940px;
+  font-size: 0.9rem;
+  line-height: 1.36;
+}
+
+#slide-diagram .slide-header {
+  max-width: 940px;
+}
+
+#slide-focus h2 {
+  margin-top: 10px;
+  font-size: clamp(1.62rem, 2.08vw, 2.12rem);
+  line-height: 1.08;
+}
+
+#slide-focus .slide-lead {
+  margin-top: 8px;
+  max-width: 940px;
+  font-size: 0.92rem;
+  line-height: 1.38;
+}
+
 #slide-output .slide-surface,
 #slide-readiness .slide-surface {
   padding: 30px 34px 24px;
 }
 
+#slide-readiness .slide-surface {
+  padding: 26px 30px 20px;
+}
+
 #slide-output h2,
 #slide-readiness h2 {
   font-size: clamp(1.72rem, 2.28vw, 2.28rem);
+}
+
+#slide-readiness h2 {
+  font-size: clamp(1.58rem, 2.02vw, 2.04rem);
 }
 
 #slide-output .slide-lead,
@@ -549,6 +591,12 @@ h2 {
   max-width: 940px;
   font-size: 0.93rem;
   line-height: 1.44;
+}
+
+#slide-readiness .slide-lead {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  line-height: 1.34;
 }
 
 #slide-output .executive-band {
@@ -1040,16 +1088,18 @@ h2 {
 
 .bridge-copy {
   margin-top: 4px;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.42;
 }
 
 .focus-pills {
-  margin-top: 18px;
+  margin-top: 14px;
+  gap: 10px;
 }
 
 .focus-pill {
   min-width: 0;
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(47, 109, 246, 0.08), rgba(124, 77, 244, 0.08));
   border: 1px solid rgba(47, 109, 246, 0.12);
@@ -1059,21 +1109,21 @@ h2 {
 .focus-pill strong {
   display: block;
   color: var(--blue);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
 }
 
 .focus-pill span {
   display: block;
-  margin-top: 6px;
+  margin-top: 4px;
   color: var(--body);
-  font-size: 0.84rem;
-  line-height: 1.38;
+  font-size: 0.78rem;
+  line-height: 1.3;
 }
 
 .mini-gloss {
-  margin-top: 12px;
+  margin-top: 10px;
   border-radius: 18px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   background: linear-gradient(180deg, rgba(15, 157, 114, 0.08), rgba(15, 157, 114, 0.04));
   border: 1px solid rgba(15, 157, 114, 0.12);
 }
@@ -1081,32 +1131,42 @@ h2 {
 .mini-gloss strong {
   display: block;
   color: var(--green);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .mini-gloss p {
   color: var(--body);
-  line-height: 1.55;
-  font-size: 0.82rem;
+  line-height: 1.36;
+  font-size: 0.76rem;
 }
 
 #slide-focus .bridge-copy {
-  font-size: 0.92rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 .diagram-layout {
   align-items: stretch;
+  margin-top: 16px;
+  gap: 12px;
 }
 
 .diagram-driver-card {
   display: grid;
-  gap: 16px;
+  gap: 10px;
+}
+
+#slide-diagram .panel-card {
+  padding: 14px 14px 12px;
+}
+
+#slide-diagram .panel-label {
+  margin-bottom: 8px;
 }
 
 .diagram-aim {
   border-radius: 22px;
-  padding: 18px 18px 16px;
+  padding: 14px 14px 13px;
   background: linear-gradient(135deg, rgba(47, 109, 246, 0.1), rgba(124, 77, 244, 0.08));
   border: 1px solid rgba(47, 109, 246, 0.12);
 }
@@ -1121,22 +1181,22 @@ h2 {
 }
 
 .diagram-aim p {
-  margin-top: 10px;
+  margin-top: 7px;
   color: var(--ink);
-  font-size: 1.06rem;
-  line-height: 1.55;
+  font-size: 0.88rem;
+  line-height: 1.34;
   font-weight: 600;
 }
 
 .driver-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 8px;
 }
 
 .driver-card {
   border-radius: 20px;
-  padding: 14px 14px 12px;
+  padding: 10px 10px 9px;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, var(--white), #f8fbff);
   box-shadow: 0 10px 22px rgba(10, 22, 43, 0.08);
@@ -1145,62 +1205,63 @@ h2 {
 .driver-card strong {
   display: block;
   color: var(--ink);
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: 0.86rem;
+  line-height: 1.28;
+  margin-bottom: 6px;
 }
 
 .driver-actions {
   display: grid;
-  gap: 8px;
+  gap: 5px;
 }
 
 .driver-actions span {
   display: block;
-  border-radius: 14px;
-  padding: 8px 10px;
+  border-radius: 12px;
+  padding: 5px 8px;
   background: var(--surface-2);
   color: var(--body);
-  line-height: 1.45;
-  font-size: 0.84rem;
+  line-height: 1.24;
+  font-size: 0.73rem;
 }
 
 .service-flow {
   display: grid;
-  gap: 14px;
+  gap: 8px;
 }
 
 .flow-card {
   border-radius: 20px;
-  padding: 16px 16px 14px;
+  padding: 12px 12px 10px;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, var(--white), #fbfcff);
 }
 
 .flow-card strong {
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .flow-steps {
   display: grid;
-  gap: 8px;
+  gap: 5px;
 }
 
 .flow-step {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 8px;
   align-items: start;
 }
 
 .flow-step-index {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
   display: grid;
   place-items: center;
   font-weight: 800;
@@ -1211,15 +1272,16 @@ h2 {
 .flow-step-copy strong {
   display: block;
   color: var(--ink);
-  font-size: 0.9rem;
-  margin-bottom: 3px;
+  font-size: 0.8rem;
+  line-height: 1.24;
+  margin-bottom: 2px;
 }
 
 .flow-step-copy span {
   display: block;
   color: var(--body);
-  line-height: 1.42;
-  font-size: 0.84rem;
+  line-height: 1.28;
+  font-size: 0.74rem;
 }
 
 .evidence-layout {
@@ -2001,28 +2063,55 @@ h2 {
 }
 
 .readiness-grid {
-  margin-top: 16px;
-  gap: 14px;
+  margin-top: 12px;
+  gap: 12px;
 }
 
 .readiness-grid .panel-card {
-  min-height: 232px;
+  min-height: 206px;
+  padding: 16px 16px 14px;
 }
 
 .readiness-bottom {
-  margin-top: 14px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
-  gap: 14px;
+  gap: 12px;
   align-items: stretch;
 }
 
 .readiness-support-card {
-  padding-bottom: 14px;
+  padding-bottom: 12px;
 }
 
 .readiness-support-card .story-list {
-  gap: 9px;
+  gap: 8px;
+}
+
+#slide-readiness .executive-band {
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+#slide-readiness .executive-band strong {
+  font-size: 0.92rem;
+  line-height: 1.28;
+}
+
+#slide-readiness .executive-band span {
+  font-size: 0.84rem;
+  line-height: 1.34;
+}
+
+#slide-readiness .executive-chip {
+  min-height: 28px;
+  padding: 0.32rem 0.58rem;
+  font-size: 0.72rem;
+}
+
+#slide-readiness .story-list li {
+  font-size: 0.82rem;
+  line-height: 1.42;
 }
 
 .slide-closing {
@@ -2444,6 +2533,433 @@ h2 {
   }
 }
 
+@media (max-height: 820px) and (min-width: 921px) {
+  :root {
+    --topbar-h: 66px;
+    --controls-h: 0px;
+    --rail-w: 160px;
+  }
+
+  .deck-topbar {
+    padding: 10px 20px 6px;
+    gap: 14px;
+  }
+
+  .deck-brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .deck-brand strong {
+    font-size: 0.9rem;
+  }
+
+  .deck-brand small {
+    font-size: 0.7rem;
+  }
+
+  .deck-action {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .deck-shell {
+    gap: 12px;
+    padding: 10px 16px 12px;
+  }
+
+  .deck-rail {
+    padding: 12px 8px;
+  }
+
+  .rail-title {
+    padding-bottom: 6px;
+    font-size: 0.66rem;
+  }
+
+  .rail-button {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .rail-index {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 0.84rem;
+  }
+
+  .rail-copy strong {
+    font-size: 0.84rem;
+  }
+
+  .rail-copy span {
+    font-size: 0.64rem;
+  }
+
+  .deck-controls {
+    position: fixed;
+    left: 18px;
+    right: 18px;
+    bottom: 14px;
+    z-index: 6;
+    height: auto;
+    padding: 10px 14px;
+    gap: 12px;
+    border-radius: 24px;
+    background: rgba(8, 15, 30, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 18px 44px rgba(3, 8, 20, 0.34);
+  }
+
+  .deck-controls-left {
+    padding: 6px;
+    gap: 8px;
+  }
+
+  .nav-btn {
+    padding: 9px 15px;
+    font-size: 0.84rem;
+  }
+
+  .deck-counter,
+  .deck-hint {
+    font-size: 0.82rem;
+  }
+
+  .deck-counter,
+  .deck-hint {
+    padding: 9px 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    backdrop-filter: blur(18px);
+  }
+
+  .slide-surface {
+    padding: 30px 32px 22px;
+  }
+
+  .slide-grid-2,
+  .slide-grid-3 {
+    margin-top: 18px;
+    gap: 12px;
+  }
+
+  .summary-card,
+  .panel-card,
+  .study-card,
+  .role-card,
+  .week-card,
+  .rank-card,
+  .reason-card {
+    padding: 16px 16px 14px;
+  }
+
+  .summary-card {
+    min-height: 208px;
+  }
+
+  .panel-label {
+    margin-bottom: 10px;
+    font-size: 0.68rem;
+  }
+
+  #slide-context h2,
+  #slide-study h2,
+  #slide-decision h2,
+  #slide-focus h2,
+  #slide-diagram h2,
+  #slide-evidence h2,
+  #slide-gantt h2,
+  #slide-output h2,
+  #slide-readiness h2 {
+    font-size: clamp(1.48rem, 2vw, 2.08rem);
+    line-height: 1.05;
+  }
+
+  #slide-context .slide-lead,
+  #slide-study .slide-lead,
+  #slide-decision .slide-lead,
+  #slide-focus .slide-lead,
+  #slide-diagram .slide-lead,
+  #slide-evidence .slide-lead,
+  #slide-gantt .slide-lead,
+  #slide-output .slide-lead,
+  #slide-readiness .slide-lead {
+    font-size: 0.88rem;
+    line-height: 1.36;
+    margin-top: 8px;
+  }
+
+  #slide-diagram .slide-surface {
+    padding: 20px 24px 16px;
+  }
+
+  #slide-diagram .diagram-layout {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  #slide-diagram .panel-card {
+    padding: 12px 12px 10px;
+  }
+
+  #slide-diagram .diagram-aim {
+    padding: 11px 12px 10px;
+  }
+
+  #slide-diagram .diagram-aim p {
+    font-size: 0.8rem;
+    line-height: 1.28;
+  }
+
+  #slide-diagram .driver-grid {
+    gap: 6px;
+  }
+
+  #slide-diagram .driver-card {
+    padding: 8px 8px 7px;
+    border-radius: 16px;
+  }
+
+  #slide-diagram .driver-card strong {
+    font-size: 0.78rem;
+    margin-bottom: 4px;
+  }
+
+  #slide-diagram .driver-actions {
+    gap: 4px;
+  }
+
+  #slide-diagram .driver-actions span {
+    padding: 4px 7px;
+    font-size: 0.68rem;
+    line-height: 1.18;
+  }
+
+  #slide-diagram .flow-card {
+    padding: 10px 10px 9px;
+    border-radius: 18px;
+  }
+
+  #slide-diagram .flow-card strong {
+    margin-bottom: 5px;
+    font-size: 0.68rem;
+  }
+
+  #slide-diagram .flow-steps {
+    gap: 4px;
+  }
+
+  #slide-diagram .flow-step {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  #slide-diagram .flow-step-index {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    font-size: 0.82rem;
+  }
+
+  #slide-diagram .flow-step-copy strong {
+    font-size: 0.74rem;
+    line-height: 1.18;
+  }
+
+  #slide-diagram .flow-step-copy span {
+    font-size: 0.68rem;
+    line-height: 1.18;
+  }
+
+  #slide-decision .slide-surface {
+    padding: 24px 28px 18px;
+  }
+
+  #slide-decision .decision-layout {
+    gap: 10px;
+  }
+
+  #slide-decision .rank-card,
+  #slide-decision .reason-card {
+    padding: 14px 14px 12px;
+  }
+
+  #slide-decision .ranking-list {
+    gap: 8px;
+  }
+
+  #slide-decision .ranking-item {
+    grid-template-columns: 40px minmax(0, 1fr) 48px;
+    gap: 10px;
+  }
+
+  #slide-decision .ranking-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+  }
+
+  #slide-decision .ranking-track {
+    height: 12px;
+  }
+
+  #slide-decision .ranking-copy strong,
+  #slide-decision .ranking-score {
+    font-size: 0.88rem;
+  }
+
+  #slide-decision .reason-card .story-list li {
+    font-size: 0.78rem;
+    line-height: 1.28;
+  }
+
+  #slide-evidence .slide-surface {
+    padding: 22px 24px 18px;
+  }
+
+  #slide-evidence .evidence-layout {
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  #slide-evidence .evidence-photo-grid {
+    gap: 12px;
+  }
+
+  #slide-evidence .evidence-photo-card {
+    grid-template-rows: 178px auto;
+  }
+
+  #slide-evidence .evidence-photo-card img {
+    height: 178px;
+    min-height: 178px;
+  }
+
+  #slide-evidence .evidence-photo-body {
+    padding: 10px 12px 12px;
+  }
+
+  #slide-evidence .evidence-photo-body strong {
+    font-size: 0.9rem;
+  }
+
+  #slide-evidence .evidence-photo-body span {
+    margin-top: 5px;
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  #slide-evidence .evidence-source-item {
+    padding: 10px 11px;
+  }
+
+  #slide-evidence .evidence-source-item strong {
+    font-size: 0.88rem;
+  }
+
+  #slide-evidence .evidence-source-item span {
+    font-size: 0.78rem;
+    line-height: 1.32;
+  }
+
+  #slide-output .slide-surface,
+  #slide-readiness .slide-surface {
+    padding: 22px 24px 16px;
+  }
+
+  #slide-output .executive-band,
+  #slide-readiness .executive-band {
+    padding: 10px 12px;
+    gap: 7px;
+  }
+
+  #slide-output .executive-band strong,
+  #slide-readiness .executive-band strong {
+    font-size: 0.86rem;
+    line-height: 1.24;
+  }
+
+  #slide-output .executive-band span,
+  #slide-readiness .executive-band span {
+    font-size: 0.78rem;
+    line-height: 1.28;
+  }
+
+  #slide-output .executive-chip,
+  #slide-readiness .executive-chip {
+    min-height: 26px;
+    padding: 0.28rem 0.52rem;
+    font-size: 0.68rem;
+  }
+
+  #slide-output .output-layout,
+  #slide-readiness .readiness-grid,
+  #slide-readiness .readiness-bottom {
+    gap: 10px;
+  }
+
+  #slide-output .output-layout {
+    margin-top: 10px;
+  }
+
+  #slide-output .role-panel,
+  #slide-output .output-stack {
+    gap: 8px;
+  }
+
+  #slide-output .panel-card {
+    padding: 14px 14px 12px;
+  }
+
+  #slide-output .panel-label {
+    margin-bottom: 8px;
+  }
+
+  #slide-output .role-row {
+    padding: 8px 10px 8px 12px;
+  }
+
+  #slide-output .role-row strong {
+    font-size: 0.78rem;
+  }
+
+  #slide-output .role-row p {
+    margin-top: 3px;
+    font-size: 0.7rem;
+    line-height: 1.18;
+  }
+
+  #slide-output .story-list,
+  #slide-readiness .story-list {
+    gap: 7px;
+  }
+
+  #slide-output .story-list li,
+  #slide-readiness .story-list li {
+    font-size: 0.78rem;
+    line-height: 1.32;
+  }
+
+  #slide-output .story-list li {
+    font-size: 0.74rem;
+    line-height: 1.24;
+  }
+
+  .readiness-grid .panel-card {
+    min-height: 0;
+    padding: 14px 14px 12px;
+  }
+
+  .readiness-support-card {
+    padding-bottom: 10px;
+  }
+}
+
 @media (max-width: 1180px) {
   :root {
     --rail-w: 144px;
@@ -2478,7 +2994,8 @@ h2 {
 
 @media (max-width: 920px) {
   body {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-bottom: 98px;
   }
 
@@ -2494,6 +3011,7 @@ h2 {
     grid-template-columns: 1fr;
     height: auto;
     padding: 12px 18px 18px;
+    max-width: 100%;
   }
 
   .deck-rail {
@@ -2530,6 +3048,8 @@ h2 {
   .slide-surface {
     height: auto;
     min-height: auto;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   #slide-focus .slide-surface,
@@ -2666,6 +3186,8 @@ h2 {
     margin: 10px 10px 0;
     padding: 12px 14px;
     gap: 12px;
+    max-width: calc(100vw - 20px);
+    overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 22px;
     background: rgba(8, 15, 30, 0.72);
@@ -2679,18 +3201,24 @@ h2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
+    min-width: 0;
   }
 
   .deck-audience-switch {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
+    min-width: 0;
   }
 
   .deck-utility-actions {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
+    min-width: 0;
   }
 
   .deck-shell {
@@ -2769,6 +3297,11 @@ h2 {
     text-align: center;
     justify-content: center;
     padding: 10px 12px;
+    min-height: 46px;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.15;
     font-size: 0.84rem;
   }
 
@@ -2913,6 +3446,35 @@ h2 {
 
   .readiness-grid .panel-card {
     min-height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .deck-topbar {
+    margin-inline: 8px;
+    padding: 10px 12px;
+  }
+
+  .deck-brand {
+    gap: 10px;
+  }
+
+  .deck-brand img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .deck-brand strong {
+    font-size: 0.86rem;
+  }
+
+  .deck-brand small {
+    font-size: 0.66rem;
+  }
+
+  .deck-action {
+    font-size: 0.78rem;
+    padding: 9px 10px;
   }
 }
 

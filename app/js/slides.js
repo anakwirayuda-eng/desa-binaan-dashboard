@@ -66,22 +66,22 @@
     dinkes: {
       buttonLabel: "Mode Dinkes",
       coverBadge: {
-        value: "zero-disruption",
-        label: "ringan untuk puskesmas dan tidak menambah proyek baru",
+        value: "ringan untuk layanan",
+        label: "tidak menambah proyek baru bagi puskesmas",
       },
       summary: {
         title: "Tiga hal yang perlu diyakini sebelum penempatan dimulai",
-        lead: "Fokus mode ini adalah memastikan koas masuk sebagai bantuan operasional yang ringan, aman, dan meninggalkan hasil yang bisa dipakai puskesmas.",
+        lead: "Di hadapan Dinkes, yang kami tawarkan sederhana: koas masuk sebagai bantuan kerja yang ringan, aman, dan menutup rotasi dengan hasil yang bisa dipakai puskesmas.",
         cards: [
           {
             accent: "var(--green)",
-            title: "Nilai untuk Dinkes dan Puskesmas",
-            body: "Koas membantu baseline, edukasi, monitoring ringan, dan perapian alur sederhana tanpa meminta puskesmas memulai proyek baru.",
+            title: "Nilai langsung bagi layanan",
+            body: "Koas membantu gambaran awal, edukasi, monitoring ringan, dan perapian alur tanpa meminta puskesmas memulai program baru.",
           },
           {
             accent: "var(--blue)",
             title: "Jaminan pelaksanaan",
-            body: "Data minimum, zero-disruption, zero-cost bagi puskesmas, dan seluruh output ditutup dengan handover yang bisa dipakai lokal.",
+            body: "Data minimum, layanan rutin tidak diganggu, tanpa biaya bagi puskesmas, dan seluruh output ditutup dengan serah terima yang dapat dipakai lokal.",
           },
           {
             accent: "var(--red)",
@@ -92,37 +92,37 @@
       },
       output: {
         kicker: "Kontribusi untuk Layanan",
-        title: "Tim koas datang membawa bantuan operasional kecil yang selesai dan ditinggalkan",
-        lead: "Yang dijanjikan bukan proyek besar baru, melainkan paket kerja ringkas yang memperingan edukasi, monitoring, dan tindak lanjut keluarga balita di lapangan.",
+        title: "Koas kami tempatkan sebagai tim kecil yang menuntaskan pekerjaan prioritas lalu menyerahkannya ke puskesmas",
+        lead: "Yang kami janjikan bukan program baru, melainkan paket kerja ringkas yang meringankan edukasi, monitoring, dan tindak lanjut keluarga balita di lapangan.",
         band: {
           kicker: "Mode Dinkes",
-          title: "Rotasi dianggap berhasil bila puskesmas menerima alat kerja yang langsung bisa dipakai pada akhir minggu ke-4.",
+          title: "Rotasi dianggap berhasil bila puskesmas menerima alat kerja yang langsung dapat dipakai pada akhir minggu ke-4.",
           body: "Fokusnya adalah pekerjaan ringan, adaptif, dan tidak membebani ritme layanan yang sudah berjalan.",
-          chips: ["baseline brief", "toolkit mini", "handover lokal"],
+          chips: ["gambaran awal", "paket alat kerja", "serah terima"],
         },
         roleLabel: "Tim kecil pelaksana",
         roles: [
           {
             accent: "var(--blue)",
             title: "Koordinator Lapangan",
-            desc: "Menjaga ritme, komunikasi lintas pihak, dan batas scope kerja.",
+            desc: "Menjaga ritme, komunikasi lintas pihak, dan batas cakupan kerja.",
           },
           {
             accent: "#0c99b8",
-            title: "Data, Baseline, dan Monitoring",
-            desc: "Menarik baseline minimum, menjaga logbook, dan menutup rotasi dengan brief singkat.",
+            title: "Data, Gambaran Awal, dan Monitoring",
+            desc: "Menarik data minimum, menjaga buku log, dan menutup rotasi dengan ringkasan singkat.",
           },
           {
             accent: "var(--purple)",
-            title: "Edukasi, Alur, dan Toolkit",
-            desc: "Menyiapkan script edukasi, form ringkas, dan alat kerja yang realistis bagi petugas.",
+            title: "Edukasi, Alur, dan Alat Kerja",
+            desc: "Menyiapkan naskah edukasi, form ringkas, dan alat kerja yang realistis bagi petugas.",
           },
         ],
         deliverableLabel: "Yang diterima puskesmas",
         deliverables: [
-          "Baseline brief masalah prioritas yang bisa dipakai untuk briefing internal.",
+          "Ringkasan gambaran awal masalah prioritas yang dapat dipakai untuk rapat internal.",
           "SOP mini, form ringkas, dan media edukasi yang siap dijalankan.",
-          "Paket handover beserta log monitoring sederhana untuk tindak lanjut.",
+          "Paket serah terima beserta log monitoring sederhana untuk tindak lanjut.",
         ],
         guardrailLabel: "Jaminan untuk mitra layanan",
         guardrails: [
@@ -133,7 +133,7 @@
       readiness: {
         kicker: "Kesepakatan Operasional",
         title: "Kesepakatan yang dibutuhkan agar penempatan dapat dimulai dengan aman",
-        lead: "Setelah poin ini disetujui, pembahasan dapat langsung bergeser dari konsep ke penjadwalan, penunjukan PIC, dan penyiapan toolkit lapangan.",
+        lead: "Setelah poin ini disetujui, pembahasan dapat langsung bergeser dari konsep ke penjadwalan, penunjukan PIC, dan penyiapan paket alat kerja lapangan.",
         primaryLabel: "Yang perlu Dinkes / puskesmas sepakati",
         primaryItems: [
           "Konfirmasi Mentikan sebagai lokasi tahap awal dan tunjuk PIC operasional di puskesmas.",
@@ -142,115 +142,115 @@
         ],
         secondaryLabel: "Yang perlu FKK tetapkan",
         secondaryItems: [
-          "Tetapkan pembimbing akademik dan decision gate mingguan.",
-          "Sahkan logbook, monitoring, dan output akhir sebagai evidence pembelajaran.",
-          "Pastikan mahasiswa turun dengan scope yang sudah dipersempit.",
+          "Tetapkan pembimbing akademik dan titik keputusan mingguan.",
+          "Sahkan buku log, monitoring, dan luaran akhir sebagai bukti pembelajaran.",
+          "Pastikan mahasiswa turun dengan cakupan kerja yang sudah dipersempit.",
         ],
         tertiaryLabel: "Jaminan untuk mitra layanan",
         tertiaryItems: [
-          "Zero-cost bagi puskesmas; kebutuhan mahasiswa tidak memakai anggaran layanan.",
-          "Zero-disruption; koas membantu alur yang ada, bukan menambah proyek baru.",
+          "Tanpa biaya bagi puskesmas; kebutuhan mahasiswa tidak memakai anggaran layanan.",
+          "Layanan rutin tidak diganggu; koas membantu alur yang sudah ada, bukan menambah proyek baru.",
           "Data minimum dan semua materi diverifikasi PIC sebelum dipakai luas.",
         ],
         band: {
           kicker: "Keputusan hari ini",
-          title: "Setujui Mentikan, kunci PIC lintas pihak, dan izinkan tim menyiapkan paket handover sebelum turun lapangan.",
+          title: "Setujui Mentikan, kunci PIC lintas pihak, dan izinkan tim menyiapkan paket serah terima sebelum turun lapangan.",
           body: "Jika ini selesai di meja rapat, pertemuan berikutnya sudah cukup membahas kalender eksekusi dan artefak yang dibawa tim.",
-          chips: ["PIC jelas", "batas data jelas", "handover disetujui"],
+          chips: ["PIC jelas", "batas data jelas", "serah terima disetujui"],
         },
         supportLabel: "Yang perlu sudah ada di meja rapat",
         supportItems: [
           "Mockup SOP mini atau media edukasi yang akan ditinggalkan.",
-          "Skema supervisi mingguan dan contoh format dashboard handover.",
+          "Skema supervisi mingguan dan contoh format ringkasan serah terima.",
         ],
       },
       closing: {
-        title: "FKK ITS siap masuk ke Mentikan sebagai mitra kerja kecil yang tertib, ringan, dan meninggalkan hasil.",
-        lead: "Jika disetujui, tahap berikutnya bukan merumuskan ulang konsep, melainkan menyiapkan PIC, kalender kerja, dan paket lapangan yang langsung dipakai di Mentikan.",
+        title: "Dengan persetujuan Dinkes, FKK ITS siap masuk ke Mentikan sebagai tim kecil yang tertib, ringan bagi layanan, dan meninggalkan hasil.",
+        lead: "Jika Bapak/Ibu menyetujui hari ini, langkah berikutnya bukan lagi membahas konsep, melainkan mengunci PIC, kalender kerja, dan paket lapangan yang langsung dipakai di Mentikan.",
         values: [
           { value: "Ringan", label: "tidak menambah proyek baru bagi puskesmas" },
-          { value: "Terukur", label: "20 hari, milestone jelas, dan handover nyata" },
-          { value: "Aman", label: "data minimum, patient safety, dan zero-disruption" },
-          { value: "Tinggal pakai", label: "SOP mini, media, logbook, dan dashboard ringkas" },
+          { value: "Terukur", label: "20 hari, milestone jelas, dan serah terima nyata" },
+          { value: "Aman", label: "data minimum, keselamatan pasien, dan layanan tetap berjalan" },
+          { value: "Siap pakai", label: "SOP mini, media, buku log, dan ringkasan tindak lanjut" },
         ],
       },
     },
     fkk: {
       buttonLabel: "Mode Dekanat FKK",
       coverBadge: {
-        value: "CPL dan RAE jelas",
-        label: "evidence pembelajaran terhubung dari lapangan sampai handover",
+        value: "CPL dan asesmen selaras",
+        label: "bukti pembelajaran terhubung dari lapangan sampai serah terima",
       },
       summary: {
         title: "Tiga hal yang perlu disahkan sebelum rotasi dijalankan",
-        lead: "Fokus mode ini adalah memastikan blok CM koas memiliki wahana belajar yang valid, aman disupervisi, dan menghasilkan evidence akademik yang jelas.",
+        lead: "Di hadapan Dekanat FKK, yang kami ajukan adalah wahana belajar yang sah, aman untuk supervisi, dan menghasilkan bukti akademik yang jelas.",
         cards: [
           {
             accent: "var(--blue)",
-            title: "Nilai akademik untuk Dekanat",
-            body: "Rotasi memberi wahana diagnosis komunitas, desain intervensi, implementasi, dan handover yang selaras dengan CPL, CPMK, dan RAE.",
+            title: "Nilai akademik untuk FKK",
+            body: "Rotasi memberi wahana diagnosis komunitas, desain intervensi, implementasi, dan serah terima yang selaras dengan CPL, CPMK, dan RAE.",
           },
           {
             accent: "var(--purple)",
             title: "Keamanan supervisi",
-            body: "Scope dipersempit, keputusan mingguan jelas, data minimum terjaga, dan seluruh kerja lapangan dibatasi oleh guardrails etik serta patient safety.",
+            body: "Cakupan rotasi dipersempit, keputusan mingguan jelas, data minimum terjaga, dan seluruh kerja lapangan dibatasi oleh rambu etik serta keselamatan pasien.",
           },
           {
             accent: "var(--red)",
             title: "Pengesahan yang dibutuhkan",
-            body: "Rapat ini perlu mengesahkan Mentikan, pembimbing akademik, format evidence pembelajaran, dan garis koordinasi dengan Dinkes.",
+            body: "Rapat ini perlu mengesahkan Mentikan, pembimbing akademik, format bukti pembelajaran, dan garis koordinasi dengan Dinkes.",
           },
         ],
       },
       output: {
         kicker: "Nilai Pembelajaran dan Serah Terima",
-        title: "Rotasi ini menghasilkan evidence pembelajaran sekaligus produk lapangan yang kredibel",
-        lead: "Setiap peran mahasiswa dipetakan menjadi evidence proses, produk, dan refleksi yang dapat dinilai tanpa melepaskan relevansi operasional di lapangan.",
+        title: "Rotasi ini menghasilkan bukti belajar yang jelas sekaligus produk lapangan yang dapat dipertanggungjawabkan",
+        lead: "Setiap peran mahasiswa dipetakan menjadi bukti proses, produk, dan refleksi yang dapat dinilai tanpa melepaskan relevansi operasional di lapangan.",
         band: {
           kicker: "Mode Dekanat FKK",
-          title: "Nilai akademik tidak berhenti pada kehadiran lapangan; ia ditutup dengan produk, evaluasi, dan serah terima yang bisa diverifikasi.",
+          title: "Nilai akademik tidak berhenti pada kehadiran lapangan; ia ditutup dengan produk, evaluasi, dan serah terima yang dapat diverifikasi.",
           body: "FKK memperoleh bukti CPL dan CPMK, sementara mitra lapangan tetap menerima hasil yang konkret.",
-          chips: ["logbook", "produk intervensi", "dashboard handover"],
+          chips: ["buku log", "produk intervensi", "serah terima"],
         },
         roleLabel: "Peran belajar-profesi",
         roles: [
           {
             accent: "var(--blue)",
             title: "Koordinator Lapangan",
-            desc: "Menjaga ritme mingguan dan decision gate sebagai evidence kepemimpinan klinis-komunitas.",
+            desc: "Menjaga ritme mingguan dan titik keputusan sebagai bukti kepemimpinan klinis-komunitas.",
           },
           {
             accent: "#0c99b8",
-            title: "Data, Baseline, dan Evaluasi",
-            desc: "Menyusun baseline brief, logbook, dan ringkasan outcome sebagai bukti penalaran ilmiah.",
+            title: "Data, Gambaran Awal, dan Evaluasi",
+            desc: "Menyusun gambaran awal, buku log, dan ringkasan luaran sebagai bukti penalaran ilmiah.",
           },
           {
             accent: "var(--purple)",
-            title: "Intervensi, Alur, dan Handover",
-            desc: "Menerjemahkan diagnosis menjadi media, SOP mini, dan paket handover yang bisa diuji dan dinilai.",
+            title: "Intervensi, Alur, dan Serah Terima",
+            desc: "Menerjemahkan diagnosis menjadi media, SOP mini, dan paket serah terima yang bisa diuji dan dinilai.",
           },
         ],
-        deliverableLabel: "Evidence yang keluar",
+        deliverableLabel: "Bukti yang dihasilkan",
         deliverables: [
-          "Baseline brief dan justifikasi masalah prioritas.",
-          "Paket intervensi mikro: SOP mini, media, dan script lapangan.",
-          "Logbook pilot, dashboard ringkas, dan paket handover.",
+          "Ringkasan gambaran awal dan justifikasi masalah prioritas.",
+          "Paket intervensi mikro: SOP mini, media, dan naskah lapangan.",
+          "Buku log uji lapangan, ringkasan monitoring, dan paket serah terima.",
         ],
-        guardrailLabel: "Batas akademik dan etik",
+        guardrailLabel: "Rambu akademik dan etik",
         guardrails: [
-          "Scope rotasi dipersempit pada intervensi mikro yang dapat ditutup tuntas.",
-          "Data minimum, anonimitas, dan patient safety tidak dinegosiasikan.",
+          "Cakupan rotasi dipersempit pada intervensi mikro yang dapat ditutup tuntas.",
+          "Data minimum, anonimitas, dan keselamatan pasien tidak dinegosiasikan.",
         ],
       },
       readiness: {
         kicker: "Pengesahan Akademik",
         title: "Pengesahan yang dibutuhkan agar rotasi sah sebagai wahana belajar profesi",
-        lead: "Setelah poin ini disetujui, FKK dapat menutup fase perencanaan dan masuk ke persiapan supervisi, penugasan mahasiswa, serta evidence pembelajaran.",
+        lead: "Setelah poin ini disetujui, FKK dapat menutup fase perencanaan dan masuk ke persiapan supervisi, penugasan mahasiswa, serta bukti pembelajaran.",
         primaryLabel: "Yang perlu Dekanat / FKK sahkan",
         primaryItems: [
           "Tetapkan Mentikan sebagai wahana implementasi awal blok CM koas.",
-          "Tunjuk pembimbing akademik yang memegang decision gate mingguan.",
-          "Akui logbook, output lapangan, dan handover sebagai evidence resmi blok.",
+          "Tunjuk pembimbing akademik yang memegang titik keputusan mingguan.",
+          "Akui buku log, output lapangan, dan serah terima sebagai bukti resmi blok.",
         ],
         secondaryLabel: "Yang perlu Dinkes fasilitasi",
         secondaryItems: [
@@ -260,30 +260,30 @@
         ],
         tertiaryLabel: "Jaminan akademik dan etik",
         tertiaryItems: [
-          "Intervensi bersifat frugal dan terukur, bukan proyek besar yang sulit ditutup.",
-          "Data minimum, anonimitas, dan patient safety dijaga sepanjang rotasi.",
+          "Intervensi bersifat hemat sumber daya dan terukur, bukan proyek besar yang sulit ditutup.",
+          "Data minimum, anonimitas, dan keselamatan pasien dijaga sepanjang rotasi.",
           "Perubahan lapangan melalui preseptor, PJ program, dan pembimbing.",
         ],
         band: {
           kicker: "Pengesahan hari ini",
-          title: "Sahkan Mentikan, tetapkan pembimbing, dan kunci format evidence sekarang agar rotasi tidak kehilangan arah saat turun lapangan.",
+          title: "Sahkan Mentikan, tetapkan pembimbing, dan kunci format bukti sekarang agar rotasi tidak kehilangan arah saat turun lapangan.",
           body: "Dengan itu, presentasi berikutnya sudah tidak lagi berdebat soal konsep, melainkan memeriksa kesiapan eksekusi dan supervisi.",
-          chips: ["wahana sah", "pembimbing jelas", "evidence terkunci"],
+          chips: ["wahana sah", "pembimbing jelas", "bukti terkunci"],
         },
-        supportLabel: "Yang perlu siap sebelum briefing pertama",
+        supportLabel: "Yang perlu siap sebelum pengarahan pertama",
         supportItems: [
-          "Nama pembimbing, preseptor, dan PIC lokal yang akan muncul di logbook.",
-          "Template logbook, monitoring, dan rubrik evidence yang disepakati.",
+          "Nama pembimbing, preseptor, dan PIC lokal yang akan muncul di buku log.",
+          "Template buku log, monitoring, dan rubrik bukti yang disepakati.",
         ],
       },
       closing: {
-        title: "FKK ITS siap menjalankan blok kedokteran komunitas dengan wahana belajar yang jelas, aman, dan bernilai.",
-        lead: "Jika disetujui, tahap berikutnya adalah mengunci supervisi, evidence pembelajaran, dan kesiapan artefak lapangan agar rotasi berjalan koheren dari awal sampai handover.",
+        title: "Dengan pengesahan Dekanat, FKK ITS siap menjalankan blok kedokteran komunitas pada wahana belajar yang jelas, aman, dan bernilai.",
+        lead: "Jika Dekanat menyetujui hari ini, tahap berikutnya adalah mengunci supervisi, bukti pembelajaran, dan kesiapan artefak lapangan agar rotasi berjalan koheren dari awal sampai serah terima.",
         values: [
           { value: "Koheren", label: "selaras dengan CPL, CPMK, dan RAE" },
-          { value: "Tersupervisi", label: "decision gate mingguan dan jalur pembimbing jelas" },
-          { value: "Etis", label: "data minimum, patient safety, dan batas intervensi terjaga" },
-          { value: "Terbukti", label: "logbook, produk, diseminasi, dan handover" },
+          { value: "Tersupervisi", label: "titik keputusan mingguan dan jalur pembimbing jelas" },
+          { value: "Etis", label: "data minimum, keselamatan pasien, dan batas intervensi terjaga" },
+          { value: "Terbukti", label: "buku log, produk, diseminasi, dan serah terima" },
         ],
       },
     },
@@ -436,16 +436,16 @@
       {
         title: "Posisi program",
         items: [
-          "Tahap awal dijalankan di satu wilayah kerja, bukan perombakan seluruh layanan kota.",
-          "Komparatif inti dibatasi pada 5 wilayah kajian blok kedokteran komunitas; Kedundung tidak masuk kajian rotasi ini.",
+          "Kami tidak mengusulkan perombakan seluruh layanan kota; tahap awal ini cukup dijalankan di satu wilayah kerja yang hasilnya bisa ditutup rapi.",
+          "Dalam deck ini kami hanya membandingkan 5 wilayah kajian blok kedokteran komunitas; Kedundung tidak masuk karena bukan objek rotasi ini.",
         ],
         accent: "var(--blue)",
       },
       {
         title: "Parameter keberhasilan rapat",
         items: [
-          "Sepakati lokasi tahap awal, fokus masalah, dan batas intervensi 20 hari.",
-          "Pastikan hasil akhir yang diterima lokal: paket kerja, alur kerja singkat, logbook, dan serah terima.",
+          "Yang kami mohon dikunci hari ini ialah lokasi tahap awal, fokus masalah, dan batas intervensi 20 hari.",
+          "Yang kami siapkan untuk diterima lokal ialah paket kerja, alur singkat, buku log, dan serah terima.",
         ],
         accent: "var(--green)",
       },
@@ -522,14 +522,16 @@
       </div>
     `).join("");
 
-    decisionReasons.innerHTML = D.communityMedicine.recommendation.rationale
-      .slice(0, 3)
-      .map((item) => `<li>${escapeHtml(item)}</li>`)
-      .join("");
+    const decisionReasonsCopy = [
+      "Volume kunjungan memberi cukup banyak titik kontak untuk observasi alur dan edukasi keluarga.",
+      "Keterbatasan tenaga strategis membuat intervensi mikro dan perapian alur kerja menjadi sangat relevan.",
+      "Jejaring 3 PUSTU aktif memberi ruang kerja komunitas yang nyata sekaligus jangkauan tindak lanjut.",
+    ];
+    decisionReasons.innerHTML = decisionReasonsCopy.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
     const framing = [
-      "Keputusan ini menempatkan Mentikan sebagai lokasi implementasi awal, bukan sebagai penilaian mutu mutlak terhadap puskesmas lain.",
-      "Pilihan lokasi diarahkan pada tempat yang paling memungkinkan untuk menunjukkan hasil yang selesai, terukur, dan dapat diserahterimakan dalam satu rotasi.",
+      "Pilihan ini menempatkan Mentikan sebagai lokasi tahap awal, bukan sebagai penilaian mutu mutlak terhadap puskesmas lain.",
+      "Yang kami cari adalah lokasi yang paling memungkinkan menunjukkan hasil yang selesai, terukur, dan dapat diserahterimakan dalam satu rotasi.",
     ];
     decisionFraming.innerHTML = framing.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   }
@@ -551,16 +553,16 @@
       </div>
     `).join("");
 
-    bridgeCopy.textContent = "Beban penyakit kota dipakai sebagai konteks layanan. Fokus 20 hari di Mentikan diarahkan pada perilaku keluarga balita dan alur layanan yang paling mungkin dibenahi cepat.";
+    bridgeCopy.textContent = "Dalam 20 hari, yang kami kejar adalah perbaikan di titik layanan yang paling dekat dengan keluarga balita: edukasi singkat, pengingat, dan tindak lanjut yang lebih rapi.";
 
     const pills = [
       {
-        title: "Target perilaku",
-        body: "Kehadiran keluarga balita dan tindak lanjut setelah keluarga bersentuhan dengan layanan.",
+        title: "Hasil yang ingin terlihat pada keluarga",
+        body: "Keluarga lebih paham, lebih siap hadir, dan tahu langkah lanjut setelah kontak dengan layanan.",
       },
       {
-        title: "Target layanan",
-        body: "Pengingat, naskah edukasi ringkas, dan alur pencatatan ringan yang mudah dipakai petugas.",
+        title: "Hasil yang ingin terasa di layanan",
+        body: "Petugas punya pengingat, naskah singkat, dan alur pencatatan yang lebih ringan.",
       },
     ];
 
@@ -576,14 +578,32 @@
     const diagramAim = document.getElementById("diagramAim");
     const driverGrid = document.getElementById("driverGrid");
     const serviceFlow = document.getElementById("serviceFlow");
-    const driverDiagram = D.communityMedicine.visualToolkit.driverDiagram;
 
     diagramAim.innerHTML = `
       <strong>Sasaran perbaikan</strong>
-      <p>${escapeHtml(driverDiagram.aim)}</p>
+      <p>Dalam satu rotasi, kami menargetkan titik sentuh edukasi dan tindak lanjut keluarga balita di Mentikan menjadi lebih jelas, lebih ringan dijalankan, dan lebih mudah dipantau.</p>
     `;
 
-    driverGrid.innerHTML = driverDiagram.drivers.map((driver, index) => `
+    const driverCards = [
+      {
+        title: "Keluarga siap bertindak",
+        actions: ["Konseling 3 menit", "Leaflet tanda bahaya"],
+      },
+      {
+        title: "Layanan punya titik sentuh",
+        actions: ["Edukasi singkat di PUSTU / posyandu", "Form tindak lanjut satu halaman"],
+      },
+      {
+        title: "Kader dan petugas punya pengingat",
+        actions: ["Naskah pesan singkat", "Pengingat komitmen kunjungan"],
+      },
+      {
+        title: "Perubahan bisa dipantau",
+        actions: ["Ringkasan mingguan", "Checklist kepatuhan alur"],
+      },
+    ];
+
+    driverGrid.innerHTML = driverCards.map((driver, index) => `
       <article class="driver-card" style="--accent:${Object.values(TONE_VARS)[index] || "var(--blue)"}">
         <strong>${escapeHtml(driver.title)}</strong>
         <div class="driver-actions">
@@ -594,26 +614,26 @@
 
     const steps = [
       {
-        title: "Baseline dan pemetaan sasaran",
-        body: "Data awal ditarik dan titik layanan keluarga balita dipetakan.",
+        title: "Kunci gambaran awal",
+        body: "Data awal dan sasaran keluarga dikunci.",
       },
       {
-        title: "Rancang titik layanan yang sederhana",
-        body: "Naskah edukasi, pengingat, dan formulir tindak lanjut disusun bersama petugas.",
+        title: "Siapkan alat bantu",
+        body: "Media, pengingat, dan form singkat disetujui petugas.",
       },
       {
-        title: "Pilot, perbaikan cepat, dan evaluasi mingguan",
-        body: "Intervensi diuji terbatas, ditinjau bersama PIC lokal, lalu diperbaiki cepat.",
+        title: "Uji terbatas",
+        body: "Intervensi dijalankan, ditinjau mingguan, lalu diperbaiki cepat.",
       },
       {
-        title: "Serah terima ke puskesmas dan kader",
-        body: "Produk akhir diserahkan dalam bentuk yang bisa langsung dipakai lokal.",
+        title: "Serah terima",
+        body: "Paket akhir diserahkan ke puskesmas dan kader lokal.",
       },
     ];
 
     serviceFlow.innerHTML = `
       <article class="flow-card">
-        <strong>Alur kerja yang diharapkan</strong>
+        <strong>Empat langkah eksekusi</strong>
         <div class="flow-steps">
           ${steps.map((step, index) => `
             <div class="flow-step">
@@ -699,7 +719,7 @@
             end: 2,
             subtasks: [
               "D1: Kick-off, kontrak kerja, dan tarik data inti",
-              "D2: Sinkronisasi baseline dan indikator prioritas",
+              "D2: Sinkronisasi gambaran awal dan indikator prioritas",
             ],
           },
           {
@@ -735,7 +755,7 @@
             start: 8,
             end: 10,
             subtasks: [
-              "D8-D9: Desain bersama, materi, dan script lapangan",
+              "D8-D9: Desain bersama, materi, dan naskah lapangan",
               "D10: Uji awal dan finalisasi rancangan",
             ],
           },
@@ -753,7 +773,7 @@
             end: 10,
             subtasks: [
               "D7-D8: Draft SOP mini, media, dan form sederhana",
-              "D9-D10: Finalisasi paket pilot dan alur kerja",
+              "D9-D10: Finalisasi paket uji dan alur kerja",
             ],
           },
           {
