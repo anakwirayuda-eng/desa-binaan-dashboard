@@ -110,7 +110,6 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 | dr. Endah Indriastuti, Sp.PK | **Patologi Klinik** — kunci untuk validasi biomarker |
 | dr. Rizka Nurul Hidayah, M.Biomed | Biomedik |
 | dr. Fatimah Nur Fitriani, M.Biomed | Biomedik |
-| dr. Rumman Karimah, M.Biomed | Biomedik |
 | dr. Gumilar Fardhani Ami Putra, M.Biomed | Biomedik |
 | dr. Dwinka Syafira Eljatin, M.Ked.Trop | **Kedokteran Tropis** |
 | dr. Abdurrahman, Sp.An-TI, M.Ked.Klin | Anestesiologi & Terapi Intensif |
@@ -442,17 +441,18 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 2. **Roadmap Penelitian ITS 2025–2029** (DRPM) — apakah ada slot tema kesehatan yang harus diinduki → `its.ac.id/drpm/.../Roadmap-Penelitian-2025-2029.pdf`
 3. **Renstra ITS 2026–2030** — kerangka RAISE sebagai payung
 4. **Struktur FKK 2025** (`its.ac.id/wp-content/uploads/2025/01/Struktur-FKK-2025-Rev.pdf`) — struktur organisasi & kepemimpinan otoritatif
-5. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 12 dari ~27 dosen Prodi Kedokteran. **Ini bukan kesenjangan sepele:** satu nama yang semula tidak tergali (Dr. A.A.B. Wirayuda, epidemiolog) ternyata mengubah kesimpulan strategis dokumen ini. Asumsikan masih ada kapasitas tersembunyi lain di 15 nama yang belum terpetakan — petakan seluruhnya sebelum pohon difinalkan.
+5. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 11 dosen aktif dari ~27 dosen Prodi Kedokteran. **Ini bukan kesenjangan sepele:** satu nama yang semula tidak tergali (Dr. A.A.B. Wirayuda, epidemiolog) ternyata mengubah kesimpulan strategis dokumen ini. Asumsikan masih ada kapasitas tersembunyi lain di ~16 nama yang belum terpetakan — petakan seluruhnya sebelum pohon difinalkan.
+6. **Status aktif/non-aktif setiap dosen.** Halaman web fakultas tertinggal dari kenyataan — satu nama yang terindeks (dr. Rumman Karimah) ternyata sudah mengundurkan diri dan telah dikeluarkan dari roster dokumen ini. Sebelum pohon dipakai, **cocokkan roster dengan data kepegawaian mutakhir**, bukan dengan situs. Ini kritis karena perhitungan DTPS, rasio dosen, dan indikator NPD/NPM pada akreditasi hanya menghitung dosen aktif ber-*homebase* di prodi.
 
 **Prioritas 2 — menentukan angka**
-6. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
-7. **Daftar publikasi FKK lengkap** → `scholar.its.ac.id/en/organisations/faculty-of-medicine-and-health`
-8. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
+7. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
+8. **Daftar publikasi FKK lengkap** → `scholar.its.ac.id/en/organisations/faculty-of-medicine-and-health`
+9. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
 
 **Prioritas 3 — menyempurnakan benchmark**
-9. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
-10. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
-11. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
+10. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
+11. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
+12. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
 
 ---
 
