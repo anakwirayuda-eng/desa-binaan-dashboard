@@ -77,7 +77,7 @@ Rumusan yang diusulkan sebagai batang — satu kalimat yang harus muncul identik
 > **Kedokteran Pencegahan Presisi Berbasis Teknologi**
 > *Menggeser titik intervensi ke hulu — dari mengobati penyakit yang sudah bermanifestasi menjadi mendeteksi, menstratifikasi, dan mencegahnya pada tingkat individu dan populasi, dengan teknologi yang terjangkau dan dapat di-deploy di layanan primer Indonesia.*
 
-**Mengapa rumusan ini, dan bukan yang lain.** Ada ketegangan nyata yang harus diselesaikan pohon ini: identitas resmi kalian adalah *kedokteran pencegahan*, tetapi SDM yang benar-benar produktif secara riset ada di sisi **teknik** (lihat §4). Rumusan di atas adalah satu-satunya jembatan yang jujur terhadap keduanya:
+**Mengapa rumusan ini, dan bukan yang lain.** Identitas resmi kalian adalah *kedokteran pencegahan*, sementara volume publikasi terbesar saat ini berasal dari sisi **teknik** (EEG, biomekanika, e-nose — lihat §4.2). Rumusan di atas menyatukan keduanya di satu titik yang sama-sama sah, tanpa salah satunya menjadi pelengkap:
 
 ```
 kedokteran pencegahan  ×  teknologi ITS  =  DETEKSI DINI & STRATIFIKASI RISIKO
@@ -116,6 +116,7 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 | dr. Abdurrahman, Sp.An-TI, M.Ked.Klin | Anestesiologi & Terapi Intensif |
 | dr. Lely Nurhayati, M.H., C.M.C | **Hukum Kesehatan / medikolegal** — aset langka |
 | dr. Edwin Nugroho Njoto, Sp.PD, MIPH, MHM | **Penyakit Dalam + Int'l Public Health + Health Management** |
+| **Dr. Anak Agung Bagus Wirayuda, dr., B.Med., M.D., M.Sc.** (Lektor) | **Epidemiologi & Statistika Medis** — M.Sc. Epidemiology and Medical Statistics; Ph.D. Sultan Qaboos University. Riset: determinan wabah dengue (Oman), *systematic review* penyakit tular-vektor kawasan MENA, pemodelan angka harapan hidup & determinan sosial kesehatan negara OIC, model skoring prognostik nyeri punggung bawah di layanan primer Indonesia (*J Prev Med Public Health*, 2025) |
 | Ira Resmi Melani, S.Ked | — |
 
 **Prodi Pendidikan Profesi Dokter** — 7 terverifikasi, seluruhnya klinisi spesialis:
@@ -152,8 +153,8 @@ Sp.F (Anwar Djunaidi) · Sp.Rad (Erna Furaidah) · Sp.B FINACS (Ivor Wiguna H.W.
 
 | Kesenjangan | Dampak pada pohon | Mitigasi |
 |---|---|---|
-| **Tidak ada epidemiolog / S3 Kesmas terverifikasi** selain dr. Edwin Njoto (MIPH, MHM) | Pilar berbasis pencegahan populasi lemah di sisi metodologi | Rekrut prioritas #1; sementara ini gandeng **Lab Statistika & Sains Data Lingkungan dan Kesehatan** ITS + FKM UNAIR |
-| **Biostatistisi klinis** tidak terlihat | Desain studi & *sample size* untuk uji diagnostik | Dept. Statistika ITS — mitra internal, tersedia sekarang |
+| ~~Tidak ada epidemiolog~~ — **TERKOREKSI.** Kapasitas epidemiologi & biostatistik **sudah ada di dalam**: Dr. Anak Agung Bagus Wirayuda (M.Sc. Epidemiology & Medical Statistics, Ph.D.) | Bukan kesenjangan. Justru ini **penambat metodologis** untuk seluruh pilar dan prasyarat kohort (§6) | Perkuat, bukan rekrut: beri peran Penanggung Jawab Metodologi lintas pilar; tambah 1–2 epidemiolog/biostatistisi yunior sebagai kaderisasi agar tidak bergantung pada satu orang |
+| **Biostatistisi klinis tambahan** untuk menopang volume | Desain studi & *sample size* untuk uji diagnostik pada banyak pilar sekaligus | Dept. Statistika ITS (Lab Statistika & Sains Data Lingkungan dan Kesehatan) — mitra internal, tersedia sekarang |
 | **Mikrobiologi klinik / Patologi Anatomi** tidak terverifikasi | Pilar 3 (AMR) dan validasi biomarker terhambat | Manfaatkan Sp.PK yang ada + jejaring lab RSUD; rekrut menengah |
 | **Farmakologi klinik** tidak terverifikasi | Membatasi riset intervensi | Rekrut jangka menengah |
 | Mayoritas dosen Kedokteran masih **M.Biomed (S2)** | Kapasitas memimpin riset mandiri terbatas | Program studi lanjut S3 terarah ke cabang pohon; jadikan mereka *co-PI* pada proyek yang dipimpin platform |
@@ -274,7 +275,9 @@ Mengapa ini keputusan strategis, bukan sekadar proyek:
 5. **Memenuhi C.7 dan C.8 sekaligus** — kohort adalah penelitian sekaligus pengabdian.
 6. **Menyelesaikan kesenjangan SDM.** Kohort memberi dosen M.Biomed yang masih muda jalur riset nyata tanpa harus memimpin proyek mandiri lebih dulu.
 
-Prasyarat yang harus disiapkan: persetujuan etik (KEPK), tata kelola data & persetujuan subjek, PKS dengan Dinkes Kota Mojokerto, dan seorang epidemiolog/biostatistisi sebagai penanggung jawab metodologi (lihat kesenjangan SDM §4.3).
+Prasyarat yang harus disiapkan: persetujuan etik (KEPK), tata kelola data & persetujuan subjek, dan PKS dengan Dinkes Kota Mojokerto.
+
+**Prasyarat metodologisnya sudah terpenuhi.** Penanggung jawab desain kohort tersedia di dalam fakultas: Dr. Anak Agung Bagus Wirayuda (M.Sc. Epidemiology & Medical Statistics, Ph.D.), yang rekam jejaknya justru persis pada jenis pekerjaan ini — pemodelan determinan pada tingkat populasi, epidemiologi penyakit tular-vektor, dan pengembangan model prognostik di layanan primer Indonesia. Kohort ini sebaiknya diletakkan di bawah kepemimpinan metodologisnya sejak protokol.
 
 ---
 
@@ -309,7 +312,10 @@ Tabel ini menjawab langsung pertanyaan "penelitian apa yang bisa dibuat berdasar
 | 22 | HTA & analisis biaya-manfaat inovasi alkes frugal FKK ITS | P5 × T5 | **B** | Edwin Njoto (MHM) + Teknik Industri ITS |
 | 23 | Evaluasi rotasi Community Medicine terhadap capaian CPL | P5 × T5 | **A** | Data kurikulum & CPL sudah terdokumentasi di repositori ini |
 | 24 | Kesiapan adopsi teknologi kesehatan digital oleh nakes puskesmas | P5 × T5 | **A** | Jejaring 5 puskesmas + Sistem Informasi ITS |
-| 25 | **Protokol dasar Kohort Sehat Mojokerto** | lintas pilar | **C** | Perlu epidemiolog/biostatistisi — lihat §4.3 |
+| 25 | **Protokol dasar Kohort Sehat Mojokerto** | lintas pilar | **A** | Wirayuda (epidemiologi & statistika medis) sebagai PJ metodologi — kapasitas sudah internal |
+| 26 | Model prognostik untuk transisi penyakit di layanan primer (replikasi & perluasan model nyeri punggung bawah ke PTM) | P1/P5 × T3 | **A** | Wirayuda — model prognostik layanan primer sudah terbit 2025 |
+| 27 | Epidemiologi & pemodelan risiko DBD di Kota Mojokerto | P3 × T3/T5 | **A** | Wirayuda — determinan wabah dengue (Oman) & *review* penyakit tular-vektor MENA |
+| 28 | Analisis determinan sosial kesehatan & disparitas angka harapan hidup Jawa Timur | P1/P5 × T3 | **A** | Wirayuda — pemodelan angka harapan hidup & determinan sosial negara OIC |
 
 **Catatan cara pakai:** butir **[A]** cukup untuk mengisi 2–3 tahun pertama roadmap. Ini penting karena jendela data akreditasi hanya **3 tahun terakhir (TS, TS-1, TS-2)** — target tahun 1–3 harus realistis dan pasti tercapai, karena justru itulah yang akan dinilai.
 
@@ -436,7 +442,7 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 2. **Roadmap Penelitian ITS 2025–2029** (DRPM) — apakah ada slot tema kesehatan yang harus diinduki → `its.ac.id/drpm/.../Roadmap-Penelitian-2025-2029.pdf`
 3. **Renstra ITS 2026–2030** — kerangka RAISE sebagai payung
 4. **Struktur FKK 2025** (`its.ac.id/wp-content/uploads/2025/01/Struktur-FKK-2025-Rev.pdf`) — struktur organisasi & kepemimpinan otoritatif
-5. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 11 dari ~27 dosen Prodi Kedokteran
+5. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 12 dari ~27 dosen Prodi Kedokteran. **Ini bukan kesenjangan sepele:** satu nama yang semula tidak tergali (Dr. A.A.B. Wirayuda, epidemiolog) ternyata mengubah kesimpulan strategis dokumen ini. Asumsikan masih ada kapasitas tersembunyi lain di 15 nama yang belum terpetakan — petakan seluruhnya sebelum pohon difinalkan.
 
 **Prioritas 2 — menentukan angka**
 6. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
