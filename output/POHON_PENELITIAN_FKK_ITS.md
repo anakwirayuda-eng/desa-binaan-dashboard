@@ -43,6 +43,7 @@ Fakta institusional pendukung (semua dari sumber terindeks, perlu verifikasi fin
 - FKK adalah **fakultas ke-8 ITS**, berdiri dengan **Peraturan Rektor ITS No. 2 Tahun 2023**; FK UNAIR sebagai fakultas pembina.
 - Tiga prodi: **Sarjana Kedokteran**, **Pendidikan Profesi Dokter**, **Teknologi Kedokteran**.
 - Dekan 2025–2029: **Dr. Lukman Hakim, M.Kes., Sp.U(K), Ph.D** (PhD KU Leuven; uro-onkologi). Dekan pendiri: Dr. dr. Imam Susilo, Sp.PA(K).
+- **Wakil Dekan: Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.** — sekaligus **profesor pertama FKK ITS** (dikukuhkan sbg Profesor ke-266 ITS, Agustus 2025; orasi ilmiah *"Pemanfaatan Sinyal Otak untuk Mendukung Inovasi Neuroteknologi bagi Kemajuan Bangsa"*). **Perlu diverifikasi manual** — sumber berasal dari cuplikan mesin pencari (dua kueri terpisah), bukan halaman/PDF struktur organisasi asli, dan `its.ac.id` masih memblokir pengambilan langsung dari sesi ini.
 - Kurikulum memuat **~20% materi teknologi kesehatan**: AI, sains data medis, genomik.
 - Sinergi lintas fakultas dinyatakan Dekan sebagai *"kekuatan utama yang membedakan FKK ITS dari fakultas kedokteran lainnya."*
 - Prodi Kedokteran & Profesi Dokter **sudah divisitasi LAM-PTKes 23–26 April 2025**; halaman prodi menyebut peringkat **"Baik"**.
@@ -125,7 +126,7 @@ Sp.F (Anwar Djunaidi) · Sp.Rad (Erna Furaidah) · Sp.B FINACS (Ivor Wiguna H.W.
 
 | Nama | Bidang terpublikasi |
 |---|---|
-| **Prof. Dr. Ir. Adhi Dharma Wibawa** | Pemrosesan sinyal biomedis (EEG/EMG/ECG), AI; PhD Biomedical Engineering **Univ. Groningen**; Kepala Pusat Studi KATD |
+| **Prof. Dr. Ir. Adhi Dharma Wibawa** — **Wakil Dekan FKK ITS**, profesor pertama FKK (dikukuhkan Agustus 2025) | Pemrosesan sinyal biomedis (EEG/EMG/ECG), AI; PhD Biomedical Engineering **Univ. Groningen**; Kepala Pusat Studi KATD |
 | **Dr. Shoffi Izza Sabilla, S.Kom., M.Kom.** | ***Electronic nose***, machine learning, deep NN, IoT |
 | **Achmad Syaifudin, Ph.D** | Biomekanika ortopedi, *bone plate*, desain stent & FEM |
 | **Djoko Kuswanto, S.T., M.Biotech.** | Desain produk medis, **3D printing**, prostesis & *custom implant*; pendiri Rumah Prostesis Indonesia |
@@ -441,18 +442,19 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 2. **Roadmap Penelitian ITS 2025–2029** (DRPM) — apakah ada slot tema kesehatan yang harus diinduki → `its.ac.id/drpm/.../Roadmap-Penelitian-2025-2029.pdf`
 3. **Renstra ITS 2026–2030** — kerangka RAISE sebagai payung
 4. **Struktur FKK 2025** (`its.ac.id/wp-content/uploads/2025/01/Struktur-FKK-2025-Rev.pdf`) — struktur organisasi & kepemimpinan otoritatif
-5. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 11 dosen aktif dari ~27 dosen Prodi Kedokteran. **Ini bukan kesenjangan sepele:** satu nama yang semula tidak tergali (Dr. A.A.B. Wirayuda, epidemiolog) ternyata mengubah kesimpulan strategis dokumen ini. Asumsikan masih ada kapasitas tersembunyi lain di ~16 nama yang belum terpetakan — petakan seluruhnya sebelum pohon difinalkan.
-6. **Status aktif/non-aktif setiap dosen.** Halaman web fakultas tertinggal dari kenyataan — satu nama yang terindeks (dr. Rumman Karimah) ternyata sudah mengundurkan diri dan telah dikeluarkan dari roster dokumen ini. Sebelum pohon dipakai, **cocokkan roster dengan data kepegawaian mutakhir**, bukan dengan situs. Ini kritis karena perhitungan DTPS, rasio dosen, dan indikator NPD/NPM pada akreditasi hanya menghitung dosen aktif ber-*homebase* di prodi.
+5. **Susunan dekanat terkini.** Cuplikan mesin pencari (Agustus 2026) menyebut **Prof. Dr. Ir. Adhi Dharma Wibawa** sebagai Wakil Dekan sekaligus profesor pertama FKK — sudah dimasukkan ke §2 dan §4.1 dengan tanda perlu-verifikasi, karena diambil dari dua kueri pencarian terpisah yang saling melengkapi, bukan dari PDF struktur organisasi resmi (masih terblokir). **Belum teridentifikasi:** nama "Prof. Ketut" yang disebut pengguna sebagai bagian dekanat/pimpinan saat ini — tidak ditemukan lewat pencarian web pada sesi ini. Perlu nama lengkap & gelar dari pengguna, atau akses langsung ke halaman struktur organisasi.
+6. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 11 dosen aktif dari ~27 dosen Prodi Kedokteran. **Ini bukan kesenjangan sepele:** satu nama yang semula tidak tergali (Dr. A.A.B. Wirayuda, epidemiolog) ternyata mengubah kesimpulan strategis dokumen ini. Asumsikan masih ada kapasitas tersembunyi lain di ~16 nama yang belum terpetakan — petakan seluruhnya sebelum pohon difinalkan.
+7. **Status aktif/non-aktif setiap dosen.** Halaman web fakultas tertinggal dari kenyataan — satu nama yang terindeks (dr. Rumman Karimah) ternyata sudah mengundurkan diri dan telah dikeluarkan dari roster dokumen ini. Sebelum pohon dipakai, **cocokkan roster dengan data kepegawaian mutakhir**, bukan dengan situs. Ini kritis karena perhitungan DTPS, rasio dosen, dan indikator NPD/NPM pada akreditasi hanya menghitung dosen aktif ber-*homebase* di prodi.
 
 **Prioritas 2 — menentukan angka**
-7. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
-8. **Daftar publikasi FKK lengkap** → `scholar.its.ac.id/en/organisations/faculty-of-medicine-and-health`
-9. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
+8. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
+9. **Daftar publikasi FKK lengkap** → `scholar.its.ac.id/en/organisations/faculty-of-medicine-and-health`
+10. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
 
 **Prioritas 3 — menyempurnakan benchmark**
-10. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
-11. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
-12. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
+11. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
+12. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
+13. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
 
 ---
 
