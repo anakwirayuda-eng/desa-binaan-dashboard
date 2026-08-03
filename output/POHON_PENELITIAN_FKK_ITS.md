@@ -1,33 +1,44 @@
 # Rancangan Pohon Penelitian FKK ITS
 ### Dokumen kerja untuk penyusunan RIP & Peta Jalan Penelitian — bahan akreditasi LAM-PTKes
 
-**Disusun:** 28 Juli 2026 · **Status:** draf kerja, belum ditetapkan · **Untuk:** Dekanat & Unit Penelitian FKK ITS
+**Disusun:** 28 Juli 2026 · **Revisi besar:** 3 Agustus 2026 · **Status:** draf kerja, belum ditetapkan · **Untuk:** Dekanat & Unit Penelitian FKK ITS
 
 ---
 
 ## 0. Cara membaca dokumen ini (baca dulu)
 
-Dokumen ini disusun dari riset web empat jalur: profil institusi FKK ITS, rekam jejak SDM, benchmark 14 fakultas kedokteran dunia, dan regulasi akreditasi Indonesia.
+Dokumen ini disusun dari riset web empat jalur: profil institusi FKK ITS, rekam jejak SDM, benchmark fakultas kedokteran dunia, dan regulasi akreditasi Indonesia. Revisi 3 Agustus 2026 menambahkan hasil **riset agentik 18 agen** (personel → verifikasi silang adversarial → benchmark → konteks) serta **struktur organisasi resmi FKK** yang dipasok pengguna.
 
-**Batas validitas yang harus diketahui.** Sesi riset ini berjalan di balik *egress policy* yang memblokir akses langsung ke `its.ac.id`, `sinta.kemdiktisaintek.go.id`, `pddikti`, `scholar.google.com`, dan `lamptkes.org` (HTTP 403 pada CONNECT). Artinya:
+**Batas validitas yang harus diketahui.** Sesi riset berjalan di balik *egress policy* yang memblokir akses langsung ke `its.ac.id`, seluruh domain `.ac.id`, `sinta.kemdiktisaintek.go.id`, `pddikti`, `scholar.google.com`, `researchgate.net`, `ieeexplore.ieee.org`, dan `lamptkes.org` (HTTP 403 pada CONNECT). Pada revisi 3 Agustus, kuota pencarian web juga habis (200/200) di tengah jalan. Artinya:
 
-- Tidak satu pun halaman ITS atau PDF instrumen LAM-PTKes yang dibuka langsung. Semua berasal dari indeks mesin pencari (judul halaman + URL + ringkasan).
-- **Tidak ada satu pun angka bibliometrik (skor SINTA, H-index, jumlah dokumen Scopus) dalam dokumen ini.** Angka-angka itu tidak berhasil diambil, dan sengaja tidak dikarang. Kolomnya dikosongkan untuk diisi manual.
-- Nama dosen yang dicantumkan berasal dari URL halaman profil individual yang terindeks — bukti kuat bahwa halamannya ada, tetapi ejaan dan gelar tetap **wajib dikonfirmasi** ke kepegawaian.
+- Tidak satu pun halaman ITS atau PDF instrumen LAM-PTKes yang dibuka langsung. Sebagian besar fakta institusional berasal dari indeks mesin pencari.
+- **Tidak ada satu pun angka bibliometrik (skor SINTA, H-index, jumlah dokumen Scopus) dalam dokumen ini.** Angka-angka itu tidak berhasil diambil, dan sengaja tidak dikarang.
+- **Tidak ada satu pun angka ambang batas akreditasi, nominal hibah, atau angka prevalensi nasional.** Semuanya gagal diverifikasi pada Agustus 2026 dan sengaja dibiarkan kosong — lihat §10 Prioritas 4.
+
+**Tiga koreksi berturut-turut sudah terjadi pada dokumen ini**, dan polanya harus dipahami sebelum membacanya:
+
+| Draf | Kekeliruan | Penyebab |
+|---|---|---|
+| 1 | Menyatakan FKK tidak punya epidemiolog | Nama Dr. A.A.B. Wirayuda tidak tergali oleh riset berdomain terblokir |
+| 2 | Menyebut Prof. Adhi Dharma Wibawa sebagai Wakil Dekan | Sumber daring **usang** — benar untuk 2023, salah untuk 2026 |
+| 3 | Mengusulkan dr. Afia (Sp.M) memimpin riset retinopati diabetik; menganggap klaster EEG tanpa mitra klinis | Menyimpulkan peran **dari gelar**, bukan dari jejak riset; roster tidak lengkap |
+
+Ketiganya lahir dari mekanisme yang sama: **menyimpulkan dari cuplikan mesin pencari alih-alih dari halaman sumber.** Karena itu setiap klaim personel dalam revisi ini melewati agen pemeriksa yang ditugasi *membantah*, dan hasil vonisnya — 28 dikonfirmasi, 37 diragukan, 43 tidak dapat diperiksa, 11 dibantah — tercermin pada tanda peringatan di sepanjang dokumen. **Perlakukan setiap nama tanpa tanda "terverifikasi" sebagai hipotesis kerja.**
 
 Seluruh butir yang harus diverifikasi dikumpulkan di **§10**. Jangan salin dokumen ini ke LED sebelum §10 tuntas.
 
 ---
 
-## 1. Ringkasan eksekutif — lima keputusan yang diusulkan
+## 1. Ringkasan eksekutif — enam keputusan yang diusulkan
 
 | # | Keputusan | Alasan singkat |
 |---|---|---|
 | **K1** | Pakai **struktur matriks**: 5 Pilar (sumbu hasil kesehatan) × 5 Platform (sumbu kapabilitas teknologi). Yang dipublikasikan hanya Pilar. | Pohon yang pilarnya "AI / Robotika / Biomaterial" tidak terbaca oleh Kemenkes, RS pendidikan, dan asesor kedokteran — mereka menilai hasil kesehatan. Pohon yang pilarnya murni penyakit menghapus satu-satunya keunggulan FKK ITS. Matriks menyelesaikan keduanya. Pola ini dipakai Imperial (14×4), Yale (8×3), Carle Illinois. |
 | **K2** | **Platform memegang anggaran modal; Pilar memegang narasi.** Jangan dibalik. | Investasi alat di institut teknologi paling efisien bila mengalir ke platform yang dipakai lintas pilar (pola *core facilities* Karolinska). Pilar-lah yang berbicara ke Dinkes, RSUD, dan funder. |
-| **K3** | Jadikan **Desa Binaan Mojokerto sebagai kohort komunitas longitudinal**, bukan sekadar lokasi pengabdian. | Ini aset riset tunggal yang memberi makan kelima pilar selama puluhan tahun, langsung membuktikan klaim "kedokteran pencegahan", dan tidak dapat ditiru FK konvensional. Lihat §6. |
+| **K3** | Jadikan Desa Binaan Mojokerto **platform surveilans bertahap yang dibingkai sebagai *testbed* teknologi kedokteran pada populasi terdefinisi** — bukan kohort prospektif penuh, dan bukan sekadar lokasi pengabdian. | *Direvisi Agustus 2026.* Kohort penuh bergaya Rotterdam tidak realistis untuk fakultas berumur 3 tahun, dan kohort biasa akan selalu kalah dari HDSS Sleman UGM yang lebih dulu dan lebih besar. Yang tidak bisa ditiru bukan kohortnya, melainkan **kohort yang menempel pada pabrik teknologi medis**. Lihat §6. |
 | **K4** | Terbitkan **dua pohon terpisah**: Pohon Penelitian dan Pohon PkM. | Kriteria C.7 (Penelitian) dan C.8 (PkM) LAM-PTKes menuntut peta jalan masing-masing dengan rumusan indikator yang identik. Satu pohon hanya memenuhi separuh. |
-| **K5** | Bangun **mekanisme penegakan sejak hari pertama**, bukan menjelang visitasi. | Unsur ke-3 dan ke-4 indikator C.7 (evaluasi kesesuaian + tindak lanjut) adalah titik gugur paling umum. Lihat §8. |
+| **K5** | Bangun **mekanisme penegakan sejak hari pertama**, bukan menjelang visitasi. | Unsur ke-3 dan ke-4 indikator C.7 (evaluasi kesesuaian + tindak lanjut) adalah titik gugur paling umum. Rubrik LAM memisahkan skor 3 dari 4 hanya lewat dua hal, dan salah satunya adalah sistem TIK yang *menyebarluaskan* hasil riset ke publik. Lihat §8.5 dan §9.1a. |
+| **K6** | **Tetapkan desa pembanding sejak hari pertama** platform surveilans berjalan. | Keputusan ini **gratis di tahun pertama dan mustahil diperbaiki di tahun kelima**. Tanpa area pembanding permanen, tidak satu pun klaim efektivitas intervensi Desa Binaan dapat dipertahankan secara metodologis. Butir tunggal paling berdampak dalam dokumen ini. Lihat §6.4. |
 
 ---
 
@@ -43,8 +54,10 @@ Fakta institusional pendukung (semua dari sumber terindeks, perlu verifikasi fin
 - FKK adalah **fakultas ke-8 ITS**, berdiri dengan **Peraturan Rektor ITS No. 2 Tahun 2023**; FK UNAIR sebagai fakultas pembina.
 - Tiga prodi: **Sarjana Kedokteran**, **Pendidikan Profesi Dokter**, **Teknologi Kedokteran**.
 - Dekan 2025–2029: **Dr. Lukman Hakim, M.Kes., Sp.U(K), Ph.D** (PhD KU Leuven; uro-onkologi). Dekan pendiri: Dr. dr. Imam Susilo, Sp.PA(K).
-- **Wakil Dekan: Prof. Dr. I Ketut Eddy Purnama, S.T., M.T.** — sumber: halaman resmi *Struktur Organisasi* `its.ac.id/fakultas/fkk/profil/`, dikonfirmasi pengguna. **Perlu diverifikasi:** bidang keahlian & *homebase* prodi — nama ini belum terpetakan ke satu pun dari tiga prodi FKK dalam riset sebelumnya, kemungkinan pengangkatan lintas-unit dari luar FKK (pola umum pada fakultas kedokteran teknologi-baru untuk kursi Wakil Dekan bidang riset/teknologi).
-- **Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.** menjabat **Kepala Penjaminan Mutu Fakultas** (bukan Wakil Dekan — **koreksi** atas draf commit sebelumnya, yang keliru menyimpulkan dari cuplikan mesin pencari tanpa halaman sumber; lihat §10 butir 5), sekaligus **profesor pertama FKK ITS** (dikukuhkan sbg Profesor ke-266 ITS, Agustus 2025; orasi ilmiah *"Pemanfaatan Sinyal Otak untuk Mendukung Inovasi Neuroteknologi bagi Kemajuan Bangsa"* — sumber ITS News, terpisah dari kekeliruan di atas).
+- **Wakil Dekan: Prof. Dr. I Ketut Eddy Purnama, S.T., M.T.** — sumber: halaman resmi *Struktur Organisasi* `its.ac.id/fakultas/fkk/profil/`, dikonfirmasi pengguna 3 Agustus 2026. Guru Besar bidang **Telematika Kesehatan**, dari Departemen Teknik Komputer FTEIC. Profil lengkap di §4.1a — **ini aset kepemimpinan riset yang selama ini tidak terlihat dalam dokumen.**
+- **Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.** kini menjabat **Kepala Penjaminan Mutu Fakultas**, sekaligus profesor pertama yang lahir dari FKK ITS (dikukuhkan Agustus 2025; orasi *"Pemanfaatan Sinyal Otak untuk Mendukung Inovasi Neuroteknologi bagi Kemajuan Bangsa"*).
+
+> **Catatan garis waktu — penting agar kekeliruan lama tidak terulang.** Draf kedua dokumen ini sempat menyebut Wibawa sebagai Wakil Dekan. Penelusuran verifikasi menemukan bahwa itu **benar untuk tahun 2023** — pemberitaan Agustus 2023 memang mencatat pelantikan Dr. Adhi Dharma Wibawa sebagai Wakil Dekan FKK pada masa kepemimpinan Dekan pendiri Dr. dr. Imam Susilo, Sp.PA(K). Jadi sumber lamanya tidak palsu, melainkan **usang**. Susunan yang berlaku sekarang adalah Dekan Lukman Hakim (2025–2029) dengan Wakil Dekan I Ketut Eddy Purnama. Pelajarannya: pada fakultas berumur tiga tahun yang sudah berganti satu periode kepemimpinan, sumber daring berumur 2–3 tahun bukan sekadar lemah — ia aktif menyesatkan.
 - Kurikulum memuat **~20% materi teknologi kesehatan**: AI, sains data medis, genomik.
 - Sinergi lintas fakultas dinyatakan Dekan sebagai *"kekuatan utama yang membedakan FKK ITS dari fakultas kedokteran lainnya."*
 - Prodi Kedokteran & Profesi Dokter **sudah divisitasi LAM-PTKes 23–26 April 2025**; halaman prodi menyebut peringkat **"Baik"**.
@@ -118,6 +131,30 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 | Kaprodi Pendidikan Profesi Dokter | dr. Rahmah Yasinta Rangkuti, Sp.A, M.Biomed |
 | Kaprodi Teknologi Kedokteran | Dr. Shoffi Izza Sabilla, S.Kom |
 
+### 4.1a Prof. Dr. I Ketut Eddy Purnama — aset yang selama ini tidak terlihat
+
+Riset mendalam Agustus 2026 mengungkap bahwa Wakil Dekan FKK ITS **bukan administrator yang kebetulan berlatar teknik**. Bidang keilmuan guru besarnya adalah **Telematika Kesehatan** (*Health Telematics*), dan seluruh portofolio risetnya bertumpu pada kesehatan.
+
+| Aspek | Temuan |
+|---|---|
+| *Homebase* | Departemen Teknik Komputer, FTEIC ITS |
+| Bidang guru besar | **Telematika Kesehatan** — orasi pengukuhan *"Telematika Kesehatan untuk mewujudkan layanan kesehatan yang cerdas, paripurna dan memuaskan bagi masyarakat"* (2 November 2023) |
+| Ruang lingkup yang ia definisikan sendiri | Akuisisi data, penyimpanan, transmisi, pengolahan, analisis data, *telemedicine*, *blockchain*, kecerdasan artifisial, rehabilitasi medik, *gaming*, IoT, dan robotika dalam layanan kesehatan |
+| Bidang riset teknis | Analisis citra medis, analisis citra mikroskopik, *computer vision* |
+| Objek riset nyata (2022–2025) | MRI otak (klasifikasi abnormalitas, segmentasi hipokampus) · MRI jantung (segmentasi *cine cardiac*, cincin miokardium) · CT paru COVID-19 (segmentasi + visualisasi 3D) · USG trombosis vena dalam · **mikroskopi sputum untuk basil tuberkulosis** · rekonstruksi kraniofasial 3D dari tengkorak · segmentasi pembuluh darah retina |
+| Venue | *Journal of Imaging Informatics in Medicine* (Springer) · *Array* (Elsevier) · *IET Image Processing* · IEEE Access · beberapa prosiding IEEE |
+| Jabatan lain | Mantan Dekan FTEIC (periode berakhir sebelum 2025); disebut **Kepala Pusat Studi KATD** DRPM ITS sejak Januari 2025 — **konflik data, lihat catatan di bawah** |
+
+**Apa artinya bagi pohon ini — tiga konsekuensi:**
+
+1. **Platform T3 (AI Medis & Pencitraan) dan T5 (Informatika Kesehatan) kini punya pemimpin bergelar guru besar**, dan kebetulan orang itu adalah Wakil Dekan. Sebelumnya kedua platform ini praktis tanpa penambat senior. Ini mengubah T3/T5 dari aspirasi menjadi kapasitas.
+2. **"Telematika Kesehatan" adalah rumusan yang lebih tepat untuk T5 daripada "Informatika Kesehatan"** — dan menggunakan istilah guru besar sendiri berarti pohon ini berdiri di atas bidang keilmuan yang sudah diakui secara formal pada tingkat pengukuhan profesor, bukan istilah yang dikarang penyusun RIP.
+3. **Kolaborator tetapnya berulang**: Eko Mulyanto Yuniarno dan Prof. Mauridhi Hery Purnomo muncul di hampir semua makalahnya, dan pada beberapa makalah ada klinisi (mis. radiolog Anggraini Dwi Sensusiati, kardiolog Johanes Nugroho) serta mitra luar negeri (UMCG/Twente Belanda, Kumamoto Jepang). Artinya **model kolaborasi insinyur–klinisi–mitra internasional sudah berjalan di sekitar Wakil Dekan** — tinggal ditarik ke dalam kerangka FKK.
+
+> **Konflik data yang harus diselesaikan:** dokumen ini (§2) mencatat Prof. Adhi Dharma Wibawa sebagai Kepala Pusat Studi KATD, sementara riset Agustus 2026 menemukan Prof. I Ketut Eddy Purnama dilantik pada kursi itu Januari 2025. Keduanya bersumber cuplikan, keduanya plausibel, dan keduanya tidak dapat dibuka karena `its.ac.id` diblokir. **Jangan cantumkan salah satunya di LED sebelum dikonfirmasi ke DRPM ITS.** Nomor urut "Guru Besar ITS ke-188" juga tidak lolos verifikasi silang — jangan dikutip.
+
+---
+
 **Prodi Sarjana Kedokteran** — situs mengklaim 27 dosen; 12 terverifikasi individual (peran lab dari struktur organisasi resmi):
 
 | Nama | Keahlian tersirat / peran struktural |
@@ -167,7 +204,27 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 | Nadya Paramitha Jafari, S.Ds., M.T. | Desain produk medis |
 | Dr. Shoffi / Gusfatul Mukhairiq, S.T., M.T. | — |
 
-**Belum terpetakan:** Prof. Dr. I Ketut Eddy Purnama (Wakil Dekan), Endah Mayasari (Kepala Sub Bagian — administratif, kemungkinan besar bukan dosen riset).
+**Belum terpetakan:** Endah Mayasari (Kepala Sub Bagian — administratif, kemungkinan besar bukan dosen riset).
+
+### 4.1b Kapasitas riset klinisi — hasil penelusuran, termasuk dua koreksi
+
+Riset Agustus 2026 menelusuri jejak publikasi tiap klinisi, lalu setiap klaim diadu ulang oleh agen pemeriksa yang bertugas **membantah**, bukan mengonfirmasi. Hasilnya mengoreksi dua dugaan yang tampak masuk akal tetapi salah — dan menaikkan dua nama yang semula dianggap sekadar potensi.
+
+| Klinisi | Kapasitas riset terbukti | Penilaian |
+|---|---|---|
+| **dr. Riva Satya Radiansyah, Sp.N** | **Sudah menjadi rekan penulis Yuri Pamungkas** pada *systematic review* AI untuk zona epileptogenik (*Journal of Robotics and Control*, 2025) — yaitu artikel yang dokumen ini kutip sebagai milik klaster EEG. Juga penulis pertama meta-analisis magnesium–nimodipin pada perdarahan subaraknoid (*J Yeungnam Med Sci*, 2025). Minat: stroke, nyeri neuropatik, rTMS, AI dalam neurologi. Banyak menulis *systematic review* dan meta-analisis. | **Terkuat.** Jembatan klinis untuk klaster EEG **bukan sesuatu yang perlu dibangun — sudah ada dan tinggal diformalkan** |
+| **dr. Zain Budi Syulthoni, Sp.KJ** | **Juga sudah menjadi rekan penulis Yuri Pamungkas** (EECSI 2024, *hybrid* CNN-RNN untuk identifikasi pascastroke). Dua sumbu: psikiatri berbasis sinyal EEG, dan epidemiologi perilaku (analisis data SDKI untuk perilaku berisiko HIV pada remaja) | **Kuat.** Menguasai alur EEG + *deep learning*, sekaligus berwenang menegakkan diagnosis baku emas sebagai label model |
+| **dr. Atina Irani Wira Putri, Sp.PD** | Paling aktif meneliti di antara klinisi baru; satu-satunya dengan luaran terindeks internasional sebagai penulis pertama. Tiga sumbu: komplikasi berat diabetes (*necrotizing fasciitis*, IJSCR/Elsevier), **tuberkulosis paru** (2 dari 4 publikasi), aritmia terkait obat | **Kuat.** Pasangan paling tajam untuk *e-nose*: **TB berbasis napas** dan infeksi luka diabetik — dua-duanya ia punya otoritas klinis dan akses kasus |
+| **dr. Edwin Nugroho Njoto, Sp.PD, MIPH, MHM** | Epidemiologi lapangan sungguhan: determinan kusta subklinis pada kontak serumah dengan penanda serologis (PeerJ, 2026) — desain kedokteran pencegahan murni. Juga telaah sistem layanan paliatif Indonesia. MIPH + MHM dari beasiswa Australia Awards | **Kuat.** Orang yang paling tepat memikul pilar "kedokteran pencegahan", dan buktinya riset, bukan gelar |
+| **dr. Afia Nuzila Fadhlina, Sp.M, M.Ked.Klin** | Riset orisinal **eksperimental** (bukan laporan kasus): studi hewan terkontrol 16 kelinci, ekspresi SOD-1 imunohistokimia, morfometri **endotel kornea** via mikroskopi spekular. Juga ko-penulis artikel pencegahan TB komunitas | **Peneliti sungguhan** — kompetensi desain terkontrol & kuantifikasi citra mikroskopik lebih dalam dari yang terlihat |
+| **dr. Tri Hedianto, Sp.THT-BKL** | Tidak ditemukan satu pun publikasi riset THT. Jejak yang ada: modul ajar, bab buku, artikel pengabdian, dan **komunikasi kesehatan publik** (pembicara TEDxITS 2024, YouTube Health Accelerator 2023) | **Klinisi–pengajar–komunikator, bukan peneliti aktif.** Jangan diposisikan sebagai pemimpin riset |
+
+**Dua koreksi atas dugaan saya sendiri — dicatat terbuka karena polanya penting:**
+
+> **Koreksi 1 — dr. Afia bukan untuk retinopati diabetik.** Dugaan awal saya: Sp.M + AI pencitraan = skrining retinopati diabetik. Riset membantahnya: kepakaran Afia yang terbukti adalah **segmen anterior (kornea, katarak fakoemulsifikasi, stres oksidatif)**, bukan retina; tidak ditemukan jejak *fellowship* vitreoretina. Menempatkannya memimpin riset retinopati berarti **mengulang persis pola kesalahan yang sudah dua kali menjerat proyek ini: menyimpulkan peran dari gelar, bukan dari jejak riset.**
+> **Irisan yang jauh lebih kuat dan lebih jujur:** analisis citra **mikroskopi spekular endotel kornea berbasis AI** — persis metode yang sudah ia kuasai dan publikasikan, dan persis jenis pekerjaan yang dikuasai Prof. I Ketut Eddy Purnama (§4.1a). Ini pasangan yang nyata, bukan yang dipaksakan.
+
+> **Koreksi 2 — jalur audiologi belum internal.** Dugaan awal saya: Dhany Arifianto (akustik) + dr. Tri Hedianto (Sp.THT) = riset audiologi. Riset membantahnya dari dua sisi: (a) Tri Hedianto tidak punya rekam jejak riset THT; (b) program audiometri portabel Lab Vibrastik Teknik Fisika ITS (didanai LPDP) **sudah berjalan dengan mitra klinis dari luar** — Sp.THT-KL dari UNAIR/RSUD Dr. Soetomo. Jadi jalur translasi audiologi ITS saat ini **bergantung pada klinisi eksternal**. Tri Hedianto adalah satu-satunya Sp.THT-KL internal FKK, sehingga secara struktural dialah kandidat untuk **meng-internalkan** kemitraan itu — tetapi itu potensi struktural, bukan kapasitas riset terbukti, dan harus ditulis apa adanya.
 
 ### 4.2 Klaster publikasi yang sudah nyata
 
@@ -181,6 +238,14 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 
 > **Paper JMHT 2025 itu adalah bukti konsep pohon ini.** Satu tim berisi dokter klinis + teknolog + desainer, terbit di jurnal milik fakultas sendiri. Model kolaborasi yang harus direplikasi, bukan ditemukan.
 
+**Klaster keenam yang baru ketahuan — dan mengubah premis dokumen ini:**
+
+| Klaster | Bukti |
+|---|---|
+| **EEG × klinisi — sudah berjalan, bukan aspirasi** | Yuri Pamungkas × **dr. Riva Satya Radiansyah (Sp.N)** pada *systematic review* AI zona epileptogenik (*J Robotics and Control*, 2025); Yuri Pamungkas × **dr. Zain Budi Syulthoni (Sp.KJ)** pada CNN-RNN identifikasi pascastroke (EECSI 2024) |
+
+Draf-draf sebelumnya menyatakan klaster EEG "tidak punya pasangan klinis" dan menjadikannya kesenjangan. **Pernyataan itu salah.** Kolaborasi insinyur–klinisi yang selama ini dicari-cari sudah terjadi di dalam fakultas, hanya belum pernah tercatat karena nama kedua klinisi itu tidak ada dalam roster yang berhasil dijangkau riset terdahulu. Konsekuensinya untuk pohon: **T1 (Biosinyal & Neuroteknologi) bukan platform yang perlu dibangunkan mitra — ia platform paling matang yang dimiliki fakultas ini**, dan seharusnya diberi posisi yang sepadan.
+
 ### 4.3 Kesenjangan SDM — dan ini harus dinyatakan terbuka
 
 | Kesenjangan | Dampak pada pohon | Mitigasi |
@@ -190,7 +255,9 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 | **Mikrobiologi klinik** tidak terverifikasi; **Patologi Anatomi** ada koordinator lab (dr. Rizka Nurul Hidayah, M.Biomed) tapi belum jelas berstatus spesialis Sp.PA | Pilar 3 (AMR) dan validasi biomarker terhambat | Manfaatkan Sp.PK yang ada + jejaring lab RSUD; konfirmasi status Sp.PA Rizka Nurul Hidayah; rekrut menengah bila belum |
 | **Farmakologi klinik** tidak terverifikasi | Membatasi riset intervensi | Rekrut jangka menengah |
 | Mayoritas dosen Kedokteran masih **M.Biomed (S2)** | Kapasitas memimpin riset mandiri terbatas | Program studi lanjut S3 terarah ke cabang pohon; jadikan mereka *co-PI* pada proyek yang dipimpin platform |
-| **Afiliasi ganda** (Dhany↔T. Fisika, Syaifudin & Fahmi↔T. Mesin, Kuswanto↔Despro) | Berisiko pada perhitungan rasio dosen & *homebase* akreditasi | Perjelas status *homebase* resmi sebelum LED disusun — **ini isu administratif mendesak** |
+| **Afiliasi ganda** (Dhany↔T. Fisika, Syaifudin & Fahmi↔T. Mesin, Kuswanto↔Despro, **I Ketut Eddy Purnama↔T. Komputer**) | Berisiko pada perhitungan rasio dosen & *homebase* akreditasi | Perjelas status *homebase* resmi sebelum LED disusun — **ini isu administratif mendesak** |
+| **Sebagian nama di roster Teknologi Kedokteran tidak punya unsur kedokteran sama sekali** — verifikasi menemukan keahlian Fahmi Mubarok seluruhnya pada pelapisan SiC, tribologi, dan *bearing* turbin angin lepas pantai | Mencantumkan mereka sebagai aset riset kedokteran akan terbaca sebagai penggelembungan oleh asesor yang memeriksa rekam jejak | Pisahkan tegas "dosen di prodi" dari "peneliti bidang kesehatan"; libatkan lewat proyek bersama yang jelas keluarannya medis, bukan lewat penempatan di bagan |
+| **Ketergantungan pada satu nama di beberapa platform** — T1 pada Pamungkas, T4 pada Kuswanto & Syaifudin | Satu kepindahan atau cuti studi mematikan satu platform penuh | Wajibkan setiap platform punya dua nama dengan luaran terbukti sebelum ditetapkan sebagai unit anggaran |
 
 ---
 
@@ -269,15 +336,20 @@ Jumlah pilar sengaja lima. Benchmark menunjukkan jumlah tema berkorelasi dengan 
 
 ### 5.2 Sumbu 2 — Lima Platform Teknologi (internal, unit anggaran)
 
-| Kode | Platform | Penanggung jawab keahlian (terverifikasi) | Mitra ITS |
-|---|---|---|---|
-| **T1** | Biosinyal, Neuroteknologi & Akustik Medis | Prof. Adhi Dharma Wibawa, Yuri Pamungkas, Dr. Eng. Dhany Arifianto | Teknik Biomedik, Teknik Fisika |
-| **T2** | Biosensor & Diagnostik Non-Invasif | Dr. Shoffi Izza Sabilla, dr. Endah Indriastuti (Sp.PK) | Teknik Instrumentasi, Teknik Biomedik, Kimia |
-| **T3** | AI Medis, Pencitraan & Sains Data Kesehatan | dr. Erna Furaidah (Sp.Rad), Yuri Pamungkas | **PUI-AIHeS**, **Puslit KATK**, Statistika, Teknik Informatika |
-| **T4** | Biomaterial, Biomekanika & Manufaktur Medis | Achmad Syaifudin Ph.D, Djoko Kuswanto, Fahmi Mubarok Ph.D | Teknik Material (Prof. Agung Purniawan), Teknik Mesin, Despro |
-| **T5** | Informatika Kesehatan, Interoperabilitas & Sains Implementasi | dr. Edwin Njoto (MIPH, MHM), dr. Lely Nurhayati (M.H.) | Sistem Informasi, Teknik Informatika, Pusat Kajian PDPM |
+| Kode | Platform | Penanggung jawab keahlian — **rekayasa** | Penambat **klinis** (baru, §4.1b) | Mitra ITS |
+|---|---|---|---|---|
+| **T1** | Biosinyal, Neuroteknologi & Akustik Medis | Prof. Adhi Dharma Wibawa, Yuri Pamungkas, Dr. Eng. Dhany Arifianto | **dr. Riva Satya Radiansyah (Sp.N)**, **dr. Zain Budi Syulthoni (Sp.KJ)** — keduanya sudah menulis bersama Pamungkas | Teknik Biomedik, Teknik Fisika |
+| **T2** | Biosensor & Diagnostik Non-Invasif | Dr. Shoffi Izza Sabilla | dr. Endah Indriastuti (Sp.PK), **dr. Atina Irani Wira Putri (Sp.PD — TB & komplikasi DM)** | Teknik Instrumentasi, Teknik Biomedik, Kimia |
+| **T3** | AI Medis, Pencitraan & Sains Data Kesehatan | **Prof. Dr. I Ketut Eddy Purnama** (guru besar, §4.1a), Yuri Pamungkas | dr. Erna Furaidah (Sp.Rad), **dr. Afia Nuzila Fadhlina (Sp.M — morfometri citra)** | **PUI-AIHeS**, **Puslit KATK**, Statistika, Teknik Informatika |
+| **T4** | Biomaterial, Biomekanika & Manufaktur Medis | Achmad Syaifudin Ph.D, Djoko Kuswanto | dr. Ivor Wiguna H.W. (Sp.B) | Teknik Material (Prof. Agung Purniawan), Teknik Mesin, Despro |
+| **T5** | **Telematika Kesehatan**, Interoperabilitas & Sains Implementasi | **Prof. Dr. I Ketut Eddy Purnama** (bidang guru besarnya persis ini) | dr. Edwin Njoto (MIPH, MHM), dr. Lely Nurhayati (M.H.) | Sistem Informasi, Teknik Informatika, Pusat Kajian PDPM |
 
-**Aturan tata kelola:** setiap kelompok riset dan setiap judul penelitian memiliki **koordinat (Pilar, Platform)** — bukan satu kotak. Matriks 5×5 menghasilkan 25 sel; tidak semua harus terisi. Sel kosong adalah peta rekrutmen.
+**Dua perubahan dari draf sebelumnya:**
+
+1. **Kolom penambat klinis ditambahkan.** Draf lama hanya mencantumkan sisi rekayasa, sehingga platform tampak sebagai unit teknik murni — persis kelemahan yang membuat pohon FK berbasis teknologi gagal dibaca asesor kedokteran. Setiap platform kini wajib punya nama klinis, dan **semuanya sudah terisi dari SDM internal**.
+2. **T5 diganti namanya menjadi "Telematika Kesehatan"** — istilah resmi bidang guru besar Wakil Dekan. Ini membuat platform berdiri di atas bidang keilmuan yang sudah diakui pada tingkat pengukuhan profesor, bukan istilah yang dikarang penyusun RIP.
+
+**Aturan tata kelola:** setiap kelompok riset dan setiap judul penelitian memiliki **koordinat (Pilar, Platform)** — bukan satu kotak. Matriks 5×5 menghasilkan 25 sel; tidak semua harus terisi. Sel kosong adalah peta rekrutmen. Syarat penetapan sebagai unit anggaran: **dua nama dengan luaran terbukti per platform** (§4.3) — hari ini T1, T3, dan T4 memenuhinya; T2 dan T5 belum.
 
 ### 5.3 Lapis ketiga — Wahana Translasi
 
@@ -292,24 +364,62 @@ T4     Desa Binaan Kota Mojokerto (5 puskesmas) · Bina Desa Sehat Sukolilo/Kepu
 
 ---
 
-## 6. Rekomendasi tunggal terpenting: Kohort Desa Binaan
+## 6. Rekomendasi tunggal terpenting: Platform Surveilans Desa Binaan
 
-Aset paling bernilai yang dapat dibangun fakultas kedokteran muda — dan yang **tidak dimiliki FK manapun di Indonesia dalam bentuk ini** — adalah kohort komunitas longitudinal yang dimiliki sendiri.
+> **Revisi mendasar, Agustus 2026.** Draf sebelumnya mengusulkan "Kohort Sehat Mojokerto" sebagai kohort prospektif penuh bergaya Rotterdam. Benchmark terhadap Rotterdam Study, Framingham, UK Biobank, HDSS Agincourt & Matlab, HDSS Sleman (UGM), Studi Kohort PTM Bogor, dan IFLS **membantah kelayakan bentuk itu untuk fakultas berumur tiga tahun** — dan memberi bentuk pengganti yang justru lebih kuat. Rekomendasinya tetap: bangun aset longitudinal di Desa Binaan. Yang berubah adalah **bentuk, penahapan, dan cara menuliskannya di RIP.**
 
-**Usulan: "Kohort Sehat Mojokerto"** — kohort berbasis populasi di wilayah Desa Binaan, dengan pengukuran berkala (antropometri, tekanan darah, glukosa/lipid, kuesioner perilaku), ditambah lapisan teknologi yang menjadi ciri ITS (wearable, *e-nose*, skrining berbasis citra dan sinyal).
+### 6.1 Mengapa bentuk lama ditolak
 
-Mengapa ini keputusan strategis, bukan sekadar proyek:
+Kohort prospektif penuh — ronde pemeriksaan klinis berulang, biobank, luaran insidens — menuntut prasyarat yang tidak dimiliki FKK ITS: Erasmus MC sudah punya departemen epidemiologi matang saat memulai 1990; Framingham disokong pemerintah federal AS; UK Biobank butuh konsorsium nasional. Pembanding domestik terdekat, **HDSS Sleman**, dijalankan FK-KMK UGM yang berumur lebih dari 75 tahun dengan bangku epidemiologi dan biostatistik tebal. Menjanjikan kohort penuh di RIP adalah janji yang akan terlihat gagal pada reakreditasi berikutnya.
 
-1. **Memberi makan kelima pilar sekaligus.** PTM, KIA, infeksi/AMR, disabilitas, dan sistem layanan semuanya mengambil data dari kohort yang sama.
-2. **Menjadikan "kedokteran pencegahan" terbukti, bukan diklaim.** Pencegahan hanya dapat dibuktikan secara longitudinal.
-3. **Menghasilkan luaran berlipat selama puluhan tahun** dari satu investasi pengumpulan data — persis logika Framingham, dengan biaya frugal.
-4. **Tidak dapat ditiru.** FK konvensional dapat meniru daftar tema; mereka tidak dapat meniru kohort yang sudah berjalan lima tahun dengan PKS tripartit dan dua RSUD pendidikan di wilayah yang sama.
-5. **Memenuhi C.7 dan C.8 sekaligus** — kohort adalah penelitian sekaligus pengabdian.
-6. **Menyelesaikan kesenjangan SDM.** Kohort memberi dosen M.Biomed yang masih muda jalur riset nyata tanpa harus memimpin proyek mandiri lebih dulu.
+**Dan ada masalah pembeda.** UGM (Sleman, Purworejo) serta Badan Kebijakan Pembangunan Kesehatan (Kohort PTM Bogor) sudah lebih dulu dan lebih besar. Kohort 5.000 jiwa yang dibingkai sebagai "Rotterdam versi Mojokerto" akan selalu terbaca sebagai versi kecil dari sesuatu yang sudah ada.
 
-Prasyarat yang harus disiapkan: persetujuan etik (KEPK), tata kelola data & persetujuan subjek, dan PKS dengan Dinkes Kota Mojokerto.
+### 6.2 Bentuk yang diusulkan — dan pembedanya
 
-**Prasyarat metodologisnya sudah terpenuhi.** Penanggung jawab desain kohort tersedia di dalam fakultas: Dr. Anak Agung Bagus Wirayuda (M.Sc. Epidemiology & Medical Statistics, Ph.D.), yang rekam jejaknya justru persis pada jenis pekerjaan ini — pemodelan determinan pada tingkat populasi, epidemiologi penyakit tular-vektor, dan pengembangan model prognostik di layanan primer Indonesia. Kohort ini sebaiknya diletakkan di bawah kepemimpinan metodologisnya sejak protokol.
+**Bingkai ulang sebagai: TESTBED TEKNOLOGI KEDOKTERAN PADA POPULASI TERDEFINISI.**
+
+Populasi yang terenumerasi penuh, ter-*consent*, dan ter-*geotag* adalah substrat yang persis dibutuhkan untuk **memvalidasi sensor, algoritma skrining berbasis AI, dan alat *point-of-care* pada kondisi dunia nyata** — dan ITS punya fakultas teknik yang tidak dimiliki FK konvensional. Inilah yang tidak bisa ditiru: bukan kohortnya, melainkan kohort **yang menempel pada pabrik teknologi medis**.
+
+Ini juga menjawab pertanyaan "apa bedanya dengan Sleman" dengan jawaban yang jujur dan kuat, alih-alih klaim "kami juga punya kohort".
+
+### 6.3 Penahapan — bentuk minimum yang layak
+
+| Tahap | Isi | Luaran yang dijanjikan |
+|---|---|---|
+| **Tahap 0** (bulan 0–12) | **Sensus dasar, bukan kohort.** Enumerasi lengkap 1–2 desa binaan: register rumah tangga bernomor, register individu bernomor, *geotag* tiap rumah tangga. Dua instrumen saja: roster demografi + modul faktor risiko pendek. Skala ±1.000–2.000 rumah tangga (±4.000–8.000 jiwa) | Naskah **prevalensi** & pengelompokan faktor risiko (12–18 bulan) |
+| **Tahap 1** (tahun 2–5) | **Ronde pembaruan tahunan**: hanya mencatat kelahiran, kematian, pindah masuk, pindah keluar + autopsi verbal untuk sebab kematian. Studi tersarang mulai ditumpangkan | **Validasi alat skrining** & studi tersarang |
+| **Tahap 2** (tahun 7–10) | Kohort matang | Insidens & etiologi |
+
+**Adopsi instrumen, jangan bikin sendiri.** Modul faktor risiko harus sengaja diadaptasi dari **SKI/Riskesdas atau WHO STEPS** agar hasilnya sebanding dengan data nasional. Pada tahap ini kesebandingan jauh lebih berharga daripada orisinalitas.
+
+### 6.4 Enam keputusan yang gratis sekarang dan mustahil diperbaiki nanti
+
+1. **Tetapkan desa pembanding sejak hari pertama.** Pelajaran Matlab: membagi wilayah menjadi area intervensi dan area pembanding secara permanen membuat setiap program baru otomatis punya kontrol. Jika FKK ITS memberi intervensi ke **semua** desa binaan sekaligus — dorongan yang sulit ditolak karena terasa lebih adil — maka tidak satu pun klaim efektivitas dapat dipertahankan secara metodologis. **Ini butir tunggal paling berdampak dalam seluruh dokumen.**
+2. **Anggarkan tiga ronde pembaruan SEBELUM menyetujui sensus dasar.** Kendala pengikat sesungguhnya bukan rekrutmen, melainkan **ronde kedua**: mayoritas kohort universitas mati di antara data dasar dan pembaruan pertama karena tidak ada yang menganggarkan lanjutannya. Jika tiga ronde tidak terbiayai, **kecilkan sensus dasarnya**.
+3. **Jadikan kurikulum sebagai tenaga lapangan.** Biaya terbesar HDSS adalah pencacah. FKK ITS punya mahasiswa yang wajib menjalani blok IKM/kedokteran komunitas. Rancang ronde pembaruan sebagai penugasan akademik terstruktur dan dinilai, selesai dalam satu periode blok — maka platform tetap berjalan pada tahun anggaran kering. Konsekuensinya: **supervisi mutu data wajib**, karena data mahasiswa tanpa supervisi tidak layak publikasi.
+4. **Susun cakupan *informed consent* untuk seumur hidup studi.** Rotterdam Study tidak dapat membuka datanya sampai hari ini karena batasan *consent* yang ditulis pada 1990. *Consent* FKK ITS harus mencakup sejak awal: tindak lanjut jangka panjang tanpa batas waktu, penautan ke rekam medis dan data Puskesmas/BPJS, penyimpanan spesimen untuk penggunaan masa depan yang belum ditentukan, dan berbagi data dengan peneliti luar termasuk luar negeri.
+5. **Tulis tata kelola data sebelum mengumpulkan data.** Adopsi kerangka UK Biobank pada skala desa: komite akses yang terpisah dari pendiri studi, kamus data terbuka, formulir aplikasi baku, tarif pemulihan biaya, kebijakan publikasi, dan — yang paling sering gagal — **aturan tegas bahwa pendiri tidak punya jendela eksklusif di luar embargo**. Data yang dikuasai satu-dua orang sampai basi adalah penyebab utama kohort universitas mati muda.
+6. **Pilih jalur data terbuka, bukan tertutup.** Bandingkan Rotterdam (tertutup, reputasi dari institusi yang sudah mapan) dengan **IFLS** (dibuka bebas, menjadi salah satu sumber data Indonesia paling banyak disitasi dunia). FKK ITS tidak punya modal reputasi Erasmus MC, jadi jalur Rotterdam tidak tersedia. Jalur IFLS tersedia dan murah.
+
+### 6.5 Jalur kedua yang berjalan paralel — dan lebih cepat berbuah
+
+**Kohort berbasis register.** Model Karolinska membuktikan epidemiologi kelas dunia bisa dijalankan tanpa mengumpulkan data primer sama sekali, dengan menautkan register. Indonesia punya bahan setara yang belum digarap: **NIK, klaim BPJS Kesehatan, register Puskesmas/SIMPUS**. Biaya per subjek mendekati nol, ukuran sampel bisa ratusan ribu, luaran cepat — dan ini **jauh lebih cocok dengan identitas "berbasis teknologi"** daripada kerja lapangan konvensional, serta tidak menuntut bangku epidemiologi lapangan yang tebal.
+
+RIP sebaiknya memuat **dua jalur paralel**: jalur lapangan (Desa Binaan — lambat tapi khas) dan jalur data (register/BPJS — cepat dan murah), agar fakultas punya luaran sambil menunggu platform lapangan matang.
+
+*Alternatif lebih ringan bila kohort tertutup terlalu berat:* **potong lintang berulang** model REACT (Imperial) — sampel acak komunitas berulang kali alih-alih melacak orang yang sama. Tidak menderita atrisi, tidak butuh sistem pelacakan migran (biaya terbesar panel Indonesia), lebih tahan pergantian staf, dan tetap sah disebut surveilans populasi. Kelemahannya (tidak bisa menghitung insidens individual) tidak mengikat pada 3–5 tahun pertama.
+
+### 6.6 Keberlanjutan
+
+Jejaring INDEPTH — jejaring HDSS internasional bereputasi tinggi — tetap bisa berhenti ketika pendanaan donor mengering. Karena itu tambatkan platform ini pada dua hal yang **tidak bergantung hibah**: **(a) kurikulum**, sehingga ronde lapangan berjalan sebagai kegiatan akademik wajib; dan **(b) nota kesepahaman dengan Dinkes dan Puskesmas Kota Mojokerto**, dengan syarat platform menghasilkan sesuatu yang memang diinginkan pemerintah daerah — misalnya **laporan profil kesehatan desa tahunan**. Platform yang melayani kebutuhan nyata mitra lokal akan dipertahankan mitra tersebut; platform yang hanya melayani publikasi akan ditinggalkan saat hibah habis.
+
+### 6.7 Kepemimpinan dan langkah pertama
+
+**Prasyarat metodologisnya sudah terpenuhi.** Penanggung jawab desain tersedia di dalam fakultas: Dr. Anak Agung Bagus Wirayuda (M.Sc. Epidemiology & Medical Statistics, Ph.D.), yang rekam jejaknya persis pada jenis pekerjaan ini — pemodelan determinan tingkat populasi, epidemiologi penyakit tular-vektor, dan pengembangan model prognostik di layanan primer Indonesia. Platform ini sebaiknya berada di bawah kepemimpinan metodologisnya sejak protokol, dengan **dr. Edwin Njoto (IKM-KP, MIPH, MHM)** sebagai penambat kedua dari sisi kesehatan masyarakat dan sistem layanan.
+
+Prasyarat administratif: **KEPK ber-nomor registrasi KEPPKN** (lihat §8.5), tata kelola data & *consent*, dan PKS dengan Dinkes Kota Mojokerto.
+
+> **Langkah paling praktis, bisa dilakukan minggu ini, dan tidak butuh akses internet:** hubungi **FK-KMK UGM** mengenai HDSS Sleman dan pengalaman Purworejo, serta **Badan Kebijakan Pembangunan Kesehatan** (eks Balitbangkes) mengenai Studi Kohort PTM Bogor. Mereka punya protokol, instrumen, struktur biaya nyata, dan — yang paling berharga — daftar kesalahan yang sudah mereka bayar mahal. Satu percakapan dengan pengelola HDSS Sleman kemungkinan bernilai lebih daripada seluruh riset daring tentang Rotterdam dan Framingham, karena konteks sumber daya, regulasi etik, dan struktur pemerintahan desanya sama persis. **Dekati sebagai mitra, bukan pesaing.**
 
 ---
 
@@ -323,31 +433,37 @@ Tabel ini menjawab langsung pertanyaan "penelitian apa yang bisa dibuat berdasar
 | 1 | Validasi *e-nose* napas untuk skrining diabetes pada populasi Desa Binaan | P1 × T2 | **A** | Sabilla sudah publikasi e-nose diabetes; DM 1.420 kasus di Blooto |
 | 2 | Model prediksi risiko hipertensi dari data kunjungan puskesmas rutin | P1 × T3 | **A** | Statistika ITS + data 5 puskesmas di repositori ini |
 | 3 | Wearable pemantauan tekanan darah & kepatuhan terapi hipertensi | P1 × T2/T5 | **B** | T. Instrumentasi + Edwin Njoto (Sp.PD) |
-| 4 | Deteksi retinopati/kaki diabetik berbasis citra di layanan primer | P1 × T3 | **B** | PUI-AIHeS + Sp.PD; rekam jejak AI citra sudah ada |
+| 4 | Deteksi kaki diabetik berbasis citra di layanan primer | P1 × T3 | **B** | PUI-AIHeS + dr. Atina (Sp.PD, publikasi komplikasi berat DM). *Retinopati sengaja dikeluarkan — lihat Koreksi 1 §4.1b* |
 | 5 | Intervensi perubahan perilaku berbasis COM-B/MINDSPACE untuk PTM | P1 × T5 | **A** | Kerangka sudah dipakai di *white paper* Desa Binaan |
 | 6 | Prediksi risiko stunting berbasis ML dari data posyandu | P2 × T3 | **A** | Statistika ITS + program GENTALA |
 | 7 | Evaluasi RE-AIM program GENTALA sebagai riset implementasi | P2 × T5 | **A** | Kerangka RE-AIM sudah ada di dashboard ini |
-| 8 | Skrining pendengaran neonatal berbasis akustik terjangkau | P2 × T1 | **B** | Dhany Arifianto (audiologi) + Sp.A + PONED Blooto |
+| 8 | Skrining pendengaran neonatal berbasis akustik terjangkau | P2 × T1 | **C** | Dhany Arifianto + PONED Blooto. **Turun dari B:** mitra klinis audiologi ITS saat ini eksternal (UNAIR); butuh internalisasi lebih dulu — lihat Koreksi 2 §4.1b |
 | 9 | Analisis sistem rujukan maternal PONED → RSUD Wahidin | P2 × T5 | **B** | Sp.OG + PKS RSUD; data PONED Blooto tersedia |
 | 10 | Survei penggunaan & swamedikasi antibiotik di komunitas | P3 × T5 | **A** | Program Bina Desa Sehat AMR sudah berjalan; M.Ked.Trop |
 | 11 | Pola resistensi antimikroba di RSUD pendidikan | P3 × T2 | **B** | Sp.PK + lab RSUD |
-| 12 | Skrining TB berbasis analisis napas / AI citra toraks | P3 × T2/T3 | **B** | E-nose + rekam jejak CNN pneumonia anak |
+| 12 | Skrining TB berbasis analisis napas (*breathprint*) | P3 × T2 | **A** | **Naik dari B.** Sabilla (e-nose) + dr. Atina (Sp.PD — 2 dari 4 publikasinya TB paru) + dr. Eljatin (M.Ked.Trop). Otoritas klinis & akses kasus sudah internal |
 | 13 | Surveilans sindromik digital lintas puskesmas Kota Mojokerto | P3 × T5 | **B** | Dashboard repositori ini sebagai purwarupa; SATUSEHAT |
 | 14 | Optimasi topologi *bone plate* dengan material lokal (SS316L) | P4 × T4 | **A** | Syaifudin — sudah terbit di jurnal Q1 |
 | 15 | Registri implan & luaran fraktur di RSUD pendidikan | P4 × T4 | **B** | Sp.B + Syaifudin + RSUD |
 | 16 | Prostesis tangan/kaki 3D print untuk amputasi diabetik | P4 × T4 | **A** | Kuswanto — "Gerakan Seribu Tangan Palsu" sudah berjalan |
 | 17 | *Custom cranial implant* dari data citra pasien | P4 × T4/T3 | **B** | Kuswanto (preseden implan tempurung kepala) + Sp.Rad |
-| 18 | Neurorehabilitasi pascastroke berbasis EEG/EMG | P4 × T1 | **A** | Wibawa & Pamungkas — klaster paling produktif |
+| 18 | Neurorehabilitasi pascastroke berbasis EEG/EMG | P4 × T1 | **A** | Wibawa & Pamungkas + **dr. Riva (Sp.N)** & **dr. Zain (Sp.KJ)** — ketiganya sudah pernah menulis bersama |
 | 19 | Desain & simulasi stent berbasis FEM | P4 × T4 | **A** | Riset berjalan Syaifudin |
-| 20 | Skrining kognitif lansia berbasis EEG di posyandu lansia | P1/P4 × T1 | **B** | Pamungkas + wahana Desa Binaan |
-| 21 | Tanggung jawab hukum & tata kelola AI diagnostik di Indonesia | P5 × — | **A** | Lely Nurhayati (M.H., C.M.C) — ceruk hampir kosong |
+| 20 | Skrining kognitif lansia berbasis EEG di posyandu lansia | P1/P4 × T1 | **A** | **Naik dari B.** Pamungkas + dr. Riva (Sp.N) + wahana Desa Binaan |
+| 21 | Tanggung jawab hukum & tata kelola AI diagnostik di Indonesia | P5 × — | **B** | Lely Nurhayati (M.H.) — ceruk hampir kosong, tetapi **tidak ditemukan jejak publikasi**; butuh mitra metodologi. *Perluasan 'C.M.C = mediator' tidak berdasar — lihat §10* |
 | 22 | HTA & analisis biaya-manfaat inovasi alkes frugal FKK ITS | P5 × T5 | **B** | Edwin Njoto (MHM) + Teknik Industri ITS |
 | 23 | Evaluasi rotasi Community Medicine terhadap capaian CPL | P5 × T5 | **A** | Data kurikulum & CPL sudah terdokumentasi di repositori ini |
 | 24 | Kesiapan adopsi teknologi kesehatan digital oleh nakes puskesmas | P5 × T5 | **A** | Jejaring 5 puskesmas + Sistem Informasi ITS |
-| 25 | **Protokol dasar Kohort Sehat Mojokerto** | lintas pilar | **A** | Wirayuda (epidemiologi & statistika medis) sebagai PJ metodologi — kapasitas sudah internal |
+| 25 | **Protokol sensus dasar Platform Surveilans Desa Binaan** (Tahap 0, §6.3) | lintas pilar | **A** | Wirayuda (PJ metodologi) + Njoto (IKM-KP). *Judul direvisi dari "Kohort Sehat Mojokerto" mengikuti §6* |
 | 26 | Model prognostik untuk transisi penyakit di layanan primer (replikasi & perluasan model nyeri punggung bawah ke PTM) | P1/P5 × T3 | **A** | Wirayuda — model prognostik layanan primer sudah terbit 2025 |
 | 27 | Epidemiologi & pemodelan risiko DBD di Kota Mojokerto | P3 × T3/T5 | **A** | Wirayuda — determinan wabah dengue (Oman) & *review* penyakit tular-vektor MENA |
 | 28 | Analisis determinan sosial kesehatan & disparitas angka harapan hidup Jawa Timur | P1/P5 × T3 | **A** | Wirayuda — pemodelan angka harapan hidup & determinan sosial negara OIC |
+| 29 | **Analisis citra mikroskopi spekular endotel kornea berbasis AI** | P4/P1 × T3 | **A** | **Baru.** dr. Afia (Sp.M — sudah publikasi morfometri endotel kornea) × Prof. I Ketut Eddy Purnama (analisis citra mikroskopik). Irisan metode yang sudah dikuasai kedua pihak, bukan yang dipaksakan |
+| 30 | **Deteksi otomatis basil TB pada apusan sputum** | P3 × T3 | **A** | **Baru.** Prof. I Ketut Eddy Purnama sudah meneliti mikroskopi sputum TB + dr. Atina (Sp.PD, TB) + dr. Endah Indriastuti (Sp.PK, lab) |
+| 31 | **EEG untuk skrining gangguan jiwa di layanan primer** (depresi/ansietas) | P1/P5 × T1 | **A** | **Baru.** dr. Zain (Sp.KJ) sudah menguasai alur EEG + *deep learning*, dan berwenang menegakkan diagnosis baku emas sebagai label model |
+| 32 | **Kohort berbasis register: penautan data BPJS/SIMPUS Kota Mojokerto** | lintas pilar × T5 | **B** | **Baru — jalur cepat §6.5.** Wirayuda + Njoto (MHM) + Prof. I Ketut Eddy Purnama (telematika kesehatan). Butuh izin akses data, bukan rekrutmen |
+| 33 | **Arsitektur interoperabilitas & tata kelola data kesehatan desa** (SATUSEHAT-ready) | P5 × T5 | **A** | **Baru.** Prof. I Ketut Eddy Purnama — bidang guru besarnya persis ini; dashboard repositori ini sebagai purwarupa |
+| 34 | Pemodelan risiko kusta subklinis pada kontak serumah | P3 × T3 | **B** | **Baru.** Njoto sudah publikasi determinan kusta subklinis (PeerJ 2026) + Wirayuda (pemodelan); butuh wilayah endemik mitra |
 
 **Catatan cara pakai:** butir **[A]** cukup untuk mengisi 2–3 tahun pertama roadmap. Ini penting karena jendela data akreditasi hanya **3 tahun terakhir (TS, TS-1, TS-2)** — target tahun 1–3 harus realistis dan pasti tercapai, karena justru itulah yang akan dinilai.
 
@@ -382,6 +498,42 @@ Banyak prodi punya peta jalan (unsur 1) dan penelitian yang kebetulan sesuai (un
 
 Buat instrumen tahunan berupa matriks `Judul Penelitian × Cabang Pohon` dengan kolom *sesuai / sesuai sebagian / tidak sesuai*, persentase kesesuaian, analisis penyebab, dan rekomendasi. Terbitkan sebagai **Berita Acara + Laporan bertanda tangan Dekan**, lalu tunjukkan **revisi peta jalan bernomor versi** (v1.0 → v2.0) sebagai bukti bahwa lingkar PPEPP benar-benar berputar.
 
+### 8.5 Mekanisme operasional — dari praktik SPMI/AMI yang terverifikasi
+
+Butir-butir berikut diambil dari sistem penjaminan mutu dan SIM-LPPM perguruan tinggi Indonesia yang teksnya terbaca langsung (bukan dari ringkasan), sehingga rumusannya dapat disalin dengan sedikit penyesuaian.
+
+**a. Wajibkan koordinat pohon pada setiap pengajuan.** Blueprint SIM-LPPM Indonesia yang terbaca memuat 16 modul (Proposal → RAB → Cek Similarity → Penugasan Reviewer & COI → Penilaian → *Ethical Clearance* → Kontrak → Logbook → Monev → Pencairan → Luaran → Laporan Akhir) tetapi **tidak satu pun modul pemetaan ke peta jalan**. FKK ITS harus menambahkannya dengan sengaja: dua *dropdown* wajib — **Pilar (P1–P5)** dan **Platform (T1–T5)** — sehingga setiap usulan lahir dengan koordinat matriks. Aturannya tegas: *proposal tanpa koordinat tidak dapat disimpan*, bukan sekadar tidak disarankan.
+
+**b. Sasar jarak skor 3 → 4, bukan sekadar lulus.** Rubrik LAM yang terbaca memisahkan skor 4 dari skor 3 hanya oleh dua hal: (i) sistem berbasis TIK yang **menyebarluaskan** — bukan sekadar mendokumentasikan — proses dan hasil penelitian kepada publik, dan (ii) bukti hasil evaluasi dipakai untuk perbaikan. Untuk (i), **dashboard publik pohon penelitian sudah setengah terbangun di repositori ini** dan tinggal diarahkan.
+
+**c. Instrumen evaluasi kesesuaian dengan lima kolom baku**, meniru daftar tilik AMI yang terverifikasi: `Pertanyaan | Indikator | Sumber Data | Metode Perhitungan | Target`. Pertanyaan bakunya sudah ada dalam praktik AMI Indonesia, verbatim: *"Apakah UPPS sudah melakukan evaluasi kesesuaian penelitian dosen dengan peta jalan?"* Isi kolom Metode Perhitungan dengan **persentase kesesuaian**, bukan "ketersediaan dokumen" seperti yang lazim — di situlah FKK ITS bisa melampaui praktik umum.
+
+**d. Jadwalkan enam tahap AMI, bukan empat.** Alur yang terverifikasi: persiapan → pelaksanaan → temuan → laporan → **tindak lanjut → verifikasi**, ditutup Rapat Tinjauan Manajemen yang berakhir pada notulen. Dua tahap terakhir itulah yang membuktikan lingkar PPEPP berputar. Gunakan kategori temuan baku **KTS** (Ketidaksesuaian) dan **OB** (Observasi).
+
+**e. Hindari pola gagal khas unit baru — dan ini persis profil FKK ITS.** Laporan AMI nyata yang terbaca mendiagnosis unit muda sebagai *"aktif dalam Perencanaan dan Pelaksanaan (P-P), kosong pada Evaluasi–Pengendalian–Peningkatan (E-P-P)"*, dengan akar penyebab *"belum pernah diaudit sebelumnya, sehingga tindak lanjut audit sebelumnya belum ada"*. Tindakan konkret: **jadwalkan AMI pertama sekarang meski dokumennya belum lengkap.** Temuan tahun pertama adalah aset, karena hanya siklus kedua yang bisa membuktikan peningkatan.
+
+**f. Klausul kelompok riset yang bisa disalin apa adanya.** Standar SPMI terverifikasi: *"Lembaga penelitian membentuk kelompok riset sesuai dengan renstra penelitian"*, dengan tiga indikator bukti — (1) bukti legal formal keberadaan kelompok riset; (2) bukti aktif dalam jejaring nasional maupun internasional; (3) bukti menghasilkan produk riset yang bermanfaat menyelesaikan permasalahan masyarakat. *Jumlah anggota minimum tidak ditemukan — ambil dari Panduan Penelitian DRPM ITS, jangan dikarang.*
+
+**g. Skema hibah internal berjenjang untuk menutup kesenjangan SDM §4.3.** Tiru pola tiga skema yang terverifikasi: **Dosen Muda** (ketua S2, maksimal Asisten Ahli) untuk mayoritas dosen M.Biomed; **Dosen Utama** (ketua minimal Lektor, atau Asisten Ahli S3 dengan rekam jejak penulis pertama/*corresponding*); dan **Kolaborasi Luar Negeri**. Adopsi juga klausul penegak yang paling murah dan paling efektif: pelamar *tidak punya utang luaran wajib dari hibah periode sebelumnya*. Tambahkan syarat khas FKK: kesesuaian dengan cabang pohon sebagai kriteria seleksi berbobot.
+
+**h. Pakai UKCRC HRCS sebagai kosakata pemetaan.** Alasannya dapat dipertahankan: strukturnya dua sumbu (*Health Categories* × *Research Activity Codes*) yang **berpadanan langsung dengan matriks Pilar × Platform**; tersedia gratis dan mesin-terbaca; dan sudah terbukti dipakai sebagai field resmi sistem informasi riset nasional Norwegia. Cara pakai: tandai setiap publikasi dan proposal dengan satu *Health Category* dan satu *Research Activity Code* di samping koordinat internal. *Catatan: NIH RCDC, GBD, WHO, dan OECD Frascati tidak dapat diverifikasi pada sesi riset ini — jangan menulis klaim komparatif antar-taksonomi sebelum keempatnya dibaca.*
+
+**i. Turunkan "rasio riset translasi" dari sumbu Research Activity HRCS.** Karena instrumen Indonesia yang terbaca berhenti pada hitungan publikasi, indikator ini harus dikonstruksi sendiri: proporsi portofolio pada grup hilir (*Detection, Screening and Diagnosis*; *Prevention and Promotion of Well-Being*; *Management of diseases*) terhadap grup hulu (*Underpinning research*; *Aetiology*). **Bagi fakultas yang mengklaim "kedokteran pencegahan", proporsi pada grup Prevention adalah indikator identitas yang paling jujur** — dan paling sulit dibantah asesor. Tandai di dokumen bahwa ini konstruksi FKK ITS, bukan praktik yang sudah lazim di Indonesia.
+
+**j. Pasang indikator kuantitatif lazim sebagai lantai, bukan target.** Ambang yang benar-benar dipakai SPMI Indonesia dan terbaca verbatim: rasio publikasi jurnal internasional bereputasi terhadap dosen tetap **≥10%**; jurnal nasional terakreditasi/internasional **≥50%**; seminar & media massa **≥35%**; artikel disitasi **≥17%**; dosen memperoleh rekognisi eksternal **>15%/tahun**. Empat indikator non-publikasi yang tersedia dan jarang dipakai — **rekognisi eksternal, keterlibatan peneliti asing, inkubator hasil penelitian, unit bisnis hasil penelitian** — adalah tempat FKK ITS bisa menonjol tanpa mengejar volume publikasi.
+
+**k. Bentuk KEPK dengan kerangka baku sejak hari pertama.** Telaah mengikuti **7 Standar WHO 2011** (Nilai Sosial · Nilai Ilmiah · Pemerataan Beban dan Manfaat · Risiko · Bujukan/Eksploitasi · Kerahasiaan dan *Privacy* · Persetujuan Setelah Penjelasan) merujuk Pedoman CIOMS 2016 dan Pedoman KEPPKN. Sediakan tiga jenis surat (persetujuan, perbaikan, pembebasan) dan empat klasifikasi hasil telaah yang terbaca verbatim: *Exempted · Expedited · Full Board · Discontinuing*.
+
+**l. Daftarkan KEPK ke KEPPKN untuk memperoleh nomor registrasi.** Surat laik etik yang lazim mencetak baris *"Nomor Registrasi Pada KEPPKN"* beserta masa berlaku. Tanpa nomor registrasi, surat yang diterbitkan tidak berformat lazim di mata jurnal dan mitra. **Ini prasyarat operasional Platform Surveilans Desa Binaan — kerjakan sebelum protokol disusun, bukan sesudah.**
+
+**m. Jadikan *ethical clearance* gerbang penerbitan kontrak, bukan dokumen yang menyusul.** Urutan yang terverifikasi: usulan → cek similarity → penugasan reviewer + deklarasi konflik kepentingan → penilaian → **ethical clearance → kontrak/SPP** → logbook → monev → pencairan termin → luaran → laporan akhir. *Deklarasi COI reviewer adalah artefak yang paling sering terlupakan fakultas baru dan paling murah untuk diadakan.*
+
+**n. Produksi Berita Acara Monev sebagai luaran otomatis sistem.** Template *"BERITA ACARA MONITORING DAN EVALUASI"* yang di-*generate* dari data proposal sudah menjadi praktik berjalan di LPPM Indonesia. Ini yang mengubah bukti kesesuaian dari retrospektif menjadi berkelanjutan.
+
+**o. Bangun pengklasifikasi otomatis judul tugas akhir ke cabang pohon — sebagai proyek Pilar 5.** Sudah ada preseden Indonesia: klasifikasi judul dan abstrak skripsi ke Kelompok Bidang Keahlian dengan *decision tree*, menghasilkan probabilitas per kelompok. Bagi FKK ITS ini bernilai ganda — menjadi bukti unsur 3 yang berjalan otomatis **dan** menjadi objek penelitian pendidikan kedokteran berbasis teknologi yang dikerjakan Prodi Teknologi Kedokteran sendiri.
+
+**p. Cantumkan klausul "masukan dari *stakeholders*" sebagai dasar formal uji publik.** Indikator SPMI terverifikasi menuntut Renstra Penelitian disusun *"dengan mempertimbangkan masukan dari stakeholders"* dan pedomannya *"disosialisasikan, mudah diakses, serta dipahami oleh semua pemangku kepentingan"*. Ini landasan untuk mengundang Dinkes Kota Mojokerto, RSUD dr. Wahidin Sudiro Husodo, dan RSUD RA Basoeni ke uji publik roadmap — **dan berita acaranya menjadi bukti dua unsur sekaligus**.
+
 ---
 
 ## 9. Persyaratan akreditasi yang harus dipenuhi
@@ -399,6 +551,19 @@ Rumusan ini identik lintas instrumen turunan IAPS 4.0:
 **Kriteria C.8 (PkM) memakai rumusan cermin** dengan penggantian "penelitian" → "PkM". Karena itu **dibutuhkan dua peta jalan, bukan satu.**
 
 Penilaian bersifat kumulatif per unsur; tidak memiliki peta jalan berarti skor nol.
+
+> **Status verifikasi teks ini — kuat.** Riset Agustus 2026 menemukan rumusan empat unsur di atas muncul **kata-per-kata di lima repositori sistem akreditasi/AMI perguruan tinggi Indonesia yang tidak saling terkait**. Ini satu-satunya klaim akreditasi dalam dokumen ini yang lolos korroborasi silang independen — sisanya (jumlah kriteria 9 vs 8, ambang batas peringkat, panduan asesor) **tidak berhasil diverifikasi sama sekali** karena `lamptkes.org` dan seluruh domain `.ac.id` diblokir. Angka ambang batas peringkat adalah area dengan risiko fabrikasi tertinggi: ia terdengar sangat spesifik dan sangat meyakinkan justru ketika dikarang. **Jangan mencantumkan satu pun angka ambang sebelum instrumen resminya diunduh.**
+
+### 9.1a Rubrik bertingkat — di mana skor jatuh
+
+Rubrik instrumen LAM kualitatif yang terbaca verbatim menunjukkan skor **4** menuntut lima elemen, dan yang membedakannya dari skor **3** hanyalah dua hal:
+
+1. **UPPS menerapkan sistem berbasis TIK yang andal untuk *menyebarluaskan*** — bukan sekadar mendokumentasikan — proses dan hasil penelitian kepada publik.
+2. **Hasil evaluasi benar-benar dipakai untuk perbaikan** (unsur 4 yang berjalan, bukan yang dinyatakan).
+
+Elemen lain yang dituntut skor 4: tata kelola penelitian yang andal, jelas, transparan; kepatuhan kode etik; dan prosedur terdokumentasi yang mudah diakses.
+
+**Implikasi langsung:** dashboard publik yang menampilkan setiap judul penelitian beserta cabang pohonnya bukan sekadar hal yang bagus dimiliki — ia adalah **salah satu dari dua pembeda skor 3 dan 4**, dan purwarupanya sudah ada di repositori ini.
 
 ### 9.2 Rantai kesesuaian yang ditelusuri asesor
 
@@ -477,7 +642,16 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 5. **Pelajaran dari kekeliruan sesi sebelumnya:** draf sebelum ini sempat menyimpulkan dari cuplikan mesin pencari (bukan halaman sumber) bahwa Prof. Adhi Dharma Wibawa adalah Wakil Dekan. Struktur resmi menunjukkan itu **keliru** — Wakil Dekan yang benar adalah **Prof. Dr. I Ketut Eddy Purnama** (juga sosok "Prof Ketut" yang sempat tidak teridentifikasi lewat pencarian web), dan Wibawa menjabat Kepala Penjaminan Mutu Fakultas. Sudah dikoreksi di §2 dan §4.1. **Yang masih perlu diverifikasi:** bidang keahlian dan status *homebase* Prof. I Ketut Eddy Purnama — belum ada satu pun data risetnya di dokumen ini, dan sebagai Wakil Dekan namanya kemungkinan besar perlu masuk struktur kepemimpinan pilar (§8.1).
 6. **Roster lengkap dosen** ketiga prodi — dokumen ini kini memverifikasi ~24 nama dari ~27+ dosen Prodi Kedokteran (setelah struktur organisasi menambah 6 nama baru: Tri Hedianto, Atina Irani Wira Putri, Afia Nuzila Fadhlina, Riva Satya Radiansyah, Zain Budi Syulthoni; plus Endah Mayasari yang statusnya administratif, bukan dosen riset). **Ini bukan kesenjangan sepele:** dua ronde revisi berturut-turut mengubah kesimpulan strategis dokumen (epidemiolog Wirayuda tidak tergali di draf 1; Wakil Dekan salah nama di draf 2). Petakan sisanya sebelum pohon difinalkan.
 7. **Status aktif/non-aktif setiap dosen.** Halaman web fakultas tertinggal dari kenyataan — satu nama yang terindeks (dr. Rumman Karimah) ternyata sudah mengundurkan diri dan telah dikeluarkan dari roster dokumen ini. Sebelum pohon dipakai, **cocokkan roster dengan data kepegawaian mutakhir**, bukan dengan situs. Ini kritis karena perhitungan DTPS, rasio dosen, dan indikator NPD/NPM pada akreditasi hanya menghitung dosen aktif ber-*homebase* di prodi.
-8. **Ejaan nama & gelar spesialis yang perlu dikonfirmasi:** "Fatimah Nur Fitriani" vs "Fitriyani" (beda ejaan antar sumber); apakah dr. Rizka Nurul Hidayah (koordinator Lab Patologi Anatomi) berstatus Sp.PA bersertifikat atau M.Biomed yang mengoordinasi lab tanpa gelar spesialis.
+8. **Ejaan nama & gelar spesialis yang perlu dikonfirmasi:** "Fatimah Nur Fitriani" vs "Fitriyani" (beda ejaan antar sumber — hanya SK kepegawaian atau PDDikti yang bisa memutuskan, bukan sumber daring); dr. Rizka Nurul Hidayah mengoordinasi Lab Histologi & Patologi Anatomi tetapi **tidak ditemukan bukti gelar Sp.PA** — perlakukan Patologi Anatomi sebagai kesenjangan sampai terbukti sebaliknya.
+
+**Prioritas 1b — jerat yang ditemukan riset Agustus 2026 (jangan diulang)**
+8a. **Konflik jabatan Kepala Pusat Studi KATD.** Dokumen ini mencatat Prof. Adhi Dharma Wibawa; riset menemukan Prof. I Ketut Eddy Purnama dilantik pada kursi itu Januari 2025. Keduanya bersumber cuplikan. **Konfirmasi ke DRPM ITS.**
+8b. **Konflik atribusi publikasi nyeri punggung bawah.** Artikel model skoring prognostik (*J Prev Med Public Health*, 2025) diatribusikan ke Dr. Wirayuda di §4.1, tetapi penelusuran juga mengaitkannya ke dr. M. Nazhif Haykal. Kepenulisan bersama sangat mungkin — **baca daftar penulis lengkapnya sebelum menempatkan artikel ini di bawah nama siapa pun.**
+8c. **Klaim bab buku dari penerbit bunga rampai adalah artefak pencarian.** Riset menemukan satu buku yang sama (penerbit Media Sains Indonesia) menempel ke tiga nama berbeda pada tiga penelusuran berbeda — ciri khas halaman katalog berisi puluhan kontributor sehingga nama apa pun yang dicari akan "cocok". **Verifikasi lewat daftar isi/halaman kontributor, bukan hasil pencarian.** Berlaku untuk seluruh klaim bab buku dalam dokumen ini.
+8d. **Nama umum = risiko tabrakan identitas.** "dr. Abdurrahman" tanpa nama keluarga pembeda adalah entri berisiko tertinggi: setiap pencocokan berbasis nama harus dianggap tidak sah kecuali disertai NIDN, ORCID, atau halaman resmi yang benar-benar terbaca. Jerat konkret lain yang ditemukan: profil "Atina Putri" di ResearchGate berafiliasi **Institut Teknologi Bandung** — orang berbeda, dan kemiripan "Institut Teknologi" berpotensi menyesatkan.
+8e. **"C.M.C" pada gelar dr. Lely Nurhayati jangan diterjemahkan.** Draf sebelumnya memuainya menjadi "Certified Mediator" lalu membangun narasi penyelesaian sengketa medis di atasnya — dua lapis dugaan bertumpuk. Dalam praktik gelar non-akademik Indonesia, C.M.C. lazim berarti *Certified Management Consultant*. **Tanyakan langsung kepada yang bersangkutan.**
+8f. **Nomor urut "Guru Besar ITS ke-188"** untuk Prof. I Ketut Eddy Purnama tidak lolos korroborasi (dua cuplikan yang kemungkinan berasal dari satu halaman ITS yang sama). Jangan dicantumkan.
+8g. **Sasaran Pemda adalah KOTA Mojokerto, bukan Kabupaten.** Penelusuran seluruh berkas proyek menemukan 33 penyebutan "Kota Mojokerto" dan nol "Kabupaten Mojokerto"; kelima puskesmas berada di Kecamatan Prajuritkulon dan Magersari — keduanya wilayah Kota. Periksa kembali setiap penyebutan "RSUD RA Basoeni (Kab. Mojokerto)" agar konsisten.
 
 **Prioritas 2 — menentukan angka**
 9. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
@@ -485,9 +659,21 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 11. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
 
 **Prioritas 3 — menyempurnakan benchmark**
-12. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
+12. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026, **fakultas pembina**), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). **Riset Agustus 2026 kembali gagal menemukan satu pun dokumen ini** — seluruh domain `.ac.id` diblokir dan kuota pencarian web habis. Ini tetap bahan benchmark paling berharga yang belum tergarap, dan **satu-satunya cara mendapatkannya adalah mengunduhnya sendiri dari laptop biasa.**
 13. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
 14. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
+
+**Prioritas 4 — konteks pendukung yang seluruhnya gagal diverifikasi Agustus 2026**
+
+Riset agentik 3 Agustus 2026 menjalankan empat penelusuran konteks; **tiga di antaranya menghasilkan nol fakta terverifikasi** karena kuota pencarian web habis (200/200) di tengah jalan dan seluruh egress non-GitHub ditolak proxy. Agen-agen itu melaporkan kegagalan secara terbuka alih-alih mengarang — itulah sebabnya butir di bawah ini kosong dan bukan terisi angka palsu.
+
+15. **Lanskap pendanaan** — nol verifikasi. Nama skema, besaran dana, dan syarat hibah DRPM ITS, BIMA/Kemendiktisaintek, LPDP RISPRO, BRIN RIIM, dan Kemenkes semuanya tidak dapat dipastikan. Dua hipotesis yang wajib dicek, bukan diasumsikan: (a) apakah **Penelitian Dosen Pemula** benar-benar terbuka bagi dosen ITS, mengingat skema pemula secara historis dibatasi pada PT berklaster bawah — jika tertutup, jalur masuk dosen M.Biomed FKK harus dirancang lain; (b) apakah **Kedaireka/Matching Fund** masih berjalan setelah pergantian kementerian Oktober 2024.
+16. **Instrumen LAM-PTKes** — 9 vs 8 kriteria, ambang batas peringkat Unggul/Baik Sekali/Baik, panduan asesor, dan contoh LED: **seluruhnya tidak ditemukan.** Lihat peringatan di §9.1.
+17. **Prioritas nasional** — RIRN 2017–2045, PRN, RPJMN 2025–2029, Renstra Kemenkes (PMK 12/2025), 6 Pilar Transformasi Kesehatan: **tidak satu pun berhasil dibaca.** Klaim di §9.4 yang bersumber dari sesi terdahulu kini menjadi risiko terbuka — verifikasi ulang sebelum dipakai. Status kelembagaan PRN pasca-peleburan Kemenristek ke BRIN juga tidak diketahui: **periksa apakah PRN masih instrumen aktif dan siapa walidatanya sekarang.**
+18. **Beban penyakit** — nol angka prevalensi dicantumkan, dan itu disengaja. Catatan metodologis yang tetap berguna: survei rujukan nasional untuk prevalensi PTM dan status gizi **sudah berganti nama** dari Riskesdas menjadi **SKI (Survei Kesehatan Indonesia)** — pastikan mengutip nama dan tahun yang benar.
+19. **Regulasi alat kesehatan** — jalur izin edar **AKD/AKL**, TKDN, dan e-katalog tidak terverifikasi. Ini kritis untuk Pilar 4 (prostesis, implan): **peta jalan dari purwarupa kampus ke produk berizin harus ditulis di RIP**, dan saat ini fondasinya belum ada.
+20. **Registri uji klinis Indonesia** — pencarian eksplisit mengembalikan **nol hasil**. Apakah Indonesia punya registri uji klinik nasional dan apakah pendaftarannya wajib: masih terbuka. Perlu ditanyakan ke KEPPKN.
+21. **Prosedur perizinan pengambilan data** di Puskesmas dan Dinkes Kota Mojokerto — tidak ditemukan. Ini prasyarat operasional §6.5 (jalur register) maupun §6.3 (sensus dasar).
 
 ---
 
@@ -507,6 +693,14 @@ LAM-PTKes (instrumen 9 kriteria & 8 kriteria) · Matriks Penilaian IAPS BAN-PT �
 
 **Pembanding FK Indonesia**
 FK Unsri · FK UI (IMERI) · FK Unair · FK UB · FK-KMK UGM · FK UNS · FK Undip · FK Unpad (*fish bone*) · FK UMSU · FKIK Unismuh
+*Catatan: dokumen roadmap kesepuluh FK ini tetap belum berhasil diambil setelah dua ronde riset — lihat §10 butir 12.*
+
+**Model kohort & surveilans populasi** *(ditambahkan 3 Agustus 2026, dasar revisi §6)*
+Rotterdam Study/ERGO (Erasmus MC) · Framingham Heart Study · UK Biobank (model tata kelola akses) · **HDSS Sleman & Purworejo (FK-KMK UGM — pembanding domestik terpenting)** · Studi Kohort Faktor Risiko PTM Bogor (eks Balitbangkes) · IFLS/RAND (model data terbuka) · **Agincourt HDSS (Wits, Afrika Selatan — arsitektur sensus dasar + ronde pembaruan)** · Matlab HDSS (icddr,b — model area intervensi vs pembanding permanen) · Jejaring INDEPTH (dan pelajaran keruntuhannya) · REACT/Imperial (potong lintang berulang)
+
+**Praktik tata kelola riset Indonesia** *(ditambahkan 3 Agustus 2026, dasar §8.5)*
+Rubrik instrumen LAM kualitatif (skala 4-3-2-1) · daftar tilik AMI (5 kolom baku) · siklus PPEPP & alur AMI enam tahap · blueprint SIM-LPPM 16 modul · template Berita Acara Monev · standar SPMI kelompok riset · 7 Standar WHO 2011 & CIOMS 2016 untuk KEPK · registrasi KEPPKN
+*Seluruhnya dibaca verbatim dari repositori sistem penjaminan mutu perguruan tinggi Indonesia yang terbuka, karena situs resmi LAM-PTKes tidak dapat dijangkau.*
 
 ---
 
