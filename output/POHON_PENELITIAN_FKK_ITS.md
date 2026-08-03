@@ -43,7 +43,8 @@ Fakta institusional pendukung (semua dari sumber terindeks, perlu verifikasi fin
 - FKK adalah **fakultas ke-8 ITS**, berdiri dengan **Peraturan Rektor ITS No. 2 Tahun 2023**; FK UNAIR sebagai fakultas pembina.
 - Tiga prodi: **Sarjana Kedokteran**, **Pendidikan Profesi Dokter**, **Teknologi Kedokteran**.
 - Dekan 2025–2029: **Dr. Lukman Hakim, M.Kes., Sp.U(K), Ph.D** (PhD KU Leuven; uro-onkologi). Dekan pendiri: Dr. dr. Imam Susilo, Sp.PA(K).
-- **Wakil Dekan: Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.** — sekaligus **profesor pertama FKK ITS** (dikukuhkan sbg Profesor ke-266 ITS, Agustus 2025; orasi ilmiah *"Pemanfaatan Sinyal Otak untuk Mendukung Inovasi Neuroteknologi bagi Kemajuan Bangsa"*). **Perlu diverifikasi manual** — sumber berasal dari cuplikan mesin pencari (dua kueri terpisah), bukan halaman/PDF struktur organisasi asli, dan `its.ac.id` masih memblokir pengambilan langsung dari sesi ini.
+- **Wakil Dekan: Prof. Dr. I Ketut Eddy Purnama, S.T., M.T.** — sumber: halaman resmi *Struktur Organisasi* `its.ac.id/fakultas/fkk/profil/`, dikonfirmasi pengguna. **Perlu diverifikasi:** bidang keahlian & *homebase* prodi — nama ini belum terpetakan ke satu pun dari tiga prodi FKK dalam riset sebelumnya, kemungkinan pengangkatan lintas-unit dari luar FKK (pola umum pada fakultas kedokteran teknologi-baru untuk kursi Wakil Dekan bidang riset/teknologi).
+- **Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.** menjabat **Kepala Penjaminan Mutu Fakultas** (bukan Wakil Dekan — **koreksi** atas draf commit sebelumnya, yang keliru menyimpulkan dari cuplikan mesin pencari tanpa halaman sumber; lihat §10 butir 5), sekaligus **profesor pertama FKK ITS** (dikukuhkan sbg Profesor ke-266 ITS, Agustus 2025; orasi ilmiah *"Pemanfaatan Sinyal Otak untuk Mendukung Inovasi Neuroteknologi bagi Kemajuan Bangsa"* — sumber ITS News, terpisah dari kekeliruan di atas).
 - Kurikulum memuat **~20% materi teknologi kesehatan**: AI, sains data medis, genomik.
 - Sinergi lintas fakultas dinyatakan Dekan sebagai *"kekuatan utama yang membedakan FKK ITS dari fakultas kedokteran lainnya."*
 - Prodi Kedokteran & Profesi Dokter **sudah divisitasi LAM-PTKes 23–26 April 2025**; halaman prodi menyebut peringkat **"Baik"**.
@@ -103,39 +104,70 @@ Ini bagian yang paling menentukan bentuk pohon. Pohon yang tidak berakar pada re
 
 ### 4.1 Peta SDM terverifikasi
 
-**Prodi Sarjana Kedokteran** — situs mengklaim 27 dosen; 11 terverifikasi individual:
+**Kepemimpinan fakultas** (sumber: halaman resmi *Struktur Organisasi*, `its.ac.id/fakultas/fkk/profil/`, dikonfirmasi pengguna 3 Agustus 2026):
 
-| Nama | Keahlian tersirat |
+| Jabatan | Nama |
 |---|---|
-| dr. Muhammad Nazhif Haykal, M.Biomed | Biomedik |
-| dr. Endah Indriastuti, Sp.PK | **Patologi Klinik** — kunci untuk validasi biomarker |
-| dr. Rizka Nurul Hidayah, M.Biomed | Biomedik |
-| dr. Fatimah Nur Fitriani, M.Biomed | Biomedik |
-| dr. Gumilar Fardhani Ami Putra, M.Biomed | Biomedik |
-| dr. Dwinka Syafira Eljatin, M.Ked.Trop | **Kedokteran Tropis** |
+| Dekan | dr. Lukman Hakim, M.Kes., Sp.U(K), Ph.D |
+| Wakil Dekan | Prof. Dr. I Ketut Eddy Purnama, S.T., M.T. |
+| Kepala Sub Bagian | Endah Mayasari, S.T. |
+| Penjaminan Mutu Fakultas | Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T. |
+| Penjaminan Mutu Prodi Kedokteran | dr. Ratri Dwi Indriani, Sp.An, FIP, FIPP |
+| Penjaminan Mutu Prodi Teknologi Kedokteran | Yuri Pamungkas, S.Tr.T., M.T. |
+| Kaprodi Kedokteran | dr. Endah Indriastuti, Sp.PK |
+| Kaprodi Pendidikan Profesi Dokter | dr. Rahmah Yasinta Rangkuti, Sp.A, M.Biomed |
+| Kaprodi Teknologi Kedokteran | Dr. Shoffi Izza Sabilla, S.Kom |
+
+**Prodi Sarjana Kedokteran** — situs mengklaim 27 dosen; 12 terverifikasi individual (peran lab dari struktur organisasi resmi):
+
+| Nama | Keahlian tersirat / peran struktural |
+|---|---|
+| dr. Endah Indriastuti, Sp.PK | **Patologi Klinik** — kunci untuk validasi biomarker; **Kaprodi Kedokteran** |
+| dr. Muhammad Nazhif Haykal, M.Biomed | Biomedik; Koordinator Lab **Patologi Klinik** |
+| dr. Rizka Nurul Hidayah, M.Biomed | Biomedik; Koordinator Lab **Histologi & Patologi Anatomi** — catatan: M.Biomed adalah gelar magister umum, bukan Sp.PA; peran koordinasi lab tidak serta-merta berarti spesialis Patologi Anatomi bersertifikat (lihat §4.3) |
+| dr. Fatimah Nur Fitriani/Fitriyani, M.Biomed | Biomedik; Koordinator Lab **Fisiologi** — ejaan nama berbeda antar sumber, perlu dikonfirmasi |
+| dr. Gumilar Fardhani Ami Putra, M.Biomed | Biomedik; Koordinator Lab **Anatomi** |
+| dr. Dwinka Syafira Eljatin, M.Ked.Trop | **Kedokteran Tropis**; Koordinator Lab **Farmakologi** |
 | dr. Abdurrahman, Sp.An-TI, M.Ked.Klin | Anestesiologi & Terapi Intensif |
 | dr. Lely Nurhayati, M.H., C.M.C | **Hukum Kesehatan / medikolegal** — aset langka |
-| dr. Edwin Nugroho Njoto, Sp.PD, MIPH, MHM | **Penyakit Dalam + Int'l Public Health + Health Management** |
+| dr. Edwin Nugroho Njoto, Sp.PD, MIPH, MHM | **Penanggung Jawab KKM Ilmu Kesehatan Masyarakat–Kedokteran Pencegahan (IKM-KP)** — bukan Interna seperti tersirat di draf sebelumnya (Interna kini dipegang dr. Atina Irani Wira Putri, lihat di bawah). **Temuan penting:** ini menempatkan Njoto tepat di jantung batang pohon "kedokteran pencegahan" (§3) — bukan sekadar penunjang |
 | **Dr. Anak Agung Bagus Wirayuda, dr., B.Med., M.D., M.Sc.** (Lektor) | **Epidemiologi & Statistika Medis** — M.Sc. Epidemiology and Medical Statistics; Ph.D. Sultan Qaboos University. Riset: determinan wabah dengue (Oman), *systematic review* penyakit tular-vektor kawasan MENA, pemodelan angka harapan hidup & determinan sosial kesehatan negara OIC, model skoring prognostik nyeri punggung bawah di layanan primer Indonesia (*J Prev Med Public Health*, 2025) |
 | Ira Resmi Melani, S.Ked | — |
 
-**Prodi Pendidikan Profesi Dokter** — 7 terverifikasi, seluruhnya klinisi spesialis:
-Sp.F (Anwar Djunaidi) · Sp.Rad (Erna Furaidah) · Sp.B FINACS (Ivor Wiguna H.W.) · Sp.An FIP FIPP (Ratri Dwi Indriani) · Sp.DV (Desiana Widityaning Sari) · Sp.OG (Sonny Fadli) · Sp.A (Rahmah Yasinta Rangkuti)
+**Prodi Pendidikan Profesi Dokter** — struktur resmi mengungkap **13 KKM (Kelompok Kerja Medis) + IKM-KP**, naik dari 7 yang sempat terverifikasi di draf sebelumnya:
 
-**Prodi Teknologi Kedokteran** — 10 dari 11 terverifikasi. **Di sinilah mesin riset fakultas saat ini:**
-
-| Nama | Bidang terpublikasi |
+| KKM | Nama |
 |---|---|
-| **Prof. Dr. Ir. Adhi Dharma Wibawa** — **Wakil Dekan FKK ITS**, profesor pertama FKK (dikukuhkan Agustus 2025) | Pemrosesan sinyal biomedis (EEG/EMG/ECG), AI; PhD Biomedical Engineering **Univ. Groningen**; Kepala Pusat Studi KATD |
-| **Dr. Shoffi Izza Sabilla, S.Kom., M.Kom.** | ***Electronic nose***, machine learning, deep NN, IoT |
+| Interna | dr. Atina Irani Wira Putri, Sp.PD |
+| Pediatri | dr. Rahmah Yasinta Rangkuti, Sp.A, M.Biomed — **Kaprodi Profesi Dokter** |
+| THT | dr. Tri Hedianto, Sp.THT-BKL — juga Koordinator Lab **Keterampilan Klinik** (Prodi Kedokteran) |
+| Mata | dr. Afia Nuzila Fadhlina, Sp.M, M.Ked.Klin |
+| Neurologi & Rehabilitasi Medik | dr. Riva Satya Radiansyah, Sp.N |
+| Psikiatri | dr. Zain Budi Syulthoni, Sp.KJ |
+| Dermato-Venereologi | dr. Desiana Widityaning Sari, Sp.DV, M.Ked.Klin |
+| Forensik | dr. Anwar Djunaidi, Sp.F |
+| Radiologi | dr. Erna Furaidah, Sp.Rad |
+| Bedah | dr. Ivor Wiguna Hartanto Wilopo, Sp.B, FINACS |
+| Obstetri & Ginekologi | dr. Sonny Fadli, M.Ked.Klin, Sp.OG |
+| Kegawatdaruratan Anestesi | dr. Ratri Dwi Indriani, Sp.An, FIP, FIPP — juga **Penjaminan Mutu Prodi Kedokteran** |
+| IKM-KP | dr. Edwin Nugroho Njoto, MIPH, MHM, Sp.PD |
+
+**Prodi Teknologi Kedokteran** — 10 dari 11 terverifikasi, plus peran struktural baru. **Di sinilah mesin riset fakultas saat ini:**
+
+| Nama | Bidang terpublikasi / peran struktural |
+|---|---|
+| **Prof. Dr. Ir. Adhi Dharma Wibawa** — profesor pertama FKK (Agustus 2025), Kepala Penjaminan Mutu Fakultas | Pemrosesan sinyal biomedis (EEG/EMG/ECG), AI; PhD Biomedical Engineering **Univ. Groningen**; Kepala Pusat Studi KATD |
+| **Dr. Shoffi Izza Sabilla, S.Kom., M.Kom.** — **Kaprodi Teknologi Kedokteran** | ***Electronic nose***, machine learning, deep NN, IoT |
 | **Achmad Syaifudin, Ph.D** | Biomekanika ortopedi, *bone plate*, desain stent & FEM |
-| **Djoko Kuswanto, S.T., M.Biotech.** | Desain produk medis, **3D printing**, prostesis & *custom implant*; pendiri Rumah Prostesis Indonesia |
+| **Djoko Kuswanto, S.T., M.Biotech.** — Kepala Lab **Teknologi Kesehatan** | Desain produk medis, **3D printing**, prostesis & *custom implant*; pendiri Rumah Prostesis Indonesia |
 | **Dr. Eng. Dhany Arifianto** | **Audiologi & akustik** |
-| **Yuri Pamungkas, S.Tr.T., M.T.** | Pemrosesan sinyal EEG, AI kedokteran, neuroteknologi |
+| **Yuri Pamungkas, S.Tr.T., M.T.** — Penjaminan Mutu Prodi Teknologi Kedokteran | Pemrosesan sinyal EEG, AI kedokteran, neuroteknologi |
 | Hamdan Dwi Rizqi, S.Si., M.Si. | Biokimia |
 | Fahmi Mubarok, Ph.D | Material & manufaktur |
 | Nadya Paramitha Jafari, S.Ds., M.T. | Desain produk medis |
 | Dr. Shoffi / Gusfatul Mukhairiq, S.T., M.T. | — |
+
+**Belum terpetakan:** Prof. Dr. I Ketut Eddy Purnama (Wakil Dekan), Endah Mayasari (Kepala Sub Bagian — administratif, kemungkinan besar bukan dosen riset).
 
 ### 4.2 Klaster publikasi yang sudah nyata
 
@@ -155,7 +187,7 @@ Sp.F (Anwar Djunaidi) · Sp.Rad (Erna Furaidah) · Sp.B FINACS (Ivor Wiguna H.W.
 |---|---|---|
 | ~~Tidak ada epidemiolog~~ — **TERKOREKSI.** Kapasitas epidemiologi & biostatistik **sudah ada di dalam**: Dr. Anak Agung Bagus Wirayuda (M.Sc. Epidemiology & Medical Statistics, Ph.D.) | Bukan kesenjangan. Justru ini **penambat metodologis** untuk seluruh pilar dan prasyarat kohort (§6) | Perkuat, bukan rekrut: beri peran Penanggung Jawab Metodologi lintas pilar; tambah 1–2 epidemiolog/biostatistisi yunior sebagai kaderisasi agar tidak bergantung pada satu orang |
 | **Biostatistisi klinis tambahan** untuk menopang volume | Desain studi & *sample size* untuk uji diagnostik pada banyak pilar sekaligus | Dept. Statistika ITS (Lab Statistika & Sains Data Lingkungan dan Kesehatan) — mitra internal, tersedia sekarang |
-| **Mikrobiologi klinik / Patologi Anatomi** tidak terverifikasi | Pilar 3 (AMR) dan validasi biomarker terhambat | Manfaatkan Sp.PK yang ada + jejaring lab RSUD; rekrut menengah |
+| **Mikrobiologi klinik** tidak terverifikasi; **Patologi Anatomi** ada koordinator lab (dr. Rizka Nurul Hidayah, M.Biomed) tapi belum jelas berstatus spesialis Sp.PA | Pilar 3 (AMR) dan validasi biomarker terhambat | Manfaatkan Sp.PK yang ada + jejaring lab RSUD; konfirmasi status Sp.PA Rizka Nurul Hidayah; rekrut menengah bila belum |
 | **Farmakologi klinik** tidak terverifikasi | Membatasi riset intervensi | Rekrut jangka menengah |
 | Mayoritas dosen Kedokteran masih **M.Biomed (S2)** | Kapasitas memimpin riset mandiri terbatas | Program studi lanjut S3 terarah ke cabang pohon; jadikan mereka *co-PI* pada proyek yang dipimpin platform |
 | **Afiliasi ganda** (Dhany↔T. Fisika, Syaifudin & Fahmi↔T. Mesin, Kuswanto↔Despro) | Berisiko pada perhitungan rasio dosen & *homebase* akreditasi | Perjelas status *homebase* resmi sebelum LED disusun — **ini isu administratif mendesak** |
@@ -441,20 +473,21 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 1. **Instrumen LAM-PTKes mana yang berlaku** bagi FKK ITS (9 kriteria kuantitatif vs 8 kriteria kualitatif) → unduh dari `lamptkes.org/File-Unduhan`; cek status mutakhir di Database Hasil Akreditasi LAM-PTKes
 2. **Roadmap Penelitian ITS 2025–2029** (DRPM) — apakah ada slot tema kesehatan yang harus diinduki → `its.ac.id/drpm/.../Roadmap-Penelitian-2025-2029.pdf`
 3. **Renstra ITS 2026–2030** — kerangka RAISE sebagai payung
-4. **Struktur FKK 2025** (`its.ac.id/wp-content/uploads/2025/01/Struktur-FKK-2025-Rev.pdf`) — struktur organisasi & kepemimpinan otoritatif
-5. **Susunan dekanat terkini.** Cuplikan mesin pencari (Agustus 2026) menyebut **Prof. Dr. Ir. Adhi Dharma Wibawa** sebagai Wakil Dekan sekaligus profesor pertama FKK — sudah dimasukkan ke §2 dan §4.1 dengan tanda perlu-verifikasi, karena diambil dari dua kueri pencarian terpisah yang saling melengkapi, bukan dari PDF struktur organisasi resmi (masih terblokir). **Belum teridentifikasi:** nama "Prof. Ketut" yang disebut pengguna sebagai bagian dekanat/pimpinan saat ini — tidak ditemukan lewat pencarian web pada sesi ini. Perlu nama lengkap & gelar dari pengguna, atau akses langsung ke halaman struktur organisasi.
-6. **Roster lengkap dosen** ketiga prodi — dokumen ini hanya memverifikasi 11 dosen aktif dari ~27 dosen Prodi Kedokteran. **Ini bukan kesenjangan sepele:** satu nama yang semula tidak tergali (Dr. A.A.B. Wirayuda, epidemiolog) ternyata mengubah kesimpulan strategis dokumen ini. Asumsikan masih ada kapasitas tersembunyi lain di ~16 nama yang belum terpetakan — petakan seluruhnya sebelum pohon difinalkan.
+4. ~~**Struktur FKK 2025**~~ — **SELESAI.** Pengguna memasok tangkapan layar halaman resmi *Struktur Organisasi* (`its.ac.id/fakultas/fkk/profil/`) pada 3 Agustus 2026. Dekanat, Kaprodi ketiga prodi, koordinator lab, dan 13 KKM Prodi Profesi Dokter sudah dipetakan ke §2 dan §4.1.
+5. **Pelajaran dari kekeliruan sesi sebelumnya:** draf sebelum ini sempat menyimpulkan dari cuplikan mesin pencari (bukan halaman sumber) bahwa Prof. Adhi Dharma Wibawa adalah Wakil Dekan. Struktur resmi menunjukkan itu **keliru** — Wakil Dekan yang benar adalah **Prof. Dr. I Ketut Eddy Purnama** (juga sosok "Prof Ketut" yang sempat tidak teridentifikasi lewat pencarian web), dan Wibawa menjabat Kepala Penjaminan Mutu Fakultas. Sudah dikoreksi di §2 dan §4.1. **Yang masih perlu diverifikasi:** bidang keahlian dan status *homebase* Prof. I Ketut Eddy Purnama — belum ada satu pun data risetnya di dokumen ini, dan sebagai Wakil Dekan namanya kemungkinan besar perlu masuk struktur kepemimpinan pilar (§8.1).
+6. **Roster lengkap dosen** ketiga prodi — dokumen ini kini memverifikasi ~24 nama dari ~27+ dosen Prodi Kedokteran (setelah struktur organisasi menambah 6 nama baru: Tri Hedianto, Atina Irani Wira Putri, Afia Nuzila Fadhlina, Riva Satya Radiansyah, Zain Budi Syulthoni; plus Endah Mayasari yang statusnya administratif, bukan dosen riset). **Ini bukan kesenjangan sepele:** dua ronde revisi berturut-turut mengubah kesimpulan strategis dokumen (epidemiolog Wirayuda tidak tergali di draf 1; Wakil Dekan salah nama di draf 2). Petakan sisanya sebelum pohon difinalkan.
 7. **Status aktif/non-aktif setiap dosen.** Halaman web fakultas tertinggal dari kenyataan — satu nama yang terindeks (dr. Rumman Karimah) ternyata sudah mengundurkan diri dan telah dikeluarkan dari roster dokumen ini. Sebelum pohon dipakai, **cocokkan roster dengan data kepegawaian mutakhir**, bukan dengan situs. Ini kritis karena perhitungan DTPS, rasio dosen, dan indikator NPD/NPM pada akreditasi hanya menghitung dosen aktif ber-*homebase* di prodi.
+8. **Ejaan nama & gelar spesialis yang perlu dikonfirmasi:** "Fatimah Nur Fitriani" vs "Fitriyani" (beda ejaan antar sumber); apakah dr. Rizka Nurul Hidayah (koordinator Lab Patologi Anatomi) berstatus Sp.PA bersertifikat atau M.Biomed yang mengoordinasi lab tanpa gelar spesialis.
 
 **Prioritas 2 — menentukan angka**
-8. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
-9. **Daftar publikasi FKK lengkap** → `scholar.its.ac.id/en/organisations/faculty-of-medicine-and-health`
-10. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
+9. **Seluruh metrik SINTA/Scopus per dosen** — tidak ada satu angka pun dalam dokumen ini; ambil manual dari SINTA (filter afiliasi ITS)
+10. **Daftar publikasi FKK lengkap** → `scholar.its.ac.id/en/organisations/faculty-of-medicine-and-health`
+11. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
 
 **Prioritas 3 — menyempurnakan benchmark**
-11. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
-12. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
-13. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
+12. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). Daftar tema unggulan mereka tidak berhasil diekstraksi dan justru ini bahan benchmark paling berharga.
+13. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
+14. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
 
 ---
 
