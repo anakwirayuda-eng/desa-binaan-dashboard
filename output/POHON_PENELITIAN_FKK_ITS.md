@@ -226,6 +226,34 @@ Riset Agustus 2026 menelusuri jejak publikasi tiap klinisi, lalu setiap klaim di
 
 > **Koreksi 2 — jalur audiologi belum internal.** Dugaan awal saya: Dhany Arifianto (akustik) + dr. Tri Hedianto (Sp.THT) = riset audiologi. Riset membantahnya dari dua sisi: (a) Tri Hedianto tidak punya rekam jejak riset THT; (b) program audiometri portabel Lab Vibrastik Teknik Fisika ITS (didanai LPDP) **sudah berjalan dengan mitra klinis dari luar** — Sp.THT-KL dari UNAIR/RSUD Dr. Soetomo. Jadi jalur translasi audiologi ITS saat ini **bergantung pada klinisi eksternal**. Tri Hedianto adalah satu-satunya Sp.THT-KL internal FKK, sehingga secara struktural dialah kandidat untuk **meng-internalkan** kemitraan itu — tetapi itu potensi struktural, bukan kapasitas riset terbukti, dan harus ditulis apa adanya.
 
+### 4.1c Sumbu Kedokteran Dasar / Profesi / Translasi (khusus Prodi Kedokteran & Profesi Dokter)
+
+Ini sumbu **kedua** yang melengkapi matriks Pilar × Platform (§5), dan berlaku **hanya** untuk kedua prodi kedokteran (bukan Teknologi Kedokteran). Matriks menjawab *"riset apa, dengan alat apa"*; sumbu ini menjawab *"siapa yang mengerjakan, dan di tahap pipeline pendidikan mana posisi formalnya."* Keduanya berpotongan — satu nama muncul di kedua sumbu — bukan saling menggantikan.
+
+Diagram interaktifnya tersedia sebagai artefak visual (lihat pesan pengiriman); ringkasan teksnya di bawah.
+
+> **Prinsip penetapan — supaya tidak mengulang kesalahan lama.** Penempatan **hanya** berdasarkan (a) jabatan resmi terverifikasi (Koordinator Lab / Penanggung Jawab KKM) dan (b) jejak riset yang benar-benar terdokumentasi. **Bukan** disimpulkan dari gelar. Nama tanpa dua hal itu masuk kategori residual yang dinyatakan terbuka, bukan dipaksakan ke salah satu cabang.
+
+> **Ketiga tier bernilai institusional SETARA.** Urutan Dasar → Profesi → Translasi adalah **tahap pipeline pendidikan kedokteran** (preklinik → kepaniteraan → jembatan lintas-rumpun yang sudah terbukti), **bukan tangga prestise atau kenaikan pangkat.** Ini harus dinyatakan eksplisit di dokumen agar tidak memicu sensitivitas internal — seorang Koordinator Lab Anatomi tidak "lebih rendah" dari klinisi di cabang Translasi; mereka mengisi fungsi berbeda pada pipeline yang sama.
+
+**Cabang 1 — Kedokteran Dasar** (7 orang): ilmu biomedik & paraklinik tahap preklinik. Jangkar = jabatan Koordinator Laboratorium.
+dr. Endah Indriastuti Sp.PK (**Kaprodi Kedokteran**, Patologi Klinik) · dr. M. Nazhif Haykal (Koord. Lab Patologi Klinik) · dr. Rizka Nurul Hidayah (Koord. Lab Histologi & PA — *bukan* Sp.PA) · dr. Fatimah N. Fitriani (Koord. Lab Fisiologi — ejaan belum pasti) · dr. Gumilar F.A. Putra (Koord. Lab Anatomi) · dr. Dwinka Syafira Eljatin (Koord. Lab Farmakologi — latar tropis ≠ lab) · dr. Tri Hedianto Sp.THT-BKL (Koord. Lab Keterampilan Klinik — klinisi-komunikator, bukan peneliti aktif)
+
+**Cabang 2 — Kedokteran Profesi** (9 orang): ilmu klinis tahap kepaniteraan (koas). Jangkar = Penanggung Jawab KKM.
+dr. Atina Irani Wira Putri Sp.PD (KKM Interna, **paling aktif meneliti**; jembatan *diusulkan* → e-nose Sabilla) · dr. Afia Nuzila Fadhlina Sp.M (KKM Mata; jembatan *diusulkan* → citra kornea I K.E. Purnama; **kornea, bukan retina**) · dr. Rahmah Yasinta Rangkuti Sp.A (**Kaprodi Profesi**, KKM Pediatri) · dr. Ratri Dwi Indriani Sp.An (KKM Anestesi + Penjaminan Mutu Prodi) · dr. Erna Furaidah Sp.Rad · dr. Ivor Wiguna H.W. Sp.B · dr. Sonny Fadli Sp.OG · dr. Desiana Widityaning Sari Sp.DV · dr. Anwar Djunaidi Sp.F
+
+**Cabang 3 — Kedokteran Translasi** (4 orang): riset **terverifikasi** (bukan potensi) yang menjembatani ke teknologi atau ke populasi/kebijakan. **Dua tingkat kekuatan bukti dibedakan tegas:**
+- **dr. Zain Budi Syulthoni Sp.KJ** — kolaborasi **empiris** (studi EEG CNN-RNN) dengan Yuri Pamungkas. *Bukti terkuat.*
+- **dr. Riva Satya Radiansyah Sp.N** — kolaborasi berupa **telaah sistematis** (bukan riset empiris primer) dengan Yuri Pamungkas. Bukti nyata tetapi berbeda jenis dari Zain.
+- **dr. Edwin Nugroho Njoto Sp.PD, MIPH, MHM** — jalur **populasi/kebijakan** (IKM-KP, epidemiologi lapangan kusta subklinis).
+- **Dr. A.A.B. Wirayuda M.Sc.** — jalur **populasi/kebijakan** (penambat metodologi). ⚠ **Konflik kepentingan yang harus dikelola:** ia pengusul trunk pohon ini sekaligus pemohon dokumen. Penempatan dirinya di tier paling dekat dengan trunk **wajib diratifikasi pihak independen** (Wakil Dekan / Kepala Penjaminan Mutu), bukan ditetapkan sendiri.
+
+**Kategori residual — Belum Terklasifikasi** (3 orang, dinyatakan terbuka): dr. Abdurrahman Sp.An-TI (risiko tabrakan identitas — nama umum tanpa marga, verifikasi via NIDN/ORCID) · dr. Lely Nurhayati M.H., C.M.C (tanpa jejak publikasi; gelar C.M.C jangan diterjemahkan) · Ira Resmi Melani S.Ked (status dosen vs staf belum jelas).
+
+> **Dua koreksi faktual yang ditangkap verifikasi silang, dicatat agar tidak terulang:** (1) dr. Endah Indriastuti adalah **Kaprodi**, bukan Koordinator Lab Patologi Klinik — jabatan koordinator itu milik dr. Nazhif Haykal; jabatan Kaprodi adalah peran kepemimpinan, **bukan** bukti produktivitas riset. (2) Jangan mengklaim matriks Pilar × Platform "sudah mengusulkan" pasangan tertentu (mis. Erna Furaidah × I K.E. Purnama) kecuali benar-benar tertulis di §5 — kalau tidak, itu inferensi baru yang menyamar sebagai rujukan.
+
+**Rekap terkait matriks (§5):** dari 4 nama cabang Translasi, tiga sudah muncul di matriks sebagai penambat klinis platform — Zain & Riva di **T1 (Biosinyal/Neuroteknologi)**, Njoto di **T5 (Telematika Kesehatan)**, Wirayuda lintas-pilar. Ini bukti dua sumbu itu konsisten, bukan bertabrakan: cabang = tahap pipeline orangnya; sel matriks = tema/alat risetnya.
+
 ### 4.2 Klaster publikasi yang sudah nyata
 
 | Klaster | Bukti |
@@ -701,6 +729,33 @@ Rotterdam Study/ERGO (Erasmus MC) · Framingham Heart Study · UK Biobank (model
 **Praktik tata kelola riset Indonesia** *(ditambahkan 3 Agustus 2026, dasar §8.5)*
 Rubrik instrumen LAM kualitatif (skala 4-3-2-1) · daftar tilik AMI (5 kolom baku) · siklus PPEPP & alur AMI enam tahap · blueprint SIM-LPPM 16 modul · template Berita Acara Monev · standar SPMI kelompok riset · 7 Standar WHO 2011 & CIOMS 2016 untuk KEPK · registrasi KEPPKN
 *Seluruhnya dibaca verbatim dari repositori sistem penjaminan mutu perguruan tinggi Indonesia yang terbuka, karena situs resmi LAM-PTKes tidak dapat dijangkau.*
+
+---
+
+## 12. Rencana penyelesaian — milestone menuju pengajuan ke Dekanat
+
+Disusun karena dokumen ini ditunggu pimpinan. Target **bukan** "terakreditasi" (itu proses terpisah bertahun-tahun), melainkan **"draf final siap diajukan resmi ke Dekanat sebagai bahan uji publik & keputusan"** — realistis **± 2 September 2026**.
+
+**Jalur kritis** bukan penulisan (bisa selesai 1–2 hari) dan bukan verifikasi mandiri situs terblokir (di tangan Anda, bisa dicicil). Jalur kritis adalah **rantai kelembagaan**: review tim kecil → revisi → uji publik stakeholders → revisi final. Simpul paling rentan molor adalah **uji publik** karena bergantung jadwal pihak eksternal — undang lebih awal.
+
+| Target | Tonggak | Deliverable | Pemilik |
+|---|---|---|---|
+| **3 Agu** ✓ | Struktur & visual siap | Draf + taksonomi Dasar/Profesi/Translasi + grafik interaktif | Asisten + Anda — **selesai** |
+| **4–8 Agu** | Verifikasi mandiri + minta roster resmi | Anda buka sendiri LAM-PTKes (9 vs 8 kriteria), SINTA, roadmap FK Unair; kirim permintaan roster & status kepegawaian ke bagian akademik. **Paralel, tidak menunggu.** | Anda |
+| **5–10 Agu** | Review internal tim kecil | Urut: Wakil Dekan Prof. I K.E. Purnama (**klarifikasi COI** penempatan platform & tier Translasi) → Kepala PM Prof. Adhi Dharma Wibawa → 3 Kaprodi (konfirmasi penempatan dosen tiap prodi) | Anda mengundang |
+| **11–14 Agu** | Revisi v2 · PR *ready-for-review* · kolaborator kedua | Masukan tim kecil masuk dokumen; PR #1 dibuka dari draft; tambah reviewer manusia kedua di repo sebelum diedarkan luas | Asisten + Anda |
+| **19–21 Agu** | Data kepegawaian resmi & konfirmasi eksternal | Roster lengkap + status aktif; konfirmasi jabatan Kepala Pusat Studi KATD ke DRPM ITS; kontak FK-KMK UGM soal HDSS Sleman | Pihak luar |
+| **24–28 Agu** | Uji publik stakeholders | Dinkes Kota Mojokerto + 2 RSUD + dosen. Berita Acara = bukti unsur C.7/C.8 sekaligus. **Undang paling lambat minggu ke-2 Agustus** | Pihak luar (undangan resmi) |
+| **± 2 Sep** ★ | **Draf final siap diajukan ke Dekanat** | Konsolidasi seluruh masukan — bahan uji publik & keputusan, **bukan** pengesahan final. **Inilah tonggak yang ditunggu atasan.** | Anda mempresentasikan |
+| **14–18 Sep** | Pengesahan — SK Dekan penetapan RIP & Peta Jalan | Header berubah dari "draf kerja" menjadi resmi; SK terpisah untuk Peta Jalan PkM (sesuai K4). Di luar kendali langsung | Dekan |
+
+### Cara melaporkan ke atasan minggu ini
+
+Dokumen ini sudah **sangat substantif** (progres nyata, bukan janji) tetapi masih draf kerja dengan celah data yang **diketahui dan terdaftar eksplisit** (§10). Lapor dengan bingkai itu — jangan terlihat "belum mulai", jangan pula mengklaim "selesai". Contoh kalimat yang bisa dipakai:
+
+> *"Kerangka lengkap Pohon Penelitian sudah jadi — arsitektur matriks 5 Pilar × 5 Platform, plus sumbu Kedokteran Dasar/Profesi/Translasi untuk kedua prodi kedokteran, dengan 23 dosen sudah terpetakan ke perannya. Ada versi visualnya untuk dilihat cepat. Statusnya draf kerja: sebagian data institusional (angka SINTA, instrumen LAM-PTKes yang berlaku, roster kepegawaian final) sedang saya verifikasi karena harus diambil manual dari sistem resmi. Rencana: siap saya ajukan sebagai bahan uji publik awal September. Boleh saya minta waktu review tim kecil pekan depan?"*
+
+Kalimat itu menyampaikan tiga hal sekaligus: ada hasil konkret, Anda tahu persis apa yang belum lengkap, dan ada tanggal.
 
 ---
 
