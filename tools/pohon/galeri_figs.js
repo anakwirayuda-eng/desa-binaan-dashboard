@@ -8,9 +8,9 @@ const { chromium } = require('playwright');
   const p = await b.newPage({ viewport: { width: 1180, height: 900 }, deviceScaleFactor: 2, colorScheme: 'light' });
   await p.goto('file://' + path.resolve(src));
   await p.waitForTimeout(1200);
-  const names = ['padanan', 'pohon', 'poster', 'lajur'];
+  const names = ['padanan', 'pohon', 'duaarah', 'ikan_tekdok', 'poster', 'lajur'];
   const svgs = await p.locator('.scroll svg').all();
-  if (svgs.length !== names.length) throw new Error('expected 4 diagrams, found ' + svgs.length);
+  if (svgs.length !== names.length) throw new Error('expected ' + names.length + ' diagrams, found ' + svgs.length);
   for (let i = 0; i < svgs.length; i++) {
     await svgs[i].screenshot({ path: path.join(outdir, 'fig_' + names[i] + '.png') });
   }

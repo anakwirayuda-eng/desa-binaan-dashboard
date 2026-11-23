@@ -179,7 +179,7 @@ GALLERY = [
    "Poster, sampul RIP, sosialisasi ke dosen dan mahasiswa. Paling cepat dipahami asesor.",
    "Cepat penuh teks. Tidak memuat waktu dan tidak memperlihatkan kerja lintas prodi.", "use", "Dipakai · identitas"),
   ("ikan", "Tulang ikan", "Ekor tahun awal, kepala tujuan 2030, tulang untuk topik dan subtopik.",
-   "Peta jalan satu prodi atau satu topik. Prodi Kedokteran & Profesi Dokter sudah memakainya.",
+   "Peta jalan satu prodi atau satu topik. Prodi Kedokteran & Profesi Dokter sudah memakainya; Teknologi Kedokteran memakai kerangka yang sama per platform.",
    "Aslinya alat analisis sebab-akibat. Tahun tidak terbaca dari posisi tulang, dan daftar judul cepat memanjang.", "use", "Dipakai · tingkat prodi"),
   ("matriks", "Matriks Pilar × Platform", "Baris pilar, kolom platform, isi sel jumlah topik.",
    "Tata kelola: melihat integrasi dan sel kosong yang menjadi peta rekrutmen.",
@@ -384,6 +384,124 @@ def lajur_svg():
     o.append('</svg>')
     return "\n".join(o)
 
+# ---------------------------------------------------------------- matrix read two ways (§5.6)
+# Cell content = topics of §5.1 whose "Platform utama" lists that platform.
+CELLS = {
+  (0, 0): "1.1", (0, 1): "1.1, 1.3", (0, 2): "1.2, 1.3", (0, 4): "1.2, 1.4",
+  (1, 0): "2.3", (1, 1): "2.2, 2.4", (1, 2): "2.1", (1, 4): "2.1, 2.2",
+  (2, 1): "3.2", (2, 2): "3.2, 3.3", (2, 4): "3.1, 3.3, 3.4",
+  (3, 0): "4.3", (3, 3): "4.1, 4.2, 4.3", (3, 4): "4.4",
+  (4, 2): "5.2", (4, 4): "5.1, 5.2, 5.4",
+}
+PILAR_SHORT = ["P1 Deteksi Dini PTM", "P2 Ibu, Anak & 1000 HPK", "P3 Infeksi & AMR", "P4 Trauma & Restorasi", "P5 Sistem & Pendidikan"]
+JALUR = [("A", 3, 0, "EEG", "P4 × T1 · butir #18, #20", "W0 → W3 → W4"),
+         ("B", 0, 1, "E-nose diabetes", "P1 × T2 · butir #1", "W0 → W3 → W4"),
+         ("C", 3, 3, "Bone plate & prostesis", "P4 × T4 · butir #14–#16", "W0 → W3")]
+
+def duaarah_svg():
+    W, H = 1040, 560
+    gx, gy, cw, ch, gap = 200, 92, 100, 52, 8
+    o = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Matriks lima pilar kali lima platform yang dibaca dua arah. Dibaca per baris, pilar P1 sampai P5 menjadi peta jalan Prodi Kedokteran dan Profesi Dokter. Dibaca per kolom, platform T1 sampai T5 menjadi peta jalan Prodi Teknologi Kedokteran. Isi sel adalah kode topik. Tiga contoh jalur tiga prodi ditandai: A EEG di P4 kali T1, B e-nose diabetes di P1 kali T2, C bone plate dan prostesis di P4 kali T4.">']
+    o.append('<defs><marker id="ah4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" class="da-head"/></marker></defs>')
+    o.append(f'<text x="20" y="24" class="zone-label">SATU MATRIKS · DUA PETA JALAN</text>')
+    short = ["Biosinyal", "Biosensor", "AI & citra", "Biomaterial", "Telematika"]
+    for c, (code, name) in enumerate(zip([p[0] for p in PLATFORM], short)):
+        x = gx + c*(cw+gap) + cw/2
+        o.append(f'<text x="{f(x)}" y="58" text-anchor="middle" class="root-code mono">{code}</text>')
+        o.append(f'<text x="{f(x)}" y="76" text-anchor="middle" class="da-colname">{E(name)}</text>')
+    gend = gx + 5*(cw+gap) - gap
+    ry = gy + 3*(ch+gap) + ch/2
+    cx = gx + 1*(cw+gap) + cw/2
+    o.append(f'<line x1="{gx-4}" y1="{f(ry)}" x2="{gend+26}" y2="{f(ry)}" class="da-arrow" marker-end="url(#ah4)"/>')
+    o.append(f'<line x1="{f(cx)}" y1="{gy-8}" x2="{f(cx)}" y2="{gy+5*(ch+gap)+18}" class="da-arrow" marker-end="url(#ah4)"/>')
+    for r in range(5):
+        y = gy + r*(ch+gap)
+        o.append(f'<text x="{gx-12}" y="{y+ch/2+5}" text-anchor="end" class="lj-lane p{r+1}-text">{E(PILAR_SHORT[r])}</text>')
+        for c in range(5):
+            x = gx + c*(cw+gap)
+            txt = CELLS.get((r, c))
+            if r == 3:
+                cls = "da-row"
+            elif c == 1:
+                cls = "da-col"
+            else:
+                cls = "cell" if txt else "lane-empty"
+            if txt is None and cls != "lane-empty":
+                cls += " da-dash"
+            o.append(f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="6" class="{cls}"/>')
+            if txt:
+                o.append(f'<text x="{f(x+cw/2)}" y="{y+ch/2+5}" text-anchor="middle" class="da-cell mono">{txt}</text>')
+    for letter, r, c, *_ in JALUR:
+        bx = gx + c*(cw+gap) + cw - 4
+        by = gy + r*(ch+gap) + 4
+        o.append(f'<circle cx="{bx}" cy="{by}" r="11" class="da-badge"/>')
+        o.append(f'<text x="{bx}" y="{by+4.5}" text-anchor="middle" class="da-badge-t">{letter}</text>')
+    # two reading boxes below the grid
+    by0 = gy + 5*(ch+gap) + 34
+    boxes = [("→  PER BARIS", "Prodi Kedokteran & Profesi Dokter", ["Pilar P1–P5 · luaran per topik", "Tulang ikan per topik (sudah ada)"]),
+             ("↓  PER KOLOM", "Prodi Teknologi Kedokteran", ["Platform T1–T5 · TKT 1–9 dan W0 → W4", "Tulang ikan per platform (baru)"])]
+    for n, (k, who, lines) in enumerate(boxes):
+        x = 20 + n*360
+        o.append(f'<rect x="{x}" y="{by0}" width="340" height="104" rx="8" class="da-box"/>')
+        o.append(f'<text x="{x+16}" y="{by0+24}" class="zone-label">{E(k)}</text>')
+        o.append(f'<text x="{x+16}" y="{by0+46}" class="cw-name strong">{E(who)}</text>')
+        for j, ln in enumerate(lines):
+            o.append(f'<text x="{x+16}" y="{by0+68+j*18}" class="lj-text">{E(ln)}</text>')
+    # three example paths, right column
+    px = 790
+    o.append(f'<text x="{px}" y="58" class="zone-label">CONTOH JALUR TIGA PRODI</text>')
+    for n, (letter, r, c, name, coord, wah) in enumerate(JALUR):
+        y = 92 + n*132
+        o.append(f'<rect x="{px-10}" y="{y-6}" width="250" height="118" rx="8" class="da-box"/>')
+        o.append(f'<circle cx="{px+8}" cy="{y+14}" r="11" class="da-badge"/>')
+        o.append(f'<text x="{px+8}" y="{y+18.5}" text-anchor="middle" class="da-badge-t">{letter}</text>')
+        o.append(f'<text x="{px+28}" y="{y+19}" class="cw-name strong">{E(name)}</text>')
+        o.append(f'<text x="{px+4}" y="{y+44}" class="lj-text mono">{E(coord)}</text>')
+        o.append(f'<text x="{px+4}" y="{y+64}" class="lj-text">{E(wah)}</text>')
+        for k, (key, lab) in enumerate([("s3", "Tekdok"), ("s2", "Profesi"), ("s1", "Sarjana")]):
+            sx = px + 4 + k*76
+            o.append(f'<rect x="{sx}" y="{y+80}" width="16" height="9" rx="4.5" class="{key}-sw"/>')
+            o.append(f'<text x="{sx+21}" y="{y+89}" class="lj-small">{lab}</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
+# ---------------------------------------------------------------- Tekdok fishbone skeleton (§5.6)
+SERVES = {"T1": ["p1", "p2", "p4"], "T2": ["p1", "p2", "p3"], "T3": ["p1", "p2", "p3", "p5"], "T4": ["p4"], "T5": ["p1", "p2", "p3", "p4", "p5"]}
+
+def ikan_svg():
+    W, H, SY = 1040, 530, 270
+    o = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Kerangka kosong tulang ikan Prodi Teknologi Kedokteran: ekor 2023, kepala 2030 Kedokteran Pencegahan 4.0 yang sama dengan tulang ikan prodi kedokteran, lima tulang T1 sampai T5 berselang di atas dan di bawah duri. Setiap tulang punya tiga ruas periode 2023 sampai 2025, 2026 sampai 2028, 2029 sampai 2030, masing-masing berisi tempat untuk judul, TKT, dan wahana. Label di tiap tulang menunjukkan pilar yang dilayani.">']
+    o.append('<text x="20" y="20" class="zone-label">TULANG IKAN · PRODI TEKNOLOGI KEDOKTERAN · KERANGKA KOSONG</text>')
+    o.append(f'<line x1="104" y1="{SY}" x2="896" y2="{SY}" class="ik-spine"/>')
+    o.append(f'<path d="M36,{SY-44} L108,{SY} L36,{SY+44} Z" class="ik-tail"/>')
+    o.append(f'<text x="62" y="{SY+5}" text-anchor="middle" class="ik-year mono">2023</text>')
+    o.append(f'<path d="M890,{SY-64} C982,{SY-64} 1028,{SY-30} 1028,{SY} C1028,{SY+30} 982,{SY+64} 890,{SY+64} Z" class="ik-head"/>')
+    o.append(f'<text x="952" y="{SY-12}" text-anchor="middle" class="ik-year mono">2030</text>')
+    o.append(f'<text x="952" y="{SY+8}" text-anchor="middle" class="ik-headt">Kedokteran</text>')
+    o.append(f'<text x="952" y="{SY+25}" text-anchor="middle" class="ik-headt">Pencegahan 4.0</text>')
+    bones = [("T1", 330, -1), ("T2", 465, 1), ("T3", 600, -1), ("T4", 735, 1), ("T5", 870, -1)]
+    names = dict(PLATFORM)
+    periods = ["2023–2025", "2026–2028", "2029–2030"]
+    for code, jx, side in bones:
+        y0 = SY - 198 if side < 0 else SY + 198
+        x0 = jx - 120
+        o.append(f'<line x1="{x0}" y1="{y0}" x2="{jx}" y2="{SY}" class="ik-bone"/>')
+        ly = y0 - 32 if side < 0 else y0 + 24
+        o.append(f'<text x="{x0}" y="{ly}" class="ik-code"><tspan class="mono strong">{code}</tspan> {E(names[code])}</text>')
+        pills = " ".join(f'<tspan class="mono strong {p}-text">{p.upper()}</tspan>' for p in SERVES[code])
+        o.append(f'<text x="{x0}" y="{ly+18}" class="lj-small">melayani {pills}</text>')
+        for k, t in enumerate((0.2, 0.5, 0.8)):
+            px = x0 + 120*t
+            py = y0 + (SY - y0)*t
+            bx = px - 132
+            o.append(f'<circle cx="{f(px)}" cy="{f(py)}" r="3" class="ik-joint"/>')
+            o.append(f'<line x1="{f(bx+124)}" y1="{f(py)}" x2="{f(px)}" y2="{f(py)}" class="ik-rib"/>')
+            o.append(f'<rect x="{f(bx)}" y="{f(py-15)}" width="124" height="30" rx="5" class="lane-empty"/>')
+            o.append(f'<text x="{f(bx+8)}" y="{f(py-2)}" class="ik-per mono">{periods[k]}</text>')
+            o.append(f'<text x="{f(bx+8)}" y="{f(py+11)}" class="lj-placeholder ik-ph">judul · TKT · W</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
 RULES = [
   ("Tiga tingkat di gambar", "Visi, pilar, topik. Subtopik dan judul penelitian tinggal di tabel dan di instrumen isian."),
   ("Lima cabang, paling banyak empat ranting", "Dua puluh ranting adalah batas atas. Pilar yang baru punya dua ranting aktif cukup digambar dua."),
@@ -532,6 +650,25 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 .lj-placeholder{font-size:12px;fill:var(--muted);font-style:italic}
 .ms-cell{fill:var(--accent-soft);stroke:none;opacity:.9}
 .lane-empty{fill:none;stroke:var(--line);stroke-dasharray:4 4}
+/* dua arah & tulang ikan Tekdok */
+.da-colname{font-size:12px;fill:var(--muted)}
+.da-row{fill:var(--p4t);stroke:var(--p4)} .da-col{fill:var(--accent-soft);stroke:var(--accent)}
+.da-dash{stroke-dasharray:4 4}
+.da-cell{font-size:12px}
+.da-arrow{stroke:var(--accent);stroke-width:2.2;opacity:.75}
+.da-head{fill:var(--accent)}
+.da-badge{fill:var(--ink)} svg .da-badge-t{fill:var(--surface);font-size:12px;font-weight:600}
+.da-box{fill:var(--surface);stroke:var(--line)}
+.ik-spine{stroke:var(--s3);stroke-width:5;stroke-linecap:round}
+.ik-tail{fill:var(--accent-soft);stroke:var(--s3);stroke-width:1.5}
+.ik-head{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.ik-year{font-size:14px;font-weight:600}
+.ik-headt{font-family:var(--font-display);font-size:13px;font-weight:650}
+.ik-bone{stroke:var(--s3);stroke-width:2.2;stroke-linecap:round}
+.ik-code{font-size:13px}
+.ik-joint{fill:var(--s3)} .ik-rib{stroke:var(--line);stroke-width:1.2}
+.ik-per{font-size:10.5px;fill:var(--muted)}
+.ik-ph{font-size:11px}
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .2s}.card:hover{border-color:var(--accent)}}
 """
 
@@ -548,7 +685,7 @@ PAGE = f"""<title>Bentuk Pohon Penelitian FKK ITS</title>
   <p class="lead">Asesor menelusuri tiga hal: apa yang diteliti, siapa bekerja dengan siapa, dan kapan hasilnya keluar. Satu gambar tidak sanggup menjawab ketiganya dengan rapi. Usulannya tiga bentuk di tingkat fakultas yang saling merujuk dan memakai kode yang sama. Tulang ikan yang sudah dipakai prodi tetap dipertahankan di tingkat prodi.</p>
   <div class="trio">
     <div><span class="q">Apa</span><strong>Pohon</strong><span>Identitas fakultas dalam satu gambar: visi, lima pilar, dua puluh topik.</span></div>
-    <div><span class="q">Siapa dengan siapa</span><strong>Matriks</strong><span>Lima pilar × lima platform. Isi sel dihitung dari isian dosen.</span></div>
+    <div><span class="q">Siapa dengan siapa</span><strong>Matriks</strong><span>Lima pilar × lima platform, dibaca dua arah: baris untuk prodi kedokteran, kolom untuk Teknologi Kedokteran.</span></div>
     <div><span class="q">Kapan</span><strong>Lajur</strong><span>Tiga periode 2023–2030, sama dengan RIP prodi, dengan tonggak bersama ketiga prodi.</span></div>
   </div>
 </header>
@@ -584,6 +721,19 @@ PAGE = f"""<title>Bentuk Pohon Penelitian FKK ITS</title>
   </div>
 </section>
 
+<section aria-labelledby="da">
+  <h2 id="da">Matriks dibaca dua arah: tiga prodi setara</h2>
+  <p class="sec-intro">Matriks yang sama dibaca dari dua arah. Per baris, pilar menjadi peta jalan Prodi Kedokteran &amp; Profesi Dokter. Per kolom, platform menjadi peta jalan Prodi Teknologi Kedokteran, diukur dengan TKT dan perpindahan wahana. Satu judul diisi sekali dan tercatat di kedua peta jalan. Isi sel adalah kode topik dari draf §5.1.</p>
+  <figure>
+    <div class="scroll">{duaarah_svg()}</div>
+    <figcaption>Baris P4 dan kolom T2 diwarnai sebagai contoh cara membaca. Sel bergaris putus belum punya topik dan menjadi peta rekrutmen. Huruf A, B, C menandai tiga contoh jalur tiga prodi dari draf §5.6. Contoh itu cara membaca, bukan penugasan.</figcaption>
+  </figure>
+  <figure>
+    <div class="scroll">{ikan_svg()}</div>
+    <figcaption>Kerangka tulang ikan untuk Prodi Teknologi Kedokteran. Kepalanya sama dengan tulang ikan prodi kedokteran, karena tujuannya satu. Tiap tulang dibagi tiga ruas periode, sehingga tahun terbaca dari posisinya. Ruas diisi judul, TKT, dan wahana dari isian dosen dan data prodi; kerangka ini sengaja kosong.</figcaption>
+  </figure>
+</section>
+
 <section aria-labelledby="a3">
   <h2 id="a3">Bentuk luas: satu lembar A3</h2>
   <p class="sec-intro">Poster mendatar yang memuat ketiga bentuk sekaligus. Setiap bidang punya sumber data di instrumen isian dosen, sehingga poster bisa dibuat ulang setiap tahun tanpa menggambar dari nol.</p>
@@ -609,7 +759,7 @@ PAGE = f"""<title>Bentuk Pohon Penelitian FKK ITS</title>
   </ol>
 </section>
 
-<p class="foot">Sumber isi: Rancangan Pohon Penelitian FKK ITS (draf kerja, PR #1, §5.1–5.5), RIP Prodi Kedokteran dan Profesi Dokter FKK ITS 2026–2030 (draf, Tabel 2–17), dan instrumen isian agenda penelitian dosen. Halaman ini bahan diskusi bentuk, bukan dokumen resmi FKK ITS.</p>
+<p class="foot">Sumber isi: Rancangan Pohon Penelitian FKK ITS (draf kerja, PR #1, §5.1–5.6), RIP Prodi Kedokteran dan Profesi Dokter FKK ITS 2026–2030 (draf, Tabel 2–17), dan instrumen isian agenda penelitian dosen. Halaman ini bahan diskusi bentuk, bukan dokumen resmi FKK ITS.</p>
 </main>
 """
 open(OUT, "w").write(PAGE)

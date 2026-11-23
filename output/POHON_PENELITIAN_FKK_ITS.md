@@ -1,7 +1,7 @@
 # Rancangan Pohon Penelitian FKK ITS
 ### Dokumen kerja untuk penyusunan RIP & Peta Jalan Penelitian — bahan akreditasi LAM-PTKes
 
-**Disusun:** 28 Juli 2026 · **Revisi besar:** 3 Agustus 2026 · **Tambahan:** 23 November 2026 (§5.4 peta jalan tiga prodi + instrumen isian dosen; contoh FK Indonesia di §11; §5.5 penyelarasan dengan RIP Prodi Kedokteran & Profesi Dokter; §12 milestone disusun ulang) · **Status:** draf kerja, belum ditetapkan · **Untuk:** Dekanat & Unit Penelitian FKK ITS
+**Disusun:** 28 Juli 2026 · **Revisi besar:** 3 Agustus 2026 · **Tambahan:** 23 November 2026 (§5.4 peta jalan tiga prodi + instrumen isian dosen; contoh FK Indonesia di §11; §5.5 penyelarasan dengan RIP Prodi Kedokteran & Profesi Dokter; §12 milestone disusun ulang; §5.6 matriks dibaca dua arah sehingga Prodi Teknologi Kedokteran punya peta jalan setara, K1 direvisi) · **Status:** draf kerja, belum ditetapkan · **Untuk:** Dekanat & Unit Penelitian FKK ITS
 
 ---
 
@@ -33,7 +33,7 @@ Seluruh butir yang harus diverifikasi dikumpulkan di **§10**. Jangan salin doku
 
 | # | Keputusan | Alasan singkat |
 |---|---|---|
-| **K1** | Pakai **struktur matriks**: 5 Pilar (sumbu hasil kesehatan) × 5 Platform (sumbu kapabilitas teknologi). Yang dipublikasikan hanya Pilar. | Pohon yang pilarnya "AI / Robotika / Biomaterial" tidak terbaca oleh Kemenkes, RS pendidikan, dan asesor kedokteran — mereka menilai hasil kesehatan. Pohon yang pilarnya murni penyakit menghapus satu-satunya keunggulan FKK ITS. Matriks menyelesaikan keduanya. Pola ini dipakai Imperial (14×4), Yale (8×3), Carle Illinois. |
+| **K1** | Pakai **struktur matriks**: 5 Pilar (sumbu hasil kesehatan) × 5 Platform (sumbu kapabilitas teknologi). **Keduanya dipublikasikan**: pilar sebagai cabang pohon, platform sebagai akar pohon. Matriks **dibaca dua arah**: per baris menjadi peta jalan Prodi Kedokteran & Profesi Dokter, per kolom menjadi peta jalan Prodi Teknologi Kedokteran (§5.6). | Pohon yang pilarnya "AI / Robotika / Biomaterial" tidak terbaca oleh Kemenkes, RS pendidikan, dan asesor kedokteran — mereka menilai hasil kesehatan. Pohon yang pilarnya murni penyakit menghapus satu-satunya keunggulan FKK ITS. Matriks menyelesaikan keduanya. Pola ini dipakai Imperial (14×4), Yale (8×3), Carle Illinois. *Direvisi 23 November 2026:* draf sebelumnya menyebut platform hanya untuk internal. Akibatnya Prodi Teknologi Kedokteran tidak punya peta jalan yang bisa ditunjukkan ke asesornya sendiri, dan tampak sebagai penunjang. |
 | **K2** | **Platform memegang anggaran modal; Pilar memegang narasi.** Jangan dibalik. | Investasi alat di institut teknologi paling efisien bila mengalir ke platform yang dipakai lintas pilar (pola *core facilities* Karolinska). Pilar-lah yang berbicara ke Dinkes, RSUD, dan funder. |
 | **K3** | Jadikan Desa Binaan Mojokerto **platform surveilans bertahap yang dibingkai sebagai *testbed* teknologi kedokteran pada populasi terdefinisi** — bukan kohort prospektif penuh, dan bukan sekadar lokasi pengabdian. | *Direvisi Agustus 2026.* Kohort penuh bergaya Rotterdam tidak realistis untuk fakultas berumur 3 tahun, dan kohort biasa akan selalu kalah dari HDSS Sleman UGM yang lebih dulu dan lebih besar. Yang tidak bisa ditiru bukan kohortnya, melainkan **kohort yang menempel pada pabrik teknologi medis**. Lihat §6. |
 | **K4** | Terbitkan **dua pohon terpisah**: Pohon Penelitian dan Pohon PkM. | Kriteria C.7 (Penelitian) dan C.8 (PkM) LAM-PTKes menuntut peta jalan masing-masing dengan rumusan indikator yang identik. Satu pohon hanya memenuhi separuh. |
@@ -364,7 +364,9 @@ Jumlah pilar sengaja lima. Benchmark menunjukkan jumlah tema berkorelasi dengan 
 
 ---
 
-### 5.2 Sumbu 2 — Lima Platform Teknologi (internal, unit anggaran)
+### 5.2 Sumbu 2 — Lima Platform Teknologi (dipublikasikan sebagai akar pohon; unit anggaran)
+
+> *Diubah 23 November 2026 (K1 direvisi).* Platform tidak lagi bersifat internal. Ia digambar sebagai akar pohon dan menjadi lima topik peta jalan Prodi Teknologi Kedokteran (§5.6). Fungsi anggarannya tetap (K2).
 
 | Kode | Platform | Penanggung jawab keahlian — **rekayasa** | Penambat **klinis** (baru, §4.1b) | Mitra ITS |
 |---|---|---|---|---|
@@ -396,7 +398,7 @@ W4     Desa Binaan Kota Mojokerto (5 puskesmas) · Bina Desa Sehat Sukolilo/Kepu
 
 ### 5.4 Peta jalan fakultas — tiga prodi dalam satu pohon
 
-> *Ditambahkan 23 November 2026.* Menjawab pertanyaan: *"berarti peta jalan fakultas itu gabungan ketiga prodi?"* **Ya — dan matriks §5.1–5.2 memang sudah dirancang di tingkat fakultas (UPPS), bukan per prodi.** Sumbu Dasar/Profesi/Translasi di §4.1c sengaja hanya untuk dua prodi kedokteran; Prodi Teknologi Kedokteran sudah ada di dalam pohon, tetapi **tersirat** di kolom Platform. Ada dua hal yang belum ada: **(1) peran tiap prodi belum dinyatakan eksplisit**, dan **(2) pohon ini baru menjawab *apa*, belum *kapan*.** Selama belum ada tonggak waktunya, ia masih pohon, belum peta jalan. Definisi yang dipakai FK Unisba tepat: peta jalan adalah *"milestones kegiatan penelitian dalam ruang waktu tertentu (5–20 tahun)"*.
+> *Ditambahkan 23 November 2026.* Menjawab pertanyaan: *"berarti peta jalan fakultas itu gabungan ketiga prodi?"* **Ya — dan matriks §5.1–5.2 memang sudah dirancang di tingkat fakultas (UPPS), bukan per prodi.** Sumbu Dasar/Profesi/Translasi di §4.1c sengaja hanya untuk dua prodi kedokteran; Prodi Teknologi Kedokteran sudah ada di dalam pohon, tetapi **tersirat** di kolom Platform (*sejak 23 November 2026 dinyatakan eksplisit di §5.6: kolom platform adalah peta jalan prodi itu*). Ada dua hal yang belum ada: **(1) peran tiap prodi belum dinyatakan eksplisit**, dan **(2) pohon ini baru menjawab *apa*, belum *kapan*.** Selama belum ada tonggak waktunya, ia masih pohon, belum peta jalan. Definisi yang dipakai FK Unisba tepat: peta jalan adalah *"milestones kegiatan penelitian dalam ruang waktu tertentu (5–20 tahun)"*.
 
 **Prinsip 1 — Satu pohon fakultas, tiga peta jalan prodi turunan.** Prodi **tidak** membuat pohon sendiri. Setiap prodi menurunkan peta jalannya dengan **memilih sel matriks** yang menjadi tanggung jawabnya, lalu menulis tonggaknya sendiri di sel itu. Inilah rantai yang ditelusuri asesor (§9.2), dan pola ini sudah dipraktikkan: roadmap PPDS IKA FK UB menyatakan dirinya diturunkan dari *Roadmap Penelitian FK UB 2016* dan *RIP Universitas Brawijaya 2016–2020* (§11).
 
@@ -407,6 +409,7 @@ W4     Desa Binaan Kota Mojokerto (5 puskesmas) · Bina Desa Sehat Sukolilo/Kepu
 | | **Sarjana Kedokteran** | **Pendidikan Profesi Dokter** | **Teknologi Kedokteran** |
 |---|---|---|---|
 | Posisi di matriks | Sisi Pilar — cabang **Kedokteran Dasar** (§4.1c) | Sisi Pilar — cabang **Kedokteran Profesi** (§4.1c) | Sisi **Platform** — pemegang T1–T5 (§5.2) |
+| Peta jalan turunan dibaca dari | **Baris** matriks (pilar P1–P5) — bersama Profesi Dokter | **Baris** matriks (pilar P1–P5) — bersama Sarjana Kedokteran | **Kolom** matriks (platform T1–T5) — §5.6 |
 | Pertanyaan riset khas | Mekanisme, biomarker, data populasi | Validasi klinis: apakah alat/model bekerja pada pasien nyata | Purwarupa alat, algoritma, material |
 | Wahana utama (§5.3) | W0–W1 lab preklinik · W4 Desa Binaan | **W3 RSUD pendidikan** — aktif penuh begitu koas mulai **2027** | W0–W2 lab ITS · ITS Medical Center |
 | Jangkar SDM | 7 Koordinator Lab (§4.1c) | 9 PJ KKM (§4.1c) | Kaprodi + penanggung jawab platform (§4.1, §5.2) |
@@ -487,7 +490,64 @@ Tiga keputusan desain yang disengaja: (a) **satu topik diisi sekali oleh ketuany
 - lima warna pilar dikunci; prodi dibedakan di batang (tiga pilin), tidak di cabang;
 - struktur tetap sampai evaluasi 2030; status ranting diperbarui setiap rekap tahunan.
 
-**Yang belum terlihat:** peta jalan Prodi Teknologi Kedokteran dan Roadmap FKK 2023–2025.
+**Yang belum terlihat:** peta jalan Prodi Teknologi Kedokteran dan Roadmap FKK 2023–2025. Kerangka peta jalan Teknologi Kedokteran kini ada di §5.6; isinya menunggu data dari Kaprodi (§10 butir 1e).
+
+### 5.6 Matriks dibaca dua arah — peta jalan Teknologi Kedokteran yang setara
+
+> *Ditambahkan 23 November 2026, disetujui pengguna.* Bagian ini merevisi K1 (§1) dan melengkapi §5.4.
+
+**Masalahnya.** Sampai draf sebelumnya, Prodi Teknologi Kedokteran hanya "pemegang platform". Platform disebut internal (K1 lama), jadi prodi ini tidak punya peta jalan yang bisa ditunjukkan ke asesornya. P4 adalah satu-satunya pilar yang ia pimpin. Padahal klaster riset paling produktif dan rekam jejak internasional terkuat fakultas ada di prodi ini (§4.2). Pohon yang membuatnya tampak sebagai penunjang tidak jujur terhadap datanya sendiri.
+
+**Jalan keluarnya tidak menambah struktur.** Matriks 5 × 5 yang sama cukup dibaca dari dua arah:
+
+| | **Dibaca per baris** | **Dibaca per kolom** |
+|---|---|---|
+| Unit | Pilar P1–P5 | Platform T1–T5 |
+| Pemilik peta jalan turunan | Prodi Kedokteran & Profesi Dokter | Prodi Teknologi Kedokteran |
+| Pertanyaan pokok | Masalah kesehatan apa yang diselesaikan? | Teknologi apa yang dimatangkan, dan sudah sampai mana? |
+| Ukuran kemajuan | Luaran per topik; perpindahan wahana W0→W4 | **TKT 1–9** dan perpindahan wahana W0→W4 |
+| Luaran khas | Publikasi klinis, referensi PPK, bahan kebijakan | Purwarupa, HKI, publikasi rekayasa, langkah izin edar |
+| Bentuk visual turunan | Tulang ikan per topik (sudah ada di RIP prodi) | Tulang ikan per platform (kerangka baru, di bawah) |
+| Di gambar pohon | Cabang | Akar |
+
+**Aturan hitung: satu judul, satu baris, dua peta jalan.** Setiap judul punya koordinat (Pilar, Platform) (§5.2) dan diisi sekali oleh ketuanya di instrumen. Judul itu tercatat di baris pilarnya **dan** di kolom platformnya. Tidak ada judul yang "milik" satu prodi saja ketika ia memakai platform. Rekap kolom dapat dibuat langsung dari tab AGENDA instrumen (kolom Platform, Wahana, dan TKT sudah ada), tanpa mengubah instrumennya.
+
+**Peta jalan turunan Prodi Teknologi Kedokteran: lima platform menjadi lima topik.**
+
+| Kode | Topik peta jalan Tekdok | Pilar yang dilayani (§5.1) | Bukti yang sudah ada, 2023–2025 (§4.2) | Contoh butir §7 untuk 2026–2028 | Syarat dua nama (§5.2) |
+|---|---|---|---|---|---|
+| **T1** | Biosinyal, Neuroteknologi & Akustik Medis | P1, P2, P4 | Klaster EEG paling produktif; dua klinisi sudah menulis bersama | #18 neurorehabilitasi · #20 skrining kognitif lansia · #31 EEG kesehatan jiwa | Terpenuhi |
+| **T2** | Biosensor & Diagnostik Non-Invasif | P1, P2, P3 | *E-nose* untuk diabetes (2017) dan klasifikasi aroma | #1 *e-nose* diabetes · #12 TB *breathprint* | Belum |
+| **T3** | AI Medis, Pencitraan & Sains Data | P1, P2, P3, P5 | CNN pneumonia anak; analisis citra medis Prof. I K.E. Purnama | #29 endotel kornea · #30 basil TB | Terpenuhi |
+| **T4** | Biomaterial, Biomekanika & Manufaktur Medis | P4 | *Bone plate* (Q1, 2024); 3D printing (JMHT 2025); prostesis | #14 *bone plate* · #16 prostesis · #19 stent | Terpenuhi |
+| **T5** | Telematika Kesehatan & Sains Implementasi | P1–P5 | Bidang guru besar Prof. I K.E. Purnama; dashboard Desa Binaan sebagai purwarupa | #13 surveilans sindromik · #33 interoperabilitas data desa | Belum |
+
+**Tiga kolom yang sengaja belum diisi:** TKT saat ini, TKT target per periode, dan jumlah luaran per platform. Ketiganya diisi Prodi Teknologi Kedokteran dari isian dosen dan data prodi (§10 butir 1e). Penyusun tidak mengarangnya. Satu-satunya angka TKT yang sudah ada di dokumen ini berasal dari RIP Prodi Kedokteran untuk Digital Health (lajur Platform, Gambar 3), dan itu bukan angka Prodi Teknologi Kedokteran.
+
+**Tulang ikan Prodi Teknologi Kedokteran (kerangka kosong).** Bentuknya mengikuti tulang ikan RIP prodi kedokteran agar keduanya terbaca sebagai satu keluarga:
+- ekor **2023**, kepala **"2030 Kedokteran Pencegahan 4.0"**: kepala yang **sama** dengan tulang ikan prodi kedokteran, karena tujuannya satu;
+- lima tulang besar = T1–T5, berselang di atas dan di bawah duri;
+- setiap tulang dibagi tiga ruas sesuai periode 2023–2025 · 2026–2028 · 2029–2030; di tiap ruas ada tempat untuk **judul, TKT, dan wahana**. Dengan begitu tahun terbaca dari posisi di tulang, dan kelemahan tulang ikan yang dicatat di galeri teratasi;
+- di pangkal tiap tulang ada label pilar yang dilayani, berwarna sama dengan cabang pohon.
+
+**Tiga contoh jalur tiga prodi.** Ketiganya disusun dari butir §7 dan nama yang sudah ada di §5.2. Ini contoh cara membaca, bukan penugasan. TKT diisi tim di instrumen.
+
+| Jalur | Koordinat | Teknologi Kedokteran | Profesi Dokter | Sarjana Kedokteran | Wahana | Dibaca per baris | Dibaca per kolom |
+|---|---|---|---|---|---|---|---|
+| **EEG** (#18, #20) | P4 × T1, juga P1 | Algoritma & perangkat EEG/EMG (Prof. Adhi Dharma Wibawa, Yuri Pamungkas) | Validasi klinis pascastroke dan label diagnosis (dr. Riva, Sp.N; dr. Zain, Sp.KJ) | Studi skrining kognitif lansia di posyandu; skripsi | W0 → W3 → W4 | 4.3 Rehabilitasi & teknologi asistif | T1 naik TKT; berpindah dari lab ke RSUD lalu Desa Binaan |
+| ***E-nose* diabetes** (#1) | P1 × T2 | Sensor dan model klasifikasi napas (Dr. Shoffi Izza Sabilla) | Validasi pada pasien DM di RSUD (dr. Atina, Sp.PD) | Uji laboratorium pembanding (dr. Endah Indriastuti, Sp.PK); studi populasi Desa Binaan | W0 → W3 → W4 | 1.1 Skrining PTM berbasis sensor | T2 naik TKT; luaran bersama menambah nama ber-luaran di T2, syarat yang belum dipenuhi T2 (§5.2) |
+| ***Bone plate* & prostesis** (#14, #15, #16) | P4 × T4 | Desain, simulasi, dan uji (Achmad Syaifudin, Ph.D; Djoko Kuswanto) | Registri implan & luaran fraktur di RSUD (dr. Ivor, Sp.B) | Tim subtopik *Biomaterial & alat kesehatan* RIP prodi (10 luaran, §5.5) — nama tim dikonfirmasi Kaprodi | W0 → W3 | 4.1 Implan ortopedi · 4.2 Prostesis | T4 menuju izin edar alkes pada 2029–2030 (§10 butir 19) |
+
+Satu baris tabel seperti ini menjawab tiga pertanyaan asesor sekaligus: integrasi lintas prodi (kolom prodi), kemajuan (perpindahan wahana dan TKT), dan kesesuaian dengan peta jalan (kode pilar dan platform).
+
+**Apa yang berubah di bagian lain:**
+- K1 (§1): platform ikut dipublikasikan; matriks dibaca dua arah.
+- §5.2: judul tidak lagi "internal". Fungsi anggaran platform (K2) tetap.
+- §5.4: baris baru di tabel peran prodi; Prodi Teknologi Kedokteran membaca kolom.
+- §12: pada review 18–22 Januari, Prodi Teknologi Kedokteran mengisi tulang ikan platform dan kolom TKT.
+- Struktur pohon, kode 1.1–5.4, T1–T5, W0–W4, dan instrumen **tidak berubah**.
+
+> ⚠ **Masih bergantung pada §10 butir 1a.** Bila akreditor Prodi Teknologi Kedokteran bukan LAM-PTKes, rumusan peta jalan per kolom ini perlu disesuaikan dengan kriteria lembaga tersebut. Strukturnya tetap.
 
 ---
 
@@ -769,6 +829,7 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 1b. **Roadmap Penelitian & PkM FKK ITS 2023–2025** — disebut RIP Prodi Kedokteran & Profesi sebagai dokumen induknya, tetapi belum terlihat oleh penyusun. Minta salinannya: dokumen 2026–2030 ini adalah edisi kedua dan wajib memuat evaluasi edisi pertama (unsur 3–4 indikator C.7). *Ditambahkan 23 November 2026.*
 1c. **Tabel PIC RIP prodi berbeda antarversi** — paparan pptx (Agustus 2026) dan docx berbeda pada anggota topik Digital Health serta nama dan PIC topik ketujuh ("Health Policy…" vs "Kedokteran Pencegahan…"). Pakai versi terbaru dan konfirmasi ke kedua Kaprodi sebelum dikutip. *Ditambahkan 23 November 2026.*
 1d. **Daftar dosen instrumen bukan roster resmi** — 39 nama (35 dari penelusuran publik + 4 nama pendek dari Tabel 2 RIP prodi: dr. Dyahati, dr. Zulistiyan, dr. Alfian, dr. Faizal). "dr. Fira" (PIC topik KSR) belum dimasukkan karena belum pasti apakah sama dengan salah satu nama yang sudah ada. Roster resmi tetap diminta ke kepegawaian (§12). *Ditambahkan 23 November 2026.*
+1e. **Data Prodi Teknologi Kedokteran untuk peta jalan per kolom (§5.6)** — daftar dosen ber-*homebase* Tekdok; judul dan luaran 2023–2026 per platform; TKT saat ini per judul teknologi; peta jalan prodi bila sudah ada. Tanpa data ini, tabel T1–T5 di §5.6 baru berisi bukti dari penelusuran publik. Minta ke Kaprodi Teknologi Kedokteran pada review tim kecil. *Ditambahkan 23 November 2026.*
 2. **Roadmap Penelitian ITS 2025–2029** (DRPM) — apakah ada slot tema kesehatan yang harus diinduki → `its.ac.id/drpm/.../Roadmap-Penelitian-2025-2029.pdf`
 3. **Renstra ITS 2026–2030** — kerangka RAISE sebagai payung
 4. ~~**Struktur FKK 2025**~~ — **SELESAI.** Pengguna memasok tangkapan layar halaman resmi *Struktur Organisasi* (`its.ac.id/fakultas/fkk/profil/`) pada 3 Agustus 2026. Dekanat, Kaprodi ketiga prodi, koordinator lab, dan 13 KKM Prodi Profesi Dokter sudah dipetakan ke §2 dan §4.1.
@@ -869,12 +930,12 @@ Target tetap **bukan** "terakreditasi", melainkan dokumen yang siap diputuskan p
 | Target | Tonggak | Deliverable | Pemilik |
 |---|---|---|---|
 | **23–27 Nov** | Bahan siap | Bentuk visual dipilih (galeri §5.5) · instrumen diunggah ke Google Sheets dan diuji cepat · tiga sel kuning PETUNJUK diisi · nama batang dan periode diselaraskan dengan RIP prodi (§5.5) · minta salinan Roadmap FKK 2023–2025 (§10 butir 1b) | Anda + asisten |
-| **30 Nov–4 Des** | Review tim kecil | Satu pertemuan ±1 jam dengan bahan satu lembar (poster A3) + instrumen: Wakil Dekan Prof. I K.E. Purnama (**klarifikasi COI** penempatan platform & tier Translasi) · Kepala PM Prof. Adhi Dharma Wibawa · Kaprodi Kedokteran, Profesi Dokter, dan Teknologi Kedokteran (koreksi daftar dosen; konfirmasi padanan tujuh topik). Paralel: permintaan roster resmi ke kepegawaian | Anda mengundang |
+| **30 Nov–4 Des** | Review tim kecil | Satu pertemuan ±1 jam dengan bahan satu lembar (poster A3) + instrumen: Wakil Dekan Prof. I K.E. Purnama (**klarifikasi COI** penempatan platform & tier Translasi) · Kepala PM Prof. Adhi Dharma Wibawa · Kaprodi Kedokteran, Profesi Dokter, dan Teknologi Kedokteran (koreksi daftar dosen; konfirmasi padanan tujuh topik; Kaprodi Tekdok menanggapi usulan matriks dibaca dua arah §5.6 dan menyerahkan data §10 butir 1e). Paralel: permintaan roster resmi ke kepegawaian | Anda mengundang |
 | **★ ±7–9 Des** | **Pengajuan tahap 1 ke Dekanat** | Kerangka pohon + instrumen + draf surat edaran. Keputusan yang diminta: setujui kerangka sebagai dasar pengisian; terbitkan surat edaran | Anda mempresentasikan |
 | **10 Des–8 Jan** | Pengisian instrumen | Batas **Jumat 8 Januari 2027**. Periode ini memotong akhir semester dan libur akhir tahun, jadi waktu kerja efektifnya ±2,5 minggu. Pengingat lewat Kaprodi 18 Des dan 4 Jan; pantau tab DAFTAR DOSEN | Semua dosen; Kaprodi memantau |
 | **≤ 18 Des** | Undangan uji publik terkirim | Undangan resmi ke Dinkes Kota Mojokerto, 2 RSUD, perwakilan dosen dan mahasiswa. Dikirim sebelum libur karena jadwal pihak luar paling rentan molor | Dekanat (surat) |
 | **11–15 Jan** | Rekap & revisi v3 | Matriks dan lajur terisi data nyata · ranting tanpa tim menjadi tunas · keputusan ranting onkologi (§5.5) · target angka periode 2026–2028 disusun Unit Penelitian dari data SINTA (§10 Prioritas 2) | Asisten + Unit Penelitian |
-| **18–22 Jan** | Review peta jalan prodi turunan | Tiap Kaprodi memeriksa sel matriks prodinya · Prodi Kedokteran & Profesi mencocokkan dengan RIP prodi · Prodi Teknologi Kedokteran menurunkan peta jalannya | 3 Kaprodi |
+| **18–22 Jan** | Review peta jalan prodi turunan | Tiap Kaprodi memeriksa sel matriks prodinya · Prodi Kedokteran & Profesi mencocokkan dengan RIP prodi · Prodi Teknologi Kedokteran menurunkan peta jalannya dari kolom T1–T5: mengisi tulang ikan platform dan kolom TKT (§5.6) | 3 Kaprodi |
 | **25–29 Jan** | Uji publik stakeholders | Berita Acara = bukti unsur C.7/C.8 sekaligus | Pihak luar |
 | **★ ±3–5 Feb** | **Draf final ke Dekanat** | RIP & Peta Jalan Penelitian FKK 2026–2030 (edisi 2) + Peta Jalan PkM terpisah (K4) | Anda mempresentasikan |
 | **Feb–5 Mar** | Pengesahan | SK Dekan penetapan RIP & Peta Jalan; SK terpisah untuk PkM. RIP Prodi Kedokteran & Profesi sebaiknya disahkan **pada siklus yang sama**, dengan dasar penyusunan yang merujuk dokumen fakultas 2026–2030 (saat ini masih merujuk edisi 2023–2025). Target sebelum libur 8–12 Maret. Di luar kendali langsung | Dekan |
@@ -885,7 +946,7 @@ Target tetap **bukan** "terakreditasi", melainkan dokumen yang siap diputuskan p
 
 Dokumen ini sudah **sangat substantif** (progres nyata, bukan janji) tetapi masih draf kerja dengan celah data yang **diketahui dan terdaftar eksplisit** (§10). Lapor dengan bingkai itu — jangan terlihat "belum mulai", jangan pula mengklaim "selesai". Contoh kalimat yang bisa dipakai:
 
-> *"Kerangka Pohon Penelitian fakultas sudah jadi dan sudah saya selaraskan dengan RIP Prodi Kedokteran & Profesi Dokter: tujuh topik prodi masuk ke lima pilar fakultas, ditambah sumbu platform teknologi tempat Prodi Teknologi Kedokteran berperan. Ada juga instrumen isian supaya semua dosen ketiga prodi mengisi rencana penelitiannya sendiri. Usul saya dua tahap: awal Desember kerangkanya saya ajukan sekaligus mohon surat edaran pengisian, lalu awal Februari draf final berbasis isian dosen. Boleh saya minta waktu review tim kecil pekan depan?"*
+> *"Kerangka Pohon Penelitian fakultas sudah jadi dan sudah saya selaraskan dengan RIP Prodi Kedokteran & Profesi Dokter: tujuh topik prodi masuk ke lima pilar fakultas. Prodi Teknologi Kedokteran membaca matriks yang sama per kolom, sehingga lima platform teknologi menjadi peta jalannya sendiri, setara dengan prodi kedokteran. Ada juga instrumen isian supaya semua dosen ketiga prodi mengisi rencana penelitiannya sendiri. Usul saya dua tahap: awal Desember kerangkanya saya ajukan sekaligus mohon surat edaran pengisian, lalu awal Februari draf final berbasis isian dosen. Boleh saya minta waktu review tim kecil pekan depan?"*
 
 Kalimat itu menyampaikan tiga hal sekaligus: ada hasil konkret, Anda tahu persis apa yang belum lengkap, dan ada tanggal.
 

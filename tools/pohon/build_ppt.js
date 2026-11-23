@@ -103,7 +103,7 @@ async function icon(Comp, hex, size = 256) {
   s.addText("Satu pohon, tiga prodi, diisi dari bawah", { placeholder: "title" });
   const trio = [
     [icTree, "Pohon", "Apa yang diteliti", "Visi, lima pilar, dua puluh topik. Identitas fakultas dalam satu gambar."],
-    [icGrid, "Matriks", "Siapa bekerja dengan siapa", "Lima pilar × lima platform. Setiap topik punya koordinat (pilar, platform)."],
+    [icGrid, "Matriks", "Siapa bekerja dengan siapa", "Lima pilar × lima platform, dibaca dua arah: baris untuk prodi kedokteran, kolom untuk Teknologi Kedokteran."],
     [icStream, "Lajur", "Kapan hasilnya keluar", "Tiga periode yang sama dengan RIP prodi: 2023–2025, 2026–2028, 2029–2030."],
   ];
   trio.forEach(([ic, h, q, d], i) => {
@@ -196,13 +196,40 @@ async function icon(Comp, hex, size = 256) {
     plat.forEach((_, j) => s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: gx + j * (cw + gap), y, w: cw, h: ch, rectRadius: 0.06, fill: { color: C.background2 }, line: { color: C.background2 }, objectName: `cell-${i + 1}-${j + 1}` }));
   });
   s.addText("Isi sel = jumlah topik dari instrumen (Januari 2027)", { x: gx, y: gy + 5 * (ch + gap) + 0.02, w: 5.3, h: 0.3, fontSize: 11, italic: true, ...muted, margin: 0, isTextBox: true });
-  const side = [["Pilar dipegang sisi kedokteran", "S1 Kedokteran (cabang Dasar) dan Profesi Dokter (validasi klinis di RSUD)."], ["Platform dipegang Teknologi Kedokteran", "Setiap topik yang memakai platform otomatis menjadi kerja lintas prodi."], ["Sel kosong = peta rekrutmen", "T1, T3, T4 sudah punya dua nama dengan luaran terbukti; T2 dan T5 belum."]];
+  const side = [["Baris = peta jalan prodi kedokteran", "S1 Kedokteran (cabang Dasar) dan Profesi Dokter (validasi klinis di RSUD)."], ["Kolom = peta jalan Tekdok", "Prodi Teknologi Kedokteran membaca per platform. Topik yang memakai platform otomatis lintas prodi."], ["Sel kosong = peta rekrutmen", "T1, T3, T4 sudah punya dua nama dengan luaran terbukti; T2 dan T5 belum."]];
   side.forEach(([h, d], i) => {
     const y = 1.5 + i * 1.65;
     s.addText(h, { x: 9.2, y, w: 3.5, h: 0.4, fontSize: 16, bold: true, color: C.text2, margin: 0, isTextBox: true });
     s.addText(d, { x: 9.2, y: y + 0.42, w: 3.5, h: 1.0, fontSize: 14, color: C.text1, margin: 0, valign: "top", isTextBox: true });
   });
   s.addNotes("Tidak perlu membentuk program integrasi tersendiri: karena setiap judul wajib punya koordinat (pilar, platform), integrasi terpaksa terjadi di sel. Badge hijau: platform yang sudah memenuhi syarat dua nama (draf §5.2).");
+
+  s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Kerangka" });
+  s.addText("Satu matriks, dua peta jalan setara", { placeholder: "title" });
+  s.addImage({ path: path.join(FIG, "fig_duaarah.png"), x: 1.52, y: 1.3, w: 10.29, h: 5.55, altText: "Matriks lima pilar kali lima platform dibaca dua arah: per baris peta jalan Prodi Kedokteran & Profesi Dokter, per kolom peta jalan Prodi Teknologi Kedokteran; tiga contoh jalur tiga prodi A EEG, B e-nose diabetes, C bone plate & prostesis", objectName: "fig-duaarah" });
+  s.addNotes("Usulan revisi K1: platform tidak lagi internal. Matriks yang sama dibaca per baris oleh Prodi Kedokteran & Profesi Dokter (pilar, luaran per topik) dan per kolom oleh Prodi Teknologi Kedokteran (platform, TKT 1–9, wahana W0→W4). Satu judul diisi sekali dan tercatat di kedua peta jalan. Isi sel adalah kode topik draf §5.1. Tiga jalur A, B, C adalah contoh cara membaca, bukan penugasan: EEG (Wibawa, Pamungkas; dr. Riva, dr. Zain), e-nose diabetes (Dr. Shoffi; dr. Atina; dr. Endah), bone plate & prostesis (Syaifudin, Kuswanto; dr. Ivor). Struktur pohon, kode, dan instrumen tidak berubah.");
+
+  s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Kerangka" });
+  s.addText("Peta jalan Teknologi Kedokteran: lima platform", { placeholder: "title" });
+  const trows = [
+    [hdr("Kode"), hdr("Topik"), hdr("Melayani"), hdr("Bukti 2023–2025"), hdr("Contoh 2026–2028 (§7)"), hdr("Dua nama")],
+    [{ text: "T1", options: { bold: true } }, "Biosinyal, neuroteknologi & akustik", "P1 P2 P4", "Klaster EEG paling produktif; dua klinisi sudah menulis bersama", "#18 neurorehab · #20 kognitif lansia · #31 EEG jiwa", "Terpenuhi"],
+    [{ text: "T2", options: { bold: true } }, "Biosensor & diagnostik non-invasif", "P1 P2 P3", "E-nose untuk diabetes (2017), klasifikasi aroma", "#1 e-nose diabetes · #12 TB breathprint", "Belum"],
+    [{ text: "T3", options: { bold: true } }, "AI medis, pencitraan & sains data", "P1 P2 P3 P5", "CNN pneumonia anak; citra medis Prof. I K.E. Purnama", "#29 endotel kornea · #30 basil TB", "Terpenuhi"],
+    [{ text: "T4", options: { bold: true } }, "Biomaterial, biomekanika & manufaktur", "P4", "Bone plate (Q1, 2024); 3D printing (JMHT 2025); prostesis", "#14 bone plate · #16 prostesis · #19 stent", "Terpenuhi"],
+    [{ text: "T5", options: { bold: true } }, "Telematika kesehatan & implementasi", "P1–P5", "Bidang guru besar Prof. I K.E. Purnama; dashboard Desa Binaan", "#13 surveilans sindromik · #33 data desa", "Belum"],
+  ];
+  s.addTable(trows, { x: 0.6, y: 1.35, w: 12.1, colW: [0.75, 2.75, 1.35, 3.35, 2.8, 1.1], fontSize: 12, color: C.text1, border: { type: "solid", pt: 0.75, color: C.background2 }, fill: { color: C.background1 }, valign: "middle", margin: [0.04, 0.08, 0.04, 0.08], rowH: [0.42, 0.72, 0.72, 0.72, 0.72, 0.72], objectName: "tbl-tekdok" });
+  s.addText([
+    { text: "Diukur dengan TKT 1–9 dan perpindahan wahana W0 → W4. ", options: { bold: true, color: C.text2 } },
+    { text: "TKT saat ini, TKT target, dan jumlah luaran per platform diisi Prodi Teknologi Kedokteran dari isian dosen dan data prodi; tidak dikarang di paparan ini." },
+  ], { x: 0.6, y: 5.55, w: 12.1, h: 0.85, fontSize: 14, color: C.text1, margin: 0, valign: "top", isTextBox: true });
+  s.addNotes("Bukti dari penelusuran publik (draf §4.2). Data yang diminta dari Kaprodi Teknologi Kedokteran: daftar dosen ber-homebase Tekdok, judul dan luaran 2023–2026 per platform, TKT saat ini per judul, dan peta jalan prodi bila sudah ada (draf §10 butir 1e).");
+
+  s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Kerangka" });
+  s.addText("Tulang ikan Teknologi Kedokteran (kerangka)", { placeholder: "title" });
+  s.addImage({ path: path.join(FIG, "fig_ikan_tekdok.png"), x: 1.23, y: 1.3, w: 10.87, h: 5.55, altText: "Kerangka kosong tulang ikan Prodi Teknologi Kedokteran: ekor 2023, kepala 2030 Kedokteran Pencegahan 4.0, lima tulang T1–T5 dengan tiga ruas periode untuk judul, TKT, dan wahana", objectName: "fig-ikan-tekdok" });
+  s.addNotes("Bentuknya sama dengan tulang ikan RIP prodi kedokteran, dan kepalanya juga sama: 2030 Kedokteran Pencegahan 4.0. Bedanya, tiap tulang dibagi tiga ruas periode, sehingga tahun terbaca dari posisi di tulang. Diisi Prodi Teknologi Kedokteran pada review peta jalan prodi 18–22 Januari 2027.");
 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Kerangka" });
   s.addText("Peta jalan tiga periode", { placeholder: "title" });
@@ -290,9 +317,9 @@ async function icon(Comp, hex, size = 256) {
 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Jadwal & keputusan" });
   s.addText("Yang masih harus diverifikasi", { placeholder: "title" });
-  const ver = [["Akreditor Prodi Teknologi Kedokteran", "Belum diketahui; jangan diasumsikan LAM-PTKes. Menentukan rumusan peta jalan turunan prodi itu."], ["Roadmap FKK 2023–2025", "Dokumen induk RIP prodi; evaluasinya wajib masuk edisi kedua."], ["Roster dosen resmi", "Daftar 39 nama di instrumen bukan roster resmi; perlu data kepegawaian."], ["Data SINTA untuk target", "Target angka periode 2026–2028 disusun Unit Penelitian dari data resmi."], ["Tabel PIC antarversi RIP prodi", "Versi pptx dan docx berbeda untuk Digital Health dan topik ke-7."]];
+  const ver = [["Akreditor Prodi Teknologi Kedokteran", "Belum diketahui; jangan diasumsikan LAM-PTKes. Menentukan rumusan peta jalan turunan prodi itu."], ["Roadmap FKK 2023–2025", "Dokumen induk RIP prodi; evaluasinya wajib masuk edisi kedua."], ["Roster dosen resmi", "Daftar 39 nama di instrumen bukan roster resmi; perlu data kepegawaian."], ["Data SINTA untuk target", "Target angka periode 2026–2028 disusun Unit Penelitian dari data resmi."], ["Tabel PIC antarversi RIP prodi", "Versi pptx dan docx berbeda untuk Digital Health dan topik ke-7."], ["Data Prodi Teknologi Kedokteran", "Dosen ber-homebase, judul & luaran per platform, TKT saat ini: dasar peta jalan per kolom."]];
   ver.forEach(([h, d], i) => {
-    const y = 1.45 + i * 1.0;
+    const y = 1.45 + i * 0.88;
     s.addImage({ data: icWarn, x: 0.65, y: y + 0.08, w: 0.36, h: 0.36, altText: "Perlu verifikasi", objectName: `warn-${i + 1}` });
     s.addText(h, { x: 1.25, y, w: 4.6, h: 0.55, fontSize: 16, bold: true, color: C.text1, margin: 0, valign: "middle", isTextBox: true });
     s.addText(d, { x: 6.0, y, w: 6.7, h: 0.55, fontSize: 14, color: C.text1, margin: 0, valign: "middle", isTextBox: true });
@@ -303,11 +330,12 @@ async function icon(Comp, hex, size = 256) {
   s.addText("Keputusan yang dimohon hari ini", { placeholder: "title" });
   s.addText([
     { text: "Setujui kerangka pohon sebagai dasar pengisian.", options: { bullet: { type: "number" }, breakLine: true } },
+    { text: "Setujui matriks dibaca dua arah: platform T1–T5 menjadi peta jalan Prodi Teknologi Kedokteran.", options: { bullet: { type: "number" }, breakLine: true } },
     { text: "Terbitkan surat edaran pengisian instrumen, batas Jumat 8 Januari 2027.", options: { bullet: { type: "number" }, breakLine: true } },
     { text: "Tunjuk PIC topik prodi dan satu wakil Teknologi Kedokteran per pilar sebagai koordinator.", options: { bullet: { type: "number" } } },
   ], { placeholder: "body", paraSpaceAfter: 8 });
   buds(s, 0.8, 1.45, 0.3, 0.16);
-  s.addNotes("Tiga keputusan kecil, bukan pengesahan. Pengesahan RIP dan peta jalan (SK Dekan) ada di tahap 2. Bila disetujui hari ini, surat edaran bisa terbit sebelum 11 Desember.");
+  s.addNotes("Empat keputusan kecil, bukan pengesahan. Pengesahan RIP dan peta jalan (SK Dekan) ada di tahap 2. Bila disetujui hari ini, surat edaran bisa terbit sebelum 11 Desember.");
 
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
