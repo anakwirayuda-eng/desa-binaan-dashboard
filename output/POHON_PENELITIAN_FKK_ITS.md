@@ -1,7 +1,7 @@
 # Rancangan Pohon Penelitian FKK ITS
 ### Dokumen kerja untuk penyusunan RIP & Peta Jalan Penelitian — bahan akreditasi LAM-PTKes
 
-**Disusun:** 28 Juli 2026 · **Revisi besar:** 3 Agustus 2026 · **Status:** draf kerja, belum ditetapkan · **Untuk:** Dekanat & Unit Penelitian FKK ITS
+**Disusun:** 28 Juli 2026 · **Revisi besar:** 3 Agustus 2026 · **Tambahan:** 23 November 2026 (§5.4 peta jalan tiga prodi + instrumen isian dosen; contoh FK Indonesia di §11) · **Status:** draf kerja, belum ditetapkan · **Untuk:** Dekanat & Unit Penelitian FKK ITS
 
 ---
 
@@ -384,11 +384,64 @@ Jumlah pilar sengaja lima. Benchmark menunjukkan jumlah tema berkorelasi dengan 
 Bukan pilar, melainkan lahan tempat kelima pilar diuji. Inilah yang membuat kata "pencegahan" dapat dibuktikan:
 
 ```
-T0–T1  Laboratorium ITS (Biomedik, Material, Despro, Statistika, Anatomi FKK)
-T2     ITS Medical Center · Klinik mitra
-T3     RSUD dr. Wahidin Sudiro Husodo (RSPU) · RSUD RA Basoeni (satelit)
-T4     Desa Binaan Kota Mojokerto (5 puskesmas) · Bina Desa Sehat Sukolilo/Keputih
+W0–W1  Laboratorium ITS (Biomedik, Material, Despro, Statistika, Anatomi FKK)
+W2     ITS Medical Center · Klinik mitra
+W3     RSUD dr. Wahidin Sudiro Husodo (RSPU) · RSUD RA Basoeni (satelit)
+W4     Desa Binaan Kota Mojokerto (5 puskesmas) · Bina Desa Sehat Sukolilo/Keputih
 ```
+
+> *Label diganti dari T0–T4 menjadi **W0–W4** (Wahana) pada revisi 23 November 2026, karena "T1–T5" sudah dipakai sebagai kode Platform (§5.2). Tanpa penggantian ini, "T2" bisa berarti platform Biosensor atau ITS Medical Center — kerancuan yang makin parah begitu ketiga prodi memakai satu tabel bersama (§5.4).*
+
+### 5.4 Peta jalan fakultas — tiga prodi dalam satu pohon
+
+> *Ditambahkan 23 November 2026.* Menjawab pertanyaan: *"berarti peta jalan fakultas itu gabungan ketiga prodi?"* **Ya — dan matriks §5.1–5.2 memang sudah dirancang di tingkat fakultas (UPPS), bukan per prodi.** Sumbu Dasar/Profesi/Translasi di §4.1c sengaja hanya untuk dua prodi kedokteran; Prodi Teknologi Kedokteran sudah ada di dalam pohon, tetapi **tersirat** di kolom Platform. Ada dua hal yang belum ada: **(1) peran tiap prodi belum dinyatakan eksplisit**, dan **(2) pohon ini baru menjawab *apa*, belum *kapan*.** Selama belum ada tonggak waktunya, ia masih pohon, belum peta jalan. Definisi yang dipakai FK Unisba tepat: peta jalan adalah *"milestones kegiatan penelitian dalam ruang waktu tertentu (5–20 tahun)"*.
+
+**Prinsip 1 — Satu pohon fakultas, tiga peta jalan prodi turunan.** Prodi **tidak** membuat pohon sendiri. Setiap prodi menurunkan peta jalannya dengan **memilih sel matriks** yang menjadi tanggung jawabnya, lalu menulis tonggaknya sendiri di sel itu. Inilah rantai yang ditelusuri asesor (§9.2), dan pola ini sudah dipraktikkan: roadmap PPDS IKA FK UB menyatakan dirinya diturunkan dari *Roadmap Penelitian FK UB 2016* dan *RIP Universitas Brawijaya 2016–2020* (§11).
+
+**Prinsip 2 — Integrasi terjadi di sel, bukan di bagan organisasi.** Pilar dipegang sisi kedokteran; Platform dipegang sisi Teknologi Kedokteran. Karena **setiap judul penelitian wajib punya koordinat (Pilar, Platform)** (§5.2), setiap judul yang memakai platform otomatis menjadi kerja lintas prodi. Tidak perlu membentuk "program integrasi" tersendiri — strukturnya sudah memaksa integrasi terjadi.
+
+**Peran tiap prodi di dalam satu pohon:**
+
+| | **Sarjana Kedokteran** | **Pendidikan Profesi Dokter** | **Teknologi Kedokteran** |
+|---|---|---|---|
+| Posisi di matriks | Sisi Pilar — cabang **Kedokteran Dasar** (§4.1c) | Sisi Pilar — cabang **Kedokteran Profesi** (§4.1c) | Sisi **Platform** — pemegang T1–T5 (§5.2) |
+| Pertanyaan riset khas | Mekanisme, biomarker, data populasi | Validasi klinis: apakah alat/model bekerja pada pasien nyata | Purwarupa alat, algoritma, material |
+| Wahana utama (§5.3) | W0–W1 lab preklinik · W4 Desa Binaan | **W3 RSUD pendidikan** — aktif penuh begitu koas mulai **2027** | W0–W2 lab ITS · ITS Medical Center |
+| Jangkar SDM | 7 Koordinator Lab (§4.1c) | 9 PJ KKM (§4.1c) | Kaprodi + penanggung jawab platform (§4.1, §5.2) |
+| Jalur riset mahasiswa | Skripsi | Luaran ilmiah kepaniteraan — *bentuk persisnya ikuti kurikulum profesi* | Tugas akhir |
+| Contoh butir §7 yang dipegangnya | #25 sensus dasar Desa Binaan · #28 determinan sosial | #11 pola AMR di RSUD · #15 registri implan | #1 *e-nose* diabetes · #14 *bone plate* · #19 stent |
+
+**Titik temu ketiga prodi sudah ada orangnya:** cabang **Kedokteran Translasi** (§4.1c). Dua klinisinya — dr. Zain (Sp.KJ) dan dr. Riva (Sp.N) — sudah menulis bersama dosen Teknologi Kedokteran (Yuri Pamungkas). Jadi integrasi tiga prodi **bukan aspirasi yang harus dibangun dari nol**; pola kerjanya sudah terbukti di satu platform (T1), dan peta jalan tinggal menggandakannya ke empat platform lain.
+
+**Jam bersama: tahap wahana.** Supaya ketiga prodi dapat dibaca dalam satu tabel, setiap judul mencatat **tahap awal dan tahap target** pada skala wahana W0→W4 (§5.3). Untuk luaran teknologi, tambahkan **TKT (Tingkat Kesiapterapan Teknologi, skala 1–9)** — bahasa yang lazim diminta skema hibah nasional (*pastikan masih dipakai di panduan hibah terbaru — §10 butir 15*). Yang dinilai asesor sebagai bukti integrasi adalah **perpindahannya**: misalnya *e-nose* diabetes yang berangkat dari lab Teknologi Kedokteran (W0) lalu divalidasi bersama Prodi Kedokteran di Desa Binaan (W4). Satu baris tabel seperti itu lebih meyakinkan daripada satu halaman narasi "sinergi".
+
+**Peta jalan tiga tahap, 2026–2030** (selaras Renstra ITS 2026–2030, §3):
+
+| Tahap | Periode | Fokus | Tonggak lintas prodi (indikatif) |
+|---|---|---|---|
+| **I — Fondasi** | 2026–2027 | Menetapkan dan memulai | SK penetapan peta jalan penelitian & PkM · T1, T3, T4 ditetapkan sebagai unit anggaran (sudah memenuhi syarat dua nama, §5.2) · sensus dasar Desa Binaan **+ desa pembanding** (K6, butir #25) · seluruh butir **[A]** §7 berjalan · koas angkatan pertama masuk RSUD (2027) sehingga W3 aktif · formulir pohon penelitian wajib untuk skripsi/TA ketiga prodi |
+| **II — Integrasi** | 2028–2029 | Membuktikan di klinik dan populasi | T2 dan T5 memenuhi syarat dua nama · studi validasi platform di RSUD oleh tim lintas prodi (mis. #12 TB *breathprint*, #30 basil TB) · ronde pembaruan pertama platform surveilans · jalur *register-linkage* (#32) berjalan · laporan evaluasi kesesuaian tahunan ke-2 |
+| **III — Dampak** | 2030 | Hilirisasi dan revisi | Purwarupa terpilih memasuki jalur izin edar alkes (§10 butir 19) · bukti dari Desa Binaan dipakai Dinkes Kota Mojokerto · evaluasi menyeluruh → **edisi 2 peta jalan**, mengikuti pola FK UII yang edisi ke-3 roadmap-nya dirumuskan dari evaluasi edisi sebelumnya (§11) |
+
+> **Angka target (jumlah publikasi, HKI, hibah per tahun) sengaja tidak diisi.** Angka-angka itu harus disusun Unit Penelitian dari data SINTA dan kepegawaian riil (§10 Prioritas 2), bukan dikarang. Satu aturan yang tetap: **target tahun 1–3 harus pasti tercapai**, karena jendela penilaian akreditasi hanya TS, TS-1, TS-2 (§7).
+
+**Prinsip 3 — Peta jalan PkM terbit terpisah, dengan struktur yang sama.** Ini sejalan dengan K4. FKIK UIN Malang menerbitkan *RoadMap Penelitian* dan *RoadMap Pengabdian Masyarakat* sebagai dua berkas terpisah (§11).
+
+**Prinsip 4 — Peta jalan disusun dari bawah, lewat satu instrumen untuk ketiga prodi.** Matriks di atas adalah *kerangka*; isinya harus datang dari rencana nyata setiap dosen. Untuk itu tersedia **`output/INSTRUMEN_AGENDA_PENELITIAN_FKK_ITS.xlsx`** (dibuat 23 November 2026; dapat dibuka di Excel atau diunggah sebagai Google Sheet bersama):
+
+| Tab | Isi | Diisi oleh |
+|---|---|---|
+| PETUNJUK | Tujuan, 5 langkah pengisian, definisi Pilar/cabang, Platform, Wahana W0–W4, TKT | — |
+| DAFTAR DOSEN | Daftar awal 35 nama (hanya nama), dilengkapi sendiri oleh dosen: NIDN, homebase, bidang, status; status isian terpantau otomatis | Setiap dosen |
+| AGENDA | **Satu baris = satu topik.** Ketua memilih cabang pohon (Pilar terisi otomatis), Platform, anggota FKK, wahana kini & target, tahun, luaran. Kolom "Lintas prodi?" dan "Cek isian" otomatis | Ketua topik |
+| REKAP MATRIKS | Indikator kunci (respons, % masuk pohon, % lintas prodi, % melibatkan mahasiswa) + matriks Pilar × Platform | Otomatis |
+| REKAP PRODI | Partisipasi & sebaran topik per prodi, termasuk sebaran tahap wahana | Otomatis |
+| PETA JALAN | Topik aktif per tahun 2026–2030 per pilar & per prodi, luaran per tahun, tonggak tiga tahap | Otomatis |
+| USULAN DRAF | 34 butir §7 sebagai rujukan, **tanpa** catatan internal tentang individu | — |
+
+Tiga keputusan desain yang disengaja: (a) **satu topik diisi sekali oleh ketuanya**, sehingga tidak terjadi duplikasi, dan rekan dari prodi lain cukup dipilih sebagai anggota; inilah yang membuat kolom "lintas prodi" dapat dihitung; (b) opsi **"9.9 Di luar kelima pilar"** sengaja disediakan, karena persentase topik di luar pohon adalah angka evaluasi kesesuaian (unsur ke-3 indikator C.7) sekaligus bahan revisi pohon; (c) daftar dosen **tidak** memuat homebase, bidang, atau penempatan cabang hasil dugaan dokumen ini, karena dosen mengisinya sendiri. Dengan begitu instrumen ini sekaligus menutup sebagian butir §10 (roster, ejaan nama, *homebase*, status aktif). Berkas dibangun ulang dengan `output/build_instrumen_agenda.py`; seluruh rumus rekap sudah diuji dengan data contoh, dan nol galat dari 1.939 rumus.
+
+> ⚠ **Butir verifikasi baru yang menentukan bentuk turunan prodi:** akreditor Prodi Kedokteran dan Profesi Dokter adalah LAM-PTKes (§9.4), tetapi **lembaga akreditasi Prodi Teknologi Kedokteran belum diketahui.** Bila berbeda, peta jalan prodi turunannya harus menjawab rumusan kriteria LAM yang lain, meski tetap diturunkan dari pohon fakultas yang sama. Lihat §10 butir 1a.
 
 ---
 
@@ -631,7 +684,7 @@ Renstra/RIP Penelitian ITS
 - [ ] Berita acara + daftar hadir + notulen **uji publik** roadmap (pola FK-KMK UGM)
 
 **B. Penurunan ke individu (unsur 2)**
-- [ ] Agenda/Roadmap Penelitian **per dosen** (5 th, 2–5 topik, menunjuk cabang pohon)
+- [ ] Agenda/Roadmap Penelitian **per dosen** (5 th, 2–5 topik, menunjuk cabang pohon) — *instrumen pengisian sudah tersedia, lihat §5.4 Prinsip 4*
 - [ ] Matriks pemetaan rekam jejak dosen yang menjadi dasar penyusunan pohon
 - [ ] **Formulir "Pohon Penelitian" untuk tugas akhir mahasiswa**
 - [ ] SK pembentukan kelompok riset + roadmap masing-masing
@@ -664,6 +717,7 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 
 **Prioritas 1 — menentukan isi pohon**
 1. **Instrumen LAM-PTKes mana yang berlaku** bagi FKK ITS (9 kriteria kuantitatif vs 8 kriteria kualitatif) → unduh dari `lamptkes.org/File-Unduhan`; cek status mutakhir di Database Hasil Akreditasi LAM-PTKes
+1a. **Lembaga akreditasi Prodi Teknologi Kedokteran** — belum diketahui; jangan diasumsikan LAM-PTKes. Menentukan rumusan kriteria yang harus dijawab peta jalan turunan prodi tersebut (§5.4). *Ditambahkan 23 November 2026.*
 2. **Roadmap Penelitian ITS 2025–2029** (DRPM) — apakah ada slot tema kesehatan yang harus diinduki → `its.ac.id/drpm/.../Roadmap-Penelitian-2025-2029.pdf`
 3. **Renstra ITS 2026–2030** — kerangka RAISE sebagai payung
 4. ~~**Struktur FKK 2025**~~ — **SELESAI.** Pengguna memasok tangkapan layar halaman resmi *Struktur Organisasi* (`its.ac.id/fakultas/fkk/profil/`) pada 3 Agustus 2026. Dekanat, Kaprodi ketiga prodi, koordinator lab, dan 13 KKM Prodi Profesi Dokter sudah dipetakan ke §2 dan §4.1.
@@ -687,7 +741,7 @@ Karena `its.ac.id`, SINTA, PDDikti, dan `lamptkes.org` diblokir pada sesi riset 
 11. **Status *homebase* resmi** dosen berafiliasi ganda (Dhany, Syaifudin, Fahmi, Kuswanto) — kritis untuk rasio dosen
 
 **Prioritas 3 — menyempurnakan benchmark**
-12. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026, **fakultas pembina**), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). **Riset Agustus 2026 kembali gagal menemukan satu pun dokumen ini** — seluruh domain `.ac.id` diblokir dan kuota pencarian web habis. Ini tetap bahan benchmark paling berharga yang belum tergarap, dan **satu-satunya cara mendapatkannya adalah mengunduhnya sendiri dari laptop biasa.**
+12. **PDF roadmap FK pembanding** — FK Unsri (RIP + SK, model paling lengkap), FK UI (roadmap per klaster IMERI), FK Unair (2021–2026, **fakultas pembina**), FK UB ("Pohon Penelitian" + formulir TA), FK-KMK UGM (2026–2030). **Riset Agustus 2026 kembali gagal menemukan satu pun dokumen ini** — seluruh domain `.ac.id` diblokir dan kuota pencarian web habis. ***Pembaruan 23 November 2026:*** pencarian web kini berhasil menemukan **tautan langsung** ke delapan dokumen peta jalan FK Indonesia (daftar lengkap di §11, "Contoh peta jalan FK Indonesia"). **Isinya tetap belum terbaca**, karena domain `.ac.id` masih diblokir bagi sesi ini (galat DNS/403). Yang tersisa kini lebih mudah: buka tautan-tautan itu dari laptop biasa. Yang paling layak dibaca lebih dulu: FK UII 2023–2026, FK UIN Jakarta 2025–2029, dan FKIK UIN Malang. FK-KMK UGM 2026–2030 belum terbit — hanya kabar bahwa roadmap itu sedang ditinjau ulang.
 13. **Teks verbatim visi/misi FKK** — rekonstruksi di §2 berasal dari cuplikan mesin pencari, belum diverifikasi kata per kata
 14. Nomor **PerBAN-PT** yang menjadi dasar instrumen 8 kriteria — bersumber tunggal, jangan dikutip sebelum diverifikasi
 
@@ -723,6 +777,21 @@ LAM-PTKes (instrumen 9 kriteria & 8 kriteria) · Matriks Penilaian IAPS BAN-PT �
 FK Unsri · FK UI (IMERI) · FK Unair · FK UB · FK-KMK UGM · FK UNS · FK Undip · FK Unpad (*fish bone*) · FK UMSU · FKIK Unismuh
 *Catatan: dokumen roadmap kesepuluh FK ini tetap belum berhasil diambil setelah dua ronde riset — lihat §10 butir 12.*
 
+**Contoh peta jalan FK Indonesia — tautan ditemukan 23 November 2026** *(isi PDF belum dibuka: domain `.ac.id` masih diblokir bagi sesi ini; keterangan di bawah berasal dari indeks mesin pencari dan harus dicek dengan membuka dokumennya)*
+
+| Dokumen | Yang terlihat dari indeks | Relevansi untuk FKK ITS |
+|---|---|---|
+| [Roadmap Penelitian & Pengabdian FK UII 2023–2026 (edisi 3, revisi)](https://fk.uii.ac.id/wp-content/uploads/ROADMAP-Penelitain-pengabdian-FK-UII-2023-2026-revisi.pdf) | Penelitian + PkM dalam satu dokumen; edisi 3 dirumuskan dari evaluasi edisi sebelumnya | Contoh siklus PPEPP yang nyata — persis unsur ke-4 indikator C.7 |
+| [Roadmap Penelitian FK UIN Jakarta 2025–2029](https://asset.uinjkt.ac.id/uploads/SELvzzic/2026/01/roadmap-penelitian-fk-uin-jakarta-tahun-2025-2029-2compressed.pdf) | Disusun per "Roadmap Penelitian Unggulan": Pendidikan Kedokteran & Pelayanan Kesehatan · Bahan Alam & Thibbun Nabawi · Kedokteran Haji & Travel | Klaster yang menempelkan **kekhasan institusi** — padanannya bagi FKK ITS adalah teknologi |
+| [RoadMap Penelitian FKIK UIN Malang](https://fkik.uin-malang.ac.id/wp-content/uploads/2025/07/RoadMap-Penelitian-FKIK-Rev-29-Nov.pdf) · [RoadMap PkM FKIK](https://fkik.uin-malang.ac.id/wp-content/uploads/2025/07/RoadMap-Pengabdian-Masyarakat-FKIK-Rev.pdf) · [Panduan UPPM 2025](https://fkik.uin-malang.ac.id/wp-content/uploads/2025/07/Panduan-UPPM-2025.pdf) | Fakultas multi-prodi (kedokteran + farmasi); peta jalan penelitian & PkM terpisah; kekhasan kesehatan haji; pedoman menyatakan tema prioritas mengacu visi-misi tiap prodi; skema "Penelitian Unggulan Fakultas Kolaborasi Mahasiswa dan Dosen" | Analog struktural terdekat yang sudah punya dokumen: satu fakultas, beberapa prodi, satu kekhasan |
+| [Peta Jalan Penelitian FK UGM 2016–2025](https://jiwa.fkkmk.ugm.ac.id/wp-content/uploads/sites/1660/2022/08/ROADMAP-FK-UGM-2016-2025.pdf) | Fokus utama derajat kesehatan masyarakat; dirumuskan lewat serial diskusi dan konsultasi publik. Sudah kedaluwarsa; FK-KMK UGM dikabarkan sedang meninjau ulang *Roadmap Penelitian dan Pengabdian 2026–2030* dengan mengaitkannya ke AHS dan SDGs (baru judul berita) | Model uji publik (§9.5 A); kaitan dengan *Academic Health System* relevan bagi rencana RS dr. Angka Nitisastro |
+| [Roadmap Penelitian & PkM PPDS IKA FK UB](https://ppds.fk.ub.ac.id/ika/wp-content/uploads/2023/11/ROADMAP-PENELITIAN-DAN-PKM-PSPDS-IKA-FK-UB-Revisi-2-1.pdf) · [SOP Roadmap](https://ppds.fk.ub.ac.id/ika/wp-content/uploads/2024/10/SOP-ROADMAP-PENELTIAN-PkM-PS-IKA.pdf) | Roadmap prodi yang menyatakan diturunkan dari Roadmap Penelitian FK UB 2016 dan RIP UB 2016–2020; SOP: berlaku 5 tahun sejak penetapan | Contoh **rantai turunan fakultas → prodi** (§5.4 Prinsip 1) dan SOP pendampingnya |
+| [Roadmap Penelitian UPPMF FK Unisba 2021–2025](https://fk.unisba.ac.id/wp-content/uploads/2025/01/REV-ROADMAP-PENELITIAN-UPPMF-2021-2025-.pdf) | Tujuh topik penelitian & PkM; definisi roadmap sebagai *milestones* dalam rentang 5–20 tahun | Definisi kerja yang dipakai di §5.4 |
+| [RPJP FKUB 2020–2040](https://fk.ub.ac.id/wp-content/uploads/2022/03/RPJP_FKUB_2020-2040_dan_Lampiran.pdf) · [Renstra FKUB 2020–2024](https://fk.ub.ac.id/wp-content/uploads/2022/03/RENCANA_STRATEGIS_FKUB_2020-2024_dan_Lampiran.pdf) | Renstra ditetapkan dengan Peraturan Dekan No. 6/2021, mengacu RPJP 2020–2040 | Contoh dokumen penetapan formal |
+| [Road Map Penelitian Fakultas Farmasi Unair 2025–2031](https://ff.unair.ac.id/files/content/1770367359-4-ROAD-MAP-PENELITIAN-2025-2031.pdf) | Peta jalan fakultas di lingkungan Unair, edisi terbaru | Unair adalah fakultas pembina FKK ITS — gaya dokumennya kemungkinan dikenali pimpinan |
+
+**Kembaran terdekat — tetapi belum punya peta jalan publik:** **FK IPB** (berdiri ±2023, seumur FKK ITS), FK di dalam kampus non-kedokteran. Kekhasannya [*"Kedokteran Agro-Herbal dengan pendekatan One Health"*](https://fk.ipb.ac.id/wp-content/uploads/2023/08/BOOKLET-FKIPB_.pdf); dekannya menyebut AI dan pengembangan alat kesehatan sebagai arah riset lintas fakultas ([IPB](https://www.ipb.ac.id/?p=98110)); belakangan dilaporkan [bergabung dengan Departemen Ilmu Gizi menjadi Fakultas Kedokteran dan Gizi](https://www.ipb.ac.id/?p=99175). Polanya sama dengan FKK ITS: FK baru yang menempelkan kekuatan kampus induknya, dan menjadi multi-prodi lewat penggabungan dengan bidang non-kedokteran. **Tidak ditemukan satu pun peta jalan FK Indonesia yang memadukan prodi teknologi/rekayasa** — jadi integrasi lewat matriks (§5.4) tidak punya templat domestik untuk disalin. *Ini berdasarkan pencarian, bukan bukti bahwa contoh seperti itu tidak ada.*
+
 **Model kohort & surveilans populasi** *(ditambahkan 3 Agustus 2026, dasar revisi §6)*
 Rotterdam Study/ERGO (Erasmus MC) · Framingham Heart Study · UK Biobank (model tata kelola akses) · **HDSS Sleman & Purworejo (FK-KMK UGM — pembanding domestik terpenting)** · Studi Kohort Faktor Risiko PTM Bogor (eks Balitbangkes) · IFLS/RAND (model data terbuka) · **Agincourt HDSS (Wits, Afrika Selatan — arsitektur sensus dasar + ronde pembaruan)** · Matlab HDSS (icddr,b — model area intervensi vs pembanding permanen) · Jejaring INDEPTH (dan pelajaran keruntuhannya) · REACT/Imperial (potong lintang berulang)
 
@@ -733,6 +802,8 @@ Rubrik instrumen LAM kualitatif (skala 4-3-2-1) · daftar tilik AMI (5 kolom bak
 ---
 
 ## 12. Rencana penyelesaian — milestone menuju pengajuan ke Dekanat
+
+> **Pembaruan 23 November 2026:** seluruh tanggal di tabel ini sudah lewat. Penyusun belum mengetahui apakah draf sudah diajukan ke Dekanat dan apa masukannya. **Tabel perlu disusun ulang setelah status itu dikonfirmasi**, bukan diperpanjang begitu saja.
 
 Disusun karena dokumen ini ditunggu pimpinan. Target **bukan** "terakreditasi" (itu proses terpisah bertahun-tahun), melainkan **"draf final siap diajukan resmi ke Dekanat sebagai bahan uji publik & keputusan"** — realistis **± 2 September 2026**.
 
