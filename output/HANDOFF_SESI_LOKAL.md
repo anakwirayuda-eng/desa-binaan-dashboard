@@ -1,51 +1,56 @@
 # Serah-terima — Pohon Penelitian & Peta Jalan FKK ITS
 
-*Ditulis 23 November 2026 untuk melanjutkan pekerjaan di sesi lain (lokal). Diperbarui 23 November 2026 malam oleh sesi lokal (§5.6 Tekdok setara). Baca seluruhnya sebelum mengubah apa pun.*
+*Ditulis 23 November 2026 untuk melanjutkan pekerjaan di sesi lain (lokal). Diperbarui 23 November 2026 malam oleh sesi lokal: §5.6 Tekdok setara, lalu **revisi terpadu** dari riset sumber primer, red team, peta hibah 2027–2030, dan inventaris dosen. Baca seluruhnya sebelum mengubah apa pun.*
 
 ## 1. Apa proyek ini
 
-Menyusun **Pohon Penelitian dan Peta Jalan Penelitian FKK ITS 2026–2030** untuk tiga prodi (Sarjana Kedokteran, Pendidikan Profesi Dokter, Teknologi Kedokteran), sebagai bahan RIP fakultas dan bukti akreditasi (LAM-PTKes kriteria C.7/C.8). Statusnya **draf kerja, belum diajukan ke Dekanat**.
+Menyusun **Pohon Penelitian dan Peta Jalan Penelitian FKK ITS 2026–2030** untuk tiga prodi (Sarjana Kedokteran, Pendidikan Profesi Dokter, Teknologi Kedokteran), sebagai bahan RIP fakultas dan bukti akreditasi. Akreditor sudah pasti: **LAM-PTKes** untuk Kedokteran dan Profesi (butir 5.5 penelitian, 5.6 PkM), **BAN-PT** untuk Teknologi Kedokteran (IAPS 5.1). Statusnya **draf kerja, belum diajukan ke Dekanat**.
 
 - Branch kerja: `claude/fkk-its-research-tree-voquex` · PR #1 (draft) ke `main`.
 - Sumber kebenaran isi: **`output/POHON_PENELITIAN_FKK_ITS.md`**. PDF, PPT, dan galeri adalah turunannya.
+- ⚠ **Repositori ini PUBLIK**, sedangkan §4 dokumen memuat penilaian kapasitas per orang. Keputusan menjadikannya privat atau memisahkan naskah kerja dari naskah edaran ada di tangan pengguna (§10 butir 1g). Jangan menambah data pribadi atau dokumen internal mentah ke repo.
 
 ## 2. Berkas
 
 | Berkas | Isi | Dibangun dengan |
 |---|---|---|
-| `output/POHON_PENELITIAN_FKK_ITS.md` | Dokumen kerja lengkap (§0–§12) | ditulis langsung |
-| `output/POHON_PENELITIAN_FKK_ITS.pdf` | Versi cetak A4, 50 halaman, enam gambar | `tools/pohon/build_pdf.py` + `html_to_pdf.js` |
-| `output/PAPARAN_POHON_PENELITIAN_FKK_ITS.pptx` | 17 slide + catatan pembicara untuk tim kecil & tahap 1 | `tools/pohon/build_ppt.js` (isi slide ditulis di skrip ini) |
-| `output/INSTRUMEN_AGENDA_PENELITIAN_FKK_ITS.xlsx` | Instrumen isian agenda penelitian untuk semua dosen | `output/build_instrumen_agenda.py` |
-| `output/BENTUK_POHON_GALERI.html` | Galeri bentuk pohon: enam pola, padanan prodi, usulan pohon, matriks dua arah + tulang ikan Tekdok, poster A3, lajur, aturan ukuran | `tools/pohon/build_galeri.py` |
-| `output/figures/fig_*.png` | Enam gambar dari galeri (dipakai PDF & PPT) | `tools/pohon/galeri_figs.js` |
+| `output/POHON_PENELITIAN_FKK_ITS.md` | Dokumen kerja lengkap (§0–§12, termasuk §5.4a evaluasi edisi 1, §5.7 pembiayaan, §8.6 tata kelola bertahap) | ditulis langsung |
+| `output/POHON_PENELITIAN_FKK_ITS.pdf` | Versi cetak A4, ±62 halaman, tujuh gambar | `tools/pohon/build_pdf.py` + `html_to_pdf.js` |
+| `output/PAPARAN_POHON_PENELITIAN_FKK_ITS.pptx` | 21 slide + catatan pembicara untuk tim kecil & tahap 1 | `tools/pohon/build_ppt.js` (isi slide ditulis di skrip ini) |
+| `output/INSTRUMEN_AGENDA_PENELITIAN_FKK_ITS.xlsx` | Instrumen isian agenda penelitian; 42 nama, 9 tab termasuk REKAP PLATFORM, 2.060 rumus | `output/build_instrumen_agenda.py` |
+| `output/BENTUK_POHON_GALERI.html` | Galeri: enam pola, padanan prodi, usulan pohon, matriks dua arah, tulang ikan dan lajur bergerbang Tekdok, poster A3, lajur, aturan ukuran | `tools/pohon/build_galeri.py` |
+| `output/figures/fig_*.png` | Tujuh gambar dari galeri (dipakai PDF & PPT) | `tools/pohon/galeri_figs.js` |
 | `tools/pohon/README.md` | Cara membangun ulang semuanya | — |
 
-Galeri juga terbit sebagai halaman privat milik pengguna: <https://claude.ai/artifact/WZfZV3hCcnhfuYw9ufwf3i>. **Halaman terbit itu belum memuat bagian §5.6**; berkas HTML di repo sudah.
+**Di luar repo** (folder kerja `D:\Dev\Rancangan Induk Penelitian FKK ITS`): `hibah/Peta_Hibah_FKK_ITS_2027-2030.xlsx` + `hibah/build_peta_hibah_fkk.py` + `hibah/data/*.json` (276 hibah, akses per dosen; dibangun dari berkas Peta Hibah Dosen 2027 di Downloads); `riset_eksternal/` (laporan riset Codex/GPT-6.2 Astra, red team Antigravity/Gemini, prompt); `data/` (audit Roadmap FKK 2023–2025, roster publik). Galeri juga terbit sebagai halaman privat: <https://claude.ai/artifact/WZfZV3hCcnhfuYw9ufwf3i> — **belum memuat revisi 23 November**.
 
 ## 3. Keputusan rancangan yang sudah diambil
 
-- **Matriks 5 Pilar × 5 Platform** + Wahana W0–W4. **K1 direvisi (disetujui pengguna 23 Nov):** platform ikut dipublikasikan; matriks dibaca dua arah — baris = peta jalan Prodi Kedokteran & Profesi, kolom = peta jalan Prodi Teknologi Kedokteran (TKT 1–9, W0→W4), tulang ikan Tekdok per platform berkepala sama "2030 Kedokteran Pencegahan 4.0" (§5.6). Kode tetap: topik `1.1–5.4`, platform `T1–T5`, wahana `W0–W4`. Dipakai identik di dokumen, instrumen, galeri, PPT.
-- **Pohon fakultas adalah induk RIP Prodi Kedokteran & Profesi Dokter 2026–2030** (draf milik prodi, dipasok pengguna). Tujuh topik prodi dipadankan: PTM→P1, PM→P3, RNA+KSR→P2, topik ke-7→P5, Basic Science→akar ilmu, Digital Health→platform T3+T5; P4 tanpa topik prodi (dipimpin Tekdok lewat T4). Angka luaran dari tabel RIP prodi: 197 (2023–2025), 50 (2026). Detail di §5.5.
-- **Nama batang diusulkan *Kedokteran Pencegahan 4.0*** (sama dengan RIP prodi). **Periode sama dengan RIP prodi**: 2023–2025 · 2026–2028 · 2029–2030.
-- **Bentuk visual**: pohon (apa) + matriks (siapa dengan siapa) + lajur (kapan) di tingkat fakultas, dalam satu poster A3; tulang ikan tetap di tingkat prodi. Batang tiga pilin = tiga prodi. Aturan ukuran: 3 tingkat di gambar, ≤4 ranting per pilar, ranting tanpa tim digambar sebagai tunas.
-- **Milestone (§12)**: pengajuan dua tahap — tahap 1 kerangka + surat edaran pengisian (±7–9 Des 2026, titik putus 11 Des), tahap 2 draf final (±3–5 Feb 2027), SK sebelum libur 8–12 Mar 2027.
+- **Matriks 5 Pilar × 5 Platform** + Wahana W0–W4; kode `1.1–5.4`, `T1–T5`, `W0–W4`, `T0`, `9.9` dipakai identik di semua turunan. **K1 (disetujui pengguna):** platform dipublikasikan; matriks dibaca dua arah; **satu proyek, satu identitas** di register fakultas (cakupan tema · prodi pemimpin · kontribusi terverifikasi; NPD/NPM per homebase; luaran dideduplikasi).
+- **Tiga lembar pandang prodi** dari satu register: Sarjana dan Profesi membaca baris (lembar berbeda), Tekdok membaca kolom dengan pertanyaan keilmuan per platform dan TKT per produk/versi.
+- **Usulan yang menunggu keputusan Dekanat** (ditulis di dokumen sebagai usulan): K2 satu pagu dua jenis belanja (platform modal, pilar operasional); dua status platform (matang T1/T3/T4, inkubasi T2/T5, ditinjau 2028); ketua dan wakil lintas prodi per pilar/platform, satu orang maksimal satu peran; norma kredit berimbang; K6 wilayah pembanding sebagai giliran bertahap; bentuk visual Tekdok dipilih Kaprodi Tekdok (tulang ikan atau lajur bergerbang).
+- **Pohon fakultas adalah induk RIP Prodi Kedokteran & Profesi** (padanan tujuh topik, §5.5); nama batang *Kedokteran Pencegahan 4.0*; periode 2023–2025 · 2026–2028 · 2029–2030.
+- **Milestone (§12)**: tahap 1 ±7–9 Des 2026 (titik putus 11 Des), tahap 2 ±3–5 Feb 2027, SK sebelum 8–12 Mar 2027; tujuh risiko dan pencegahannya sudah masuk jadwal.
 
 ## 4. Pekerjaan terbuka (urut prioritas)
 
-1. **Data yang diminta dari Kaprodi Tekdok** (§10 butir 1a, 1e): daftar dosen ber-homebase Tekdok; judul & luaran 2023–2026 per platform; TKT saat ini; peta jalan Tekdok bila ada; lembaga akreditornya. Dengan data ini tabel T1–T5 dan tulang ikan §5.6 bisa diisi.
-2. **Bahan Oktober 2026 di folder lokal `D:\Dev\Rancangan Induk Penelitian FKK ITS`** belum dipakai dokumen ini (menunggu keputusan pengguna): audit Roadmap FKK 2023–2025 (`data/audit_rip_lama.md`; PDF aslinya ada di komputer pengguna) dan peta transisi 25 rumpun lama — menjawab §10 butir 1b; roster Tekdok 14 record dengan bukti publik (`data/dosen_teknologi_kedokteran.json`, `catatan_medtech.md`); pemetaan 45 nama. Data personel di sana memuat **dr. Fira Soraya, Sp.PA** — kandidat kuat "dr. Fira" (PIC KSR), bukan dr. Fatimah; tetap konfirmasi ke pengguna (§10 butir 1d).
-3. **Halaman galeri terbit** perlu diperbarui dari `output/BENTUK_POHON_GALERI.html` bila pengguna ingin bagian §5.6 tampil di sana.
-4. **Keputusan ranting onkologi** setelah rekap instrumen (Januari 2027): ranting P1 yang paling sedikit timnya diganti "Skrining & deteksi dini kanker" (§5.5).
-5. **Tindakan pengguna**: unggah instrumen ke Google Drive → buka sebagai Google Sheets → isi tiga sel kuning di PETUNJUK → bagikan dengan akses Editor; jadwalkan review tim kecil 30 Nov–4 Des.
+1. **Keputusan pengguna soal repositori publik** (§10 butir 1g) sebelum dokumen beredar lebih luas.
+2. **Tenggat dekat:** putuskan pernyataan minat **PUI-PT 2027 (15 Des 2026)** — cek dulu apakah pusat riset yang dimaksud pernah didanai; FAIMER 17 Des; AMEE 15 Jan (§5.7).
+3. **Data Kaprodi Tekdok** (§10 butir 1e) dan konfirmasi *homebase* (§10 butir 11: rekap SRG Jan 2026 mencatat empat dosen di Teknik Biomedik FTEIC dan dua di Teknik Mesin FTIRS). Siapkan draf pra-isi tabel T1–T5 dari data publik untuk dikoreksi Kaprodi.
+4. **Evaluasi per proyek Roadmap FKK 2023–2025** (lima status) oleh Unit Penelitian + Kaprodi, ≤ 8 Jan 2027 (§5.4a).
+5. **Tiga pengajar baru** di kalender Gasal 2026/27 ditambahkan Kaprodi ke DAFTAR DOSEN instrumen (nama sengaja tidak ditulis di repo publik; ada di inventaris lokal).
+6. **Peta hibah:** unggah ke Google Sheets dan bagikan ke dosen; dosen memperbarui jabatan (jabatan Kedokteran/Profesi diisi awal "Tenaga Pengajar" per surat formasi Sep 2024).
+7. **Halaman galeri terbit** diperbarui dari `output/BENTUK_POHON_GALERI.html` bila pengguna setuju.
+8. **Keputusan ranting onkologi** setelah rekap instrumen Januari 2027 (§5.5).
+9. **Tindakan pengguna:** unggah instrumen ke Google Sheets, isi tiga sel kuning PETUNJUK, bagikan; jadwalkan bilateral 23–27 Nov dan review tim kecil 30 Nov–4 Des.
 
 ## 5. Aturan kerja yang wajib dijaga
 
-- **Jangan mengarang** nama, angka bibliometrik, ambang akreditasi, nominal hibah, prevalensi, atau target angka. Yang belum terverifikasi ditandai dan dimasukkan ke §10.
-- Informasi tentang orang: hanya informasi profesional yang dipublikasikan atau dipasok pengguna.
-- **Berkas internal mentah** (docx/pptx RIP prodi, panduan, draf indikator) ada di komputer pengguna dan **tidak** dimasukkan ke repo; repo hanya memuat ringkasan dan angka yang dikutip dengan sumber tabelnya.
-- Setelah mengubah dokumen `.md`, bangun ulang PDF; bila angka atau keputusan berubah, perbarui juga `build_ppt.js` lalu bangun ulang PPT (lihat `tools/pohon/README.md`).
-- Instrumen: setelah mengubah generator, bangun ulang dan pastikan nol galat rumus (rekalkulasi LibreOffice), uji dengan `--test`.
-- Bekerja di **satu sesi pada satu waktu** dan selalu `git pull` sebelum mulai. Sesi cloud sebelumnya hanya memantau PR #1 (cek berkala) dan tidak mendorong perubahan tanpa permintaan.
-- Lingkungan lokal: prasyarat sudah terpasang (`tools/pohon/node_modules`, Chromium Playwright 1.63). Di Windows jalankan Python dengan `python -X utf8` (skrip galeri menulis tanpa encoding eksplisit). Tulis `doc.tmp.html` di luar repo. LibreOffice merender butir bernomor slide penutup sebagai "1." semua; PowerPoint menomori benar.
+- **Jangan mengarang** nama, angka bibliometrik, ambang akreditasi, nominal hibah, prevalensi, atau target angka. Yang belum terverifikasi ditandai dan dimasukkan ke §10. Keluaran agen AI lain (Codex, Antigravity) diperlakukan sebagai bahan: klaim penting diperiksa ulang ke sumber primer sebelum masuk dokumen (9 klaim kunci sudah diperiksa 23 Nov: 7 terkonfirmasi, 2 dikoreksi).
+- Informasi tentang orang: hanya informasi profesional yang dipublikasikan atau dipasok pengguna. Repo publik: jangan menulis NIP/NIDN/kontak, dan pertimbangkan nama dari dokumen internal sebelum menambahkannya.
+- **Berkas internal mentah** (docx/pptx RIP prodi, SK, kalender, panduan, draf indikator) ada di komputer pengguna dan **tidak** dimasukkan ke repo; repo hanya memuat ringkasan dan angka yang dikutip dengan sumbernya.
+- Setelah mengubah dokumen `.md`, bangun ulang PDF; bila angka atau keputusan berubah, perbarui juga `build_ppt.js` lalu bangun ulang PPT. Jangkar gambar di `build_pdf.py` bergantung pada kalimat tertentu di §5.5–§5.6.
+- Instrumen dan peta hibah: setelah mengubah generator, bangun ulang dan pastikan nol galat rumus (rekalkulasi LibreOffice), uji instrumen dengan `--test`.
+- Bekerja di **satu sesi pada satu waktu** dan selalu `git pull` sebelum mulai.
+- Lingkungan lokal: prasyarat sudah terpasang (`tools/pohon/node_modules`, Chromium Playwright 1.63, LibreOffice). Di Windows jalankan Python dengan `python -X utf8`. Tulis `doc.tmp.html` di luar repo. LibreOffice merender butir bernomor slide penutup sebagai "1." semua; PowerPoint menomori benar.
 - Bahasa: Indonesia; tulisan untuk pimpinan fakultas — lugas, kalimat pendek, tanpa jargon teknis yang tidak perlu.

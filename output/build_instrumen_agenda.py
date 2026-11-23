@@ -218,12 +218,16 @@ ROSTER = [
     "Fahmi Mubarok, Ph.D",
     "Nadya Paramitha Jafari, S.Ds., M.T.",
     "Gusfatul Mukhairiq, S.T., M.T.",
-    # Added 23 Nov 2026: PIC/members named in the RIP of Prodi Kedokteran & Profesi Dokter (Tabel 2),
-    # short names only — full names and titles are corrected by the lecturers themselves in column C.
-    "dr. Dyahati",
-    "dr. Zulistiyan",
-    "dr. Alfian",
-    "dr. Faizal",
+    # Added 23 Nov 2026: PIC/members named in the RIP of Prodi Kedokteran & Profesi Dokter (Tabel 2);
+    # short names resolved the same day from the prodi PkM roadmap PIC table and the Gasal 2026/27 calendar.
+    "dr. Dyahati Wahyurini, M.Biomed",
+    "dr. Zulistian Nurul Hidayati, Sp.PD",
+    "dr. Alfian Nurfaizi",
+    "dr. Faizal Mahdi",
+    "dr. Fira Soraya, Sp.PA",
+    # Teknologi Kedokteran names on the public prodi roster / SINTA department list.
+    "dr. Putri Alief Siswanto, M.T.",
+    "Alfandino Rasyid, S.Tr.T., M.Tr.T.",
 ]
 
 
@@ -407,6 +411,7 @@ ag_cols = [
     ("No. usulan draf\n(1–34, bila sama — tab USULAN DRAF)", 14, "opt"),  # Y
     ("Catatan / dukungan fakultas yang dibutuhkan", 34, "opt"),           # Z
     ("Cek isian\n(otomatis)", 30, "auto"),                                 # AA
+    ("Butuh mitra dari prodi lain? ▼\n(opsional)", 26, "opt"),              # AB
 ]
 KIND_FILL = {"req": C_REQ, "opt": C_OPT, "auto": C_AUTO}
 header(ag, 4, [c[0] for c in ag_cols], height=60)
@@ -419,7 +424,7 @@ example = [
     TOPIK[1], "P1", PLATFORM[1][1], "(CONTOH) Nama Dosen Teknologi Kedokteran", "", "", "Ya",
     "Puskesmas mitra Desa Binaan; Dinkes Kota Mojokerto", WAHANA[1][1], WAHANA[4][1], 4, 6, 2026, 2028,
     "Rencana", "Ya", 4, LUARAN[0], DANA[0], KESIAPAN[0], 1,
-    "Butuh izin akses data penderita DM di puskesmas", "OK",
+    "Butuh izin akses data penderita DM di puskesmas", "OK", "Butuh validasi klinis",
 ]
 for i, v in enumerate(example, start=1):
     c = ag.cell(row=5, column=i, value=v)
@@ -445,7 +450,7 @@ for r in range(A_FIRST, A_LAST + 1):
     ag.cell(row=r, column=27, value=(
         f'=IF(B{r}="","",IF(OR(D{r}="",E{r}="",G{r}="",M{r}="",N{r}="",Q{r}="",R{r}="",S{r}="",T{r}="",V{r}=""),'
         f'"Lengkapi kolom wajib (kuning)",IF(R{r}<Q{r},"Tahun selesai sebelum tahun mulai",'
-        f'IF(VALUE(MID(N{r},2,1))<VALUE(MID(M{r},2,1)),"Wahana target lebih rendah dari saat ini",'
+        f'IF(VALUE(MID(N{r},2,1))<VALUE(MID(M{r},2,1)),"OK — catatan: wahana target lebih rendah (sah bila kembali ke lab)",'
         f'IF(AND(ISNUMBER(O{r}),ISNUMBER(P{r}),P{r}<O{r}),"TKT target lebih rendah dari saat ini",'
         f'IF(F{r}="Di luar pohon","OK — di luar pohon (bahan revisi pohon)","OK"))))))'))
     for ci, (_, _, kind) in enumerate(ag_cols, start=1):
@@ -456,6 +461,11 @@ for r in range(A_FIRST, A_LAST + 1):
             c.number_format = "0"
 
 rng = lambda col: f"{col}{A_FIRST}:{col}{A_LAST}"
+MITRA = ["Butuh validasi klinis", "Butuh pengembang sensor/alat", "Butuh AI/analisis data", "Butuh metodologi/biostatistik", "Butuh wahana Desa Binaan/puskesmas", "Tidak"]
+for i_, v_ in enumerate(MITRA, start=2):
+    ref.cell(row=i_, column=16, value=v_)
+ref.cell(row=1, column=16, value="Kebutuhan mitra")
+dv_list(ag, f"=REF!$P$2:$P${len(MITRA) + 1}", rng("AB"), "Opsional: tandai bila topik ini butuh mitra dari prodi lain.")
 names = f"={DD}!$B${D_FIRST}:$B${D_LAST}"
 dv_list(ag, names, rng("B"), "Pilih nama Anda dari daftar.",
         "Pilih nama dari daftar. Bila belum ada, tambahkan dulu di tab DAFTAR DOSEN (baris kosong paling bawah).")
@@ -502,11 +512,12 @@ kpi = [
      f'=COUNTIFS({DD}!$B${D_FIRST}:$B${D_LAST},"?*",{DD}!$K${D_FIRST}:$K${D_LAST},"<>Belum mengisi")', "0"),
     ("Tingkat respons", "=IF(C4=0,0,C5/C4)", "0%"),
     ("Jumlah topik terisi", f'=COUNTIF({AG}!$B${A_FIRST}:$B${A_LAST},"?*")', "0"),
-    ("Topik yang masuk pohon", f'=IF(C7=0,0,1-COUNTIF({AG}!$F${A_FIRST}:$F${A_LAST},"Di luar pohon")/C7)', "0%"),
+    ("Topik yang masuk pohon (dari topik yang cabangnya terisi)", f'=IF(COUNTIF({AG}!$E${A_FIRST}:$E${A_LAST},"?*")=0,0,1-COUNTIF({AG}!$F${A_FIRST}:$F${A_LAST},"Di luar pohon")/COUNTIF({AG}!$E${A_FIRST}:$E${A_LAST},"?*"))', "0%"),
     ("Topik lintas prodi", f'=IF(C7=0,0,COUNTIF({AG}!$K${A_FIRST}:$K${A_LAST},"Ya")/C7)', "0%"),
     ("Topik melibatkan mahasiswa (proksi rencana PPDM)",
      f'=IF(C7=0,0,COUNTIF({AG}!$T${A_FIRST}:$T${A_LAST},"Ya")/C7)', "0%"),
     ("Sel inti P1–P5 × T1–T5 yang masih kosong (peta rekrutmen/kolaborasi)", "=COUNTIF(C17:G21,0)", "0"),
+    ("Topik tanpa cabang pohon (belum dapat dinilai — dilaporkan terpisah)", f'=C7-COUNTIF({AG}!$E${A_FIRST}:$E${A_LAST},"?*")', "0"),
 ]
 rm["A3"] = "Indikator kunci"
 rm["A3"].font = F_BOLD
@@ -627,6 +638,56 @@ rp.conditional_formatting.add(f"B{top2 + 1}:K{top2 + len(rp_rows)}", ColorScaleR
 rp.cell(row=top2 + len(rp_rows) + 2, column=1,
         value=("Bacaan yang diharapkan: Teknologi Kedokteran kuat di W0–W2, Profesi Dokter di W3, Kedokteran di W0 & W4. "
                "Topik yang BERPINDAH tahap antar-prodi adalah bukti integrasi.")).font = F_SUB
+
+# ---------------------------------------------------------------- REKAP PLATFORM (peta jalan per kolom, §5.6)
+rpl = wb.create_sheet("REKAP PLATFORM", 4)
+title(rpl, "REKAP — per platform T1–T5 (terisi otomatis)",
+      "Peta jalan Prodi Teknologi Kedokteran dibaca dari kolom platform. TKT dihitung per topik (tidak dirata-rata). Jangan diubah.")
+GR = f"{AG}!$G${A_FIRST}:$G${A_LAST}"
+hdr_pl = (["Platform", "Topik", "Ketua dari Teknologi Kedokteran", "Lintas prodi", "Melibatkan mahasiswa",
+           "TKT target 1–3", "TKT target 4–6", "TKT target 7–9"]
+          + [f"{w[0]} target" for w in WAHANA]
+          + ["Luaran purwarupa/produk", "Luaran HKI/paten", "Berjalan/selesai"])
+header(rpl, 4, hdr_pl)
+rpl.column_dimensions["A"].width = 44
+for j in range(2, len(hdr_pl) + 1):
+    rpl.column_dimensions[get_column_letter(j)].width = 12
+PTK = f"{AG}!$P${A_FIRST}:$P${A_LAST}"
+for i, pl in enumerate(PLATFORM):
+    r = 5 + i
+    rpl.cell(row=r, column=1, value=pl[1]).font = F_BOLD
+    rpl.cell(row=r, column=1).border = BOX
+    key = f'"{pl[0]}*"'
+    vals = [f"=COUNTIFS({GR},{key})",
+            f'=COUNTIFS({GR},{key},{CR},"{PRODI[2]}")',
+            f'=COUNTIFS({GR},{key},{AG}!$K${A_FIRST}:$K${A_LAST},"Ya")',
+            f'=COUNTIFS({GR},{key},{AG}!$T${A_FIRST}:$T${A_LAST},"Ya")',
+            f'=COUNTIFS({GR},{key},{PTK},">=1",{PTK},"<=3")',
+            f'=COUNTIFS({GR},{key},{PTK},">=4",{PTK},"<=6")',
+            f'=COUNTIFS({GR},{key},{PTK},">=7",{PTK},"<=9")']
+    vals += [f'=COUNTIFS({GR},{key},{AG}!$N${A_FIRST}:$N${A_LAST},"{w[0]}*")' for w in WAHANA]
+    vals += [f'=COUNTIFS({GR},{key},{AG}!$V${A_FIRST}:$V${A_LAST},"Purwarupa*")',
+             f'=COUNTIFS({GR},{key},{AG}!$V${A_FIRST}:$V${A_LAST},"HKI*")',
+             f'=COUNTIFS({GR},{key},{AG}!$S${A_FIRST}:$S${A_LAST},"Berjalan")+COUNTIFS({GR},{key},{AG}!$S${A_FIRST}:$S${A_LAST},"Selesai")']
+    for j, v in enumerate(vals, start=2):
+        c = rpl.cell(row=r, column=j, value=v)
+        c.border, c.alignment, c.font = BOX, CENTER, F_BASE
+        c.number_format = "0"
+rpl.conditional_formatting.add(f"B5:{get_column_letter(len(hdr_pl))}{4 + len(PLATFORM)}", ColorScaleRule(
+    start_type="num", start_value=0, start_color="FFFFFF", end_type="max", end_color="5B9BAA"))
+top3 = 6 + len(PLATFORM)
+rpl.cell(row=top3 - 1, column=1, value="Kebutuhan mitra yang ditandai ketua topik (bahan forum padanan riset)").font = F_BOLD
+header(rpl, top3, ["Kebutuhan"] + [p[0] for p in PLATFORM])
+for i, mtr in enumerate(MITRA[:-1]):
+    r = top3 + 1 + i
+    rpl.cell(row=r, column=1, value=mtr).font = F_BASE
+    rpl.cell(row=r, column=1).border = BOX
+    for j, pl in enumerate(PLATFORM):
+        c = rpl.cell(row=r, column=2 + j, value=f'=COUNTIFS({GR},"{pl[0]}*",{AG}!$AB${A_FIRST}:$AB${A_LAST},$A{r})')
+        c.border, c.alignment, c.font = BOX, CENTER, F_BASE
+rpl.cell(row=top3 + len(MITRA) + 1, column=1,
+         value=("Cara baca: kolom TKT dan wahana memperlihatkan kematangan per topik, bukan rata-rata platform. "
+                "Isi tulang ikan atau lajur bergerbang Prodi Teknologi Kedokteran (§5.6) dari tab ini.")).font = F_SUB
 
 # ---------------------------------------------------------------- PETA JALAN
 pj = wb.create_sheet("PETA JALAN", 4)
@@ -830,6 +891,7 @@ line("Status", "Rencana · Proposal diajukan · Berjalan · Selesai")
 sec("Tab rekap (otomatis)")
 line("REKAP MATRIKS", "Indikator kunci (respons, % lintas prodi, % melibatkan mahasiswa) dan matriks Pilar × Platform.")
 line("REKAP PRODI", "Partisipasi dan sebaran topik per prodi, termasuk sebaran tahap wahana.")
+line("REKAP PLATFORM", "Rekap per platform T1–T5 untuk peta jalan Prodi Teknologi Kedokteran: topik, ketua dari Tekdok, sebaran TKT dan wahana, luaran teknologi, kebutuhan mitra.")
 line("PETA JALAN", "Topik aktif per tahun 2026–2030, luaran per tahun, dan tonggak fakultas per tahap.")
 line("USULAN DRAF", "34 usulan topik dari draf pohon penelitian — rujukan, bukan penugasan.")
 
@@ -888,7 +950,7 @@ if TEST:
         ag.cell(row=rr, column=22, value=LUARAN[lu])
 
 # sheet order: PETUNJUK, DAFTAR DOSEN, AGENDA, REKAP MATRIKS, REKAP PRODI, PETA JALAN, USULAN DRAF, REF
-order = ["PETUNJUK", "DAFTAR DOSEN", AG, "REKAP MATRIKS", "REKAP PRODI", "PETA JALAN", "USULAN DRAF", "REF"]
+order = ["PETUNJUK", "DAFTAR DOSEN", AG, "REKAP MATRIKS", "REKAP PRODI", "REKAP PLATFORM", "PETA JALAN", "USULAN DRAF", "REF"]
 wb._sheets = [wb[n] for n in order]
 for ws in wb.worksheets:
     ws.sheet_view.zoomScale = 90

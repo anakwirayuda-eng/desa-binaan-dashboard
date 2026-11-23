@@ -158,6 +158,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 .ik-joint{fill:var(--s3)} .ik-rib{stroke:var(--line);stroke-width:1.2}
 .ik-per{font-size:10.5px;fill:var(--muted)}
 .ik-ph{font-size:11px}
+.gate{stroke:var(--p1);stroke-width:2;stroke-dasharray:6 4} .gate-t{font-size:11.5px;font-weight:600;fill:var(--p1)}
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .2s}.card:hover{border-color:var(--accent)}}
 </style>
 <main class="wrap">
@@ -799,7 +800,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 
 <section aria-labelledby="da">
   <h2 id="da">Matriks dibaca dua arah: tiga prodi setara</h2>
-  <p class="sec-intro">Matriks yang sama dibaca dari dua arah. Per baris, pilar menjadi peta jalan Prodi Kedokteran &amp; Profesi Dokter. Per kolom, platform menjadi peta jalan Prodi Teknologi Kedokteran, diukur dengan TKT dan perpindahan wahana. Satu judul diisi sekali dan tercatat di kedua peta jalan. Isi sel adalah kode topik dari draf §5.1.</p>
+  <p class="sec-intro">Matriks yang sama dibaca dari dua arah. Per baris, pilar menjadi lembar pandang Prodi Sarjana Kedokteran dan Profesi Dokter. Per kolom, platform menjadi peta jalan Prodi Teknologi Kedokteran, dengan pertanyaan keilmuannya sendiri dan TKT per produk. Satu proyek punya satu identitas di register fakultas dan dihitung sekali. Isi sel adalah kode topik dari draf §5.1.</p>
   <figure>
     <div class="scroll"><svg viewBox="0 0 1040 560" role="img" aria-label="Matriks lima pilar kali lima platform yang dibaca dua arah. Dibaca per baris, pilar P1 sampai P5 menjadi peta jalan Prodi Kedokteran dan Profesi Dokter. Dibaca per kolom, platform T1 sampai T5 menjadi peta jalan Prodi Teknologi Kedokteran. Isi sel adalah kode topik. Tiga contoh jalur tiga prodi ditandai: A EEG di P4 kali T1, B e-nose diabetes di P1 kali T2, C bone plate dan prostesis di P4 kali T4.">
 <defs><marker id="ah4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" class="da-head"/></marker></defs>
@@ -870,14 +871,14 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="620" y="280.5" text-anchor="middle" class="da-badge-t">C</text>
 <rect x="20" y="426" width="340" height="104" rx="8" class="da-box"/>
 <text x="36" y="450" class="zone-label">→  PER BARIS</text>
-<text x="36" y="472" class="cw-name strong">Prodi Kedokteran &amp; Profesi Dokter</text>
-<text x="36" y="494" class="lj-text">Pilar P1–P5 · luaran per topik</text>
+<text x="36" y="472" class="cw-name strong">Sarjana Kedokteran · Profesi Dokter</text>
+<text x="36" y="494" class="lj-text">Pilar P1–P5 · dua lembar pandang</text>
 <text x="36" y="512" class="lj-text">Tulang ikan per topik (sudah ada)</text>
 <rect x="380" y="426" width="340" height="104" rx="8" class="da-box"/>
 <text x="396" y="450" class="zone-label">↓  PER KOLOM</text>
 <text x="396" y="472" class="cw-name strong">Prodi Teknologi Kedokteran</text>
-<text x="396" y="494" class="lj-text">Platform T1–T5 · TKT 1–9 dan W0 → W4</text>
-<text x="396" y="512" class="lj-text">Tulang ikan per platform (baru)</text>
+<text x="396" y="494" class="lj-text">Platform T1–T5 · TKT per produk · wahana</text>
+<text x="396" y="512" class="lj-text">Tulang ikan atau lajur bergerbang</text>
 <text x="790" y="58" class="zone-label">CONTOH JALUR TIGA PRODI</text>
 <rect x="780" y="86" width="250" height="118" rx="8" class="da-box"/>
 <circle cx="798" cy="106" r="11" class="da-badge"/>
@@ -928,9 +929,11 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="952" y="258" text-anchor="middle" class="ik-year mono">2030</text>
 <text x="952" y="278" text-anchor="middle" class="ik-headt">Kedokteran</text>
 <text x="952" y="295" text-anchor="middle" class="ik-headt">Pencegahan 4.0</text>
+<text x="1020" y="358" text-anchor="end" class="lj-small">hasil keilmuan Tekdok: teknologi teruji</text>
+<text x="1020" y="374" text-anchor="end" class="lj-small">untuk diagnosis, pencegahan, pemulihan fungsi</text>
 <line x1="210" y1="72" x2="330" y2="270" class="ik-bone"/>
 <text x="210" y="40" class="ik-code"><tspan class="mono strong">T1</tspan> Biosinyal &amp; neuroteknologi</text>
-<text x="210" y="58" class="lj-small">melayani <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p4-text">P4</tspan></text>
+<text x="210" y="58" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p4-text">P4</tspan></text>
 <circle cx="234" cy="111.6" r="3" class="ik-joint"/>
 <line x1="226" y1="111.6" x2="234" y2="111.6" class="ik-rib"/>
 <rect x="102" y="96.6" width="124" height="30" rx="5" class="lane-empty"/>
@@ -948,7 +951,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="182" y="241.4" class="lj-placeholder ik-ph">judul · TKT · W</text>
 <line x1="345" y1="468" x2="465" y2="270" class="ik-bone"/>
 <text x="345" y="492" class="ik-code"><tspan class="mono strong">T2</tspan> Biosensor &amp; diagnostik</text>
-<text x="345" y="510" class="lj-small">melayani <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan></text>
+<text x="345" y="510" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan></text>
 <circle cx="369" cy="428.4" r="3" class="ik-joint"/>
 <line x1="361" y1="428.4" x2="369" y2="428.4" class="ik-rib"/>
 <rect x="237" y="413.4" width="124" height="30" rx="5" class="lane-empty"/>
@@ -966,7 +969,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="317" y="320.6" class="lj-placeholder ik-ph">judul · TKT · W</text>
 <line x1="480" y1="72" x2="600" y2="270" class="ik-bone"/>
 <text x="480" y="40" class="ik-code"><tspan class="mono strong">T3</tspan> AI, citra &amp; sains data</text>
-<text x="480" y="58" class="lj-small">melayani <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan> <tspan class="mono strong p5-text">P5</tspan></text>
+<text x="480" y="58" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan> <tspan class="mono strong p5-text">P5</tspan></text>
 <circle cx="504" cy="111.6" r="3" class="ik-joint"/>
 <line x1="496" y1="111.6" x2="504" y2="111.6" class="ik-rib"/>
 <rect x="372" y="96.6" width="124" height="30" rx="5" class="lane-empty"/>
@@ -984,7 +987,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="452" y="241.4" class="lj-placeholder ik-ph">judul · TKT · W</text>
 <line x1="615" y1="468" x2="735" y2="270" class="ik-bone"/>
 <text x="615" y="492" class="ik-code"><tspan class="mono strong">T4</tspan> Biomaterial &amp; biomekanika</text>
-<text x="615" y="510" class="lj-small">melayani <tspan class="mono strong p4-text">P4</tspan></text>
+<text x="615" y="510" class="lj-small">pilar terkait <tspan class="mono strong p4-text">P4</tspan></text>
 <circle cx="639" cy="428.4" r="3" class="ik-joint"/>
 <line x1="631" y1="428.4" x2="639" y2="428.4" class="ik-rib"/>
 <rect x="507" y="413.4" width="124" height="30" rx="5" class="lane-empty"/>
@@ -1002,7 +1005,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="587" y="320.6" class="lj-placeholder ik-ph">judul · TKT · W</text>
 <line x1="750" y1="72" x2="870" y2="270" class="ik-bone"/>
 <text x="750" y="40" class="ik-code"><tspan class="mono strong">T5</tspan> Telematika kesehatan</text>
-<text x="750" y="58" class="lj-small">melayani <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan> <tspan class="mono strong p4-text">P4</tspan> <tspan class="mono strong p5-text">P5</tspan></text>
+<text x="750" y="58" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan> <tspan class="mono strong p4-text">P4</tspan> <tspan class="mono strong p5-text">P5</tspan></text>
 <circle cx="774" cy="111.6" r="3" class="ik-joint"/>
 <line x1="766" y1="111.6" x2="774" y2="111.6" class="ik-rib"/>
 <rect x="642" y="96.6" width="124" height="30" rx="5" class="lane-empty"/>
@@ -1019,7 +1022,88 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 <text x="722" y="228.4" class="ik-per mono">2029–2030</text>
 <text x="722" y="241.4" class="lj-placeholder ik-ph">judul · TKT · W</text>
 </svg></div>
-    <figcaption>Kerangka tulang ikan untuk Prodi Teknologi Kedokteran. Kepalanya sama dengan tulang ikan prodi kedokteran, karena tujuannya satu. Tiap tulang dibagi tiga ruas periode, sehingga tahun terbaca dari posisinya. Ruas diisi judul, TKT, dan wahana dari isian dosen dan data prodi; kerangka ini sengaja kosong.</figcaption>
+    <figcaption>Pilihan A — kerangka tulang ikan untuk Prodi Teknologi Kedokteran. Kepalanya sama dengan tulang ikan prodi kedokteran, karena tujuannya satu, dengan sublabel hasil keilmuan Tekdok. Tiap tulang dibagi tiga ruas periode, sehingga tahun terbaca dari posisinya. Ruas diisi judul, TKT per produk, dan wahana; kerangka ini sengaja kosong.</figcaption>
+  </figure>
+  <figure>
+    <div class="scroll"><svg viewBox="0 0 1100 470" role="img" aria-label="Kerangka kosong peta lajur bergerbang Prodi Teknologi Kedokteran: lima lajur T1 sampai T5 melintasi tiga periode 2023 sampai 2025, 2026 sampai 2028, 2029 sampai 2030. Gerbang 1 uji laboratorium dan telaah etik, gerbang 2 validasi di RSUD atau Desa Binaan dan kekayaan intelektual. Muara 2030 Kedokteran Pencegahan 4.0.">
+<text x="20" y="20" class="zone-label">LAJUR BERGERBANG · PRODI TEKNOLOGI KEDOKTERAN · KERANGKA KOSONG (PILIHAN B)</text>
+<path d="M230,34 L446,34 L460,57 L446,80 L230,80 L244,57 Z" class="chev0"/>
+<text x="256" y="54" class="lj-phase mono">2023–2025</text>
+<text x="256" y="71" class="lj-year">rekam jejak · garis dasar</text>
+<path d="M472,34 L728,34 L742,57 L728,80 L472,80 L486,57 Z" class="chev1"/>
+<text x="498" y="54" class="lj-phase mono">2026–2028</text>
+<text x="498" y="71" class="lj-year">pengembangan &amp; validasi</text>
+<path d="M754,34 L940,34 L954,57 L940,80 L754,80 L768,57 Z" class="chev0"/>
+<text x="780" y="54" class="lj-phase mono">2029–2030</text>
+<text x="780" y="71" class="lj-year">hilirisasi &amp; penerapan</text>
+<text x="216" y="116" text-anchor="end" class="lj-lane"><tspan class="mono strong">T1</tspan> Biosinyal &amp; neuroteknologi</text>
+<text x="216" y="133" text-anchor="end" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p4-text">P4</tspan></text>
+<rect x="230" y="92" width="230" height="52" rx="6" class="lane-empty"/>
+<text x="242" y="114" class="lj-placeholder">judul · TKT · W</text>
+<text x="242" y="131" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="472" y="92" width="270" height="52" rx="6" class="lane-empty"/>
+<text x="484" y="114" class="lj-placeholder">judul · TKT · W</text>
+<text x="484" y="131" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="754" y="92" width="200" height="52" rx="6" class="lane-empty"/>
+<text x="766" y="114" class="lj-placeholder">judul · TKT · W</text>
+<text x="766" y="131" class="lj-small">bukti: laporan uji / TA / KI</text>
+<text x="216" y="180" text-anchor="end" class="lj-lane"><tspan class="mono strong">T2</tspan> Biosensor &amp; diagnostik</text>
+<text x="216" y="197" text-anchor="end" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan></text>
+<rect x="230" y="156" width="230" height="52" rx="6" class="lane-empty"/>
+<text x="242" y="178" class="lj-placeholder">judul · TKT · W</text>
+<text x="242" y="195" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="472" y="156" width="270" height="52" rx="6" class="lane-empty"/>
+<text x="484" y="178" class="lj-placeholder">judul · TKT · W</text>
+<text x="484" y="195" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="754" y="156" width="200" height="52" rx="6" class="lane-empty"/>
+<text x="766" y="178" class="lj-placeholder">judul · TKT · W</text>
+<text x="766" y="195" class="lj-small">bukti: laporan uji / TA / KI</text>
+<text x="216" y="244" text-anchor="end" class="lj-lane"><tspan class="mono strong">T3</tspan> AI, citra &amp; sains data</text>
+<text x="216" y="261" text-anchor="end" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan> <tspan class="mono strong p5-text">P5</tspan></text>
+<rect x="230" y="220" width="230" height="52" rx="6" class="lane-empty"/>
+<text x="242" y="242" class="lj-placeholder">judul · TKT · W</text>
+<text x="242" y="259" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="472" y="220" width="270" height="52" rx="6" class="lane-empty"/>
+<text x="484" y="242" class="lj-placeholder">judul · TKT · W</text>
+<text x="484" y="259" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="754" y="220" width="200" height="52" rx="6" class="lane-empty"/>
+<text x="766" y="242" class="lj-placeholder">judul · TKT · W</text>
+<text x="766" y="259" class="lj-small">bukti: laporan uji / TA / KI</text>
+<text x="216" y="308" text-anchor="end" class="lj-lane"><tspan class="mono strong">T4</tspan> Biomaterial &amp; biomekanika</text>
+<text x="216" y="325" text-anchor="end" class="lj-small">pilar terkait <tspan class="mono strong p4-text">P4</tspan></text>
+<rect x="230" y="284" width="230" height="52" rx="6" class="lane-empty"/>
+<text x="242" y="306" class="lj-placeholder">judul · TKT · W</text>
+<text x="242" y="323" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="472" y="284" width="270" height="52" rx="6" class="lane-empty"/>
+<text x="484" y="306" class="lj-placeholder">judul · TKT · W</text>
+<text x="484" y="323" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="754" y="284" width="200" height="52" rx="6" class="lane-empty"/>
+<text x="766" y="306" class="lj-placeholder">judul · TKT · W</text>
+<text x="766" y="323" class="lj-small">bukti: laporan uji / TA / KI</text>
+<text x="216" y="372" text-anchor="end" class="lj-lane"><tspan class="mono strong">T5</tspan> Telematika kesehatan</text>
+<text x="216" y="389" text-anchor="end" class="lj-small">pilar terkait <tspan class="mono strong p1-text">P1</tspan> <tspan class="mono strong p2-text">P2</tspan> <tspan class="mono strong p3-text">P3</tspan> <tspan class="mono strong p4-text">P4</tspan> <tspan class="mono strong p5-text">P5</tspan></text>
+<rect x="230" y="348" width="230" height="52" rx="6" class="lane-empty"/>
+<text x="242" y="370" class="lj-placeholder">judul · TKT · W</text>
+<text x="242" y="387" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="472" y="348" width="270" height="52" rx="6" class="lane-empty"/>
+<text x="484" y="370" class="lj-placeholder">judul · TKT · W</text>
+<text x="484" y="387" class="lj-small">bukti: laporan uji / TA / KI</text>
+<rect x="754" y="348" width="200" height="52" rx="6" class="lane-empty"/>
+<text x="766" y="370" class="lj-placeholder">judul · TKT · W</text>
+<text x="766" y="387" class="lj-small">bukti: laporan uji / TA / KI</text>
+<line x1="466" y1="86" x2="466" y2="406" class="gate"/>
+<text x="466" y="426" text-anchor="middle" class="gate-t">GERBANG 1 · uji lab &amp; telaah etik</text>
+<line x1="748" y1="86" x2="748" y2="406" class="gate"/>
+<text x="748" y="426" text-anchor="middle" class="gate-t">GERBANG 2 · validasi RSUD/Desa &amp; KI</text>
+<rect x="968" y="92" width="120" height="308" rx="10" class="ik-head"/>
+<text x="1028.0" y="212" text-anchor="middle" class="ik-year mono">2030</text>
+<text x="1028.0" y="230" text-anchor="middle" class="ik-headt">Kedokteran</text>
+<text x="1028.0" y="248" text-anchor="middle" class="ik-headt">Pencegahan 4.0</text>
+<text x="1028.0" y="284" text-anchor="middle" class="lj-small">hasil keilmuan</text>
+<text x="1028.0" y="302" text-anchor="middle" class="lj-small">Tekdok:</text>
+<text x="1028.0" y="320" text-anchor="middle" class="lj-small">teknologi teruji</text>
+</svg></div>
+    <figcaption>Pilihan B — lajur bergerbang. Lima lajur platform melintasi tiga periode dengan dua gerbang uji. Bentuk ini lazim di manajemen riset rekayasa dan paling mudah diperbarui dari rekap platform. Kaprodi Teknologi Kedokteran memilih salah satu dari dua pilihan ini.</figcaption>
   </figure>
 </section>
 

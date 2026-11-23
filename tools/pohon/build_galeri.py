@@ -438,8 +438,8 @@ def duaarah_svg():
         o.append(f'<text x="{bx}" y="{by+4.5}" text-anchor="middle" class="da-badge-t">{letter}</text>')
     # two reading boxes below the grid
     by0 = gy + 5*(ch+gap) + 34
-    boxes = [("→  PER BARIS", "Prodi Kedokteran & Profesi Dokter", ["Pilar P1–P5 · luaran per topik", "Tulang ikan per topik (sudah ada)"]),
-             ("↓  PER KOLOM", "Prodi Teknologi Kedokteran", ["Platform T1–T5 · TKT 1–9 dan W0 → W4", "Tulang ikan per platform (baru)"])]
+    boxes = [("→  PER BARIS", "Sarjana Kedokteran · Profesi Dokter", ["Pilar P1–P5 · dua lembar pandang", "Tulang ikan per topik (sudah ada)"]),
+             ("↓  PER KOLOM", "Prodi Teknologi Kedokteran", ["Platform T1–T5 · TKT per produk · wahana", "Tulang ikan atau lajur bergerbang"])]
     for n, (k, who, lines) in enumerate(boxes):
         x = 20 + n*360
         o.append(f'<rect x="{x}" y="{by0}" width="340" height="104" rx="8" class="da-box"/>')
@@ -479,6 +479,8 @@ def ikan_svg():
     o.append(f'<text x="952" y="{SY-12}" text-anchor="middle" class="ik-year mono">2030</text>')
     o.append(f'<text x="952" y="{SY+8}" text-anchor="middle" class="ik-headt">Kedokteran</text>')
     o.append(f'<text x="952" y="{SY+25}" text-anchor="middle" class="ik-headt">Pencegahan 4.0</text>')
+    o.append(f'<text x="1020" y="{SY+88}" text-anchor="end" class="lj-small">hasil keilmuan Tekdok: teknologi teruji</text>')
+    o.append(f'<text x="1020" y="{SY+104}" text-anchor="end" class="lj-small">untuk diagnosis, pencegahan, pemulihan fungsi</text>')
     bones = [("T1", 330, -1), ("T2", 465, 1), ("T3", 600, -1), ("T4", 735, 1), ("T5", 870, -1)]
     names = dict(PLATFORM)
     periods = ["2023–2025", "2026–2028", "2029–2030"]
@@ -489,7 +491,7 @@ def ikan_svg():
         ly = y0 - 32 if side < 0 else y0 + 24
         o.append(f'<text x="{x0}" y="{ly}" class="ik-code"><tspan class="mono strong">{code}</tspan> {E(names[code])}</text>')
         pills = " ".join(f'<tspan class="mono strong {p}-text">{p.upper()}</tspan>' for p in SERVES[code])
-        o.append(f'<text x="{x0}" y="{ly+18}" class="lj-small">melayani {pills}</text>')
+        o.append(f'<text x="{x0}" y="{ly+18}" class="lj-small">pilar terkait {pills}</text>')
         for k, t in enumerate((0.2, 0.5, 0.8)):
             px = x0 + 120*t
             py = y0 + (SY - y0)*t
@@ -499,6 +501,39 @@ def ikan_svg():
             o.append(f'<rect x="{f(bx)}" y="{f(py-15)}" width="124" height="30" rx="5" class="lane-empty"/>')
             o.append(f'<text x="{f(bx+8)}" y="{f(py-2)}" class="ik-per mono">{periods[k]}</text>')
             o.append(f'<text x="{f(bx+8)}" y="{f(py+11)}" class="lj-placeholder ik-ph">judul · TKT · W</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
+# ---------------------------------------------------------------- Tekdok stage-gate swimlane skeleton (§5.6 pilihan B)
+def gerbang_svg():
+    W, H = 1100, 470
+    LX, TOP, LH = 230, 92, 64
+    cols = [(LX, 230, "2023–2025", "rekam jejak · garis dasar"), (LX + 242, 270, "2026–2028", "pengembangan & validasi"), (LX + 524, 200, "2029–2030", "hilirisasi & penerapan")]
+    o = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Kerangka kosong peta lajur bergerbang Prodi Teknologi Kedokteran: lima lajur T1 sampai T5 melintasi tiga periode 2023 sampai 2025, 2026 sampai 2028, 2029 sampai 2030. Gerbang 1 uji laboratorium dan telaah etik, gerbang 2 validasi di RSUD atau Desa Binaan dan kekayaan intelektual. Muara 2030 Kedokteran Pencegahan 4.0.">']
+    o.append('<text x="20" y="20" class="zone-label">LAJUR BERGERBANG · PRODI TEKNOLOGI KEDOKTERAN · KERANGKA KOSONG (PILIHAN B)</text>')
+    for n, (x, w, yr, t) in enumerate(cols):
+        o.append(f'<path d="M{x},34 L{x+w-14},34 L{x+w},57 L{x+w-14},80 L{x},80 L{x+14},57 Z" class="chev{1 if n == 1 else 0}"/>')
+        o.append(f'<text x="{x+26}" y="54" class="lj-phase mono">{yr}</text>')
+        o.append(f'<text x="{x+26}" y="71" class="lj-year">{E(t)}</text>')
+    names = dict(PLATFORM)
+    for r, (code, _) in enumerate(PLATFORM):
+        y = TOP + r * LH
+        o.append(f'<text x="{LX-14}" y="{y+24}" text-anchor="end" class="lj-lane"><tspan class="mono strong">{code}</tspan> {E(names[code])}</text>')
+        pills = " ".join(f'<tspan class="mono strong {p}-text">{p.upper()}</tspan>' for p in SERVES[code])
+        o.append(f'<text x="{LX-14}" y="{y+41}" text-anchor="end" class="lj-small">pilar terkait {pills}</text>')
+        for c, (x, w, _, _) in enumerate(cols):
+            o.append(f'<rect x="{x}" y="{y}" width="{w}" height="{LH-12}" rx="6" class="lane-empty"/>')
+            o.append(f'<text x="{x+12}" y="{y+22}" class="lj-placeholder">judul · TKT · W</text>')
+            o.append(f'<text x="{x+12}" y="{y+39}" class="lj-small">bukti: laporan uji / TA / KI</text>')
+    gy0, gy1 = TOP - 6, TOP + 5 * LH - 6
+    for k, (gx, lab) in enumerate([(LX + 236, "GERBANG 1 · uji lab & telaah etik"), (LX + 518, "GERBANG 2 · validasi RSUD/Desa & KI")]):
+        o.append(f'<line x1="{gx}" y1="{gy0}" x2="{gx}" y2="{gy1}" class="gate"/>')
+        o.append(f'<text x="{gx}" y="{gy1+20}" text-anchor="middle" class="gate-t">{E(lab)}</text>')
+    hx = LX + 524 + 200 + 14
+    o.append(f'<rect x="{hx}" y="{TOP}" width="{W-hx-12}" height="{5*LH-12}" rx="10" class="ik-head"/>')
+    for i, line in enumerate(["2030", "Kedokteran", "Pencegahan 4.0", "", "hasil keilmuan", "Tekdok:", "teknologi teruji"]):
+        if line:
+            o.append(f'<text x="{(hx+W-12)/2}" y="{TOP+120+i*18}" text-anchor="middle" class="{"ik-year mono" if i == 0 else ("ik-headt" if i < 3 else "lj-small")}">{E(line)}</text>')
     o.append('</svg>')
     return "\n".join(o)
 
@@ -669,6 +704,7 @@ svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(
 .ik-joint{fill:var(--s3)} .ik-rib{stroke:var(--line);stroke-width:1.2}
 .ik-per{font-size:10.5px;fill:var(--muted)}
 .ik-ph{font-size:11px}
+.gate{stroke:var(--p1);stroke-width:2;stroke-dasharray:6 4} .gate-t{font-size:11.5px;font-weight:600;fill:var(--p1)}
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .2s}.card:hover{border-color:var(--accent)}}
 """
 
@@ -723,14 +759,18 @@ PAGE = f"""<title>Bentuk Pohon Penelitian FKK ITS</title>
 
 <section aria-labelledby="da">
   <h2 id="da">Matriks dibaca dua arah: tiga prodi setara</h2>
-  <p class="sec-intro">Matriks yang sama dibaca dari dua arah. Per baris, pilar menjadi peta jalan Prodi Kedokteran &amp; Profesi Dokter. Per kolom, platform menjadi peta jalan Prodi Teknologi Kedokteran, diukur dengan TKT dan perpindahan wahana. Satu judul diisi sekali dan tercatat di kedua peta jalan. Isi sel adalah kode topik dari draf §5.1.</p>
+  <p class="sec-intro">Matriks yang sama dibaca dari dua arah. Per baris, pilar menjadi lembar pandang Prodi Sarjana Kedokteran dan Profesi Dokter. Per kolom, platform menjadi peta jalan Prodi Teknologi Kedokteran, dengan pertanyaan keilmuannya sendiri dan TKT per produk. Satu proyek punya satu identitas di register fakultas dan dihitung sekali. Isi sel adalah kode topik dari draf §5.1.</p>
   <figure>
     <div class="scroll">{duaarah_svg()}</div>
     <figcaption>Baris P4 dan kolom T2 diwarnai sebagai contoh cara membaca. Sel bergaris putus belum punya topik dan menjadi peta rekrutmen. Huruf A, B, C menandai tiga contoh jalur tiga prodi dari draf §5.6. Contoh itu cara membaca, bukan penugasan.</figcaption>
   </figure>
   <figure>
     <div class="scroll">{ikan_svg()}</div>
-    <figcaption>Kerangka tulang ikan untuk Prodi Teknologi Kedokteran. Kepalanya sama dengan tulang ikan prodi kedokteran, karena tujuannya satu. Tiap tulang dibagi tiga ruas periode, sehingga tahun terbaca dari posisinya. Ruas diisi judul, TKT, dan wahana dari isian dosen dan data prodi; kerangka ini sengaja kosong.</figcaption>
+    <figcaption>Pilihan A — kerangka tulang ikan untuk Prodi Teknologi Kedokteran. Kepalanya sama dengan tulang ikan prodi kedokteran, karena tujuannya satu, dengan sublabel hasil keilmuan Tekdok. Tiap tulang dibagi tiga ruas periode, sehingga tahun terbaca dari posisinya. Ruas diisi judul, TKT per produk, dan wahana; kerangka ini sengaja kosong.</figcaption>
+  </figure>
+  <figure>
+    <div class="scroll">{gerbang_svg()}</div>
+    <figcaption>Pilihan B — lajur bergerbang. Lima lajur platform melintasi tiga periode dengan dua gerbang uji. Bentuk ini lazim di manajemen riset rekayasa dan paling mudah diperbarui dari rekap platform. Kaprodi Teknologi Kedokteran memilih salah satu dari dua pilihan ini.</figcaption>
   </figure>
 </section>
 

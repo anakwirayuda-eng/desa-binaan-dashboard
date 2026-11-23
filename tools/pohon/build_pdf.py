@@ -33,13 +33,17 @@ figs = (fig("pohon", "Gambar 2. Usulan pohon fakultas: batang Kedokteran Pencega
 body_md = body_md[:k] + figs + "\n" + body_md[k:]
 
 # --- §5.6: matrix read two ways + Tekdok fishbone skeleton ---
-anchor3 = "**Aturan hitung: satu judul, satu baris, dua peta jalan.**"
+anchor3 = "**Aturan hitung: satu proyek, satu identitas.**"
 k = body_md.index(anchor3)
-body_md = body_md[:k] + fig("duaarah", "Gambar 5. Matriks dibaca dua arah. Per baris: peta jalan Prodi Kedokteran &amp; Profesi Dokter. Per kolom: peta jalan Prodi Teknologi Kedokteran. Isi sel = kode topik §5.1; sel bergaris putus belum punya topik. A, B, C = tiga contoh jalur tiga prodi.") + "\n" + body_md[k:]
+body_md = body_md[:k] + fig("duaarah", "Gambar 5. Matriks dibaca dua arah. Per baris: lembar pandang Prodi Sarjana Kedokteran dan Profesi Dokter. Per kolom: peta jalan Prodi Teknologi Kedokteran. Isi sel = kode topik §5.1; sel bergaris putus belum punya topik. A, B, C = tiga contoh jalur tiga prodi.") + "\n" + body_md[k:]
 
-anchor4 = "**Tiga contoh jalur tiga prodi.**"
+anchor4 = "**Usul: bawa keduanya ke Kaprodi"
+anchor4 = "Usul: bawa keduanya ke Kaprodi"
 k = body_md.index(anchor4)
-body_md = body_md[:k] + fig("ikan_tekdok", "Gambar 6. Kerangka kosong tulang ikan Prodi Teknologi Kedokteran: kepala sama dengan tulang ikan prodi kedokteran; tiap tulang platform dibagi tiga ruas periode untuk judul, TKT, dan wahana.") + "\n" + body_md[k:]
+body_md = (body_md[:k]
+           + fig("ikan_tekdok", "Gambar 6. Pilihan A — kerangka kosong tulang ikan Prodi Teknologi Kedokteran: kepala sama dengan tulang ikan prodi kedokteran, dengan sublabel hasil keilmuan Tekdok; tiap tulang platform dibagi tiga ruas periode untuk judul, TKT, dan wahana.")
+           + fig("gerbang_tekdok", "Gambar 7. Pilihan B — kerangka kosong lajur bergerbang: lima lajur platform melintasi tiga periode dengan dua gerbang uji, bermuara pada tujuan 2030 yang sama.")
+           + "\n" + body_md[k:])
 
 # Python-Markdown needs a blank line before a list that follows a paragraph; "1a." items become sub-paragraphs.
 _out, _prev = [], ""
