@@ -97,7 +97,7 @@ TOPIK = [
     "1.2 Stratifikasi risiko kardiometabolik berbasis AI",
     "1.3 Deteksi dini komplikasi PTM",
     "1.4 Perubahan perilaku terdigitalisasi",
-    "1.9 Pilar 1 — topik baru (jelaskan di Catatan)",
+    "1.9 Pilar 1 — topik baru, mis. onkologi (jelaskan di Catatan)",
     "2.1 Teknologi pemantauan pertumbuhan",
     "2.2 Keselamatan maternal & neonatal",
     "2.3 Skrining tumbuh kembang & neurodevelopmental",
@@ -218,6 +218,12 @@ ROSTER = [
     "Fahmi Mubarok, Ph.D",
     "Nadya Paramitha Jafari, S.Ds., M.T.",
     "Gusfatul Mukhairiq, S.T., M.T.",
+    # Added 23 Nov 2026: PIC/members named in the RIP of Prodi Kedokteran & Profesi Dokter (Tabel 2),
+    # short names only — full names and titles are corrected by the lecturers themselves in column C.
+    "dr. Dyahati",
+    "dr. Zulistiyan",
+    "dr. Alfian",
+    "dr. Faizal",
 ]
 
 
@@ -678,19 +684,21 @@ for j in range(3, 8):
     pj.cell(row=top, column=j).number_format = "0"
 
 top = top + len(LUARAN) + 4
-pj.cell(row=top - 1, column=1, value="D. Tonggak fakultas per tahap (draf — §5.4 dokumen pohon penelitian)").font = F_BOLD
-header(pj, top, ["Tahap", "Tonggak lintas prodi (indikatif)"], height=24)
+pj.cell(row=top - 1, column=1, value="D. Tonggak fakultas per periode (draf — §5.4 dokumen pohon penelitian; periode sama dengan RIP prodi)").font = F_BOLD
+header(pj, top, ["Periode", "Tonggak lintas prodi (indikatif)"], height=24)
+# Periods follow the RIP of Prodi Kedokteran & Profesi Dokter 2026-2030 (2023-2025 / 2026-2028 / 2029-2030).
 tahap = [
-    ("I — Fondasi (2026–2027)",
-     "SK penetapan peta jalan penelitian & PkM · platform yang sudah punya dua nama dengan luaran terbukti "
-     "ditetapkan sebagai unit anggaran · sensus dasar Desa Binaan + desa pembanding · topik siap-mulai berjalan · "
-     "koas angkatan pertama di RSUD (2027) · formulir pohon penelitian wajib untuk skripsi/TA ketiga prodi"),
-    ("II — Integrasi (2028–2029)",
-     "Semua platform memenuhi syarat dua nama · validasi platform di RSUD oleh tim lintas prodi · ronde pembaruan "
-     "pertama platform surveilans · jalur register-linkage berjalan · laporan evaluasi kesesuaian tahunan ke-2"),
-    ("III — Dampak (2030)",
-     "Purwarupa terpilih memasuki jalur izin edar alat kesehatan · bukti dari Desa Binaan dipakai Dinkes Kota "
-     "Mojokerto · evaluasi menyeluruh → edisi 2 peta jalan"),
+    ("2023–2025 — Bukti konsep (capaian)",
+     "FKK berdiri (Peraturan Rektor ITS No. 2/2023) · Roadmap Penelitian & PkM FKK 2023–2025 (edisi 1) · luaran "
+     "dosen terpetakan ke tujuh topik RIP Prodi Kedokteran & Profesi Dokter · menjadi garis dasar evaluasi"),
+    ("2026–2028 — Pengembangan & validasi",
+     "SK peta jalan penelitian & PkM edisi 2 · platform yang sudah punya dua nama dengan luaran terbukti ditetapkan "
+     "sebagai unit anggaran · sensus dasar Desa Binaan + desa pembanding · koas angkatan pertama di RSUD (2027) · "
+     "formulir pohon penelitian wajib untuk skripsi/TA ketiga prodi · semua platform memenuhi syarat dua nama · "
+     "validasi platform di RSUD oleh tim lintas prodi · laporan evaluasi kesesuaian tahunan"),
+    ("2029–2030 — Hilirisasi & penerapan",
+     "Ronde pembaruan platform surveilans · jalur register-linkage · purwarupa terpilih memasuki jalur izin edar "
+     "alat kesehatan · bukti dari Desa Binaan dipakai Dinkes Kota Mojokerto · evaluasi menyeluruh → edisi 3 peta jalan"),
 ]
 for i, (t, d) in enumerate(tahap):
     r = top + 1 + i
@@ -787,6 +795,15 @@ for code, name in PILAR[:5]:
     line(f"{code} — {name}", " · ".join(pilar_topik[code]))
 line("0.0 Lintas pilar", "Platform Surveilans Desa Binaan dan riset yang melayani semua pilar.")
 line("9.9 Di luar pohon", "Topik yang belum tertampung — ditinjau saat revisi pohon.")
+
+sec("Padanan dengan tujuh topik RIP Prodi Kedokteran & Profesi Dokter")
+line("Penyakit Tidak Menular", "→ Pilar 1. Onkologi & skrining kanker: pilih '1.9 topik baru' sampai rantingnya ditetapkan.")
+line("Penyakit Menular", "→ Pilar 3.")
+line("Kesehatan Remaja, Neonatus & Anak", "→ Pilar 2.")
+line("Kesehatan Seksual & Reproduksi", "→ Pilar 2. Kanker serviks dan payudara boleh dicatat di Pilar 1.")
+line("Ked. Pencegahan, Med. Education & Social Science", "→ Pilar 5. Forensik, disabilitas, dan trauma: Pilar 4.")
+line("Basic Science", "→ Pilih pilar tempat temuan itu akan dipakai (penyakit sasarannya); Platform boleh T0.")
+line("Digital Health", "→ Pilih pilar sesuai penyakit sasarannya, lalu Platform T3 (AI & citra) atau T5 (telematika).")
 
 sec("Lima Platform (sumbu kapabilitas teknologi)")
 for code, full, _, scope in PLATFORM:
