@@ -1,0 +1,1078 @@
+<title>Bentuk Pohon Penelitian FKK ITS</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  /* Layout: one reading column (max 1080px); diagrams sit full-width in their own horizontal scroll boxes; gallery 3 → 2 → 1 columns */
+  --bg:#F3F6F4; --surface:#FFFFFF; --ink:#16211B; --muted:#55645B; --line:#CCD6CF; --accent:#1D4F91; --accent-soft:#E1E9F5;
+  --p1:#AE3F57; --p1t:#F8E5E9; --p2:#9E5F12; --p2t:#F8ECDA; --p3:#2F7A43; --p3t:#E0EFE3; --p4:#2A63A3; --p4t:#DFE9F6; --p5:#6C4CA0; --p5t:#ECE6F6;
+  --s1:#6B5641; --s2:#A3825F; --s3:#4E6578; --bark:#6B5641; --bark-hi:#8E7559; --root:#8A7A66; --soil:#E9E4D9; --soil-line:#CBC1AF;
+  --use:#1D4F91; --use-bg:#E1E9F5; --aux:#55645B; --aux-bg:#E8EDE9; --opt:#8A5A12; --opt-bg:#F6ECDA; --no:#8E3A3A; --no-bg:#F5E3E3;
+  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif; --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; --font-mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#111713; --surface:#18201B; --ink:#E3EAE5; --muted:#9BAAA1; --line:#2E3A33; --accent:#8FB5EC; --accent-soft:#1D2A3B;
+  --p1:#E98DA0; --p1t:#38222A; --p2:#E2A85F; --p2t:#372B1B; --p3:#80C792; --p3t:#1C3123; --p4:#86B3EA; --p4t:#1B293A; --p5:#B79DE3; --p5t:#2A2240;
+  --s1:#A58C70; --s2:#D2B595; --s3:#92A8BC; --bark:#A58C70; --bark-hi:#C4AA8C; --root:#8F826F; --soil:#29261F; --soil-line:#45403A;
+  --use:#8FB5EC; --use-bg:#1D2A3B; --aux:#A9B7AE; --aux-bg:#232C26; --opt:#E2B067; --opt-bg:#33291A; --no:#EE9C9C; --no-bg:#3A2222; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#111713; --surface:#18201B; --ink:#E3EAE5; --muted:#9BAAA1; --line:#2E3A33; --accent:#8FB5EC; --accent-soft:#1D2A3B;
+  --p1:#E98DA0; --p1t:#38222A; --p2:#E2A85F; --p2t:#372B1B; --p3:#80C792; --p3t:#1C3123; --p4:#86B3EA; --p4t:#1B293A; --p5:#B79DE3; --p5t:#2A2240;
+  --s1:#A58C70; --s2:#D2B595; --s3:#92A8BC; --bark:#A58C70; --bark-hi:#C4AA8C; --root:#8F826F; --soil:#29261F; --soil-line:#45403A;
+  --use:#8FB5EC; --use-bg:#1D2A3B; --aux:#A9B7AE; --aux-bg:#232C26; --opt:#E2B067; --opt-bg:#33291A; --no:#EE9C9C; --no-bg:#3A2222; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.4rem,2.6vw,1.85rem);font-weight:650}
+h3{font-size:1.06rem;font-weight:650}
+p{margin:0}
+.eyebrow{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero{display:grid;gap:18px}
+.lead{font-size:1.12rem;max-width:66ch;color:var(--ink)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:8px}
+.trio div{border-top:3px solid var(--accent);padding-top:12px;display:grid;gap:4px;min-width:0}
+.trio .q{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.trio strong{font-family:var(--font-display);font-size:1.15rem}
+.trio span{color:var(--muted);font-size:.95rem}
+section{display:grid;gap:18px}
+.sec-intro{max-width:68ch;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.thumb-wrap{background:var(--bg);border-radius:8px;padding:8px 12px}
+.thumb{display:block;width:100%;height:auto;max-height:150px}
+.card-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.card-what{font-size:.95rem}
+.card-dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:.9rem}
+.card-dl dt{color:var(--muted);font-weight:500}
+.card-dl dd{margin:0}
+.pill{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.pill-use{color:var(--use);background:var(--use-bg)} .pill-aux{color:var(--aux);background:var(--aux-bg)}
+.pill-opt{color:var(--opt);background:var(--opt-bg)} .pill-no{color:var(--no);background:var(--no-bg)}
+figure{margin:0;display:grid;gap:12px}
+.scroll{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.scroll svg{display:block;width:100%;min-width:760px;height:auto;color:var(--ink)}
+figcaption{color:var(--muted);font-size:.95rem;max-width:72ch}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.notes div{min-width:0;display:grid;gap:4px;align-content:start}
+.notes .k{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rules{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;counter-reset:r}
+.rules li{counter-increment:r;display:grid;grid-template-columns:2.2rem 1fr;gap:2px 10px;padding-block:12px;border-top:1px solid var(--line);min-width:0}
+.rules li::before{content:counter(r);grid-row:span 2;font-family:var(--font-mono);font-size:.9rem;color:var(--accent);padding-top:2px}
+.rules p{color:var(--muted);font-size:.95rem}
+.foot{color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:16px;max-width:80ch}
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.notes{grid-template-columns:1fr}}
+@media (max-width:560px){.grid,.trio,.rules{grid-template-columns:1fr}.wrap{gap:44px}}
+/* svg classes */
+svg text{font-family:var(--font-body);fill:var(--ink)}
+.mono{font-family:var(--font-mono)} .strong{font-weight:600}
+.branch{fill:none;stroke:var(--bark);stroke-linecap:round}
+.branch-hi{fill:none;stroke:var(--bark-hi);stroke-linecap:round;opacity:.55}
+.bark{fill:var(--bark)}
+.strand-gap{stroke:var(--surface);stroke-linecap:butt}
+.strand{stroke-linecap:round}
+.strand.s1{stroke:var(--s1)} .strand.s2{stroke:var(--s2)} .strand.s3{stroke:var(--s3)}
+.s1-sw{fill:var(--s1)} .s2-sw{fill:var(--s2)} .s3-sw{fill:var(--s3)}
+.root{fill:none;stroke:var(--root);stroke-linecap:round}
+.root-tip{fill:var(--root)}
+.root-code{font-size:14px;font-weight:600}
+.root-name{font-size:12.5px;fill:var(--muted)}
+.soil{fill:var(--soil);stroke:var(--soil-line)}
+.soil-sep{stroke:var(--soil-line)}
+.soil-text{font-size:12.5px}
+.zone-label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;fill:var(--muted)}
+.visi{font-family:var(--font-display);font-size:21px;font-weight:700}
+.visi-sub{font-size:13px;fill:var(--muted)}
+.blob-tag{font-size:10.5px;fill:var(--muted)}
+.root-dh{font-size:11.5px;fill:var(--accent);font-weight:600}
+.cw-sub{font-size:12px;fill:var(--muted)}
+.cw-left{fill:var(--surface);stroke:var(--line)}
+.cw-root{fill:var(--soil);stroke:var(--soil-line)}
+.cw-dashbox{stroke-dasharray:5 4}
+.cw-name{font-size:14px;font-weight:500}
+.cw-num{font-size:12px;fill:var(--muted)}
+.cw-link{fill:none;stroke:var(--muted);stroke-width:1.6}
+.cw-dash{stroke-dasharray:5 5}
+.cw-lab{font-size:11.5px;fill:var(--muted);font-style:italic}
+.lane-data{fill:var(--bg);stroke:var(--line)}
+.legend-text{font-size:13px}
+.leader{stroke:var(--muted);stroke-dasharray:2 4}
+.blob-title{font-family:var(--font-display);font-size:14.5px;font-weight:650}
+.blob-line{font-size:12.5px}
+.p1-blob{fill:var(--p1t);stroke:var(--p1)} .p2-blob{fill:var(--p2t);stroke:var(--p2)} .p3-blob{fill:var(--p3t);stroke:var(--p3)} .p4-blob{fill:var(--p4t);stroke:var(--p4)} .p5-blob{fill:var(--p5t);stroke:var(--p5)}
+svg .p1-text{fill:var(--p1)} svg .p2-text{fill:var(--p2)} svg .p3-text{fill:var(--p3)} svg .p4-text{fill:var(--p4)} svg .p5-text{fill:var(--p5)}
+.p1-bud{fill:var(--surface);stroke:var(--p1);stroke-width:1.6} .p2-bud{fill:var(--surface);stroke:var(--p2);stroke-width:1.6} .p3-bud{fill:var(--surface);stroke:var(--p3);stroke-width:1.6} .p4-bud{fill:var(--surface);stroke:var(--p4);stroke-width:1.6} .p5-bud{fill:var(--surface);stroke:var(--p5);stroke-width:1.6}
+.p1-leaf{fill:var(--p1)} .p2-leaf{fill:var(--p2)} .p3-leaf{fill:var(--p3)} .p4-leaf{fill:var(--p4)} .p5-leaf{fill:var(--p5)}
+[class$="-vein"]{stroke:var(--surface);stroke-width:1.2;opacity:.7}
+/* thumbnails */
+.th-stroke{stroke:var(--bark)} .th-line{stroke:var(--muted);stroke-width:1.4}
+.th-soft{fill:var(--accent-soft)} .th-edge{stroke:var(--accent);stroke-width:1.2}
+.th-accent{fill:var(--accent)} .th-faint{fill:var(--line)} .th-dot{fill:var(--accent)}
+.th-text{font-family:var(--font-mono);font-size:10px;fill:var(--muted)}
+/* poster */
+.paper{fill:var(--bg);stroke:var(--line);stroke-width:1.5}
+.ps-title{font-family:var(--font-display);font-size:24px;font-weight:700}
+.ps-sub{font-size:14px;fill:var(--muted)}
+.ps-meta{font-size:12.5px;fill:var(--muted)}
+.ps-rule{stroke:var(--line);stroke-width:1.5}
+.ps-panel{fill:var(--surface);stroke:var(--line)}
+.src-pill{fill:var(--accent-soft)} .src-text{font-size:11px;fill:var(--accent)}
+.mini-text{font-size:12px} .mini-title{font-family:var(--font-display);font-size:14px;font-weight:650}
+.mini-note{font-size:12px;fill:var(--muted);font-style:italic}
+.cell{fill:var(--bg);stroke:var(--line)} .cell-text{font-size:12px;fill:var(--muted)}
+.chev0{fill:var(--accent-soft)} .chev1{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.lane{fill:var(--bg);stroke:var(--line)}
+.ms{fill:var(--accent)}
+.chain0{fill:var(--surface);stroke:var(--line)} .chain1{fill:var(--accent-soft);stroke:var(--accent)}
+.chain-text{font-size:13px;font-weight:500}
+.arrow{stroke:var(--muted);stroke-width:1.5} .arrowhead{fill:var(--muted)}
+/* lajur */
+.lj-phase{font-family:var(--font-display);font-size:15px;font-weight:650}
+.lj-year{font-size:12px;fill:var(--muted)}
+.lj-lane{font-size:13.5px;font-weight:500}
+.lj-text{font-size:12.5px}
+.lj-small{font-size:11.5px;fill:var(--muted)}
+.lj-tag{font-size:11px;letter-spacing:.08em;font-weight:600;fill:var(--p1)}
+.lj-placeholder{font-size:12px;fill:var(--muted);font-style:italic}
+.ms-cell{fill:var(--accent-soft);stroke:none;opacity:.9}
+.lane-empty{fill:none;stroke:var(--line);stroke-dasharray:4 4}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .2s}.card:hover{border-color:var(--accent)}}
+</style>
+<main class="wrap">
+<header class="hero">
+  <p class="eyebrow">FKK ITS · RIP &amp; Peta Jalan Penelitian · draf kerja 23 November 2026</p>
+  <h1>Bentuk Pohon Penelitian FKK ITS</h1>
+  <p class="lead">Asesor menelusuri tiga hal: apa yang diteliti, siapa bekerja dengan siapa, dan kapan hasilnya keluar. Satu gambar tidak sanggup menjawab ketiganya dengan rapi. Usulannya tiga bentuk di tingkat fakultas yang saling merujuk dan memakai kode yang sama. Tulang ikan yang sudah dipakai prodi tetap dipertahankan di tingkat prodi.</p>
+  <div class="trio">
+    <div><span class="q">Apa</span><strong>Pohon</strong><span>Identitas fakultas dalam satu gambar: visi, lima pilar, dua puluh topik.</span></div>
+    <div><span class="q">Siapa dengan siapa</span><strong>Matriks</strong><span>Lima pilar × lima platform. Isi sel dihitung dari isian dosen.</span></div>
+    <div><span class="q">Kapan</span><strong>Lajur</strong><span>Tiga periode 2023–2030, sama dengan RIP prodi, dengan tonggak bersama ketiga prodi.</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="g">
+  <h2 id="g">Enam pola yang lazim</h2>
+  <p class="sec-intro">Pola-pola ini sering dipakai pada dokumen RIP dan Renstra perguruan tinggi, termasuk dua yang sudah dipakai paparan Prodi Kedokteran &amp; Profesi Dokter. Labelnya menunjukkan usulan pemakaian di FKK ITS.</p>
+  <div class="grid">
+<article class="card">
+  <div class="thumb-wrap"><svg viewBox="0 0 240 140" role="img" aria-label="Sketsa pohon ilustratif: akar, batang, tajuk, dan buah" class="thumb">
+<path d="M120,112 L120,70" class="th-stroke" stroke-width="9" stroke-linecap="round"/>
+<circle cx="120" cy="50" r="30" class="th-soft"/>
+<circle cx="90" cy="60" r="20" class="th-soft"/>
+<circle cx="150" cy="60" r="20" class="th-soft"/>
+<circle cx="104" cy="44" r="5" class="th-accent"/>
+<circle cx="138" cy="40" r="5" class="th-accent"/>
+<circle cx="150" cy="66" r="5" class="th-accent"/>
+<circle cx="92" cy="66" r="5" class="th-accent"/>
+<line x1="40" y1="112" x2="200" y2="112" class="th-line"/>
+<path d="M120,112 C110,122 96,126 84,130 M120,112 C130,122 144,126 156,130 M120,112 L120,132" class="th-stroke" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg></div>
+  <div class="card-head"><h3>Pohon ilustratif</h3><span class="pill pill-use">Dipakai · identitas</span></div>
+  <p class="card-what">Akar untuk sumber daya, batang untuk visi, cabang untuk tema, buah untuk luaran.</p>
+  <dl class="card-dl"><dt>Cocok untuk</dt><dd>Poster, sampul RIP, sosialisasi ke dosen dan mahasiswa. Paling cepat dipahami asesor.</dd><dt>Hati-hati</dt><dd>Cepat penuh teks. Tidak memuat waktu dan tidak memperlihatkan kerja lintas prodi.</dd></dl>
+</article>
+<article class="card">
+  <div class="thumb-wrap"><svg viewBox="0 0 240 140" role="img" aria-label="Sketsa tulang ikan: ekor tahun 2023 di kiri, kepala tujuan 2030 di kanan, tulang topik di atas dan bawah" class="thumb">
+<line x1="34" y1="70" x2="196" y2="70" class="th-line" stroke-width="2.4"/>
+<path d="M16,50 L36,70 L16,90 Z" class="th-soft th-edge"/>
+<path d="M196,50 L228,70 L196,90 Z" class="th-accent"/>
+<line x1="70" y1="70" x2="52" y2="34" class="th-line"/>
+<line x1="70" y1="70" x2="52" y2="106" class="th-line"/>
+<rect x="30" y="14" width="44" height="18" rx="3" class="th-soft th-edge"/>
+<rect x="30" y="108" width="44" height="18" rx="3" class="th-soft th-edge"/>
+<line x1="120" y1="70" x2="102" y2="34" class="th-line"/>
+<line x1="120" y1="70" x2="102" y2="106" class="th-line"/>
+<rect x="80" y="14" width="44" height="18" rx="3" class="th-soft th-edge"/>
+<rect x="80" y="108" width="44" height="18" rx="3" class="th-soft th-edge"/>
+<line x1="170" y1="70" x2="152" y2="34" class="th-line"/>
+<line x1="170" y1="70" x2="152" y2="106" class="th-line"/>
+<rect x="130" y="14" width="44" height="18" rx="3" class="th-soft th-edge"/>
+<rect x="130" y="108" width="44" height="18" rx="3" class="th-soft th-edge"/>
+</svg></div>
+  <div class="card-head"><h3>Tulang ikan</h3><span class="pill pill-use">Dipakai · tingkat prodi</span></div>
+  <p class="card-what">Ekor tahun awal, kepala tujuan 2030, tulang untuk topik dan subtopik.</p>
+  <dl class="card-dl"><dt>Cocok untuk</dt><dd>Peta jalan satu prodi atau satu topik. Prodi Kedokteran &amp; Profesi Dokter sudah memakainya.</dd><dt>Hati-hati</dt><dd>Aslinya alat analisis sebab-akibat. Tahun tidak terbaca dari posisi tulang, dan daftar judul cepat memanjang.</dd></dl>
+</article>
+<article class="card">
+  <div class="thumb-wrap"><svg viewBox="0 0 240 140" role="img" aria-label="Sketsa matriks lima pilar kali lima platform dengan sebagian sel terisi" class="thumb">
+<text x="34" y="28" text-anchor="end" class="th-text">P1</text>
+<rect x="42" y="16" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="78" y="16" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="114" y="16" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="150" y="16" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="186" y="16" width="32" height="18" rx="3" class="th-faint"/>
+<text x="34" y="50" text-anchor="end" class="th-text">P2</text>
+<rect x="42" y="38" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="78" y="38" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="114" y="38" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="150" y="38" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="186" y="38" width="32" height="18" rx="3" class="th-accent"/>
+<text x="34" y="72" text-anchor="end" class="th-text">P3</text>
+<rect x="42" y="60" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="78" y="60" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="114" y="60" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="150" y="60" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="186" y="60" width="32" height="18" rx="3" class="th-accent"/>
+<text x="34" y="94" text-anchor="end" class="th-text">P4</text>
+<rect x="42" y="82" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="78" y="82" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="114" y="82" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="150" y="82" width="32" height="18" rx="3" class="th-accent"/>
+<rect x="186" y="82" width="32" height="18" rx="3" class="th-faint"/>
+<text x="34" y="116" text-anchor="end" class="th-text">P5</text>
+<rect x="42" y="104" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="78" y="104" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="114" y="104" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="150" y="104" width="32" height="18" rx="3" class="th-faint"/>
+<rect x="186" y="104" width="32" height="18" rx="3" class="th-accent"/>
+<text x="58" y="136" text-anchor="middle" class="th-text">T1</text>
+<text x="94" y="136" text-anchor="middle" class="th-text">T2</text>
+<text x="130" y="136" text-anchor="middle" class="th-text">T3</text>
+<text x="166" y="136" text-anchor="middle" class="th-text">T4</text>
+<text x="202" y="136" text-anchor="middle" class="th-text">T5</text>
+</svg></div>
+  <div class="card-head"><h3>Matriks Pilar × Platform</h3><span class="pill pill-use">Dipakai · tata kelola</span></div>
+  <p class="card-what">Baris pilar, kolom platform, isi sel jumlah topik.</p>
+  <dl class="card-dl"><dt>Cocok untuk</dt><dd>Tata kelola: melihat integrasi dan sel kosong yang menjadi peta rekrutmen.</dd><dt>Hati-hati</dt><dd>Pembaca awam tidak membacanya sebagai pohon.</dd></dl>
+</article>
+<article class="card">
+  <div class="thumb-wrap"><svg viewBox="0 0 240 140" role="img" aria-label="Sketsa lingkaran konsentris: visi di pusat, pilar di cincin tengah, topik di cincin luar" class="thumb">
+<circle cx="120" cy="70" r="62" class="th-faint"/>
+<circle cx="120" cy="70" r="42" class="th-soft th-edge"/>
+<circle cx="120" cy="70" r="18" class="th-accent"/>
+<line x1="120" y1="52" x2="120" y2="8" class="th-line"/>
+<line x1="137.1" y1="64.4" x2="179" y2="50.8" class="th-line"/>
+<line x1="130.6" y1="84.6" x2="156.4" y2="120.2" class="th-line"/>
+<line x1="109.4" y1="84.6" x2="83.6" y2="120.2" class="th-line"/>
+<line x1="102.9" y1="64.4" x2="61" y2="50.8" class="th-line"/>
+<circle cx="128.1" cy="18.6" r="3" class="th-dot"/>
+<circle cx="143.6" cy="23.7" r="3" class="th-dot"/>
+<circle cx="156.8" cy="33.2" r="3" class="th-dot"/>
+<circle cx="166.3" cy="46.4" r="3" class="th-dot"/>
+<circle cx="171.4" cy="61.9" r="3" class="th-dot"/>
+<circle cx="171.4" cy="78.1" r="3" class="th-dot"/>
+<circle cx="166.3" cy="93.6" r="3" class="th-dot"/>
+<circle cx="156.8" cy="106.8" r="3" class="th-dot"/>
+<circle cx="143.6" cy="116.3" r="3" class="th-dot"/>
+<circle cx="128.1" cy="121.4" r="3" class="th-dot"/>
+<circle cx="111.9" cy="121.4" r="3" class="th-dot"/>
+<circle cx="96.4" cy="116.3" r="3" class="th-dot"/>
+<circle cx="83.2" cy="106.8" r="3" class="th-dot"/>
+<circle cx="73.7" cy="93.6" r="3" class="th-dot"/>
+<circle cx="68.6" cy="78.1" r="3" class="th-dot"/>
+<circle cx="68.6" cy="61.9" r="3" class="th-dot"/>
+<circle cx="73.7" cy="46.4" r="3" class="th-dot"/>
+<circle cx="83.2" cy="33.2" r="3" class="th-dot"/>
+<circle cx="96.4" cy="23.7" r="3" class="th-dot"/>
+<circle cx="111.9" cy="18.6" r="3" class="th-dot"/>
+</svg></div>
+  <div class="card-head"><h3>Lingkaran konsentris</h3><span class="pill pill-opt">Opsional · sampul</span></div>
+  <p class="card-what">Visi di pusat, pilar di cincin tengah, topik di cincin luar.</p>
+  <dl class="card-dl"><dt>Cocok untuk</dt><dd>Sampul dan slide pembuka. Paparan prodi memakai roda SDG untuk ini.</dd><dt>Hati-hati</dt><dd>Teks melengkung sulit dibaca dan sulit dicetak kecil.</dd></dl>
+</article>
+<article class="card">
+  <div class="thumb-wrap"><svg viewBox="0 0 240 140" role="img" aria-label="Sketsa rumah pilar: atap visi, lima tiang pilar, fondasi sumber daya" class="thumb">
+<path d="M30,44 L120,10 L210,44 Z" class="th-accent"/>
+<rect x="42" y="50" width="18" height="58" rx="2" class="th-soft th-edge"/>
+<rect x="76" y="50" width="18" height="58" rx="2" class="th-soft th-edge"/>
+<rect x="110" y="50" width="18" height="58" rx="2" class="th-soft th-edge"/>
+<rect x="144" y="50" width="18" height="58" rx="2" class="th-soft th-edge"/>
+<rect x="178" y="50" width="18" height="58" rx="2" class="th-soft th-edge"/>
+<rect x="26" y="112" width="188" height="16" rx="3" class="th-faint th-edge"/>
+</svg></div>
+  <div class="card-head"><h3>Rumah pilar</h3><span class="pill pill-no">Tidak dipakai</span></div>
+  <p class="card-what">Atap untuk visi, tiang untuk pilar, fondasi untuk SDM dan fasilitas.</p>
+  <dl class="card-dl"><dt>Cocok untuk</dt><dd>Dokumen Renstra yang memang memakai istilah pilar.</dd><dt>Hati-hati</dt><dd>Dua metafora sekaligus, pohon dan rumah, membingungkan pembaca.</dd></dl>
+</article>
+<article class="card">
+  <div class="thumb-wrap"><svg viewBox="0 0 240 140" role="img" aria-label="Sketsa peta jalan lajur: lima lajur pilar melintasi tiga tahap waktu dengan tonggak" class="thumb">
+<path d="M30,10 L102,10 L110,20 L102,30 L30,30 L38,20 Z" class="th-accent"/>
+<path d="M110,10 L182,10 L190,20 L182,30 L110,30 L118,20 Z" class="th-soft th-edge"/>
+<path d="M190,10 L226,10 L234,20 L226,30 L190,30 L198,20 Z" class="th-soft th-edge"/>
+<text x="24" y="51" text-anchor="end" class="th-text">P1</text>
+<rect x="30" y="40" width="204" height="14" rx="3" class="th-faint"/>
+<text x="24" y="70" text-anchor="end" class="th-text">P2</text>
+<rect x="30" y="59" width="204" height="14" rx="3" class="th-faint"/>
+<text x="24" y="89" text-anchor="end" class="th-text">P3</text>
+<rect x="30" y="78" width="204" height="14" rx="3" class="th-faint"/>
+<text x="24" y="108" text-anchor="end" class="th-text">P4</text>
+<rect x="30" y="97" width="204" height="14" rx="3" class="th-faint"/>
+<text x="24" y="127" text-anchor="end" class="th-text">P5</text>
+<rect x="30" y="116" width="204" height="14" rx="3" class="th-faint"/>
+<path d="M70,41 L76,47 L70,53 L64,47 Z" class="th-dot"/>
+<path d="M150,41 L156,47 L150,53 L144,47 Z" class="th-dot"/>
+<path d="M96,60 L102,66 L96,72 L90,66 Z" class="th-dot"/>
+<path d="M204,60 L210,66 L204,72 L198,66 Z" class="th-dot"/>
+<path d="M60,79 L66,85 L60,91 L54,85 Z" class="th-dot"/>
+<path d="M130,98 L136,104 L130,110 L124,104 Z" class="th-dot"/>
+<path d="M210,98 L216,104 L210,110 L204,104 Z" class="th-dot"/>
+<path d="M170,117 L176,123 L170,129 L164,123 Z" class="th-dot"/>
+</svg></div>
+  <div class="card-head"><h3>Peta jalan lajur</h3><span class="pill pill-use">Dipakai · waktu</span></div>
+  <p class="card-what">Baris pilar, kolom tahap waktu, tonggak di setiap sel.</p>
+  <dl class="card-dl"><dt>Cocok untuk</dt><dd>Menjawab kapan. Bagian inilah yang membuat pohon menjadi peta jalan.</dd><dt>Hati-hati</dt><dd>Tanpa pohon, alasan memilih topik tidak terlihat.</dd></dl>
+</article>
+  </div>
+</section>
+
+<section aria-labelledby="c">
+  <h2 id="c">Dari tulang ikan prodi ke pohon fakultas</h2>
+  <p class="sec-intro">RIP Prodi Kedokteran &amp; Profesi Dokter 2026–2030 sudah memetakan seluruh judul dosen ke tujuh topik. Pohon fakultas tidak menggantinya. Lima topik penyakit dan kebijakan menjadi lima pilar, Basic Science menjadi akar ilmu, dan Digital Health menjadi platform.</p>
+  <figure>
+    <div class="scroll"><svg viewBox="0 0 1000 610" role="img" aria-label="Padanan tujuh topik RIP Prodi Kedokteran dan Profesi Dokter ke pohon fakultas: Basic Science ke akar ilmu, Penyakit Tidak Menular ke P1, Kesehatan Seksual dan Reproduksi serta Kesehatan Remaja Neonatus dan Anak ke P2, Penyakit Menular ke P3, topik ketujuh ke P5, Digital Health ke platform teknologi. P4 belum punya topik prodi.">
+<defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" class="arrowhead"/></marker></defs>
+<text x="20" y="30" class="zone-label">RIP PRODI KEDOKTERAN &amp; PROFESI DOKTER</text>
+<text x="20" y="46" class="cw-sub">luaran 2023–2025 · 2026</text>
+<text x="480.0" y="30" text-anchor="middle" class="zone-label">MASUK KE</text>
+<text x="640" y="30" class="zone-label">POHON FAKULTAS</text>
+<path d="M324,87 C479,87 479,87 634,87" class="cw-link" marker-end="url(#ah3)"/>
+<path d="M324,157 C479,157 479,157 634,157" class="cw-link" marker-end="url(#ah3)"/>
+<path d="M324,227 C479,227 479,227 634,227" class="cw-link" marker-end="url(#ah3)"/>
+<path d="M324,227 C479,227 479,157 634,157" class="cw-link cw-dash" marker-end="url(#ah3)"/>
+<path d="M324,297 C479,297 479,227 634,227" class="cw-link" marker-end="url(#ah3)"/>
+<path d="M324,367 C479,367 479,297 634,297" class="cw-link" marker-end="url(#ah3)"/>
+<path d="M324,437 C479,437 479,437 634,437" class="cw-link" marker-end="url(#ah3)"/>
+<path d="M324,437 C479,437 479,367 634,367" class="cw-link cw-dash" marker-end="url(#ah3)"/>
+<path d="M324,507 C479,507 479,507 634,507" class="cw-link" marker-end="url(#ah3)"/>
+<rect x="20" y="58" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="82" class="cw-name">Basic Science</text>
+<text x="34" y="102" class="cw-num mono">34 · 8 luaran</text>
+<rect x="20" y="128" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="152" class="cw-name">Penyakit Tidak Menular</text>
+<text x="34" y="172" class="cw-num mono">61 · 18 luaran</text>
+<rect x="20" y="198" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="222" class="cw-name">Kesehatan Seksual &amp; Reproduksi</text>
+<text x="34" y="242" class="cw-num mono">16 · 7 luaran</text>
+<rect x="20" y="268" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="292" class="cw-name">Kesehatan Remaja, Neonatus &amp; Anak</text>
+<text x="34" y="312" class="cw-num mono">19 · 3 luaran</text>
+<rect x="20" y="338" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="362" class="cw-name">Penyakit Menular</text>
+<text x="34" y="382" class="cw-num mono">36 · 8 luaran</text>
+<rect x="20" y="408" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="432" class="cw-name">Ked. Pencegahan, Med. Ed. &amp; Sosial</text>
+<text x="34" y="452" class="cw-num mono">31 · 6 luaran</text>
+<rect x="20" y="478" width="300" height="58" rx="8" class="cw-left"/>
+<text x="34" y="502" class="cw-name">Digital Health</text>
+<text x="34" y="522" class="cw-num mono">dipetakan per tahun dan TKT</text>
+<rect x="640" y="58" width="340" height="58" rx="8" class="cw-root"/>
+<text x="654" y="82" class="cw-name strong ">Akar ilmu · Kedokteran Dasar</text>
+<text x="654" y="102" class="cw-num">Basic Science menjadi akar tunggang</text>
+<rect x="640" y="128" width="340" height="58" rx="8" class="p1-blob"/>
+<text x="654" y="152" class="cw-name strong p1-text">P1 · Deteksi Dini &amp; Pengendalian PTM</text>
+<text x="654" y="172" class="cw-num">+ kanker serviks &amp; payudara dari KSR</text>
+<rect x="640" y="198" width="340" height="58" rx="8" class="p2-blob"/>
+<text x="654" y="222" class="cw-name strong p2-text">P2 · Ibu, Anak &amp; 1000 HPK</text>
+<text x="654" y="242" class="cw-num">RNA dan KSR bergabung</text>
+<rect x="640" y="268" width="340" height="58" rx="8" class="p3-blob"/>
+<text x="654" y="292" class="cw-name strong p3-text">P3 · Infeksi, AMR &amp; Ketahanan</text>
+<rect x="640" y="338" width="340" height="58" rx="8" class="p4-blob cw-dashbox"/>
+<text x="654" y="362" class="cw-name strong p4-text">P4 · Trauma &amp; Restorasi Fungsi</text>
+<text x="654" y="382" class="cw-num">+ forensik &amp; disabilitas dari topik ke-7 · dipimpin T4</text>
+<rect x="640" y="408" width="340" height="58" rx="8" class="p5-blob"/>
+<text x="654" y="432" class="cw-name strong p5-text">P5 · Sistem Kesehatan &amp; Pendidikan</text>
+<rect x="640" y="478" width="340" height="58" rx="8" class="cw-root"/>
+<text x="654" y="502" class="cw-name strong plat-text">Platform T1–T5</text>
+<text x="654" y="522" class="cw-num">Digital Health = T3 + T5</text>
+<line x1="20" y1="580" x2="60" y2="580" class="cw-link"/>
+<text x="70" y="584" class="cw-num">padanan utama</text>
+<line x1="200" y1="580" x2="240" y2="580" class="cw-link cw-dash"/>
+<text x="250" y="584" class="cw-num">sebagian subtopik</text>
+</svg></div>
+    <figcaption>Angka luaran dari Tabel 3–14 RIP prodi (draf); totalnya sama dengan Tabel 17: 197 luaran pada 2023–2025 dan 50 pada 2026. Satu judul bisa tercatat di dua topik. Onkologi &amp; skrining kanker adalah subtopik terbesar (23 luaran di PTM, ditambah 13 kanker serviks dan payudara–ovarium di KSR), tetapi belum punya ranting di draf fakultas. Usulnya: setelah rekap isian dosen, ranting P1 yang paling sedikit timnya diganti dengan ranting onkologi, sehingga P1 tetap empat ranting.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="t">
+  <h2 id="t">Usulan pohon: tiga prodi, satu batang</h2>
+  <p class="sec-intro">Isi pohon diambil dari draf §5.1–5.5. Bentuknya pohon diagram: tajuk berupa lima kelompok topik yang tersusun rapi sebagai pengganti daun lepas yang sulit dibaca. Baris kecil di bawah nama pilar menunjukkan topik RIP prodi yang masuk ke sana.</p>
+  <figure>
+    <div class="scroll"><svg viewBox="0 0 1040 810" role="img" aria-label="Usulan pohon penelitian FKK ITS: akar tunggang ilmu kedokteran dasar dan lima akar platform teknologi T1 sampai T5, batang Kedokteran Pencegahan 4.0 dari tiga prodi yang dipilin menjadi satu visi, lima cabang pilar dengan empat topik masing-masing, tumbuh di atas wahana translasi W0 sampai W4.">
+<path d="M520,478 C478.8,418 313.8,496 245,436" class="branch" stroke-width="11"/>
+<path d="M520,478 C478.8,418 313.8,496 245,436" class="branch-hi" stroke-width="3"/>
+<g transform="translate(376.2,458.3) rotate(-60)"><path d="M0,0 C8,-10 26,-10 34,0 C26,10 8,10 0,0 Z" class="p1-leaf"/><line x1="2" y1="0" x2="30" y2="0" class="p1-vein"/></g>
+<path d="M520,478 C490.8,418 344.5,382 325,292" class="branch" stroke-width="11"/>
+<path d="M520,478 C490.8,418 344.5,382 325,292" class="branch-hi" stroke-width="3"/>
+<g transform="translate(406.1,387.8) rotate(-60)"><path d="M0,0 C8,-10 26,-10 34,0 C26,10 8,10 0,0 Z" class="p2-leaf"/><line x1="2" y1="0" x2="30" y2="0" class="p2-vein"/></g>
+<path d="M520,478 C519.9,418 519.5,234 519.5,144" class="branch" stroke-width="11"/>
+<path d="M520,478 C519.9,418 519.5,234 519.5,144" class="branch-hi" stroke-width="3"/>
+<g transform="translate(519.7,302.7) rotate(50)"><path d="M0,0 C8,-10 26,-10 34,0 C26,10 8,10 0,0 Z" class="p3-leaf"/><line x1="2" y1="0" x2="30" y2="0" class="p3-vein"/></g>
+<path d="M520,478 C549.2,418 695.5,382 715,292" class="branch" stroke-width="11"/>
+<path d="M520,478 C549.2,418 695.5,382 715,292" class="branch-hi" stroke-width="3"/>
+<g transform="translate(633.9,387.8) rotate(60)"><path d="M0,0 C8,-10 26,-10 34,0 C26,10 8,10 0,0 Z" class="p4-leaf"/><line x1="2" y1="0" x2="30" y2="0" class="p4-vein"/></g>
+<path d="M520,478 C561.2,418 726.2,496 795,436" class="branch" stroke-width="11"/>
+<path d="M520,478 C561.2,418 726.2,496 795,436" class="branch-hi" stroke-width="3"/>
+<g transform="translate(663.8,458.3) rotate(60)"><path d="M0,0 C8,-10 26,-10 34,0 C26,10 8,10 0,0 Z" class="p5-leaf"/><line x1="2" y1="0" x2="30" y2="0" class="p5-vein"/></g>
+<rect x="20" y="304" width="265" height="140" rx="24" class="p1-blob"/>
+<text x="38" y="331" class="blob-title p1-text">P1 · Deteksi Dini PTM</text>
+<text x="38" y="349" class="blob-tag mono">RIP prodi: Penyakit Tidak Menular</text>
+<circle cx="43" cy="367" r="4.2" class="p1-bud"/>
+<text x="54" y="371" class="blob-line"><tspan class="mono p1-text">1.1</tspan> Skrining PTM berbasis sensor</text>
+<circle cx="43" cy="386" r="4.2" class="p1-bud"/>
+<text x="54" y="390" class="blob-line"><tspan class="mono p1-text">1.2</tspan> Risiko kardiometabolik AI</text>
+<circle cx="43" cy="405" r="4.2" class="p1-bud"/>
+<text x="54" y="409" class="blob-line"><tspan class="mono p1-text">1.3</tspan> Deteksi dini komplikasi</text>
+<circle cx="43" cy="424" r="4.2" class="p1-bud"/>
+<text x="54" y="428" class="blob-line"><tspan class="mono p1-text">1.4</tspan> Perubahan perilaku digital</text>
+<rect x="130" y="154" width="265" height="140" rx="24" class="p2-blob"/>
+<text x="148" y="181" class="blob-title p2-text">P2 · Ibu, Anak &amp; 1000 HPK</text>
+<text x="148" y="199" class="blob-tag mono">RIP prodi: RNA + KSR</text>
+<circle cx="153" cy="217" r="4.2" class="p2-bud"/>
+<text x="164" y="221" class="blob-line"><tspan class="mono p2-text">2.1</tspan> Pemantauan pertumbuhan</text>
+<circle cx="153" cy="236" r="4.2" class="p2-bud"/>
+<text x="164" y="240" class="blob-line"><tspan class="mono p2-text">2.2</tspan> Keselamatan maternal-neonatal</text>
+<circle cx="153" cy="255" r="4.2" class="p2-bud"/>
+<text x="164" y="259" class="blob-line"><tspan class="mono p2-text">2.3</tspan> Skrining tumbuh kembang</text>
+<circle cx="153" cy="274" r="4.2" class="p2-bud"/>
+<text x="164" y="278" class="blob-line"><tspan class="mono p2-text">2.4</tspan> Gizi &amp; pangan lokal</text>
+<rect x="387" y="6" width="265" height="140" rx="24" class="p3-blob"/>
+<text x="405" y="33" class="blob-title p3-text">P3 · Infeksi, AMR &amp; Ketahanan</text>
+<text x="405" y="51" class="blob-tag mono">RIP prodi: Penyakit Menular</text>
+<circle cx="410" cy="69" r="4.2" class="p3-bud"/>
+<text x="421" y="73" class="blob-line"><tspan class="mono p3-text">3.1</tspan> Surveilans AMR komunitas</text>
+<circle cx="410" cy="88" r="4.2" class="p3-bud"/>
+<text x="421" y="92" class="blob-line"><tspan class="mono p3-text">3.2</tspan> Diagnostik cepat infeksi</text>
+<circle cx="410" cy="107" r="4.2" class="p3-bud"/>
+<text x="421" y="111" class="blob-line"><tspan class="mono p3-text">3.3</tspan> Surveilans sindromik digital</text>
+<circle cx="410" cy="126" r="4.2" class="p3-bud"/>
+<text x="421" y="130" class="blob-line"><tspan class="mono p3-text">3.4</tspan> Lingkungan &amp; vektor</text>
+<rect x="645" y="154" width="265" height="140" rx="24" class="p4-blob"/>
+<text x="663" y="181" class="blob-title p4-text">P4 · Trauma &amp; Restorasi Fungsi</text>
+<text x="663" y="199" class="blob-tag mono">belum ada topik prodi · dipimpin T4</text>
+<circle cx="668" cy="217" r="4.2" class="p4-bud"/>
+<text x="679" y="221" class="blob-line"><tspan class="mono p4-text">4.1</tspan> Implan ortopedi</text>
+<circle cx="668" cy="236" r="4.2" class="p4-bud"/>
+<text x="679" y="240" class="blob-line"><tspan class="mono p4-text">4.2</tspan> Prostesis &amp; ortosis</text>
+<circle cx="668" cy="255" r="4.2" class="p4-bud"/>
+<text x="679" y="259" class="blob-line"><tspan class="mono p4-text">4.3</tspan> Rehabilitasi &amp; asistif</text>
+<circle cx="668" cy="274" r="4.2" class="p4-bud"/>
+<text x="679" y="278" class="blob-line"><tspan class="mono p4-text">4.4</tspan> Nyeri &amp; perioperatif</text>
+<rect x="755" y="304" width="265" height="140" rx="24" class="p5-blob"/>
+<text x="773" y="331" class="blob-title p5-text">P5 · Sistem Kes. &amp; Pendidikan</text>
+<text x="773" y="349" class="blob-tag mono">RIP prodi: Med. Ed. &amp; Sosial</text>
+<circle cx="778" cy="367" r="4.2" class="p5-bud"/>
+<text x="789" y="371" class="blob-line"><tspan class="mono p5-text">5.1</tspan> Implementasi layanan primer</text>
+<circle cx="778" cy="386" r="4.2" class="p5-bud"/>
+<text x="789" y="390" class="blob-line"><tspan class="mono p5-text">5.2</tspan> Pendidikan berbasis teknologi</text>
+<circle cx="778" cy="405" r="4.2" class="p5-bud"/>
+<text x="789" y="409" class="blob-line"><tspan class="mono p5-text">5.3</tspan> Etika &amp; hukum AI kesehatan</text>
+<circle cx="778" cy="424" r="4.2" class="p5-bud"/>
+<text x="789" y="428" class="blob-line"><tspan class="mono p5-text">5.4</tspan> Ekonomi kesehatan &amp; HTA</text>
+<rect x="30" y="600" width="980" height="34" rx="6" class="soil"/>
+<text x="152.5" y="622" text-anchor="middle" class="soil-text"><tspan class="mono strong">W0–W1</tspan> Laboratorium</text>
+<line x1="275" y1="606" x2="275" y2="628" class="soil-sep"/>
+<text x="397.5" y="622" text-anchor="middle" class="soil-text"><tspan class="mono strong">W2</tspan> ITS Medical Center</text>
+<line x1="520" y1="606" x2="520" y2="628" class="soil-sep"/>
+<text x="642.5" y="622" text-anchor="middle" class="soil-text"><tspan class="mono strong">W3</tspan> RSUD pendidikan</text>
+<line x1="765" y1="606" x2="765" y2="628" class="soil-sep"/>
+<text x="887.5" y="622" text-anchor="middle" class="soil-text"><tspan class="mono strong">W4</tspan> Desa Binaan</text>
+<text x="30" y="590" class="zone-label">TANAH · WAHANA TRANSLASI</text>
+<path d="M494.5,634 C414.6,674 194.9,674 95,704" class="root" stroke-width="5"/>
+<circle cx="95" cy="704" r="3" class="root-tip"/>
+<text x="95" y="726" text-anchor="middle" class="root-code mono">T1</text>
+<text x="95" y="742" text-anchor="middle" class="root-name">Biosinyal &amp; neuroteknologi</text>
+<path d="M503.5,634 C451.8,674 309.6,684 245,714" class="root" stroke-width="5"/>
+<circle cx="245" cy="714" r="3" class="root-tip"/>
+<text x="245" y="736" text-anchor="middle" class="root-code mono">T2</text>
+<text x="245" y="752" text-anchor="middle" class="root-name">Biosensor &amp; diagnostik</text>
+<path d="M511.3,634 C484,674 409.1,692 375,722" class="root" stroke-width="5"/>
+<circle cx="375" cy="722" r="3" class="root-tip"/>
+<text x="375" y="744" text-anchor="middle" class="root-code mono">T3</text>
+<text x="375" y="760" text-anchor="middle" class="root-name">AI, citra &amp; sains data</text>
+<text x="375" y="776" text-anchor="middle" class="root-dh">Digital Health</text>
+<path d="M530.8,634 C564.6,674 657.7,684 700,714" class="root" stroke-width="5"/>
+<circle cx="700" cy="714" r="3" class="root-tip"/>
+<text x="700" y="736" text-anchor="middle" class="root-code mono">T4</text>
+<text x="700" y="752" text-anchor="middle" class="root-name">Biomaterial &amp; biomekanika</text>
+<path d="M543.4,634 C616.7,674 818.4,674 910,704" class="root" stroke-width="5"/>
+<circle cx="910" cy="704" r="3" class="root-tip"/>
+<text x="910" y="726" text-anchor="middle" class="root-code mono">T5</text>
+<text x="910" y="742" text-anchor="middle" class="root-name">Telematika kesehatan</text>
+<text x="910" y="758" text-anchor="middle" class="root-dh">Digital Health</text>
+<path d="M520,634 C516,674 524,714 520,752" class="root" stroke-width="9"/>
+<circle cx="520" cy="752" r="4" class="root-tip"/>
+<text x="520" y="776" text-anchor="middle" class="root-code">Ilmu kedokteran dasar</text>
+<text x="520" y="793" text-anchor="middle" class="root-name">akar tunggang · Basic Science</text>
+<text x="30" y="664" class="zone-label">AKAR · PLATFORM &amp; ILMU DASAR</text>
+<ellipse cx="520" cy="480" rx="20" ry="10" class="bark"/>
+<line x1="521.1" y1="560" x2="518.6" y2="557" class="strand-gap" stroke-width="17"/>
+<line x1="521.1" y1="560" x2="518.6" y2="557" class="strand s1" stroke-width="12"/>
+<line x1="521.5" y1="503" x2="519.4" y2="500" class="strand-gap" stroke-width="17"/>
+<line x1="521.5" y1="503" x2="519.4" y2="500" class="strand s2" stroke-width="12"/>
+<line x1="523.2" y1="590" x2="519.4" y2="587" class="strand-gap" stroke-width="17"/>
+<line x1="523.2" y1="590" x2="519.4" y2="587" class="strand s2" stroke-width="12"/>
+<line x1="520.2" y1="530" x2="517.9" y2="527" class="strand-gap" stroke-width="17"/>
+<line x1="520.2" y1="530" x2="517.9" y2="527" class="strand s3" stroke-width="12"/>
+<line x1="522.5" y1="533" x2="520.2" y2="530" class="strand-gap" stroke-width="17"/>
+<line x1="522.5" y1="533" x2="520.2" y2="530" class="strand s3" stroke-width="12"/>
+<line x1="519.4" y1="587" x2="516.4" y2="584" class="strand-gap" stroke-width="17"/>
+<line x1="519.4" y1="587" x2="516.4" y2="584" class="strand s2" stroke-width="12"/>
+<line x1="519.4" y1="500" x2="517.4" y2="497" class="strand-gap" stroke-width="17"/>
+<line x1="519.4" y1="500" x2="517.4" y2="497" class="strand s2" stroke-width="12"/>
+<line x1="522.5" y1="476" x2="520.6" y2="473" class="strand-gap" stroke-width="17"/>
+<line x1="522.5" y1="476" x2="520.6" y2="473" class="strand s1" stroke-width="12"/>
+<line x1="523.6" y1="563" x2="521.1" y2="560" class="strand-gap" stroke-width="17"/>
+<line x1="523.6" y1="563" x2="521.1" y2="560" class="strand s1" stroke-width="12"/>
+<line x1="518.6" y1="557" x2="516.2" y2="554" class="strand-gap" stroke-width="17"/>
+<line x1="518.6" y1="557" x2="516.2" y2="554" class="strand s1" stroke-width="12"/>
+<line x1="523.5" y1="506" x2="521.5" y2="503" class="strand-gap" stroke-width="17"/>
+<line x1="523.5" y1="506" x2="521.5" y2="503" class="strand s2" stroke-width="12"/>
+<line x1="528.2" y1="593" x2="523.2" y2="590" class="strand-gap" stroke-width="17"/>
+<line x1="528.2" y1="593" x2="523.2" y2="590" class="strand s2" stroke-width="12"/>
+<line x1="517.9" y1="527" x2="515.8" y2="524" class="strand-gap" stroke-width="17"/>
+<line x1="517.9" y1="527" x2="515.8" y2="524" class="strand s3" stroke-width="12"/>
+<line x1="524.7" y1="536" x2="522.5" y2="533" class="strand-gap" stroke-width="17"/>
+<line x1="524.7" y1="536" x2="522.5" y2="533" class="strand s3" stroke-width="12"/>
+<line x1="516.4" y1="584" x2="514" y2="581" class="strand-gap" stroke-width="17"/>
+<line x1="516.4" y1="584" x2="514" y2="581" class="strand s2" stroke-width="12"/>
+<line x1="517.4" y1="497" x2="515.6" y2="494" class="strand-gap" stroke-width="17"/>
+<line x1="517.4" y1="497" x2="515.6" y2="494" class="strand s2" stroke-width="12"/>
+<line x1="524.2" y1="479" x2="522.5" y2="476" class="strand-gap" stroke-width="17"/>
+<line x1="524.2" y1="479" x2="522.5" y2="476" class="strand s1" stroke-width="12"/>
+<line x1="526" y1="566" x2="523.6" y2="563" class="strand-gap" stroke-width="17"/>
+<line x1="526" y1="566" x2="523.6" y2="563" class="strand s1" stroke-width="12"/>
+<line x1="516.2" y1="554" x2="514.1" y2="551" class="strand-gap" stroke-width="17"/>
+<line x1="516.2" y1="554" x2="514.1" y2="551" class="strand s1" stroke-width="12"/>
+<line x1="525.4" y1="509" x2="523.5" y2="506" class="strand-gap" stroke-width="17"/>
+<line x1="525.4" y1="509" x2="523.5" y2="506" class="strand s2" stroke-width="12"/>
+<line x1="534.2" y1="596" x2="528.2" y2="593" class="strand-gap" stroke-width="17"/>
+<line x1="534.2" y1="596" x2="528.2" y2="593" class="strand s2" stroke-width="12"/>
+<line x1="515.8" y1="524" x2="514" y2="521" class="strand-gap" stroke-width="17"/>
+<line x1="515.8" y1="524" x2="514" y2="521" class="strand s3" stroke-width="12"/>
+<line x1="526.7" y1="539" x2="524.7" y2="536" class="strand-gap" stroke-width="17"/>
+<line x1="526.7" y1="539" x2="524.7" y2="536" class="strand s3" stroke-width="12"/>
+<line x1="514" y1="581" x2="512.2" y2="578" class="strand-gap" stroke-width="17"/>
+<line x1="514" y1="581" x2="512.2" y2="578" class="strand s2" stroke-width="12"/>
+<line x1="515.6" y1="494" x2="514" y2="491" class="strand-gap" stroke-width="17"/>
+<line x1="515.6" y1="494" x2="514" y2="491" class="strand s2" stroke-width="12"/>
+<line x1="525.8" y1="482" x2="524.2" y2="479" class="strand-gap" stroke-width="17"/>
+<line x1="525.8" y1="482" x2="524.2" y2="479" class="strand s1" stroke-width="12"/>
+<line x1="528.1" y1="569" x2="526" y2="566" class="strand-gap" stroke-width="17"/>
+<line x1="528.1" y1="569" x2="526" y2="566" class="strand s1" stroke-width="12"/>
+<line x1="514.1" y1="551" x2="512.2" y2="548" class="strand-gap" stroke-width="17"/>
+<line x1="514.1" y1="551" x2="512.2" y2="548" class="strand s1" stroke-width="12"/>
+<line x1="527.1" y1="512" x2="525.4" y2="509" class="strand-gap" stroke-width="17"/>
+<line x1="527.1" y1="512" x2="525.4" y2="509" class="strand s2" stroke-width="12"/>
+<line x1="541.1" y1="599" x2="534.2" y2="596" class="strand-gap" stroke-width="17"/>
+<line x1="541.1" y1="599" x2="534.2" y2="596" class="strand s2" stroke-width="12"/>
+<line x1="514" y1="521" x2="512.4" y2="518" class="strand-gap" stroke-width="17"/>
+<line x1="514" y1="521" x2="512.4" y2="518" class="strand s3" stroke-width="12"/>
+<line x1="528.4" y1="542" x2="526.7" y2="539" class="strand-gap" stroke-width="17"/>
+<line x1="528.4" y1="542" x2="526.7" y2="539" class="strand s3" stroke-width="12"/>
+<line x1="512.2" y1="578" x2="510.5" y2="575" class="strand-gap" stroke-width="17"/>
+<line x1="512.2" y1="578" x2="510.5" y2="575" class="strand s2" stroke-width="12"/>
+<line x1="514" y1="491" x2="512.8" y2="488" class="strand-gap" stroke-width="17"/>
+<line x1="514" y1="491" x2="512.8" y2="488" class="strand s2" stroke-width="12"/>
+<line x1="527.2" y1="485" x2="525.8" y2="482" class="strand-gap" stroke-width="17"/>
+<line x1="527.2" y1="485" x2="525.8" y2="482" class="strand s1" stroke-width="12"/>
+<line x1="529.8" y1="572" x2="528.1" y2="569" class="strand-gap" stroke-width="17"/>
+<line x1="529.8" y1="572" x2="528.1" y2="569" class="strand s1" stroke-width="12"/>
+<line x1="512.2" y1="548" x2="510.8" y2="545" class="strand-gap" stroke-width="17"/>
+<line x1="512.2" y1="548" x2="510.8" y2="545" class="strand s1" stroke-width="12"/>
+<line x1="528.5" y1="515" x2="527.1" y2="512" class="strand-gap" stroke-width="17"/>
+<line x1="528.5" y1="515" x2="527.1" y2="512" class="strand s2" stroke-width="12"/>
+<line x1="548.6" y1="602" x2="541.1" y2="599" class="strand-gap" stroke-width="17"/>
+<line x1="548.6" y1="602" x2="541.1" y2="599" class="strand s2" stroke-width="12"/>
+<line x1="512.4" y1="518" x2="511.3" y2="515" class="strand-gap" stroke-width="17"/>
+<line x1="512.4" y1="518" x2="511.3" y2="515" class="strand s3" stroke-width="12"/>
+<line x1="529.8" y1="545" x2="528.4" y2="542" class="strand-gap" stroke-width="17"/>
+<line x1="529.8" y1="545" x2="528.4" y2="542" class="strand s3" stroke-width="12"/>
+<line x1="510.5" y1="575" x2="509.2" y2="572" class="strand-gap" stroke-width="17"/>
+<line x1="510.5" y1="575" x2="509.2" y2="572" class="strand s2" stroke-width="12"/>
+<line x1="512.8" y1="488" x2="511.9" y2="485" class="strand-gap" stroke-width="17"/>
+<line x1="512.8" y1="488" x2="511.9" y2="485" class="strand s2" stroke-width="12"/>
+<line x1="528.3" y1="488" x2="527.2" y2="485" class="strand-gap" stroke-width="17"/>
+<line x1="528.3" y1="488" x2="527.2" y2="485" class="strand s1" stroke-width="12"/>
+<line x1="531.2" y1="575" x2="529.8" y2="572" class="strand-gap" stroke-width="17"/>
+<line x1="531.2" y1="575" x2="529.8" y2="572" class="strand s1" stroke-width="12"/>
+<line x1="510.8" y1="545" x2="509.8" y2="542" class="strand-gap" stroke-width="17"/>
+<line x1="510.8" y1="545" x2="509.8" y2="542" class="strand s1" stroke-width="12"/>
+<line x1="529.5" y1="518" x2="528.5" y2="515" class="strand-gap" stroke-width="17"/>
+<line x1="529.5" y1="518" x2="528.5" y2="515" class="strand s2" stroke-width="12"/>
+<line x1="491.4" y1="602" x2="492.8" y2="599" class="strand-gap" stroke-width="17"/>
+<line x1="491.4" y1="602" x2="492.8" y2="599" class="strand s3" stroke-width="12"/>
+<line x1="511.3" y1="515" x2="510.5" y2="512" class="strand-gap" stroke-width="17"/>
+<line x1="511.3" y1="515" x2="510.5" y2="512" class="strand s3" stroke-width="12"/>
+<line x1="530.8" y1="548" x2="529.8" y2="545" class="strand-gap" stroke-width="17"/>
+<line x1="530.8" y1="548" x2="529.8" y2="545" class="strand s3" stroke-width="12"/>
+<line x1="509.2" y1="572" x2="508.5" y2="569" class="strand-gap" stroke-width="17"/>
+<line x1="509.2" y1="572" x2="508.5" y2="569" class="strand s2" stroke-width="12"/>
+<line x1="511.9" y1="485" x2="511.4" y2="482" class="strand-gap" stroke-width="17"/>
+<line x1="511.9" y1="485" x2="511.4" y2="482" class="strand s2" stroke-width="12"/>
+<line x1="528.9" y1="491" x2="528.3" y2="488" class="strand-gap" stroke-width="17"/>
+<line x1="528.9" y1="491" x2="528.3" y2="488" class="strand s1" stroke-width="12"/>
+<line x1="532.1" y1="578" x2="531.2" y2="575" class="strand-gap" stroke-width="17"/>
+<line x1="532.1" y1="578" x2="531.2" y2="575" class="strand s1" stroke-width="12"/>
+<line x1="509.8" y1="542" x2="509.3" y2="539" class="strand-gap" stroke-width="17"/>
+<line x1="509.8" y1="542" x2="509.3" y2="539" class="strand s1" stroke-width="12"/>
+<line x1="530.1" y1="521" x2="529.5" y2="518" class="strand-gap" stroke-width="17"/>
+<line x1="530.1" y1="521" x2="529.5" y2="518" class="strand s2" stroke-width="12"/>
+<line x1="492.8" y1="599" x2="495.5" y2="596" class="strand-gap" stroke-width="17"/>
+<line x1="492.8" y1="599" x2="495.5" y2="596" class="strand s3" stroke-width="12"/>
+<line x1="510.5" y1="512" x2="510.3" y2="509" class="strand-gap" stroke-width="17"/>
+<line x1="510.5" y1="512" x2="510.3" y2="509" class="strand s3" stroke-width="12"/>
+<line x1="531.2" y1="551" x2="530.8" y2="548" class="strand-gap" stroke-width="17"/>
+<line x1="531.2" y1="551" x2="530.8" y2="548" class="strand s3" stroke-width="12"/>
+<line x1="508.5" y1="569" x2="508.3" y2="566" class="strand-gap" stroke-width="17"/>
+<line x1="508.5" y1="569" x2="508.3" y2="566" class="strand s2" stroke-width="12"/>
+<line x1="511.4" y1="482" x2="511.3" y2="479" class="strand-gap" stroke-width="17"/>
+<line x1="511.4" y1="482" x2="511.3" y2="479" class="strand s2" stroke-width="12"/>
+<line x1="529.2" y1="494" x2="528.9" y2="491" class="strand-gap" stroke-width="17"/>
+<line x1="529.2" y1="494" x2="528.9" y2="491" class="strand s1" stroke-width="12"/>
+<line x1="533" y1="581" x2="532.1" y2="578" class="strand-gap" stroke-width="17"/>
+<line x1="533" y1="581" x2="532.1" y2="578" class="strand s1" stroke-width="12"/>
+<line x1="509.3" y1="539" x2="509.3" y2="536" class="strand-gap" stroke-width="17"/>
+<line x1="509.3" y1="539" x2="509.3" y2="536" class="strand s1" stroke-width="12"/>
+<line x1="530.2" y1="524" x2="530.1" y2="521" class="strand-gap" stroke-width="17"/>
+<line x1="530.2" y1="524" x2="530.1" y2="521" class="strand s2" stroke-width="12"/>
+<line x1="495.5" y1="596" x2="498.9" y2="593" class="strand-gap" stroke-width="17"/>
+<line x1="495.5" y1="596" x2="498.9" y2="593" class="strand s3" stroke-width="12"/>
+<line x1="510.3" y1="509" x2="510.5" y2="506" class="strand-gap" stroke-width="17"/>
+<line x1="510.3" y1="509" x2="510.5" y2="506" class="strand s3" stroke-width="12"/>
+<line x1="531.1" y1="554" x2="531.2" y2="551" class="strand-gap" stroke-width="17"/>
+<line x1="531.1" y1="554" x2="531.2" y2="551" class="strand s3" stroke-width="12"/>
+<line x1="508.3" y1="566" x2="508.6" y2="563" class="strand-gap" stroke-width="17"/>
+<line x1="508.3" y1="566" x2="508.6" y2="563" class="strand s2" stroke-width="12"/>
+<line x1="511.3" y1="479" x2="511.6" y2="476" class="strand-gap" stroke-width="17"/>
+<line x1="511.3" y1="479" x2="511.6" y2="476" class="strand s2" stroke-width="12"/>
+<line x1="529.1" y1="497" x2="529.2" y2="494" class="strand-gap" stroke-width="17"/>
+<line x1="529.1" y1="497" x2="529.2" y2="494" class="strand s1" stroke-width="12"/>
+<line x1="533.8" y1="584" x2="533" y2="581" class="strand-gap" stroke-width="17"/>
+<line x1="533.8" y1="584" x2="533" y2="581" class="strand s1" stroke-width="12"/>
+<line x1="509.3" y1="536" x2="509.9" y2="533" class="strand-gap" stroke-width="17"/>
+<line x1="509.3" y1="536" x2="509.9" y2="533" class="strand s1" stroke-width="12"/>
+<line x1="529.8" y1="527" x2="530.2" y2="524" class="strand-gap" stroke-width="17"/>
+<line x1="529.8" y1="527" x2="530.2" y2="524" class="strand s2" stroke-width="12"/>
+<line x1="498.9" y1="593" x2="502.7" y2="590" class="strand-gap" stroke-width="17"/>
+<line x1="498.9" y1="593" x2="502.7" y2="590" class="strand s3" stroke-width="12"/>
+<line x1="510.5" y1="506" x2="511.1" y2="503" class="strand-gap" stroke-width="17"/>
+<line x1="510.5" y1="506" x2="511.1" y2="503" class="strand s3" stroke-width="12"/>
+<line x1="530.5" y1="557" x2="531.1" y2="554" class="strand-gap" stroke-width="17"/>
+<line x1="530.5" y1="557" x2="531.1" y2="554" class="strand s3" stroke-width="12"/>
+<line x1="508.6" y1="563" x2="509.5" y2="560" class="strand-gap" stroke-width="17"/>
+<line x1="508.6" y1="563" x2="509.5" y2="560" class="strand s2" stroke-width="12"/>
+<line x1="511.6" y1="476" x2="512.4" y2="473" class="strand-gap" stroke-width="17"/>
+<line x1="511.6" y1="476" x2="512.4" y2="473" class="strand s2" stroke-width="12"/>
+<line x1="528.5" y1="500" x2="529.1" y2="497" class="strand-gap" stroke-width="17"/>
+<line x1="528.5" y1="500" x2="529.1" y2="497" class="strand s1" stroke-width="12"/>
+<line x1="534.2" y1="587" x2="533.8" y2="584" class="strand-gap" stroke-width="17"/>
+<line x1="534.2" y1="587" x2="533.8" y2="584" class="strand s1" stroke-width="12"/>
+<line x1="509.9" y1="533" x2="510.8" y2="530" class="strand-gap" stroke-width="17"/>
+<line x1="509.9" y1="533" x2="510.8" y2="530" class="strand s1" stroke-width="12"/>
+<line x1="529" y1="530" x2="529.8" y2="527" class="strand-gap" stroke-width="17"/>
+<line x1="529" y1="530" x2="529.8" y2="527" class="strand s2" stroke-width="12"/>
+<line x1="502.7" y1="590" x2="506.4" y2="587" class="strand-gap" stroke-width="17"/>
+<line x1="502.7" y1="590" x2="506.4" y2="587" class="strand s3" stroke-width="12"/>
+<line x1="511.1" y1="503" x2="512.2" y2="500" class="strand-gap" stroke-width="17"/>
+<line x1="511.1" y1="503" x2="512.2" y2="500" class="strand s3" stroke-width="12"/>
+<line x1="529.4" y1="560" x2="530.5" y2="557" class="strand-gap" stroke-width="17"/>
+<line x1="529.4" y1="560" x2="530.5" y2="557" class="strand s3" stroke-width="12"/>
+<line x1="509.5" y1="560" x2="510.9" y2="557" class="strand-gap" stroke-width="17"/>
+<line x1="509.5" y1="560" x2="510.9" y2="557" class="strand s2" stroke-width="12"/>
+<line x1="527.4" y1="503" x2="528.5" y2="500" class="strand-gap" stroke-width="17"/>
+<line x1="527.4" y1="503" x2="528.5" y2="500" class="strand s1" stroke-width="12"/>
+<line x1="534" y1="590" x2="534.2" y2="587" class="strand-gap" stroke-width="17"/>
+<line x1="534" y1="590" x2="534.2" y2="587" class="strand s1" stroke-width="12"/>
+<line x1="510.8" y1="530" x2="512.2" y2="527" class="strand-gap" stroke-width="17"/>
+<line x1="510.8" y1="530" x2="512.2" y2="527" class="strand s1" stroke-width="12"/>
+<line x1="527.7" y1="533" x2="529" y2="530" class="strand-gap" stroke-width="17"/>
+<line x1="527.7" y1="533" x2="529" y2="530" class="strand s2" stroke-width="12"/>
+<line x1="506.4" y1="587" x2="509.9" y2="584" class="strand-gap" stroke-width="17"/>
+<line x1="506.4" y1="587" x2="509.9" y2="584" class="strand s3" stroke-width="12"/>
+<line x1="512.2" y1="500" x2="513.5" y2="497" class="strand-gap" stroke-width="17"/>
+<line x1="512.2" y1="500" x2="513.5" y2="497" class="strand s3" stroke-width="12"/>
+<line x1="525.9" y1="476" x2="527" y2="473" class="strand-gap" stroke-width="17"/>
+<line x1="525.9" y1="476" x2="527" y2="473" class="strand s3" stroke-width="12"/>
+<line x1="527.8" y1="563" x2="529.4" y2="560" class="strand-gap" stroke-width="17"/>
+<line x1="527.8" y1="563" x2="529.4" y2="560" class="strand s3" stroke-width="12"/>
+<line x1="510.9" y1="557" x2="512.6" y2="554" class="strand-gap" stroke-width="17"/>
+<line x1="510.9" y1="557" x2="512.6" y2="554" class="strand s2" stroke-width="12"/>
+<line x1="526" y1="506" x2="527.4" y2="503" class="strand-gap" stroke-width="17"/>
+<line x1="526" y1="506" x2="527.4" y2="503" class="strand s1" stroke-width="12"/>
+<line x1="532.9" y1="593" x2="534" y2="590" class="strand-gap" stroke-width="17"/>
+<line x1="532.9" y1="593" x2="534" y2="590" class="strand s1" stroke-width="12"/>
+<line x1="512.2" y1="527" x2="514" y2="524" class="strand-gap" stroke-width="17"/>
+<line x1="512.2" y1="527" x2="514" y2="524" class="strand s1" stroke-width="12"/>
+<line x1="526" y1="536" x2="527.7" y2="533" class="strand-gap" stroke-width="17"/>
+<line x1="526" y1="536" x2="527.7" y2="533" class="strand s2" stroke-width="12"/>
+<line x1="509.9" y1="584" x2="513" y2="581" class="strand-gap" stroke-width="17"/>
+<line x1="509.9" y1="584" x2="513" y2="581" class="strand s3" stroke-width="12"/>
+<line x1="513.5" y1="497" x2="515.2" y2="494" class="strand-gap" stroke-width="17"/>
+<line x1="513.5" y1="497" x2="515.2" y2="494" class="strand s3" stroke-width="12"/>
+<line x1="524.5" y1="479" x2="525.9" y2="476" class="strand-gap" stroke-width="17"/>
+<line x1="524.5" y1="479" x2="525.9" y2="476" class="strand s3" stroke-width="12"/>
+<line x1="525.8" y1="566" x2="527.8" y2="563" class="strand-gap" stroke-width="17"/>
+<line x1="525.8" y1="566" x2="527.8" y2="563" class="strand s3" stroke-width="12"/>
+<line x1="512.6" y1="554" x2="514.7" y2="551" class="strand-gap" stroke-width="17"/>
+<line x1="512.6" y1="554" x2="514.7" y2="551" class="strand s2" stroke-width="12"/>
+<line x1="524.3" y1="509" x2="526" y2="506" class="strand-gap" stroke-width="17"/>
+<line x1="524.3" y1="509" x2="526" y2="506" class="strand s1" stroke-width="12"/>
+<line x1="530.4" y1="596" x2="532.9" y2="593" class="strand-gap" stroke-width="17"/>
+<line x1="530.4" y1="596" x2="532.9" y2="593" class="strand s1" stroke-width="12"/>
+<line x1="514" y1="524" x2="515.9" y2="521" class="strand-gap" stroke-width="17"/>
+<line x1="514" y1="524" x2="515.9" y2="521" class="strand s1" stroke-width="12"/>
+<line x1="524" y1="539" x2="526" y2="536" class="strand-gap" stroke-width="17"/>
+<line x1="524" y1="539" x2="526" y2="536" class="strand s2" stroke-width="12"/>
+<line x1="513" y1="581" x2="515.7" y2="578" class="strand-gap" stroke-width="17"/>
+<line x1="513" y1="581" x2="515.7" y2="578" class="strand s3" stroke-width="12"/>
+<line x1="515.2" y1="494" x2="517" y2="491" class="strand-gap" stroke-width="17"/>
+<line x1="515.2" y1="494" x2="517" y2="491" class="strand s3" stroke-width="12"/>
+<line x1="522.8" y1="482" x2="524.5" y2="479" class="strand-gap" stroke-width="17"/>
+<line x1="522.8" y1="482" x2="524.5" y2="479" class="strand s3" stroke-width="12"/>
+<line x1="523.5" y1="569" x2="525.8" y2="566" class="strand-gap" stroke-width="17"/>
+<line x1="523.5" y1="569" x2="525.8" y2="566" class="strand s3" stroke-width="12"/>
+<line x1="514.7" y1="551" x2="517" y2="548" class="strand-gap" stroke-width="17"/>
+<line x1="514.7" y1="551" x2="517" y2="548" class="strand s2" stroke-width="12"/>
+<line x1="522.4" y1="512" x2="524.3" y2="509" class="strand-gap" stroke-width="17"/>
+<line x1="522.4" y1="512" x2="524.3" y2="509" class="strand s1" stroke-width="12"/>
+<line x1="526.2" y1="599" x2="530.4" y2="596" class="strand-gap" stroke-width="17"/>
+<line x1="526.2" y1="599" x2="530.4" y2="596" class="strand s1" stroke-width="12"/>
+<line x1="515.9" y1="521" x2="518.1" y2="518" class="strand-gap" stroke-width="17"/>
+<line x1="515.9" y1="521" x2="518.1" y2="518" class="strand s1" stroke-width="12"/>
+<line x1="521.7" y1="542" x2="524" y2="539" class="strand-gap" stroke-width="17"/>
+<line x1="521.7" y1="542" x2="524" y2="539" class="strand s2" stroke-width="12"/>
+<line x1="515.7" y1="578" x2="518.4" y2="575" class="strand-gap" stroke-width="17"/>
+<line x1="515.7" y1="578" x2="518.4" y2="575" class="strand s3" stroke-width="12"/>
+<line x1="517" y1="491" x2="519" y2="488" class="strand-gap" stroke-width="17"/>
+<line x1="517" y1="491" x2="519" y2="488" class="strand s3" stroke-width="12"/>
+<line x1="520.9" y1="485" x2="522.8" y2="482" class="strand-gap" stroke-width="17"/>
+<line x1="520.9" y1="485" x2="522.8" y2="482" class="strand s3" stroke-width="12"/>
+<line x1="521" y1="572" x2="523.5" y2="569" class="strand-gap" stroke-width="17"/>
+<line x1="521" y1="572" x2="523.5" y2="569" class="strand s3" stroke-width="12"/>
+<line x1="517" y1="548" x2="519.4" y2="545" class="strand-gap" stroke-width="17"/>
+<line x1="517" y1="548" x2="519.4" y2="545" class="strand s2" stroke-width="12"/>
+<line x1="520.2" y1="515" x2="522.4" y2="512" class="strand-gap" stroke-width="17"/>
+<line x1="520.2" y1="515" x2="522.4" y2="512" class="strand s1" stroke-width="12"/>
+<line x1="520" y1="602" x2="526.2" y2="599" class="strand-gap" stroke-width="17"/>
+<line x1="520" y1="602" x2="526.2" y2="599" class="strand s1" stroke-width="12"/>
+<line x1="518.1" y1="518" x2="520.2" y2="515" class="strand-gap" stroke-width="17"/>
+<line x1="518.1" y1="518" x2="520.2" y2="515" class="strand s1" stroke-width="12"/>
+<line x1="519.4" y1="545" x2="521.7" y2="542" class="strand-gap" stroke-width="17"/>
+<line x1="519.4" y1="545" x2="521.7" y2="542" class="strand s2" stroke-width="12"/>
+<line x1="518.4" y1="575" x2="521" y2="572" class="strand-gap" stroke-width="17"/>
+<line x1="518.4" y1="575" x2="521" y2="572" class="strand s3" stroke-width="12"/>
+<line x1="519" y1="488" x2="520.9" y2="485" class="strand-gap" stroke-width="17"/>
+<line x1="519" y1="488" x2="520.9" y2="485" class="strand s3" stroke-width="12"/>
+<text x="60" y="507" class="zone-label">BATANG · VISI KEILMUAN</text>
+<text x="60" y="536" class="visi">Kedokteran Pencegahan 4.0</text>
+<text x="60" y="558" class="visi-sub">presisi, berbasis teknologi kedokteran</text>
+<line x1="352" y1="532" x2="488" y2="532" class="leader"/>
+<text x="640" y="507" class="zone-label">BATANG · TIGA PRODI DIPILIN</text>
+<rect x="640" y="520" width="22" height="10" rx="5" class="s1-sw"/>
+<text x="672" y="530" class="legend-text">Sarjana Kedokteran</text>
+<rect x="640" y="542" width="22" height="10" rx="5" class="s2-sw"/>
+<text x="672" y="552" class="legend-text">Pendidikan Profesi Dokter</text>
+<rect x="640" y="564" width="22" height="10" rx="5" class="s3-sw"/>
+<text x="672" y="574" class="legend-text">Teknologi Kedokteran</text>
+<line x1="552" y1="532" x2="628" y2="532" class="leader"/>
+</svg></div>
+    <figcaption>Lingkaran kosong di depan tiap topik diisi setelah rekap isian dosen Januari 2027: penuh untuk ranting yang sudah punya tim, garis saja untuk tunas yang belum punya tim. Pada layar sempit, geser gambar ke samping.</figcaption>
+  </figure>
+  <div class="notes">
+    <div><span class="k">Batang</span><p>Tiga prodi dipilin menjadi satu batang. Pesannya: satu visi fakultas, tiga prodi yang menumbuhkannya bersama. Prodi dibedakan di batang saja, sehingga cabang tetap milik bersama.</p></div>
+    <div><span class="k">Akar</span><p>Ilmu kedokteran dasar menjadi akar tunggang. Platform T1–T5 menjadi akar samping karena dipakai lintas pilar; Digital Health prodi berada di T3 dan T5. Pilar berbicara ke Dinkes, RSUD, dan pemberi dana; platform memegang alat dan anggaran modal (keputusan K2).</p></div>
+    <div><span class="k">Tanah</span><p>Wahana W0–W4 adalah tempat pohon diuji, dari laboratorium sampai Desa Binaan. Perpindahan sebuah topik dari W0 ke W4 adalah bukti integrasi yang paling mudah ditunjukkan.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="a3">
+  <h2 id="a3">Bentuk luas: satu lembar A3</h2>
+  <p class="sec-intro">Poster mendatar yang memuat ketiga bentuk sekaligus. Setiap bidang punya sumber data di instrumen isian dosen, sehingga poster bisa dibuat ulang setiap tahun tanpa menggambar dari nol.</p>
+  <figure>
+    <div class="scroll"><svg viewBox="0 0 1000 707" role="img" aria-label="Tata letak satu lembar A3 mendatar: judul di atas, pohon di kiri, matriks pilar kali platform di kanan atas, peta jalan tiga tahap di kanan bawah, rantai acuan di bawah. Tiap bidang diisi dari tab instrumen isian dosen.">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" class="arrowhead"/></marker></defs>
+<rect x="4" y="4" width="992" height="699" rx="10" class="paper"/>
+<text x="30" y="46" class="ps-title">Pohon Penelitian &amp; Peta Jalan FKK ITS 2026–2030</text>
+<text x="30" y="68" class="ps-sub">Kedokteran Pencegahan 4.0 · tiga prodi, satu pohon</text>
+<text x="970" y="46" text-anchor="end" class="ps-meta">Ditetapkan dengan SK Dekan</text>
+<text x="970" y="66" text-anchor="end" class="ps-meta mono">No. … / 2027</text>
+<line x1="30" y1="84" x2="970" y2="84" class="ps-rule"/>
+<rect x="30" y="100" width="400" height="500" rx="8" class="ps-panel"/>
+<text x="44" y="122" class="zone-label">POHON · APA YANG DITELITI</text>
+<rect x="345.0" y="109" width="71" height="19" rx="9.5" class="src-pill"/>
+<text x="380.5" y="122.5" text-anchor="middle" class="src-text mono">tab AGENDA</text>
+<rect x="446" y="100" width="524" height="238" rx="8" class="ps-panel"/>
+<text x="460" y="122" class="zone-label">MATRIKS · SIAPA DENGAN SIAPA</text>
+<rect x="840.9" y="109" width="115.1" height="19" rx="9.5" class="src-pill"/>
+<text x="898.5" y="122.5" text-anchor="middle" class="src-text mono">tab REKAP MATRIKS</text>
+<rect x="446" y="352" width="524" height="248" rx="8" class="ps-panel"/>
+<text x="460" y="374" class="zone-label">LAJUR · KAPAN</text>
+<rect x="859.8" y="361" width="96.2" height="19" rx="9.5" class="src-pill"/>
+<text x="907.9" y="374.5" text-anchor="middle" class="src-text mono">tab PETA JALAN</text>
+<rect x="50" y="520" width="360" height="18" rx="4" class="soil"/>
+<text x="230" y="533" text-anchor="middle" class="mini-text">W0 → W4</text>
+<path d="M230,538 C230,556 70,552 70,572" class="root" stroke-width="3"/>
+<text x="70" y="588" text-anchor="middle" class="mini-text mono">T1</text>
+<path d="M230,538 C230,556 150,552 150,572" class="root" stroke-width="3"/>
+<text x="150" y="588" text-anchor="middle" class="mini-text mono">T2</text>
+<path d="M230,538 C230,556 230,552 230,572" class="root" stroke-width="3"/>
+<text x="230" y="588" text-anchor="middle" class="mini-text mono">T3</text>
+<path d="M230,538 C230,556 310,552 310,572" class="root" stroke-width="3"/>
+<text x="310" y="588" text-anchor="middle" class="mini-text mono">T4</text>
+<path d="M230,538 C230,556 390,552 390,572" class="root" stroke-width="3"/>
+<text x="390" y="588" text-anchor="middle" class="mini-text mono">T5</text>
+<path d="M230,520 L230,400" class="branch" stroke-width="16"/>
+<line x1="224" y1="518" x2="224" y2="404" class="strand s1" stroke-width="4"/>
+<line x1="230" y1="518" x2="230" y2="404" class="strand s2" stroke-width="4"/>
+<line x1="236" y1="518" x2="236" y2="404" class="strand s3" stroke-width="4"/>
+<path d="M230,404 Q205.6,370 108,356" class="branch" stroke-width="6"/>
+<rect x="62" y="304" width="92" height="52" rx="14" class="p1-blob"/>
+<text x="108" y="324" text-anchor="middle" class="mini-title p1-text">P1</text>
+<circle cx="81" cy="340" r="4.5" class="p1-bud"/>
+<circle cx="99" cy="340" r="4.5" class="p1-bud"/>
+<circle cx="117" cy="340" r="4.5" class="p1-bud"/>
+<circle cx="135" cy="340" r="4.5" class="p1-bud"/>
+<path d="M230,404 Q216.0,250 160,236" class="branch" stroke-width="6"/>
+<rect x="114" y="184" width="92" height="52" rx="14" class="p2-blob"/>
+<text x="160" y="204" text-anchor="middle" class="mini-title p2-text">P2</text>
+<circle cx="133" cy="220" r="4.5" class="p2-bud"/>
+<circle cx="151" cy="220" r="4.5" class="p2-bud"/>
+<circle cx="169" cy="220" r="4.5" class="p2-bud"/>
+<circle cx="187" cy="220" r="4.5" class="p2-bud"/>
+<path d="M230,404 Q230.0,200 230,186" class="branch" stroke-width="6"/>
+<rect x="184" y="134" width="92" height="52" rx="14" class="p3-blob"/>
+<text x="230" y="154" text-anchor="middle" class="mini-title p3-text">P3</text>
+<circle cx="203" cy="170" r="4.5" class="p3-bud"/>
+<circle cx="221" cy="170" r="4.5" class="p3-bud"/>
+<circle cx="239" cy="170" r="4.5" class="p3-bud"/>
+<circle cx="257" cy="170" r="4.5" class="p3-bud"/>
+<path d="M230,404 Q244.0,250 300,236" class="branch" stroke-width="6"/>
+<rect x="254" y="184" width="92" height="52" rx="14" class="p4-blob"/>
+<text x="300" y="204" text-anchor="middle" class="mini-title p4-text">P4</text>
+<circle cx="273" cy="220" r="4.5" class="p4-bud"/>
+<circle cx="291" cy="220" r="4.5" class="p4-bud"/>
+<circle cx="309" cy="220" r="4.5" class="p4-bud"/>
+<circle cx="327" cy="220" r="4.5" class="p4-bud"/>
+<path d="M230,404 Q254.4,370 352,356" class="branch" stroke-width="6"/>
+<rect x="306" y="304" width="92" height="52" rx="14" class="p5-blob"/>
+<text x="352" y="324" text-anchor="middle" class="mini-title p5-text">P5</text>
+<circle cx="325" cy="340" r="4.5" class="p5-bud"/>
+<circle cx="343" cy="340" r="4.5" class="p5-bud"/>
+<circle cx="361" cy="340" r="4.5" class="p5-bud"/>
+<circle cx="379" cy="340" r="4.5" class="p5-bud"/>
+<text x="550" y="140" text-anchor="middle" class="mini-text mono">T1</text>
+<text x="626" y="140" text-anchor="middle" class="mini-text mono">T2</text>
+<text x="702" y="140" text-anchor="middle" class="mini-text mono">T3</text>
+<text x="778" y="140" text-anchor="middle" class="mini-text mono">T4</text>
+<text x="854" y="140" text-anchor="middle" class="mini-text mono">T5</text>
+<text x="508" y="166" text-anchor="end" class="mini-text mono p1-text">P1</text>
+<rect x="520" y="150" width="62" height="28" rx="4" class="cell"/>
+<text x="551" y="169" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="596" y="150" width="62" height="28" rx="4" class="cell"/>
+<text x="627" y="169" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="672" y="150" width="62" height="28" rx="4" class="cell"/>
+<text x="703" y="169" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="748" y="150" width="62" height="28" rx="4" class="cell"/>
+<text x="779" y="169" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="824" y="150" width="62" height="28" rx="4" class="cell"/>
+<text x="855" y="169" text-anchor="middle" class="cell-text mono">n</text>
+<text x="508" y="202" text-anchor="end" class="mini-text mono p2-text">P2</text>
+<rect x="520" y="186" width="62" height="28" rx="4" class="cell"/>
+<text x="551" y="205" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="596" y="186" width="62" height="28" rx="4" class="cell"/>
+<text x="627" y="205" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="672" y="186" width="62" height="28" rx="4" class="cell"/>
+<text x="703" y="205" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="748" y="186" width="62" height="28" rx="4" class="cell"/>
+<text x="779" y="205" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="824" y="186" width="62" height="28" rx="4" class="cell"/>
+<text x="855" y="205" text-anchor="middle" class="cell-text mono">n</text>
+<text x="508" y="238" text-anchor="end" class="mini-text mono p3-text">P3</text>
+<rect x="520" y="222" width="62" height="28" rx="4" class="cell"/>
+<text x="551" y="241" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="596" y="222" width="62" height="28" rx="4" class="cell"/>
+<text x="627" y="241" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="672" y="222" width="62" height="28" rx="4" class="cell"/>
+<text x="703" y="241" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="748" y="222" width="62" height="28" rx="4" class="cell"/>
+<text x="779" y="241" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="824" y="222" width="62" height="28" rx="4" class="cell"/>
+<text x="855" y="241" text-anchor="middle" class="cell-text mono">n</text>
+<text x="508" y="274" text-anchor="end" class="mini-text mono p4-text">P4</text>
+<rect x="520" y="258" width="62" height="28" rx="4" class="cell"/>
+<text x="551" y="277" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="596" y="258" width="62" height="28" rx="4" class="cell"/>
+<text x="627" y="277" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="672" y="258" width="62" height="28" rx="4" class="cell"/>
+<text x="703" y="277" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="748" y="258" width="62" height="28" rx="4" class="cell"/>
+<text x="779" y="277" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="824" y="258" width="62" height="28" rx="4" class="cell"/>
+<text x="855" y="277" text-anchor="middle" class="cell-text mono">n</text>
+<text x="508" y="310" text-anchor="end" class="mini-text mono p5-text">P5</text>
+<rect x="520" y="294" width="62" height="28" rx="4" class="cell"/>
+<text x="551" y="313" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="596" y="294" width="62" height="28" rx="4" class="cell"/>
+<text x="627" y="313" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="672" y="294" width="62" height="28" rx="4" class="cell"/>
+<text x="703" y="313" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="748" y="294" width="62" height="28" rx="4" class="cell"/>
+<text x="779" y="313" text-anchor="middle" class="cell-text mono">n</text>
+<rect x="824" y="294" width="62" height="28" rx="4" class="cell"/>
+<text x="855" y="313" text-anchor="middle" class="cell-text mono">n</text>
+<path d="M520,392 L670,392 L680,404 L670,416 L520,416 L530,404 Z" class="chev1"/>
+<text x="604.0" y="408" text-anchor="middle" class="mini-text strong">2023–25</text>
+<path d="M686,392 L836,392 L846,404 L836,416 L686,416 L696,404 Z" class="chev0"/>
+<text x="770.0" y="408" text-anchor="middle" class="mini-text strong">2026–28</text>
+<path d="M852,392 L934,392 L944,404 L934,416 L852,416 L862,404 Z" class="chev0"/>
+<text x="902.0" y="408" text-anchor="middle" class="mini-text strong">2029–30</text>
+<text x="508" y="443" text-anchor="end" class="mini-text mono p1-text">P1</text>
+<rect x="520" y="428" width="424" height="22" rx="4" class="lane"/>
+<text x="508" y="473" text-anchor="end" class="mini-text mono p2-text">P2</text>
+<rect x="520" y="458" width="424" height="22" rx="4" class="lane"/>
+<text x="508" y="503" text-anchor="end" class="mini-text mono p3-text">P3</text>
+<rect x="520" y="488" width="424" height="22" rx="4" class="lane"/>
+<text x="508" y="533" text-anchor="end" class="mini-text mono p4-text">P4</text>
+<rect x="520" y="518" width="424" height="22" rx="4" class="lane"/>
+<text x="508" y="563" text-anchor="end" class="mini-text mono p5-text">P5</text>
+<rect x="520" y="548" width="424" height="22" rx="4" class="lane"/>
+<path d="M560,432 L567,439 L560,446 L553,439 Z" class="ms"/>
+<path d="M700,432 L707,439 L700,446 L693,439 Z" class="ms"/>
+<path d="M610,462 L617,469 L610,476 L603,469 Z" class="ms"/>
+<path d="M820,492 L827,499 L820,506 L813,499 Z" class="ms"/>
+<path d="M650,522 L657,529 L650,536 L643,529 Z" class="ms"/>
+<path d="M880,522 L887,529 L880,536 L873,529 Z" class="ms"/>
+<path d="M740,552 L747,559 L740,566 L733,559 Z" class="ms"/>
+<text x="30" y="628" class="zone-label">RANTAI ACUAN YANG DITELUSURI ASESOR</text>
+<rect x="30" y="640" width="196" height="34" rx="6" class="chain0"/>
+<text x="128.0" y="662" text-anchor="middle" class="chain-text">Renstra ITS 2026–2030</text>
+<line x1="230" y1="657" x2="252" y2="657" class="arrow" marker-end="url(#ah)"/>
+<rect x="260" y="640" width="196" height="34" rx="6" class="chain0"/>
+<text x="358.0" y="662" text-anchor="middle" class="chain-text">RIP &amp; peta jalan FKK</text>
+<line x1="460" y1="657" x2="482" y2="657" class="arrow" marker-end="url(#ah)"/>
+<rect x="490" y="640" width="196" height="34" rx="6" class="chain0"/>
+<text x="588.0" y="662" text-anchor="middle" class="chain-text">RIP tiap prodi</text>
+<line x1="690" y1="657" x2="712" y2="657" class="arrow" marker-end="url(#ah)"/>
+<rect x="720" y="640" width="196" height="34" rx="6" class="chain1"/>
+<text x="818.0" y="662" text-anchor="middle" class="chain-text">Agenda tiap dosen</text>
+<text x="970" y="628" text-anchor="end" class="ps-meta">Rekap per tanggal … · n dosen</text>
+</svg></div>
+    <figcaption>Label biru di sudut tiap bidang menunjukkan tab instrumen yang menjadi sumber angkanya. Pita bawah memperlihatkan rantai acuan dari Renstra ITS sampai agenda tiap dosen. Rantai ini yang ditelusuri asesor pada kriteria penelitian.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="lj">
+  <h2 id="lj">Peta jalan lajur</h2>
+  <p class="sec-intro">Kolomnya memakai tiga periode yang sama dengan RIP prodi, sehingga tabel fakultas dan prodi bisa dibaca berdampingan. Angka di lajur berasal dari RIP Prodi Kedokteran &amp; Profesi Dokter; Prodi Teknologi Kedokteran masuk lewat isian instrumen.</p>
+  <figure>
+    <div class="scroll"><svg viewBox="0 0 1040 574" role="img" aria-label="Peta jalan lajur dengan tiga periode yang sama dengan RIP prodi: 2023 sampai 2025, 2026 sampai 2028, 2029 sampai 2030. Baris tonggak bersama, lalu lajur lima pilar, akar ilmu dasar, dan platform, berisi jumlah luaran dari RIP Prodi Kedokteran dan Profesi Dokter.">
+<path d="M220,12 L506,12 L520,37 L506,62 L220,62 L234,37 Z" class="chev0"/>
+<text x="246" y="33" class="lj-phase mono">2023–2025</text>
+<text x="246" y="51" class="lj-year">Bukti konsep · capaian</text>
+<path d="M526,12 L812,12 L826,37 L812,62 L526,62 L540,37 Z" class="chev1"/>
+<text x="552" y="33" class="lj-phase mono">2026–2028</text>
+<text x="552" y="51" class="lj-year">Pengembangan &amp; validasi</text>
+<path d="M832,12 L1014,12 L1028,37 L1014,62 L832,62 L846,37 Z" class="chev0"/>
+<text x="858" y="33" class="lj-phase mono">2029–2030</text>
+<text x="858" y="51" class="lj-year">Hilirisasi &amp; penerapan</text>
+<text x="206" y="102" text-anchor="end" class="lj-lane strong">Tonggak bersama</text>
+<text x="206" y="120" text-anchor="end" class="lj-small">ketiga prodi</text>
+<rect x="220" y="76" width="300" height="112" rx="6" class="ms-cell"/>
+<path d="M236,93 L241,98 L236,103 L231,98 Z" class="ms"/>
+<text x="250" y="102" class="lj-text">FKK berdiri (Peraturan Rektor 2/2023)</text>
+<path d="M236,115 L241,120 L236,125 L231,120 Z" class="ms"/>
+<text x="250" y="124" class="lj-text">Roadmap FKK 2023–2025, edisi 1</text>
+<path d="M236,137 L241,142 L236,147 L231,142 Z" class="ms"/>
+<text x="250" y="146" class="lj-text">197 luaran dosen terpetakan</text>
+<path d="M236,159 L241,164 L236,169 L231,164 Z" class="ms"/>
+<text x="250" y="168" class="lj-text">T1, T3, T4 memenuhi syarat dua nama</text>
+<rect x="526" y="76" width="300" height="112" rx="6" class="ms-cell"/>
+<path d="M542,93 L547,98 L542,103 L537,98 Z" class="ms"/>
+<text x="556" y="102" class="lj-text">SK peta jalan edisi 2 (awal 2027)</text>
+<path d="M542,115 L547,120 L542,125 L537,120 Z" class="ms"/>
+<text x="556" y="124" class="lj-text">Koas masuk RSUD 2027: W3 aktif</text>
+<path d="M542,137 L547,142 L542,147 L537,142 Z" class="ms"/>
+<text x="556" y="146" class="lj-text">Sensus dasar Desa Binaan + pembanding</text>
+<path d="M542,159 L547,164 L542,169 L537,164 Z" class="ms"/>
+<text x="556" y="168" class="lj-text">T2 &amp; T5 memenuhi syarat dua nama</text>
+<rect x="832" y="76" width="196" height="112" rx="6" class="ms-cell"/>
+<path d="M848,93 L853,98 L848,103 L843,98 Z" class="ms"/>
+<text x="862" y="102" class="lj-text">Purwarupa ke izin edar</text>
+<path d="M848,115 L853,120 L848,125 L843,120 Z" class="ms"/>
+<text x="862" y="124" class="lj-text">Bukti dipakai Dinkes</text>
+<path d="M848,137 L853,142 L848,147 L843,142 Z" class="ms"/>
+<text x="862" y="146" class="lj-text">Evaluasi, lalu edisi 3</text>
+<text x="206" y="229" text-anchor="end" class="lj-lane p1-text">P1 Deteksi Dini PTM</text>
+<rect x="220" y="204" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="204" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="204" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="222" class="lj-text strong">61 luaran</text>
+<text x="234" y="238" class="lj-small">PTM</text>
+<text x="540" y="222" class="lj-text strong">18 luaran di 2026</text>
+<text x="540" y="238" class="lj-small">+ isian dosen</text>
+<text x="846" y="230" class="lj-placeholder">target: Unit Penelitian</text>
+<text x="206" y="279" text-anchor="end" class="lj-lane p2-text">P2 Ibu, Anak &amp; 1000 HPK</text>
+<rect x="220" y="254" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="254" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="254" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="272" class="lj-text strong">35 luaran</text>
+<text x="234" y="288" class="lj-small">RNA 19 + KSR 16</text>
+<text x="540" y="272" class="lj-text strong">10 luaran di 2026</text>
+<text x="540" y="288" class="lj-small">+ isian dosen</text>
+<text x="846" y="280" class="lj-placeholder">target: Unit Penelitian</text>
+<text x="206" y="329" text-anchor="end" class="lj-lane p3-text">P3 Infeksi, AMR &amp; Ketahanan</text>
+<rect x="220" y="304" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="304" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="304" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="322" class="lj-text strong">36 luaran</text>
+<text x="234" y="338" class="lj-small">PM</text>
+<text x="540" y="322" class="lj-text strong">8 luaran di 2026</text>
+<text x="540" y="338" class="lj-small">+ isian dosen</text>
+<text x="846" y="330" class="lj-placeholder">target: Unit Penelitian</text>
+<text x="206" y="379" text-anchor="end" class="lj-lane p4-text">P4 Trauma &amp; Restorasi</text>
+<rect x="220" y="354" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="354" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="354" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="372" class="lj-text strong">belum ada topik prodi</text>
+<text x="540" y="372" class="lj-text strong">dari isian dosen</text>
+<text x="540" y="388" class="lj-small">terutama Teknologi Kedokteran</text>
+<text x="846" y="380" class="lj-placeholder">target: Unit Penelitian</text>
+<text x="206" y="429" text-anchor="end" class="lj-lane p5-text">P5 Sistem Kes. &amp; Pendidikan</text>
+<rect x="220" y="404" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="404" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="404" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="422" class="lj-text strong">31 luaran</text>
+<text x="234" y="438" class="lj-small">topik ke-7</text>
+<text x="540" y="422" class="lj-text strong">6 luaran di 2026</text>
+<text x="540" y="438" class="lj-small">+ isian dosen</text>
+<text x="846" y="430" class="lj-placeholder">target: Unit Penelitian</text>
+<text x="206" y="479" text-anchor="end" class="lj-lane ">Akar ilmu dasar</text>
+<rect x="220" y="454" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="454" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="454" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="472" class="lj-text strong">34 luaran</text>
+<text x="234" y="488" class="lj-small">Basic Science</text>
+<text x="540" y="472" class="lj-text strong">8 luaran di 2026</text>
+<text x="540" y="488" class="lj-small">+ isian dosen</text>
+<text x="846" y="480" class="lj-placeholder">target: Unit Penelitian</text>
+<text x="206" y="529" text-anchor="end" class="lj-lane plat-text">Platform · Digital Health</text>
+<rect x="220" y="504" width="300" height="42" rx="6" class="lane-data"/>
+<rect x="526" y="504" width="300" height="42" rx="6" class="lane-empty"/>
+<rect x="832" y="504" width="196" height="42" rx="6" class="lane-empty"/>
+<text x="234" y="522" class="lj-text strong">TKT tertinggi 3–4</text>
+<text x="234" y="538" class="lj-small">RIP prodi, Tabel 17</text>
+<text x="540" y="522" class="lj-text strong">target TKT 4–5</text>
+<text x="540" y="538" class="lj-small">RIP prodi, Tabel 17</text>
+<text x="846" y="530" class="lj-placeholder">target TKT 6–7</text>
+</svg></div>
+    <figcaption>Periode 2023–2025 adalah capaian dan menjadi garis dasar evaluasi edisi pertama. Kolom 2026–2028 baru berisi satu tahun, lalu ditambah rencana dari tab PETA JALAN instrumen. Target angka periode berikutnya disusun Unit Penelitian dari data SINTA dan tidak dikarang di sini.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="r">
+  <h2 id="r">Aturan ukuran agar tetap feasible</h2>
+  <ol class="rules">
+<li><h3>Tiga tingkat di gambar</h3><p>Visi, pilar, topik. Subtopik dan judul penelitian tinggal di tabel dan di instrumen isian.</p></li>
+<li><h3>Lima cabang, paling banyak empat ranting</h3><p>Dua puluh ranting adalah batas atas. Pilar yang baru punya dua ranting aktif cukup digambar dua.</p></li>
+<li><h3>Ranting hidup kalau ada timnya</h3><p>Usulan: paling sedikit dua dosen tercatat di instrumen, sebagai ketua atau anggota. Ranting tanpa tim tetap digambar sebagai tunas dan menjadi peta rekrutmen.</p></li>
+<li><h3>Kode sama di semua dokumen</h3><p>1.1–5.4, T1–T5, dan W0–W4 dipakai persis sama di poster, RIP, instrumen, dan formulir skripsi/TA.</p></li>
+<li><h3>Warna dikunci</h3><p>Lima warna pilar dipakai sama di poster, slide, dan lampiran. Prodi dibedakan di batang, tidak di cabang.</p></li>
+<li><h3>Struktur lima tahun, isi setahun</h3><p>Cabang tetap sampai evaluasi 2030 yang melahirkan edisi 3. Status ranting diperbarui di setiap rekap tahunan sebagai bagian siklus PPEPP.</p></li>
+  </ol>
+</section>
+
+<p class="foot">Sumber isi: Rancangan Pohon Penelitian FKK ITS (draf kerja, PR #1, §5.1–5.5), RIP Prodi Kedokteran dan Profesi Dokter FKK ITS 2026–2030 (draf, Tabel 2–17), dan instrumen isian agenda penelitian dosen. Halaman ini bahan diskusi bentuk, bukan dokumen resmi FKK ITS.</p>
+</main>
