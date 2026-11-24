@@ -147,7 +147,7 @@ async function icon(Comp, hex, size = 256) {
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Inti" });
   s.addText("Satu matriks, dua peta jalan setara", { placeholder: "title" });
   s.addImage({ path: path.join(FIG, "fig_duaarah.png"), x: 1.52, y: 1.3, w: 10.29, h: 5.55, altText: "Matriks lima pilar kali lima platform dibaca dua arah: per baris peta jalan Prodi Kedokteran & Profesi Dokter, per kolom peta jalan Prodi Teknologi Kedokteran; tiga contoh jalur tiga prodi A EEG, B e-nose diabetes, C bone plate & prostesis", objectName: "fig-duaarah" });
-  s.addNotes("Usulan revisi K1: platform tidak lagi internal. Matriks yang sama dibaca per baris oleh Prodi Kedokteran & Profesi Dokter (pilar, luaran per topik) dan per kolom oleh Prodi Teknologi Kedokteran (platform, TKT 1–9, wahana W0→W4). Satu judul diisi sekali dan tercatat di kedua peta jalan. Isi sel adalah kode topik draf §5.1. Tiga jalur A, B, C adalah contoh cara membaca, bukan penugasan: EEG (Wibawa, Pamungkas; dr. Riva, dr. Zain), e-nose diabetes (Dr. Shoffi; dr. Atina; dr. Endah), bone plate & prostesis (Syaifudin, Kuswanto; dr. Ivor). Struktur pohon, kode, dan instrumen tidak berubah.");
+  s.addNotes("Usulan revisi K1: platform tidak lagi internal. Matriks yang sama dibaca per baris oleh Prodi Kedokteran & Profesi Dokter (pilar, luaran per topik) dan per kolom oleh Prodi Teknologi Kedokteran (platform, TKT 1–9, wahana W0→W4). Satu judul diisi sekali dan tercatat di kedua peta jalan. Isi sel adalah kode topik draf §5.1. Tiga jalur A, B, C adalah contoh cara membaca, bukan penugasan: EEG (Wibawa, Pamungkas; dr. Riva, dr. Zain), e-nose diabetes (Dr. Shoffi; dr. Endah; pendamping Sp.PD), bone plate & prostesis (Syaifudin, Kuswanto; dr. Ivor). Struktur pohon, kode, dan instrumen tidak berubah.");
 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Inti" });
   s.addText("Peta jalan Teknologi Kedokteran: lima platform", { placeholder: "title" });
@@ -205,7 +205,7 @@ async function icon(Comp, hex, size = 256) {
   s.addNotes("Dokumen kembar Pohon Penelitian (keputusan K4): Rancangan Peta Jalan PkM FKK ITS 2026–2030, draf kerangka 24 November 2026. M3 adalah tangga lima anak tangga di atas. Peran prodi: Kedokteran memimpin anak tangga 1–3, Profesi Dokter 3–4 dalam layanan, Teknologi Kedokteran 3–5 untuk penerapan produk. Butir LAM-PTKes 5.6 dan IAPS BAN-PT untuk PkM dipetakan di §9 draf. Yang masih kosong: register PkM per program dan ukuran manfaat yang disepakati mitra.");
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Inti" });
   s.addText("Instrumen: setiap dosen mengisi sendiri", { placeholder: "title" });
-  const steps = [[icUsers, "DAFTAR DOSEN", "48 nama awal, dicocokkan dengan PDDikti Gasal 2026. Dosen melengkapi homebase, bidang, status. Yang belum mengisi terlihat."], [icList, "AGENDA", "Satu baris satu proyek (penelitian atau PkM), 2–5 per dosen. Diisi sekali oleh ketuanya; ID proyek otomatis; rekan lintas prodi cukup dipilih."], [icChart, "REKAP OTOMATIS", "Matriks Pilar × Platform, rekap per prodi, peta jalan per tahun, % lintas prodi, % melibatkan mahasiswa."]];
+  const steps = [[icUsers, "DAFTAR DOSEN", "41 dosen dari daftar resmi fakultas 2026 + 2 calon dosen yang aktif mengajar; prodi, jabatan, dan bidang keahlian diisi awal untuk dikoreksi."], [icList, "AGENDA", "Satu baris satu proyek (penelitian atau PkM), 2–5 per dosen. Diisi sekali oleh ketuanya; ID proyek otomatis; rekan lintas prodi cukup dipilih."], [icChart, "REKAP OTOMATIS", "Matriks Pilar × Platform, rekap per prodi, peta jalan per tahun, % lintas prodi, % melibatkan mahasiswa."]];
   steps.forEach(([ic, h, d], i) => {
     const x = 0.6 + i * 4.15;
     s.addShape(pres.shapes.OVAL, { x, y: 1.6, w: 0.8, h: 0.8, fill: { color: C.text2 }, line: { color: C.text2 }, objectName: `step-bg-${i + 1}` });
@@ -219,7 +219,7 @@ async function icon(Comp, hex, size = 256) {
     { text: "Dibuat untuk Google Sheets bersama. ", options: { bold: true } },
     { text: "Opsi \"di luar pohon\" sengaja disediakan karena persentasenya adalah angka evaluasi kesesuaian. Padanan tujuh topik RIP prodi ada di tab PETUNJUK. Ada tab REKAP PLATFORM untuk Tekdok dan kolom anak tangga PkM. Diuji dengan kasus tepi: 2.386 rumus, nol galat.", options: {} },
   ], { x: 0.9, y: 5.0, w: 11.5, h: 1.25, fontSize: 15, color: C.text1, margin: 0, valign: "middle", isTextBox: true });
-  s.addNotes("Daftar nama bukan roster resmi: penelusuran publik, Tabel 2 RIP prodi, dan pencocokan dengan PDDikti Gasal 2026 (24 November). Roster resmi tetap dari kepegawaian. Kaprodi diminta mengoreksinya di review tim kecil. Batas pengisian usulan: Jumat 8 Januari 2027.");
+  s.addNotes("Daftar nama memakai daftar dosen resmi fakultas 2026 (41 dosen, diterima 24 November): 15 Kedokteran, 12 Profesi Dokter, 12 Teknologi Kedokteran, ditambah Dekan dan Wakil Dekan. Kaprodi diminta mengoreksinya di review tim kecil. Batas pengisian usulan: Jumat 8 Januari 2027.");
 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Inti" });
   s.addText("Akreditasi: dua lembaga, satu inti", { placeholder: "title" });
@@ -425,7 +425,7 @@ async function icon(Comp, hex, size = 256) {
 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Lampiran" });
   s.addText("Yang masih harus diverifikasi", { placeholder: "title" });
-  const ver = [["Paket instrumen final", "Aturan sudah jelas (LAM-PTKes 5.5/5.6; BAN-PT IAPS 5.1). Cocokkan paket final di akun akreditasi prodi."], ["Evaluasi Roadmap FKK 2023–2025", "Sudah ditemukan dan diaudit. Evaluasi per proyek (lima status) paling lambat 8 Januari."], ["Roster dosen resmi", "Sudah dicocokkan dengan PDDikti Gasal 2026; tetap perlu data kepegawaian bertanggal."], ["Data Prodi Teknologi Kedokteran", "Dosen ber-homebase, judul & luaran per platform, TKT per produk; tim menyiapkan draf pra-isi."], ["Data SINTA untuk target", "Target angka periode 2026–2028 disusun Unit Penelitian dari data resmi."], ["Peredaran naskah", "Naskah edaran ringkas sudah dipisah. Dokumen kerja memuat penilaian per orang: repositorinya perlu dijadikan privat."]];
+  const ver = [["Paket instrumen final", "Aturan sudah jelas (LAM-PTKes 5.5/5.6; BAN-PT IAPS 5.1). Cocokkan paket final di akun akreditasi prodi."], ["Evaluasi Roadmap FKK 2023–2025", "Sudah ditemukan dan diaudit. Evaluasi per proyek (lima status) paling lambat 8 Januari."], ["Status mitra klinis", "Roster resmi sudah ada (41 dosen). Beberapa klinisi di draf tidak tercantum: konfirmasi apakah pengajar non-tetap atau mitra RS."], ["Data Prodi Teknologi Kedokteran", "Dosen ber-homebase, judul & luaran per platform, TKT per produk; tim menyiapkan draf pra-isi."], ["Data SINTA untuk target", "Target angka periode 2026–2028 disusun Unit Penelitian dari data resmi."], ["Peredaran naskah", "Naskah edaran ringkas sudah dipisah. Dokumen kerja memuat penilaian per orang: repositorinya perlu dijadikan privat."]];
   ver.forEach(([h, d], i) => {
     const y = 1.45 + i * 0.88;
     s.addImage({ data: icWarn, x: 0.65, y: y + 0.08, w: 0.36, h: 0.36, altText: "Perlu verifikasi", objectName: `warn-${i + 1}` });

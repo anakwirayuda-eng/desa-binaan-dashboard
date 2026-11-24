@@ -184,60 +184,101 @@ STATUS_PEG = ["Aktif", "Tugas belajar", "Cuti / lainnya"]
 # Starting roster: names only, from the draft research tree (§2, §4.1).
 # No homebase, field or commentary is pre-filled: lecturers enter their own.
 ROSTER = [
-    "dr. Lukman Hakim, M.Kes., Sp.U(K), Ph.D",
+    # Official FKK list of lecturers 2026 (Daftar Dosen dan Tendik FKK ITS 2026, received 24 Nov 2026).
+    # Names only; NIP/NPP and staff (tendik) are deliberately not copied.
+    "dr. Lukman Hakim, M.Kes., Sp.U(K)., Ph.D.",
     "Prof. Dr. I Ketut Eddy Purnama, S.T., M.T.",
+    "Dr. Shoffi Izza Sabilla, S.Kom.",
+    "dr. Rahmah Yasinta Rangkuti, M.Biomed, SpA",
     "dr. Endah Indriastuti, Sp.PK",
+    "Djoko Kuswanto, S.T., M.Biotech.",
+    "Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.",
+    "Yuri Pamungkas, S.Tr.T, M.T.",
+    "Achmad Syaifudin, S.T., M.Eng., Ph.D",
+    "Dr. Dhany Arifianto, S.T., M.Eng.",
+    "Fahmi Mubarok, S.T., M.Sc., Ph.D.",
+    "dr. Putri Alief Siswanto, M.T.",
+    "Nadya Paramitha Jafari, S.Ds., M.MT",
+    "Gusfatul Mukhairiq, S.T., M.T.",
+    "Alfandino Rasyid, S.Tr.T., M.Tr.T",
+    "Rifa'atul Izza Asyari, S.T., M.Sc., Ph.D.",
     "dr. Muhammad Nazhif Haykal, M.Biomed",
     "dr. Rizka Nurul Hidayah, M.Biomed",
     "dr. Fatimah Nur Fitriani, M.Biomed",
-    "dr. Gumilar Fardhani Ami Putra, M.Biomed",
-    "dr. Dwinka Syafira Eljatin, M.Ked.Trop",
-    "dr. Abdurrahman, Sp.An-TI, M.Ked.Klin",
-    "dr. Lely Nurhayati, M.H., C.M.C",
-    "dr. Edwin Nugroho Njoto, Sp.PD, MIPH, MHM",
-    "Dr. Anak Agung Bagus Wirayuda, dr., B.Med., M.D., M.Sc.",
-    "Ira Resmi Melani, S.Ked",
-    "dr. Atina Irani Wira Putri, Sp.PD",
-    "dr. Rahmah Yasinta Rangkuti, Sp.A, M.Biomed",
-    "dr. Tri Hedianto, Sp.THT-BKL",
-    "dr. Afia Nuzila Fadhlina, Sp.M, M.Ked.Klin",
-    "dr. Riva Satya Radiansyah, Sp.N",
-    "dr. Zain Budi Syulthoni, Sp.KJ",
+    "dr. Ahmad Ridhoi, M.Biomed",
+    "dr. Edwin Nugroho Njoto, MIPH., MHM.",
+    "dr. Anak Agung Bagus Wirayuda, B.Med., M.D., M.Sc.",
+    "dr. Anwar Djunaidi, Sp.F.",
+    "dr. Gumilar Fardhani Ami Putra, M. Biomed.",
+    "dr. Dwinka Syafira Eljatin, M.Ked.Trop.",
+    "dr. Fira Soraya, Sp.P.A.",
+    "dr. Lely Nurhayati, M.H., C.M.C.",
+    "dr. Dyahati Wahyurini, M.Biomed.",
+    "dr. Noer Halimatus Syakdiyah, S.Ked., M.Imun.",
+    "dr. Iffa Halimah Hasna, S.Ked., M.Biomed.",
+    "dr. Sonny Fadli, M.Ked.Klin., SpOG",
+    "dr. Tri Hedianto, Sp.THT-KL",
     "dr. Desiana Widityaning Sari, Sp.DV, M.Ked.Klin",
-    "dr. Anwar Djunaidi, Sp.F",
+    "dr. Zain Budi Syulthoni, Sp.KJ",
+    "dr. Riva Satya Radiansyah, Sp.N",
+    "dr. Ratri Dwi Indriani, Sp.An.FIP.FIPP",
+    "dr. Afia Nuzila Fadhlina, Sp.M., M.Ked.Klin.",
     "dr. Erna Furaidah, Sp.Rad",
-    "dr. Ivor Wiguna Hartanto Wilopo, Sp.B, FINACS",
-    "dr. Sonny Fadli, M.Ked.Klin, Sp.OG",
-    "dr. Ratri Dwi Indriani, Sp.An, FIP, FIPP",
-    "Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.",
-    "Dr. Shoffi Izza Sabilla, S.Kom., M.Kom.",
-    "Achmad Syaifudin, Ph.D",
-    "Djoko Kuswanto, S.T., M.Biotech.",
-    "Dr. Eng. Dhany Arifianto",
-    "Yuri Pamungkas, S.Tr.T., M.T.",
-    "Hamdan Dwi Rizqi, S.Si., M.Si.",
-    "Fahmi Mubarok, Ph.D",
-    "Nadya Paramitha Jafari, S.Ds., M.T.",
-    "Gusfatul Mukhairiq, S.T., M.T.",
-    # Added 23 Nov 2026: PIC/members named in the RIP of Prodi Kedokteran & Profesi Dokter (Tabel 2);
-    # short names resolved the same day from the prodi PkM roadmap PIC table and the Gasal 2026/27 calendar.
-    "dr. Dyahati Wahyurini, M.Biomed",
-    "dr. Zulistian Nurul Hidayati, Sp.PD",
-    "dr. Alfian Nurfaizi",
+    "dr. Ivor Wiguna Hartanto Wilopo, Sp.B., FINACS",
+    "dr. Zulistian Nurul Hidayati, Sp.P.D.",
+    "dr. Jovian Philip Swatan, Sp.N., M.Sc.",
+    # Calon dosen already teaching (confirmed by the user 24 Nov 2026), not yet on the faculty list.
+    "dr. Alfian Nurfaizi, M.D., MDHDS, CHIA",
     "dr. Faizal Mahdi",
-    "dr. Fira Soraya, Sp.PA",
-    # Teknologi Kedokteran names on the public prodi roster / SINTA department list.
-    "dr. Putri Alief Siswanto, M.T.",
-    "Alfandino Rasyid, S.Tr.T., M.Tr.T.",
-    # Added 24 Nov 2026: permanent lecturers listed in PDDikti Gasal 2026 (public profile pages) but missing above.
-    "dr. Ahmad Ridhoi, M.Si.",
-    "dr. Noer Halimatus Syakdiyah, M.Imun.",
-    "dr. Jovian Philip Swatan, Sp.N",
-    "dr. Rumman Karimah, M.Biomed",
-    "dr. Iffa Halimah Hasna, M.Biomed",
-    "Rifa'atul Izza Asyari, S.T., M.Sc.",
 ]
 
+
+PREFILL = {  # name -> (homebase, jabatan, bidang)
+    "dr. Alfian Nurfaizi, M.D., MDHDS, CHIA": ["S1 Kedokteran", "Calon dosen (aktif mengajar)", "Digital health; kesehatan maternal (BEmONC)"],
+    "dr. Faizal Mahdi": ["", "Calon dosen (aktif mengajar)", ""],
+  #: draft from PDDikti Gasal 2026, faculty list 2026, public profiles
+    "dr. Lukman Hakim, M.Kes., Sp.U(K)., Ph.D.": ["", "Dekan", "Uro-oncology; Functional and Reconstructive; Urology Stem Cells"],
+    "Prof. Dr. I Ketut Eddy Purnama, S.T., M.T.": ["", "Guru Besar · Wakil Dekan", "Data Mining; Medical Image Processing; Intelligent System"],
+    "Dr. Shoffi Izza Sabilla, S.Kom.": ["Teknologi Kedokteran", "Lektor · Kaprodi Teknologi Kedokteran", "Biomedical Signal Processing; Internet of Things; Medical Application"],
+    "dr. Rahmah Yasinta Rangkuti, M.Biomed, SpA": ["Pendidikan Profesi Dokter", "Asisten Ahli · Kaprodi Profesi Dokter", "Ilmu Kesehatan Anak"],
+    "dr. Endah Indriastuti, Sp.PK": ["S1 Kedokteran", "Asisten Ahli · Kaprodi Kedokteran", "Patologi Klinik"],
+    "Djoko Kuswanto, S.T., M.Biotech.": ["Teknologi Kedokteran", "Lektor · Kepala Lab Teknologi Kesehatan", "Digital Design; 3D Printing; Prosthesis Technology"],
+    "Prof. Dr. Ir. Adhi Dharma Wibawa, S.T., M.T.": ["Teknologi Kedokteran", "Guru Besar", "Biomedical Signal Processing; Text Mining; Artificial Intelligence"],
+    "Yuri Pamungkas, S.Tr.T, M.T.": ["Teknologi Kedokteran", "Lektor", "Artificial Intelligence; EEG Research; IoT Research"],
+    "Achmad Syaifudin, S.T., M.Eng., Ph.D": ["Teknologi Kedokteran", "Lektor Kepala", "Solid Mechanics; Medical Mechanics; Sport Biomechanics"],
+    "Dr. Dhany Arifianto, S.T., M.Eng.": ["Teknologi Kedokteran", "Lektor Kepala", "Acoustical Signal Processing; Auditory Neuroscience; Vibration Analysis"],
+    "Fahmi Mubarok, S.T., M.Sc., Ph.D.": ["Teknologi Kedokteran", "Lektor", "Biomaterial; coating; keramik"],
+    "dr. Putri Alief Siswanto, M.T.": ["Teknologi Kedokteran", "Asisten Ahli", "Artificial Neural Network; IQ Research; Predictive Biomedicine"],
+    "Nadya Paramitha Jafari, S.Ds., M.MT": ["Teknologi Kedokteran", "Asisten Ahli", "Digital Design; User Experience; Medical Technology"],
+    "Gusfatul Mukhairiq, S.T., M.T.": ["Teknologi Kedokteran", "Asisten Ahli", ""],
+    "Alfandino Rasyid, S.Tr.T., M.Tr.T": ["Teknologi Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", ""],
+    "Rifa'atul Izza Asyari, S.T., M.Sc., Ph.D.": ["Teknologi Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", ""],
+    "dr. Muhammad Nazhif Haykal, M.Biomed": ["S1 Kedokteran", "Asisten Ahli", "Biologi Sel dan Molekuler; Biomedical engineering"],
+    "dr. Rizka Nurul Hidayah, M.Biomed": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Histologi"],
+    "dr. Fatimah Nur Fitriani, M.Biomed": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Biokimia"],
+    "dr. Ahmad Ridhoi, M.Biomed": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Mikrobiologi"],
+    "dr. Edwin Nugroho Njoto, MIPH., MHM.": ["S1 Kedokteran", "Asisten Ahli", "Ilmu Kesehatan Masyarakat / Ilmu Kedokteran Komunitas / Ilmu Kedokteran Pencegahan"],
+    "dr. Anak Agung Bagus Wirayuda, B.Med., M.D., M.Sc.": ["S1 Kedokteran", "Lektor", "Ilmu Kesehatan Masyarakat / Ilmu Kedokteran Komunitas / Ilmu Kedokteran Pencegahan"],
+    "dr. Anwar Djunaidi, Sp.F.": ["S1 Kedokteran", "Asisten Ahli", "Ilmu Kedokteran Forensik dan Medikolegal"],
+    "dr. Gumilar Fardhani Ami Putra, M. Biomed.": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Anatomi"],
+    "dr. Dwinka Syafira Eljatin, M.Ked.Trop.": ["S1 Kedokteran", "Asisten Ahli", "Parasitologi"],
+    "dr. Fira Soraya, Sp.P.A.": ["S1 Kedokteran", "Asisten Ahli", "Patologi Anatomi"],
+    "dr. Lely Nurhayati, M.H., C.M.C.": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Humaniora (Medikolegal)"],
+    "dr. Dyahati Wahyurini, M.Biomed.": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Biomedik"],
+    "dr. Noer Halimatus Syakdiyah, S.Ked., M.Imun.": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Imunologi"],
+    "dr. Iffa Halimah Hasna, S.Ked., M.Biomed.": ["S1 Kedokteran", "Tenaga Pengajar (belum ada jabatan fungsional)", "Biomedik (inferensi gelar M.Biomed)"],
+    "dr. Sonny Fadli, M.Ked.Klin., SpOG": ["Pendidikan Profesi Dokter", "Asisten Ahli", "Ilmu Kebidanan dan Penyakit Kandungan"],
+    "dr. Tri Hedianto, Sp.THT-KL": ["Pendidikan Profesi Dokter", "Tenaga Pengajar (belum ada jabatan fungsional)", "Ilmu Penyakit Telinga, Hidung, Tenggorok"],
+    "dr. Desiana Widityaning Sari, Sp.DV, M.Ked.Klin": ["Pendidikan Profesi Dokter", "Asisten Ahli", "Ilmu Kesehatan Kulit dan Kelamin"],
+    "dr. Zain Budi Syulthoni, Sp.KJ": ["Pendidikan Profesi Dokter", "Asisten Ahli", "Ilmu Kesehatan Jiwa"],
+    "dr. Riva Satya Radiansyah, Sp.N": ["Pendidikan Profesi Dokter", "Tenaga Pengajar (belum ada jabatan fungsional)", "Ilmu Penyakit Saraf"],
+    "dr. Ratri Dwi Indriani, Sp.An.FIP.FIPP": ["Pendidikan Profesi Dokter", "Asisten Ahli", "Ilmu Anestesi"],
+    "dr. Afia Nuzila Fadhlina, Sp.M., M.Ked.Klin.": ["Pendidikan Profesi Dokter", "Asisten Ahli", "Ilmu Kesehatan Mata"],
+    "dr. Erna Furaidah, Sp.Rad": ["Pendidikan Profesi Dokter", "Tenaga Pengajar (belum ada jabatan fungsional)", "Radiologi"],
+    "dr. Ivor Wiguna Hartanto Wilopo, Sp.B., FINACS": ["Pendidikan Profesi Dokter", "Asisten Ahli", "Ilmu Bedah"],
+    "dr. Zulistian Nurul Hidayati, Sp.P.D.": ["Pendidikan Profesi Dokter", "Tenaga Pengajar (belum ada jabatan fungsional)", "Penyakit Dalam"],
+    "dr. Jovian Philip Swatan, Sp.N., M.Sc.": ["Pendidikan Profesi Dokter", "Tenaga Pengajar (belum ada jabatan fungsional)", "Neurologi"],
+}
 
 def sort_key(name):
     core = re.sub(r"^((Prof|Dr|dr|Ir|Eng)\.\s*)+", "", name)
@@ -323,28 +364,29 @@ dd = wb.create_sheet("DAFTAR DOSEN", 0)
 title(dd, "DAFTAR DOSEN FKK ITS — profil singkat & pemantauan isian",
       "Langkah 1: cari nama Anda, lengkapi kolom kuning. Nama belum ada? Tulis di baris kosong paling bawah. "
       "Kolom abu-abu terisi otomatis dari tab AGENDA.")
-dd["A3"] = "Daftar awal hanya memuat nama dari struktur organisasi & roster yang terhimpun; mohon dikoreksi dan dilengkapi."
+dd["A3"] = "Daftar awal: nama dari Daftar Dosen FKK ITS 2026 (fakultas); prodi, jabatan, dan bidang keahlian sudah diisi awal dari PDDikti dan profil publik — mohon dikoreksi bila keliru. Dosen yang belum tercantum dapat menambahkan namanya di baris kosong."
 dd["A3"].font = F_SUB
 dd_cols = [
     ("No", 8, None),
     ("Nama dosen\n(daftar awal — jangan diubah, dipakai sebagai kunci)", 40, C_REQ),
     ("Koreksi ejaan nama & gelar\n(isi hanya bila kolom B keliru)", 32, C_OPT),
     ("NIDN / NIDK / NUPTK", 16, C_REQ),
-    ("Prodi homebase ▼", 24, C_REQ),
-    ("Bidang keahlian utama", 30, C_REQ),
+    ("Prodi homebase ▼\n(pra-isi — mohon koreksi)", 24, C_REQ),
+    ("Bidang keahlian utama\n(pra-isi — mohon koreksi)", 34, C_REQ),
     ("ID SINTA / ORCID\n(opsional)", 18, C_OPT),
     ("Status kepegawaian ▼", 16, C_REQ),
     ("Topik sebagai ketua\n(otomatis)", 12, C_AUTO),
     ("Topik sebagai anggota\n(otomatis)", 12, C_AUTO),
     ("Status isian agenda\n(otomatis)", 22, C_AUTO),
     ("Profil\n(otomatis)", 14, C_AUTO),
+    ("Jabatan fungsional · struktural\n(pra-isi — mohon koreksi)", 30, C_OPT),
 ]
 header(dd, 4, [c[0] for c in dd_cols])
 for i, (_, w, _) in enumerate(dd_cols, start=1):
     dd.column_dimensions[get_column_letter(i)].width = w
 
 ex = ["CONTOH", "(CONTOH) dr. Nama Dosen, Sp.X", "", "0000000000", "S1 Kedokteran",
-      "Epidemiologi klinis", "", "Aktif", 1, 0, "Kurang (min. 2 topik)", "OK"]
+      "Epidemiologi klinis", "", "Aktif", 1, 0, "Kurang (min. 2 topik)", "OK", "Asisten Ahli"]
 for i, v in enumerate(ex, start=1):
     c = dd.cell(row=5, column=i, value=v)
     c.font, c.fill, c.border, c.alignment = F_EX, fill(C_EX), BOX, WRAP
@@ -355,6 +397,13 @@ for r in range(D_FIRST, D_LAST + 1):
     dd.cell(row=r, column=1, value=n + 1)
     if n < len(ROSTER):
         dd.cell(row=r, column=2, value=ROSTER[n])
+        hb_, jab_, bid_ = PREFILL.get(ROSTER[n], ("", "", ""))
+        if hb_ and not TEST:
+            dd.cell(row=r, column=5, value=hb_)
+        if bid_ and not TEST:
+            dd.cell(row=r, column=6, value=bid_)
+        if jab_:
+            dd.cell(row=r, column=13, value=jab_)
     dd.cell(row=r, column=9, value=f'=IF(B{r}="","",COUNTIF({AG}!$B${A_FIRST}:$B${A_LAST},B{r}))')
     dd.cell(row=r, column=10, value=f'=IF(B{r}="","",COUNTIF({AG}!$H${A_FIRST}:$J${A_LAST},B{r}))')
     dd.cell(row=r, column=11, value=(

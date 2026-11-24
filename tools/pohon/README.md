@@ -28,6 +28,7 @@ Jalankan dari akar repo.
 | 4 | PDF dokumen | `python3 tools/pohon/build_pdf.py output/POHON_PENELITIAN_FKK_ITS.md doc.tmp.html "$PWD/output/figures"` lalu `node tools/pohon/html_to_pdf.js "$PWD/doc.tmp.html" output/POHON_PENELITIAN_FKK_ITS.pdf` |
 | 4c | PDF naskah edaran | sama seperti 4b dengan `output/NASKAH_EDARAN_POHON_PENELITIAN_FKK_ITS.md` dan label footer "Naskah edaran Pohon Penelitian FKK ITS · draf konsultasi, belum disahkan" |
 | 4b | PDF Peta Jalan PkM | `python3 tools/pohon/build_pdf.py output/PETA_JALAN_PKM_FKK_ITS.md pkm.tmp.html "$PWD/output/figures"` lalu `node tools/pohon/html_to_pdf.js "$PWD/pkm.tmp.html" output/PETA_JALAN_PKM_FKK_ITS.pdf "Rancangan Peta Jalan PkM FKK ITS · draf kerja, bukan dokumen resmi"` |
+| 6 | **Edisi Word** rencana induk (`.docx` + pratinjau PDF) | `bash tools/pohon/build_docx.sh <roster.json> <folder-kerja>`: grafik (`build_doc_figs.py`), diagram HTML (`doc_diagrams.html` + `doc_diagrams.js`), naskah (`build_docx.js`, memakai pustaka `docx` global lewat `NODE_PATH="$(npm root -g)"`), lalu `fill_toc.py` mengisi daftar isi, gambar, dan tabel dengan nomor halaman dari render LibreOffice. `roster.json` diekspor dari ROSTER + PREFILL di `output/build_instrumen_agenda.py` |
 | 5 | Paparan PPT | `node tools/pohon/build_ppt.js output/figures output/PAPARAN_POHON_PENELITIAN_FKK_ITS.pptx` |
 
 Catatan:

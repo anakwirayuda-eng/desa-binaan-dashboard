@@ -10,7 +10,7 @@ PILAR = [
   ("p4", "P4 · Trauma & Restorasi Fungsi", ["Implan ortopedi", "Prostesis & ortosis", "Rehabilitasi & asistif", "Nyeri & perioperatif"]),
   ("p5", "P5 · Sistem Kes. & Pendidikan", ["Implementasi layanan primer", "Pendidikan berbasis teknologi", "Etika & hukum AI kesehatan", "Ekonomi kesehatan & HTA"]),
 ]
-TAGS = ["RIP prodi: Penyakit Tidak Menular", "RIP prodi: RNA + KSR", "RIP prodi: Penyakit Menular",
+TAGS = ["RIP prodi: Penyakit Tidak Menular", "RIP prodi: Anak + Reproduksi", "RIP prodi: Penyakit Menular",
         "belum ada topik prodi · dipimpin T4", "RIP prodi: Med. Ed. & Sosial"]
 PLATFORM = [("T1", "Biosinyal & neuroteknologi"), ("T2", "Biosensor & diagnostik"), ("T3", "AI, citra & sains data"),
             ("T4", "Biomaterial & biomekanika"), ("T5", "Telematika kesehatan")]
@@ -212,9 +212,9 @@ CROSS_L = [("Basic Science", "34", "8"), ("Penyakit Tidak Menular", "61", "18"),
            ("Ked. Pencegahan, Med. Ed. & Sosial", "31", "6"), ("Digital Health", None, None)]
 CROSS_R = [("ilmu", "Akar ilmu · Kedokteran Dasar", "Basic Science menjadi akar tunggang"),
            ("p1", "P1 · Deteksi Dini & Pengendalian PTM", "+ kanker serviks & payudara → 1.5"),
-           ("p2", "P2 · Ibu, Anak & 1000 HPK", "RNA dan KSR bergabung"),
+           ("p2", "P2 · Ibu, Anak & 1000 HPK", "remaja–anak dan kesehatan reproduksi bergabung"),
            ("p3", "P3 · Infeksi, AMR & Ketahanan", ""),
-           ("p4", "P4 · Trauma & Restorasi Fungsi", "+ forensik & disabilitas dari topik ke-7 · dipimpin T4"),
+           ("p4", "P4 · Trauma & Restorasi Fungsi", "+ forensik & disabilitas · dipimpin Teknologi Kedokteran"),
            ("p5", "P5 · Sistem Kesehatan & Pendidikan", ""),
            ("plat", "Platform T1–T5", "Digital Health = T3 + T5")]
 LINKS = [(0, 0, False, ""), (1, 1, False, ""), (2, 2, False, ""), (2, 1, True, ""), (3, 2, False, ""),
@@ -343,13 +343,13 @@ def lajur_svg():
     W = 1040
     LX = 220
     cols = [(LX, 300, "2023–2025", "Bukti konsep · capaian"), (LX+306, 300, "2026–2028", "Pengembangan & validasi"), (LX+612, 196, "2029–2030", "Hilirisasi & penerapan")]
-    lanes = [("p1", "P1 Deteksi Dini PTM", "61 luaran", "PTM", "18 luaran di 2026", "+ isian dosen"),
-             ("p2", "P2 Ibu, Anak & 1000 HPK", "35 luaran", "RNA 19 + KSR 16", "10 luaran di 2026", "+ isian dosen"),
-             ("p3", "P3 Infeksi, AMR & Ketahanan", "36 luaran", "PM", "8 luaran di 2026", "+ isian dosen"),
-             ("p4", "P4 Trauma & Restorasi", "belum ada topik prodi", "", "dikoordinasi Tekdok (T4)", "+ isian dosen"),
-             ("p5", "P5 Sistem Kes. & Pendidikan", "31 luaran", "topik ke-7", "6 luaran di 2026", "+ isian dosen"),
-             ("ilmu", "Akar ilmu dasar", "34 luaran", "Basic Science", "8 luaran di 2026", "+ isian dosen"),
-             ("plat", "Platform T1–T5 · Tekdok", "T1, T3, T4 matang", "T2, T5 rintisan", "gerbang 1 lab → gerbang 2 W3", "TKT dicatat per produk")]
+    lanes = [("p1", "P1 Deteksi Dini PTM", "61 penempatan luaran", "Penyakit Tidak Menular", "18 luaran di 2026", "+ isian dosen"),
+             ("p2", "P2 Ibu, Anak & 1000 HPK", "35 penempatan luaran", "anak 19 + reproduksi 16", "10 luaran di 2026", "+ isian dosen"),
+             ("p3", "P3 Infeksi, AMR & Ketahanan", "36 penempatan luaran", "Penyakit Menular", "8 luaran di 2026", "+ isian dosen"),
+             ("p4", "P4 Trauma & Restorasi", "belum ada topik prodi", "", "dipimpin Teknologi Kedokteran", "+ isian dosen"),
+             ("p5", "P5 Sistem Kes. & Pendidikan", "31 penempatan luaran", "pencegahan & pendidikan", "6 luaran di 2026", "+ isian dosen"),
+             ("ilmu", "Akar ilmu dasar", "34 penempatan luaran", "Basic Science", "8 luaran di 2026", "+ isian dosen"),
+             ("plat", "Platform T1–T5", "T1, T3, T4 matang", "T2, T5 rintisan", "gerbang 1 lab → gerbang 2 W3", "TKT dicatat per produk")]
     ry, rh, lh = 76, 112, 50
     H = ry + rh + 16 + len(lanes)*lh + 20
     o = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Peta jalan lajur dengan tiga periode yang sama dengan RIP prodi: 2023 sampai 2025, 2026 sampai 2028, 2029 sampai 2030. Baris tonggak bersama, lalu lajur lima pilar, akar ilmu dasar, dan platform, berisi jumlah luaran dari RIP Prodi Kedokteran dan Profesi Dokter.">']
@@ -357,8 +357,8 @@ def lajur_svg():
         o.append(f'<path d="M{x},12 L{x+w-14},12 L{x+w},37 L{x+w-14},62 L{x},62 L{x+14},37 Z" class="chev{1 if n==1 else 0}"/>')
         o.append(f'<text x="{x+26}" y="33" class="lj-phase mono">{yr}</text>')
         o.append(f'<text x="{x+26}" y="51" class="lj-year">{E(t)}</text>')
-    ms = [["FKK berdiri (Peraturan Rektor 2/2023)", "Roadmap FKK 2023–2025, edisi 1", "197 penempatan luaran dosen", "T1, T3, T4 memenuhi syarat dua nama"],
-          ["SK peta jalan edisi 2 (awal 2027)", "Koas masuk RSUD 2027: W3 aktif", "Sensus dasar Desa Binaan + pembanding", "T2 & T5 memenuhi syarat dua nama"],
+    ms = [["FKK berdiri (Peraturan Rektor 2/2023)", "Roadmap FKK 2023–2025, edisi 1", "197 penempatan luaran dosen", "T1, T3, T4 platform matang"],
+          ["SK peta jalan edisi 2 (awal 2027)", "Koas masuk RSUD 2027: W3 aktif", "Sensus dasar Desa Binaan + pembanding", "T2 & T5 menjadi platform matang"],
           ["Paket bukti izin edar", "disetujui mitra produsen", "Bukti dipakai Dinkes", "Evaluasi, lalu edisi 3"]]
     o.append(f'<text x="{LX-14}" y="{ry+26}" text-anchor="end" class="lj-lane strong">Tonggak bersama</text>')
     o.append(f'<text x="{LX-14}" y="{ry+44}" text-anchor="end" class="lj-small">ketiga prodi</text>')
@@ -380,23 +380,23 @@ def lajur_svg():
             if t2:
                 o.append(f'<text x="{x+14}" y="{y+34}" class="lj-small">{E(t2)}</text>')
         x = cols[2][0]
-        o.append(f'<text x="{x+14}" y="{y+26}" class="lj-placeholder">{"target TKT 6–7" if key == "plat" else "target: Unit Penelitian"}</text>')
+        o.append(f'<text x="{x+14}" y="{y+26}" class="lj-placeholder">{"target TKT 6–7" if key == "plat" else "target ditetapkan bersama SK"}</text>')
     o.append('</svg>')
     return "\n".join(o)
 
 # ---------------------------------------------------------------- matrix read two ways (§5.6)
 # Cell content = topics of §5.1 whose "Platform utama" lists that platform.
 CELLS = {
-  (0, 0): "1.1", (0, 1): "1.1, 1.3", (0, 2): "1.2, 1.3", (0, 4): "1.2, 1.4",
+  (0, 0): "1.1", (0, 1): "1.1, 1.3, 1.5", (0, 2): "1.2, 1.3, 1.5", (0, 4): "1.2, 1.4",
   (1, 0): "2.3", (1, 1): "2.2, 2.4", (1, 2): "2.1", (1, 4): "2.1, 2.2",
   (2, 1): "3.2", (2, 2): "3.2, 3.3", (2, 4): "3.1, 3.3, 3.4",
   (3, 0): "4.3", (3, 3): "4.1, 4.2, 4.3", (3, 4): "4.4",
   (4, 2): "5.2", (4, 4): "5.1, 5.2, 5.4",
 }
 PILAR_SHORT = ["P1 Deteksi Dini PTM", "P2 Ibu, Anak & 1000 HPK", "P3 Infeksi & AMR", "P4 Trauma & Restorasi", "P5 Sistem & Pendidikan"]
-JALUR = [("A", 3, 0, "EEG", "P4 × T1 · butir #18, #20", "W0 → W3 → W4"),
-         ("B", 0, 1, "E-nose diabetes", "P1 × T2 · butir #1", "W0 → W3 → W4"),
-         ("C", 3, 3, "Bone plate & prostesis", "P4 × T4 · butir #14–#16", "W0 → W3")]
+JALUR = [("A", 3, 0, "EEG", "P4 × T1 · neurorehabilitasi", "W0 → W3 → W4"),
+         ("B", 0, 1, "E-nose diabetes", "P1 × T2 · skrining napas", "W0 → W3 → W4"),
+         ("C", 3, 3, "Bone plate & prostesis", "P4 × T4 · implan & prostesis", "W0 → W3")]
 
 def duaarah_svg():
     W, H = 1040, 560
@@ -438,7 +438,7 @@ def duaarah_svg():
         o.append(f'<text x="{bx}" y="{by+4.5}" text-anchor="middle" class="da-badge-t">{letter}</text>')
     # two reading boxes below the grid
     by0 = gy + 5*(ch+gap) + 34
-    boxes = [("→  PER BARIS", "Sarjana Kedokteran · Profesi Dokter", ["Pilar P1–P5 · dua lembar pandang", "Tulang ikan per topik (sudah ada)"]),
+    boxes = [("→  PER BARIS", "Sarjana Kedokteran · Profesi Dokter", ["Pilar P1–P5 · luaran per topik", "Tulang ikan per topik (sudah ada)"]),
              ("↓  PER KOLOM", "Prodi Teknologi Kedokteran", ["Platform T1–T5 · TKT per produk · wahana", "Tulang ikan atau lajur bergerbang"])]
     for n, (k, who, lines) in enumerate(boxes):
         x = 20 + n*360
@@ -458,10 +458,10 @@ def duaarah_svg():
         o.append(f'<text x="{px+28}" y="{y+19}" class="cw-name strong">{E(name)}</text>')
         o.append(f'<text x="{px+4}" y="{y+44}" class="lj-text mono">{E(coord)}</text>')
         o.append(f'<text x="{px+4}" y="{y+64}" class="lj-text">{E(wah)}</text>')
-        for k, (key, lab) in enumerate([("s3", "Tekdok"), ("s2", "Profesi"), ("s1", "Sarjana")]):
-            sx = px + 4 + k*76
-            o.append(f'<rect x="{sx}" y="{y+80}" width="16" height="9" rx="4.5" class="{key}-sw"/>')
-            o.append(f'<text x="{sx+21}" y="{y+89}" class="lj-small">{lab}</text>')
+        for (key, lab), (offx, offy) in zip([("s3", "Teknologi Kedokteran"), ("s2", "Profesi Dokter"), ("s1", "Sarjana")], ((0, 0), (0, 18), (120, 18))):
+            sx = px + 4 + offx
+            o.append(f'<rect x="{sx}" y="{y+76+offy}" width="16" height="9" rx="4.5" class="{key}-sw"/>')
+            o.append(f'<text x="{sx+21}" y="{y+85+offy}" class="lj-small">{lab}</text>')
     o.append('</svg>')
     return "\n".join(o)
 
@@ -479,7 +479,7 @@ def ikan_svg():
     o.append(f'<text x="952" y="{SY-12}" text-anchor="middle" class="ik-year mono">2030</text>')
     o.append(f'<text x="952" y="{SY+8}" text-anchor="middle" class="ik-headt">Kedokteran</text>')
     o.append(f'<text x="952" y="{SY+25}" text-anchor="middle" class="ik-headt">Pencegahan 4.0</text>')
-    o.append(f'<text x="1020" y="{SY+88}" text-anchor="end" class="lj-small">hasil keilmuan Tekdok: teknologi teruji</text>')
+    o.append(f'<text x="1020" y="{SY+88}" text-anchor="end" class="lj-small">hasil keilmuan Teknologi Kedokteran: teknologi teruji</text>')
     o.append(f'<text x="1020" y="{SY+104}" text-anchor="end" class="lj-small">untuk diagnosis, pencegahan, pemulihan fungsi</text>')
     bones = [("T1", 330, -1), ("T2", 465, 1), ("T3", 600, -1), ("T4", 735, 1), ("T5", 870, -1)]
     names = dict(PLATFORM)
@@ -531,7 +531,7 @@ def gerbang_svg():
         o.append(f'<text x="{gx}" y="{gy1+20}" text-anchor="middle" class="gate-t">{E(lab)}</text>')
     hx = LX + 524 + 200 + 14
     o.append(f'<rect x="{hx}" y="{TOP}" width="{W-hx-12}" height="{5*LH-12}" rx="10" class="ik-head"/>')
-    for i, line in enumerate(["2030", "Kedokteran", "Pencegahan 4.0", "", "hasil keilmuan", "Tekdok:", "teknologi teruji"]):
+    for i, line in enumerate(["2030", "Kedokteran", "Pencegahan 4.0", "", "hasil keilmuan:", "teknologi", "teruji"]):
         if line:
             o.append(f'<text x="{(hx+W-12)/2}" y="{TOP+120+i*18}" text-anchor="middle" class="{"ik-year mono" if i == 0 else ("ik-headt" if i < 3 else "lj-small")}">{E(line)}</text>')
     o.append('</svg>')

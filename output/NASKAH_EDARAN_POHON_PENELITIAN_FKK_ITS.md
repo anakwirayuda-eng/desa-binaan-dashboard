@@ -44,7 +44,7 @@ Pohon disusun dari kapasitas yang sudah ada, bukan dari daftar keinginan. Ringka
 - **Kesenjangan yang dinyatakan terbuka:** dosen bergelar doktor dan guru besar masih sedikit di prodi kedokteran; mikrobiologi klinik dan epidemiologi lapangan perlu diperkuat; kapasitas statistik untuk desain evaluasi program perlu mitra.
 - **Fondasi prodi:** RIP Prodi Kedokteran & Profesi Dokter sudah memetakan judul dosen 2023–2026 ke tujuh topik, dengan **197 penempatan luaran 2023–2025** dan 50 pada 2026. Angka ini penempatan per topik, bukan jumlah luaran unik; jumlah unik dihitung setelah deduplikasi judul, DOI, dan tahun.
 
-Daftar dosen di instrumen berasal dari penelusuran publik dan pencocokan dengan PDDikti (Gasal 2026). Daftar itu bukan roster resmi: Kaprodi dan bagian kepegawaian diminta mengoreksinya.
+Daftar dosen di instrumen memakai **daftar dosen resmi fakultas 2026**: 41 dosen — Dekan, Wakil Dekan, 15 dosen Prodi Kedokteran, 12 dosen Prodi Pendidikan Profesi Dokter, dan 12 dosen Prodi Teknologi Kedokteran — ditambah calon dosen yang sudah aktif mengajar. Dosen yang belum tercantum dapat menambahkan namanya sendiri.
 
 ---
 
