@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Diagram dokumen</title>
+<style>
+:root{--ink:#16211B;--muted:#5B655F;--line:#C9CFCB;--pale:#F2F4F2;--b0:#DCE6F3;--b1:#AFC6E6;--b2:#7CA2D6;--b3:#3F72B8;--b4:#1D4F91;--acc:#AE3F57;
+--p1:#AE3F57;--p2:#9E5F12;--p3:#2F7A43;--p4:#2A63A3;--p5:#6C4CA0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;padding:20px}
+figure.d{width:760px;background:#fff;padding:14px 10px;margin-bottom:40px;font-size:12px;line-height:1.35}
+.row{display:flex;gap:10px;align-items:stretch}
+.card{border:1px solid var(--line);background:var(--pale);border-radius:8px;padding:9px 11px}
+.card.w{background:#fff;border-color:var(--b3)}
+.card.dk{background:var(--b4);border-color:var(--b4);color:#fff}
+.t{font-weight:650;font-size:12.5px}
+.s{color:var(--muted);font-size:11px;margin-top:3px}
+.dk .s{color:#DCE6F3}
+.num{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--b4);color:#fff;font-weight:700;font-size:12px;align-items:center;justify-content:center;margin-right:7px;flex:none}
+.arr{display:flex;align-items:center;justify-content:center;color:var(--b3);font-size:18px;flex:none}
+.down{text-align:center;color:var(--muted);font-size:15px;line-height:18px;height:18px}
+.lab{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+/* staircase */
+.stairs{display:flex;align-items:flex-end;gap:6px;height:230px}
+.step{flex:1;border-radius:6px 6px 0 0;padding:9px 10px;background:var(--b0)}
+.step.dk{background:var(--b4);color:#fff}
+.step .n{font-size:22px;font-weight:750;line-height:1}
+.step .t{margin-top:5px}
+.step .s{font-size:10.5px}
+.step.dk .s{color:#DCE6F3}
+.brk{display:flex;gap:6px;margin-top:6px}
+.brk div{border-top:2px solid var(--ink);padding-top:4px;font-size:11px;text-align:center}
+.brk .a{border-color:var(--acc);color:var(--acc)}
+/* loop */
+.loop{position:relative;padding-bottom:34px}
+.loop .back{position:absolute;left:40px;right:40px;bottom:6px;height:26px;border:2px solid var(--b3);border-top:none;border-radius:0 0 14px 14px}
+.loop .back:before{content:"";position:absolute;left:-7px;top:-9px;border:6px solid transparent;border-bottom:9px solid var(--b3)}
+.loop .bl{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:#fff;padding:0 8px;font-size:11px;color:var(--b4);font-weight:600}
+.loop .card{flex:1}
+/* chevrons */
+.chev{display:flex;gap:4px}
+.chev div{flex:1;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,16px 50%);padding:10px 20px 10px 26px;color:#fff}
+.chev div:first-child{clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);padding-left:12px}
+.phase{display:flex;gap:10px;margin-top:8px}
+.phase>div{flex:1}
+.hl{color:var(--b4);font-weight:600}
+.warn{border:1.5px solid var(--acc);background:#fff;border-radius:8px;padding:9px 11px}
+.grid5{display:grid;grid-template-columns:repeat(5,14px);gap:3px}
+.grid5 i{display:block;width:14px;height:14px;background:var(--b0);border-radius:2px}
+.grid5 i.on{background:var(--acc)}
+.axis{flex:1;border-radius:8px;padding:12px;border-top:5px solid var(--b4);background:var(--pale)}
+.axis .big{font-size:20px;font-weight:750;color:var(--b4)}
+.axis ul{margin:6px 0 0 16px;font-size:11.5px}
+.axis li{margin:2px 0}
+.pill{display:inline-block;padding:1px 7px;border-radius:9px;font-size:10.5px;font-weight:600;color:#fff;margin:1px 2px 1px 0}
+</style></head><body>
+
+<!-- three axes -->
+<figure class="d" id="d_tigasumbu">
+  <div class="row">
+    <div class="axis"><div class="lab">Sumbu 1 · cabang</div><div class="big">5 pilar</div><div class="t">masalah kesehatan yang diselesaikan</div>
+      <div style="margin-top:6px"><span class="pill" style="background:var(--p1)">P1 PTM</span><span class="pill" style="background:var(--p2)">P2 Ibu &amp; anak</span><span class="pill" style="background:var(--p3)">P3 Infeksi</span><span class="pill" style="background:var(--p4)">P4 Trauma</span><span class="pill" style="background:var(--p5)">P5 Sistem</span></div>
+      <ul><li>21 topik, kode 1.1–5.4</li><li>dibaca Prodi Sarjana Kedokteran dan Profesi Dokter</li><li>ukuran: luaran per topik</li></ul></div>
+    <div class="axis"><div class="lab">Sumbu 2 · akar</div><div class="big">5 platform</div><div class="t">bidang teknologi yang dimatangkan</div>
+      <div style="margin-top:6px;font-size:11px">T1 Biosinyal · T2 Biosensor · T3 AI &amp; citra · T4 Biomaterial · T5 Telematika</div>
+      <ul><li>pertanyaan keilmuan per platform</li><li>dibaca Prodi Teknologi Kedokteran</li><li>ukuran: TKT per produk dan versi</li></ul></div>
+    <div class="axis"><div class="lab">Sumbu 3 · tanah</div><div class="big">5 wahana</div><div class="t">tempat hasil diuji</div>
+      <div style="margin-top:6px;font-size:11px">W0–W1 laboratorium · W2 klinik kampus · W3 RSUD pendidikan · W4 Desa Binaan</div>
+      <ul><li>berpindah W0 → W4 = bukti translasi</li><li>kembali ke laboratorium tetap sah</li><li>ukuran: wahana kini dan target</li></ul></div>
+  </div>
+  <div class="card" style="margin-top:10px;text-align:center"><b>Setiap proyek punya satu koordinat utama (pilar, platform)</b> dan satu wahana. Integrasi lintas prodi terjadi di sel matriks, bukan di bagan organisasi.</div>
+</figure>
+
+<!-- reference chain -->
+<figure class="d" id="d_rantai">
+  <div class="card">Acuan nasional: RPJMN 2025–2029 · Renstra Kementerian Kesehatan 2025–2029 · Rencana Induk Riset Nasional · Renstra Kemdiktisaintek 2025–2029</div>
+  <div class="down">↓</div>
+  <div class="row">
+    <div class="card" style="flex:1"><div class="t">Renstra ITS 2026–2030</div><div class="s">Peta Jalan Penelitian ITS 2025–2029</div></div>
+    <div class="arr">→</div>
+    <div class="card" style="flex:1"><div class="t">Renstra FKK 2026–2030</div><div class="s">visi integrasi kedokteran dan teknologi</div></div>
+    <div class="arr">→</div>
+    <div class="card dk" style="flex:1.3"><div class="t">Rencana Induk Penelitian &amp; PkM FKK 2026–2030</div><div class="s">pohon penelitian dan peta jalan — dokumen ini</div></div>
+  </div>
+  <div class="down">↓</div>
+  <div class="row">
+    <div class="card w" style="flex:1"><div class="t">Renstra &amp; RIP Prodi Sarjana Kedokteran</div></div>
+    <div class="card w" style="flex:1"><div class="t">Renstra &amp; RIP Prodi Pendidikan Profesi Dokter</div></div>
+    <div class="card w" style="flex:1"><div class="t">Renstra &amp; RIP Prodi Teknologi Kedokteran</div></div>
+  </div>
+  <div class="down">↓</div>
+  <div class="card">Agenda penelitian dan PkM tiap dosen — lima tahun, 2–5 proyek, setiap proyek berkode pilar dan platform</div>
+  <div class="down">↓</div>
+  <div class="card">Judul penelitian, kontrak hibah, tugas akhir mahasiswa, luaran (publikasi, HKI, produk), program PkM</div>
+</figure>
+
+<!-- five accreditation elements -->
+<figure class="d" id="d_unsur">
+  <div class="row">
+    <div class="card" style="flex:1"><span class="num">1</span><span class="t">Peta jalan</span><div class="s">memayungi tema dosen dan mahasiswa, merujuk visi keilmuan</div></div>
+    <div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">2</span><span class="t">Pelaksanaan sesuai</span><div class="s">agenda dosen dan tugas akhir merujuk peta jalan</div></div>
+    <div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">3</span><span class="t">Evaluasi kesesuaian</span><div class="s">berkala, dengan data dan cakupan telaah</div></div>
+    <div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">4</span><span class="t">Perbaikan</span><div class="s">hasil evaluasi dipakai; revisi bernomor versi</div></div>
+    <div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">5</span><span class="t">Pembelajaran</span><div class="s">hasil masuk mata kuliah, blok, rotasi</div></div>
+  </div>
+  <div class="row" style="margin-top:8px;font-size:11px">
+    <div class="card w" style="flex:1"><b>LAM-PTKes 5.5 (penelitian) dan 5.6 (PkM)</b> — Prodi Sarjana Kedokteran dan Profesi Dokter. Untuk peringkat Unggul kedua butir wajib <i>memenuhi</i>.</div>
+    <div class="card w" style="flex:1"><b>BAN-PT IAPS 5.1</b> — Prodi Teknologi Kedokteran. Relevansi penelitian dan PkM: peta jalan, pelaksanaan, evaluasi keselarasan, pemanfaatan hasil.</div>
+  </div>
+</figure>
+
+<!-- PkM depth ladder -->
+<figure class="d" id="d_tangga_pkm">
+  <div class="stairs">
+    <div class="step" style="height:40%"><div class="n">1</div><div class="t">Pengenalan</div><div class="s">penyuluhan, sosialisasi, kampanye</div></div>
+    <div class="step" style="height:55%"><div class="n">2</div><div class="t">Pelatihan</div><div class="s">kader, guru, atau tenaga kesehatan menguasai keterampilan</div></div>
+    <div class="step" style="height:70%"><div class="n">3</div><div class="t">Penerapan</div><div class="s">program atau produk dijalankan bersama mitra</div></div>
+    <div class="step dk" style="height:85%"><div class="n">4</div><div class="t">Penggunaan mandiri</div><div class="s">mitra menjalankan sendiri, minimal enam bulan setelah pendampingan</div></div>
+    <div class="step dk" style="height:100%"><div class="n">5</div><div class="t">Dampak &amp; replikasi</div><div class="s">perubahan terukur; ditiru wilayah lain atau masuk kebijakan</div></div>
+  </div>
+  <div class="brk"><div style="flex:3">target edisi 2026–2028: anak tangga 3</div><div class="a" style="flex:2">diklaim hanya dengan bukti dari mitra</div></div>
+</figure>
+
+<!-- research <-> PkM loop -->
+<figure class="d" id="d_siklus_pkm">
+  <div class="loop">
+    <div class="row">
+      <div class="card"><span class="num">1</span><span class="t">Kebutuhan mitra</span><div class="s">masalah yang ditemui di puskesmas, kader, RSUD</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">2</span><span class="t">Bank kebutuhan</span><div class="s">dicatat tiap semester, dibahas di forum padanan riset</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">3</span><span class="t">Topik riset &amp; tugas akhir</span><div class="s">proyek berkode pilar dan platform</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">4</span><span class="t">Uji kelayakan</span><div class="s">TKT, telaah etik, uji kebergunaan</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">5</span><span class="t">PkM berbasis hasil</span><div class="s">program atau alat diterapkan bersama mitra</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">6</span><span class="t">Ukuran manfaat</span><div class="s">disepakati dan dikonfirmasi mitra</div></div>
+    </div>
+    <div class="back"></div><div class="bl">umpan balik mitra menjadi kebutuhan baru</div>
+  </div>
+</figure>
+
+<!-- PPEPP loop -->
+<figure class="d" id="d_ppepp">
+  <div class="loop">
+    <div class="row">
+      <div class="card"><span class="num">1</span><span class="t">Penetapan</span><div class="s">SK pohon dan peta jalan; agenda dosen</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">2</span><span class="t">Pelaksanaan</span><div class="s">proyek, hibah internal, tugas akhir berkode pohon</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">3</span><span class="t">Evaluasi</span><div class="s">kesesuaian tahunan; Berita Acara bertanda tangan Dekan</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">4</span><span class="t">Pengendalian</span><div class="s">teruskan, perbaiki desain, cari mitra, atau hentikan dengan alasan</div></div><div class="arr">→</div>
+      <div class="card"><span class="num">5</span><span class="t">Peningkatan</span><div class="s">revisi peta jalan bernomor versi</div></div>
+    </div>
+    <div class="back"></div><div class="bl">siklus tahunan; evaluasi menyeluruh 2030 menghasilkan edisi 3</div>
+  </div>
+</figure>
+
+<!-- governance -->
+<figure class="d" id="d_tatakelola">
+  <div style="display:flex;justify-content:center"><div class="card dk" style="width:200px;text-align:center"><div class="t">Dekan</div><div class="s">menetapkan SK dan pagu</div></div></div>
+  <div class="down">↓</div>
+  <div class="row">
+    <div class="card" style="flex:1"><div class="t">Unit Penelitian</div><div class="s">satu pagu riset; evaluasi kesesuaian</div></div>
+    <div class="card" style="flex:1"><div class="t">Unit PkM</div><div class="s">program binaan; register PkM</div></div>
+    <div class="card" style="flex:1"><div class="t">Gugus Penjaminan Mutu</div><div class="s">audit mutu internal; tindak lanjut</div></div>
+    <div class="card" style="flex:1"><div class="t">Komite Etik Penelitian</div><div class="s">telaah etik; pelindungan data</div></div>
+  </div>
+  <div class="down">↓</div>
+  <div class="row" style="align-items:center">
+    <div class="card w" style="flex:1"><div class="t">5 koordinator pilar (P1–P5)</div><div class="s">dosen Kedokteran atau Profesi Dokter; P4 oleh dosen Teknologi Kedokteran · menyalurkan belanja operasional</div></div>
+    <div style="text-align:center;flex:none;width:110px">
+      <div class="grid5" style="margin:0 auto">
+        <i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div><div class="s" style="color:var(--acc)">mulai dari 2–3 sel percontohan</div></div>
+    <div class="card w" style="flex:1"><div class="t">5 koordinator platform (T1–T5)</div><div class="s">dosen Teknologi Kedokteran dengan pendamping klinis · mengusulkan belanja modal bersama</div></div>
+  </div>
+  <div class="down">↓</div>
+  <div class="card" style="text-align:center"><div class="t">Tim proyek lintas prodi</div><div class="s">dosen tiga prodi · mahasiswa (skripsi, tugas akhir, kepaniteraan) · mitra RSUD, puskesmas, Dinkes, industri</div></div>
+</figure>
+
+<!-- surveillance platform -->
+<figure class="d" id="d_surveilans">
+  <div class="chev">
+    <div style="background:var(--b2)"><div style="font-size:10.5px;opacity:.9">Tahap 0 · bulan 0–12</div><div class="t">Sensus dasar 1–2 desa</div></div>
+    <div style="background:var(--b3)"><div style="font-size:10.5px;opacity:.9">Tahap 1 · tahun 2–5</div><div class="t">Pembaruan tahunan</div></div>
+    <div style="background:var(--b4)"><div style="font-size:10.5px;opacity:.9">Tahap 2 · tahun 7–10</div><div class="t">Kohort matang</div></div>
+  </div>
+  <div class="phase">
+    <div><div class="s" style="color:var(--ink)">Register rumah tangga dan individu bernomor, titik lokasi, roster demografi, modul faktor risiko pendek (diadaptasi dari SKI/WHO STEPS).</div><div class="hl" style="margin-top:4px">Luaran: naskah prevalensi dan sebaran faktor risiko</div></div>
+    <div><div class="s" style="color:var(--ink)">Hanya kelahiran, kematian, pindah datang dan keluar; studi tersarang mulai ditumpangkan.</div><div class="hl" style="margin-top:4px">Luaran: validasi alat skrining pada populasi nyata</div></div>
+    <div><div class="s" style="color:var(--ink)">Ronde berulang yang terbiayai dan sistem data yang stabil.</div><div class="hl" style="margin-top:4px">Luaran: insidens dan etiologi</div></div>
+  </div>
+  <div class="card" style="margin-top:10px"><b>Jalur data berjalan paralel:</b> analisis data rutin puskesmas dan register, dimulai dari data agregat. Penautan data individu hanya dengan dasar hukum dan perjanjian dengan pemilik data.</div>
+  <div class="warn" style="margin-top:8px"><b style="color:var(--acc)">Prasyarat sebelum tahap 0:</b> komite etik berwenang · rancangan pelindungan data pribadi sesuai UU 27/2022 · perjanjian dengan Dinkes dan puskesmas · wilayah pembanding sebagai giliran bertahap · anggaran untuk tiga ronde pembaruan.</div>
+</figure>
+
+<!-- prototype to market -->
+<figure class="d" id="d_izinedar">
+  <div class="row">
+    <div class="card" style="flex:1"><span class="num">1</span><span class="t">Tetapkan produk</span><div class="s">tujuan penggunaan, kelas risiko, pemohon (produsen ber-CPAKB)</div></div><div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">2</span><span class="t">Kumpulkan bukti</span><div class="s">desain, manajemen risiko, verifikasi dan validasi per versi</div></div><div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">3</span><span class="t">Putuskan uji klinik</span><div class="s">persetujuan etik dan izin pelaksanaan bila diperlukan</div></div>
+  </div>
+  <div class="down">↓</div>
+  <div class="row">
+    <div class="card" style="flex:1"><span class="num">4</span><span class="t">Ajukan izin edar</span><div class="s">nomor izin edar yang dapat diperiksa, bukan "berkas siap"</div></div><div class="arr">→</div>
+    <div class="card" style="flex:1"><span class="num">5</span><span class="t">Perangkat lunak medis</span><div class="s">wajib TKT 9 saat diajukan; opsi uji klinik mandiri atau <i>regulatory sandbox</i></div></div><div class="arr">→</div>
+    <div class="card dk" style="flex:1"><span class="num" style="background:#fff;color:var(--b4)">6</span><span class="t">TKDN &amp; katalog</span><div class="s">sertifikat TKDN, tayang di katalog, pesanan, pemakaian</div></div>
+  </div>
+</figure>
+
+</body></html>
