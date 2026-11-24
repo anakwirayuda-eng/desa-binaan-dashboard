@@ -1,6 +1,6 @@
 # Serah-terima — Pohon Penelitian & Peta Jalan FKK ITS
 
-*Ditulis 23 November 2026 untuk melanjutkan pekerjaan di sesi lain (lokal). Diperbarui 23 November 2026 malam oleh sesi lokal: §5.6 Tekdok setara, lalu **revisi terpadu** dari riset sumber primer, red team, peta hibah 2027–2030, dan inventaris dosen. Baca seluruhnya sebelum mengubah apa pun.*
+*Ditulis 23 November 2026 untuk melanjutkan pekerjaan di sesi lain (lokal). Diperbarui 23 November 2026 malam oleh sesi lokal: §5.6 Tekdok setara, lalu **revisi terpadu** dari riset sumber primer, red team, peta hibah 2027–2030, dan inventaris dosen. Diperbarui lagi 24 November 2026: perbaikan hasil **deep audit Astra (GPT-6.2) dan Gemini 4 Neon** (sintesis di `riset_eksternal/SINTESIS_DEEP_AUDIT.md` di folder kerja), draf Peta Jalan PkM, naskah edaran ringkas, pencocokan PDDikti, dan penyelarasan dengan draf Renstra Prodi Kedokteran 2026–2030. Baca seluruhnya sebelum mengubah apa pun.*
 
 ## 1. Apa proyek ini
 
@@ -15,22 +15,24 @@ Menyusun **Pohon Penelitian dan Peta Jalan Penelitian FKK ITS 2026–2030** untu
 | Berkas | Isi | Dibangun dengan |
 |---|---|---|
 | `output/POHON_PENELITIAN_FKK_ITS.md` | Dokumen kerja lengkap (§0–§12, termasuk §5.4a evaluasi edisi 1, §5.7 pembiayaan, §8.6 tata kelola bertahap) | ditulis langsung |
-| `output/POHON_PENELITIAN_FKK_ITS.pdf` | Versi cetak A4, ±62 halaman, tujuh gambar | `tools/pohon/build_pdf.py` + `html_to_pdf.js` |
-| `output/PAPARAN_POHON_PENELITIAN_FKK_ITS.pptx` | 21 slide + catatan pembicara untuk tim kecil & tahap 1 | `tools/pohon/build_ppt.js` (isi slide ditulis di skrip ini) |
-| `output/INSTRUMEN_AGENDA_PENELITIAN_FKK_ITS.xlsx` | Instrumen isian agenda penelitian; 42 nama, 9 tab termasuk REKAP PLATFORM, 2.060 rumus | `output/build_instrumen_agenda.py` |
+| `output/POHON_PENELITIAN_FKK_ITS.pdf` | Versi cetak A4, 65 halaman, tujuh gambar | `tools/pohon/build_pdf.py` + `html_to_pdf.js` |
+| `output/PAPARAN_POHON_PENELITIAN_FKK_ITS.pptx` | 23 slide: **13 slide inti** (termasuk slide PkM) + pembatas + 9 slide Lampiran, dengan catatan pembicara | `tools/pohon/build_ppt.js` (isi slide ditulis di skrip ini) |
+| `output/PETA_JALAN_PKM_FKK_ITS.md` / `.pdf` | **Draf kerangka Peta Jalan PkM** (dokumen kembar K4, 24 Nov 2026): M1–M5, pohon PkM, wahana binaan, tangga lima anak tangga, peta jalan tiga periode, akreditasi 5.6, pendanaan | ditulis langsung; PDF dengan `build_pdf.py` + `html_to_pdf.js <html> <pdf> "<label footer>"` |
+| `output/NASKAH_EDARAN_POHON_PENELITIAN_FKK_ITS.md` / `.pdf` | **Naskah edaran ringkas** (10 halaman, 24 Nov 2026) untuk konsultasi dosen dan tahap 1 — tanpa penilaian per orang | ditulis langsung; PDF seperti PkM dengan label footer sendiri |
+| `output/INSTRUMEN_AGENDA_PENELITIAN_FKK_ITS.xlsx` | Instrumen isian agenda penelitian **dan PkM**; 48 nama (dicocokkan PDDikti), ID proyek otomatis, kolom jenis kegiatan & anak tangga PkM; 2.386 rumus, nol galat; disimpan ulang lewat LibreOffice agar nilai rumus tersimpan | `output/build_instrumen_agenda.py` |
 | `output/BENTUK_POHON_GALERI.html` | Galeri: enam pola, padanan prodi, usulan pohon, matriks dua arah, tulang ikan dan lajur bergerbang Tekdok, poster A3, lajur, aturan ukuran | `tools/pohon/build_galeri.py` |
 | `output/figures/fig_*.png` | Tujuh gambar dari galeri (dipakai PDF & PPT) | `tools/pohon/galeri_figs.js` |
 | `tools/pohon/README.md` | Cara membangun ulang semuanya | — |
 
-**Di luar repo** (folder kerja `D:\Dev\Rancangan Induk Penelitian FKK ITS`): `hibah/Peta_Hibah_FKK_ITS_2027-2030.xlsx` + `hibah/build_peta_hibah_fkk.py` + `hibah/data/*.json` (276 hibah, akses per dosen; dibangun dari berkas Peta Hibah Dosen 2027 di Downloads); `riset_eksternal/` (laporan riset Codex/GPT-6.2 Astra, red team Antigravity/Gemini, prompt); `data/` (audit Roadmap FKK 2023–2025, roster publik). Galeri juga terbit sebagai halaman privat: <https://claude.ai/artifact/WZfZV3hCcnhfuYw9ufwf3i> — **belum memuat revisi 23 November**.
+**Di luar repo** (folder kerja `D:\Dev\Rancangan Induk Penelitian FKK ITS`): `hibah/Peta_Hibah_FKK_ITS_2027-2030.xlsx` + `hibah/build_peta_hibah_fkk.py` + `hibah/data/*.json` (267 hibah setelah audit; 193 punya jendela 2027–2030 tetapi kebanyakan perkiraan; akses per dosen; `data/dosen_fkk.json` kini 47 dosen dengan jabatan dan prodi dari PDDikti Gasal 2026; dibangun dari berkas Peta Hibah Dosen 2027 di Downloads); `riset_eksternal/` (laporan riset Codex/GPT-6.2 Astra, red team Antigravity/Gemini, prompt); `data/` (audit Roadmap FKK 2023–2025, roster publik). Galeri juga terbit sebagai halaman privat: <https://claude.ai/artifact/WZfZV3hCcnhfuYw9ufwf3i> — **belum memuat revisi 23 November**.
 
 ## 3. Keputusan rancangan yang sudah diambil
 
 - **Matriks 5 Pilar × 5 Platform** + Wahana W0–W4; kode `1.1–5.4`, `T1–T5`, `W0–W4`, `T0`, `9.9` dipakai identik di semua turunan. **K1 (disetujui pengguna):** platform dipublikasikan; matriks dibaca dua arah; **satu proyek, satu identitas** di register fakultas (cakupan tema · prodi pemimpin · kontribusi terverifikasi; NPD/NPM per homebase; luaran dideduplikasi).
 - **Tiga lembar pandang prodi** dari satu register: Sarjana dan Profesi membaca baris (lembar berbeda), Tekdok membaca kolom dengan pertanyaan keilmuan per platform dan TKT per produk/versi.
-- **Usulan yang menunggu keputusan Dekanat** (ditulis di dokumen sebagai usulan): K2 satu pagu dua jenis belanja (platform modal, pilar operasional); dua status platform (matang T1/T3/T4, inkubasi T2/T5, ditinjau 2028); ketua dan wakil lintas prodi per pilar/platform, satu orang maksimal satu peran; norma kredit berimbang; K6 wilayah pembanding sebagai giliran bertahap; bentuk visual Tekdok dipilih Kaprodi Tekdok (tulang ikan atau lajur bergerbang).
+- **Usulan yang menunggu keputusan Dekanat** (ditulis di dokumen sebagai usulan): K2 satu pagu dua jenis belanja (platform modal, pilar operasional); dua status platform (matang T1/T3/T4, inkubasi T2/T5, ditinjau 2028); **model koordinator bertahap** (5 koordinator pilar + 5 platform, P4 dikoordinasi Tekdok, rangkap ≤ 2 peran, mulai dari sel percontohan, nama diusulkan Januari); norma kredit berimbang; K6 wilayah pembanding sebagai giliran bertahap; bentuk visual Tekdok dipilih Kaprodi Tekdok (tulang ikan atau lajur bergerbang).
 - **Pohon fakultas adalah induk RIP Prodi Kedokteran & Profesi** (padanan tujuh topik, §5.5); nama batang *Kedokteran Pencegahan 4.0*; periode 2023–2025 · 2026–2028 · 2029–2030.
-- **Milestone (§12)**: tahap 1 ±7–9 Des 2026 (titik putus 11 Des), tahap 2 ±3–5 Feb 2027, SK sebelum 8–12 Mar 2027; tujuh risiko dan pencegahannya sudah masuk jadwal.
+- **Milestone (§12)**: tahap 1 ±7–9 Des 2026 (titik putus 11 Des), tahap 2 ±3–4 Feb 2027 (5 Feb cuti bersama), SK sebelum libur ±6–15 Mar 2027, peluncuran mulai 16 Mar; sapu bersih instrumen 6–7 Jan (5 Jan libur); tujuh risiko dan pencegahannya sudah masuk jadwal.
 
 ## 4. Pekerjaan terbuka (urut prioritas)
 
@@ -38,10 +40,12 @@ Menyusun **Pohon Penelitian dan Peta Jalan Penelitian FKK ITS 2026–2030** untu
 2. **Tenggat dekat:** putuskan pernyataan minat **PUI-PT 2027 (15 Des 2026)** — cek dulu apakah pusat riset yang dimaksud pernah didanai; FAIMER 17 Des; AMEE 15 Jan (§5.7).
 3. **Data Kaprodi Tekdok** (§10 butir 1e) dan konfirmasi *homebase* (§10 butir 11: rekap SRG Jan 2026 mencatat empat dosen di Teknik Biomedik FTEIC dan dua di Teknik Mesin FTIRS). Siapkan draf pra-isi tabel T1–T5 dari data publik untuk dikoreksi Kaprodi.
 4. **Evaluasi per proyek Roadmap FKK 2023–2025** (lima status) oleh Unit Penelitian + Kaprodi, ≤ 8 Jan 2027 (§5.4a).
-5. **Tiga pengajar baru** di kalender Gasal 2026/27 ditambahkan Kaprodi ke DAFTAR DOSEN instrumen (nama sengaja tidak ditulis di repo publik; ada di inventaris lokal).
+5. **Daftar dosen:** enam dosen tetap dari PDDikti sudah ditambahkan (48 nama). Kaprodi memastikan status tiga nama yang tidak ber-homebase di prodi FKK dan memutuskan apakah dosen tidak tetap Profesi ikut mengisi (§10 butir 1d).
 6. **Peta hibah:** unggah ke Google Sheets dan bagikan ke dosen; dosen memperbarui jabatan (jabatan Kedokteran/Profesi diisi awal "Tenaga Pengajar" per surat formasi Sep 2024).
 7. **Halaman galeri terbit** diperbarui dari `output/BENTUK_POHON_GALERI.html` bila pengguna setuju.
-8. **Keputusan ranting onkologi** setelah rekap instrumen Januari 2027 (§5.5).
+8. **Keputusan ranting onkologi**: sekarang (sebelum instrumen beredar, saran Gemini) atau setelah rekap Januari 2027 (§5.5) — menunggu pengguna.
+10. **Draf Renstra Prodi Kedokteran** (berkas di Downloads pengguna, bukan Renstra fakultas): sudah dipetakan ke §3 dokumen; enam koreksi untuk tim penyusun Renstra (antara lain baseline akreditasi "Cukup" vs SK Baik) perlu disampaikan pengguna. Renstra FKK 2026–2030 sendiri belum ditemukan di komputer.
+11. **Register PkM per program** (format di Peta Jalan PkM §11) diisi penanggung jawab PkM per pilar, rekap 11–15 Jan 2027.
 9. **Tindakan pengguna:** unggah instrumen ke Google Sheets, isi tiga sel kuning PETUNJUK, bagikan; jadwalkan bilateral 23–27 Nov dan review tim kecil 30 Nov–4 Des.
 
 ## 5. Aturan kerja yang wajib dijaga

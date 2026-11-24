@@ -226,7 +226,7 @@ def cross_svg():
     o = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Padanan tujuh topik RIP Prodi Kedokteran dan Profesi Dokter ke pohon fakultas: Basic Science ke akar ilmu, Penyakit Tidak Menular ke P1, Kesehatan Seksual dan Reproduksi serta Kesehatan Remaja Neonatus dan Anak ke P2, Penyakit Menular ke P3, topik ketujuh ke P5, Digital Health ke platform teknologi. P4 belum punya topik prodi.">']
     o.append('<defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" class="arrowhead"/></marker></defs>')
     o.append(f'<text x="{LX}" y="30" class="zone-label">RIP PRODI KEDOKTERAN &amp; PROFESI DOKTER</text>')
-    o.append(f'<text x="{LX}" y="46" class="cw-sub">luaran 2023–2025 · 2026</text>')
+    o.append(f'<text x="{LX}" y="46" class="cw-sub">penempatan luaran 2023–2025 · 2026</text>')
     o.append(f'<text x="{(LX+LW+RX)/2}" y="30" text-anchor="middle" class="zone-label">MASUK KE</text>')
     o.append(f'<text x="{RX}" y="30" class="zone-label">POHON FAKULTAS</text>')
     cy = lambda i: Y0 + i*(BH+GAP) + BH/2
@@ -346,10 +346,10 @@ def lajur_svg():
     lanes = [("p1", "P1 Deteksi Dini PTM", "61 luaran", "PTM", "18 luaran di 2026", "+ isian dosen"),
              ("p2", "P2 Ibu, Anak & 1000 HPK", "35 luaran", "RNA 19 + KSR 16", "10 luaran di 2026", "+ isian dosen"),
              ("p3", "P3 Infeksi, AMR & Ketahanan", "36 luaran", "PM", "8 luaran di 2026", "+ isian dosen"),
-             ("p4", "P4 Trauma & Restorasi", "belum ada topik prodi", "", "dari isian dosen", "terutama Teknologi Kedokteran"),
+             ("p4", "P4 Trauma & Restorasi", "belum ada topik prodi", "", "dikoordinasi Tekdok (T4)", "+ isian dosen"),
              ("p5", "P5 Sistem Kes. & Pendidikan", "31 luaran", "topik ke-7", "6 luaran di 2026", "+ isian dosen"),
              ("ilmu", "Akar ilmu dasar", "34 luaran", "Basic Science", "8 luaran di 2026", "+ isian dosen"),
-             ("plat", "Platform · Digital Health", "TKT tertinggi 3–4", "RIP prodi, Tabel 17", "target TKT 4–5", "RIP prodi, Tabel 17")]
+             ("plat", "Platform T1–T5 · Tekdok", "T1, T3, T4 matang", "T2, T5 rintisan", "gerbang 1 lab → gerbang 2 W3", "TKT dicatat per produk")]
     ry, rh, lh = 76, 112, 50
     H = ry + rh + 16 + len(lanes)*lh + 20
     o = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Peta jalan lajur dengan tiga periode yang sama dengan RIP prodi: 2023 sampai 2025, 2026 sampai 2028, 2029 sampai 2030. Baris tonggak bersama, lalu lajur lima pilar, akar ilmu dasar, dan platform, berisi jumlah luaran dari RIP Prodi Kedokteran dan Profesi Dokter.">']
@@ -357,9 +357,9 @@ def lajur_svg():
         o.append(f'<path d="M{x},12 L{x+w-14},12 L{x+w},37 L{x+w-14},62 L{x},62 L{x+14},37 Z" class="chev{1 if n==1 else 0}"/>')
         o.append(f'<text x="{x+26}" y="33" class="lj-phase mono">{yr}</text>')
         o.append(f'<text x="{x+26}" y="51" class="lj-year">{E(t)}</text>')
-    ms = [["FKK berdiri (Peraturan Rektor 2/2023)", "Roadmap FKK 2023–2025, edisi 1", "197 luaran dosen terpetakan", "T1, T3, T4 memenuhi syarat dua nama"],
+    ms = [["FKK berdiri (Peraturan Rektor 2/2023)", "Roadmap FKK 2023–2025, edisi 1", "197 penempatan luaran dosen", "T1, T3, T4 memenuhi syarat dua nama"],
           ["SK peta jalan edisi 2 (awal 2027)", "Koas masuk RSUD 2027: W3 aktif", "Sensus dasar Desa Binaan + pembanding", "T2 & T5 memenuhi syarat dua nama"],
-          ["Purwarupa ke izin edar", "Bukti dipakai Dinkes", "Evaluasi, lalu edisi 3"]]
+          ["Paket bukti izin edar", "disetujui mitra produsen", "Bukti dipakai Dinkes", "Evaluasi, lalu edisi 3"]]
     o.append(f'<text x="{LX-14}" y="{ry+26}" text-anchor="end" class="lj-lane strong">Tonggak bersama</text>')
     o.append(f'<text x="{LX-14}" y="{ry+44}" text-anchor="end" class="lj-small">ketiga prodi</text>')
     for n, (x, w, _, _) in enumerate(cols):

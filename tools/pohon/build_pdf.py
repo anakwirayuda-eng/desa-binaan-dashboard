@@ -20,30 +20,40 @@ def fig(name, caption):
     return (f'\n<figure class="fig"><img src="{FIGDIR}/fig_{name}.png" alt="{html.escape(caption)}">'
             f'<figcaption>{caption}</figcaption></figure>\n')
 
-anchor1 = "*Sumber angka: Tabel 3–14 RIP prodi"
-i = body_md.index(anchor1)
-j = body_md.index("\n", i)
-body_md = body_md[:j + 1] + fig("padanan", "Gambar 1. Padanan tujuh topik RIP Prodi Kedokteran &amp; Profesi Dokter ke pohon fakultas. Garis putus-putus: sebagian subtopik.") + body_md[j + 1:]
+IS_PKM = "Pengabdian kepada Masyarakat" in title
+IS_EDARAN = "Naskah edaran" in subtitle
+EYEBROW = ("FKK ITS · Naskah edaran untuk konsultasi" if IS_EDARAN else
+           "FKK ITS · Dokumen kerja Peta Jalan PkM" if IS_PKM else "FKK ITS · Dokumen kerja RIP &amp; Peta Jalan Penelitian")
+COVER_NOTE = ("Naskah konsultasi untuk dosen ketiga prodi, tanpa penilaian per orang. Belum disahkan; isi akhirnya ditetapkan dengan SK Dekan setelah pengisian instrumen dan uji publik." if IS_EDARAN else
+              "Draf kerja kerangka Peta Jalan PkM, dokumen kembar Pohon Penelitian FKK ITS. Bukan dokumen resmi FKK ITS. Kegiatan dan angka harus dikonfirmasi dengan data prodi dan mitra (§12)." if IS_PKM else
+              "Draf kerja hasil riset web dan dokumen internal yang dipasok pengguna. Bukan dokumen resmi FKK ITS. Seluruh butir §10 harus diselesaikan sebelum materi ini dipakai dalam LED atau dokumen akreditasi.")
 
-anchor2 = "**Yang belum terlihat:** peta jalan Prodi Teknologi Kedokteran"
-k = body_md.index(anchor2)
-figs = (fig("pohon", "Gambar 2. Usulan pohon fakultas: batang Kedokteran Pencegahan 4.0 dari tiga prodi, lima cabang pilar, akar ilmu dasar dan platform T1–T5, tanah wahana W0–W4. Lingkaran di depan topik diisi setelah rekap isian dosen.")
-        + fig("lajur", "Gambar 3. Peta jalan lajur dengan periode yang sama dengan RIP prodi. Angka luaran dari RIP Prodi Kedokteran &amp; Profesi Dokter; target periode berikutnya disusun Unit Penelitian.")
-        + fig("poster", "Gambar 4. Maket poster A3: pohon, matriks, dan lajur dalam satu lembar; label biru menunjukkan tab instrumen sumber angkanya."))
-body_md = body_md[:k] + figs + "\n" + body_md[k:]
+# Figures belong to the research-tree document only; other documents (e.g. the PkM roadmap) skip this.
+if "*Sumber angka: Tabel 3–14 RIP prodi" in body_md:
+    anchor1 = "*Sumber angka: Tabel 3–14 RIP prodi"
+    i = body_md.index(anchor1)
+    j = body_md.index("\n", i)
+    body_md = body_md[:j + 1] + fig("padanan", "Gambar 1. Padanan tujuh topik RIP Prodi Kedokteran &amp; Profesi Dokter ke pohon fakultas. Garis putus-putus: sebagian subtopik.") + body_md[j + 1:]
 
-# --- §5.6: matrix read two ways + Tekdok fishbone skeleton ---
-anchor3 = "**Aturan hitung: satu proyek, satu identitas.**"
-k = body_md.index(anchor3)
-body_md = body_md[:k] + fig("duaarah", "Gambar 5. Matriks dibaca dua arah. Per baris: lembar pandang Prodi Sarjana Kedokteran dan Profesi Dokter. Per kolom: peta jalan Prodi Teknologi Kedokteran. Isi sel = kode topik §5.1; sel bergaris putus belum punya topik. A, B, C = tiga contoh jalur tiga prodi.") + "\n" + body_md[k:]
+    anchor2 = "**Yang belum terlihat:** peta jalan Prodi Teknologi Kedokteran"
+    k = body_md.index(anchor2)
+    figs = (fig("pohon", "Gambar 2. Usulan pohon fakultas: batang Kedokteran Pencegahan 4.0 dari tiga prodi, lima cabang pilar, akar ilmu dasar dan platform T1–T5, tanah wahana W0–W4. Lingkaran di depan topik diisi setelah rekap isian dosen.")
+            + fig("lajur", "Gambar 3. Peta jalan lajur dengan periode yang sama dengan RIP prodi. Angka luaran dari RIP Prodi Kedokteran &amp; Profesi Dokter; target periode berikutnya disusun Unit Penelitian.")
+            + fig("poster", "Gambar 4. Maket poster A3: pohon, matriks, dan lajur dalam satu lembar; label biru menunjukkan tab instrumen sumber angkanya."))
+    body_md = body_md[:k] + figs + "\n" + body_md[k:]
 
-anchor4 = "**Usul: bawa keduanya ke Kaprodi"
-anchor4 = "Usul: bawa keduanya ke Kaprodi"
-k = body_md.index(anchor4)
-body_md = (body_md[:k]
-           + fig("ikan_tekdok", "Gambar 6. Pilihan A — kerangka kosong tulang ikan Prodi Teknologi Kedokteran: kepala sama dengan tulang ikan prodi kedokteran, dengan sublabel hasil keilmuan Tekdok; tiap tulang platform dibagi tiga ruas periode untuk judul, TKT, dan wahana.")
-           + fig("gerbang_tekdok", "Gambar 7. Pilihan B — kerangka kosong lajur bergerbang: lima lajur platform melintasi tiga periode dengan dua gerbang uji, bermuara pada tujuan 2030 yang sama.")
-           + "\n" + body_md[k:])
+    # --- §5.6: matrix read two ways + Tekdok fishbone skeleton ---
+    anchor3 = "**Aturan hitung: satu proyek, satu identitas.**"
+    k = body_md.index(anchor3)
+    body_md = body_md[:k] + fig("duaarah", "Gambar 5. Matriks dibaca dua arah. Per baris: lembar pandang Prodi Sarjana Kedokteran dan Profesi Dokter. Per kolom: peta jalan Prodi Teknologi Kedokteran. Isi sel = kode topik §5.1; sel bergaris putus belum punya topik. A, B, C = tiga contoh jalur tiga prodi.") + "\n" + body_md[k:]
+
+    anchor4 = "**Usul: bawa keduanya ke Kaprodi"
+    anchor4 = "Usul: bawa keduanya ke Kaprodi"
+    k = body_md.index(anchor4)
+    body_md = (body_md[:k]
+               + fig("ikan_tekdok", "Gambar 6. Pilihan A — kerangka kosong tulang ikan Prodi Teknologi Kedokteran: kepala sama dengan tulang ikan prodi kedokteran, dengan sublabel hasil keilmuan Tekdok; tiap tulang platform dibagi tiga ruas periode untuk judul, TKT, dan wahana.")
+               + fig("gerbang_tekdok", "Gambar 7. Pilihan B — kerangka kosong lajur bergerbang: lima lajur platform melintasi tiga periode dengan dua gerbang uji, bermuara pada tujuan 2030 yang sama.")
+               + "\n" + body_md[k:])
 
 # Python-Markdown needs a blank line before a list that follows a paragraph; "1a." items become sub-paragraphs.
 _out, _prev = [], ""
@@ -109,8 +119,9 @@ figure.fig figcaption { font-size: 8.4pt; color: var(--muted); margin-top: 4pt; 
 .cover h1 { font-size: 30pt; font-weight: 750; margin: 8pt 0 6pt; letter-spacing: -.01em; }
 .cover .sub { font-size: 12.5pt; color: var(--muted); margin-bottom: 14pt; max-width: 150mm; }
 .cover .meta { font-size: 9pt; color: var(--ink); max-width: 165mm; }
-.cover .img { flex: 1; display: flex; align-items: center; justify-content: center; margin: 10pt 0; }
-.cover .img img { width: 100%; }
+.cover { overflow: hidden; }
+.cover .img { flex: 1 1 0; min-height: 0; display: flex; align-items: center; justify-content: center; margin: 10pt 0; }
+.cover .img img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .cover .note { font-size: 8.5pt; color: var(--muted); border-top: 0.6pt solid var(--line); padding-top: 6pt; }
 .toc h2 { break-before: avoid; }
 .toc ol { list-style: none; padding: 0; columns: 1; font-size: 10.5pt; }
@@ -122,12 +133,12 @@ figure.fig figcaption { font-size: 8.4pt; color: var(--muted); margin-top: 4pt; 
 page = f"""<!doctype html><html lang="id"><head><meta charset="utf-8"><title>{html.escape(title)}</title>
 <style>{CSS}</style></head><body>
 <section class="cover">
-  <div class="eyebrow">FKK ITS · Dokumen kerja RIP &amp; Peta Jalan Penelitian</div>
+  <div class="eyebrow">{EYEBROW}</div>
   <h1>{html.escape(title)}</h1>
   <div class="sub">{html.escape(subtitle)}</div>
   <div class="meta">{meta_html}</div>
   <div class="img"><img src="{FIGDIR}/fig_pohon.png" alt="Usulan pohon penelitian FKK ITS"></div>
-  <div class="note">Draf kerja hasil riset web dan dokumen internal yang dipasok pengguna. Bukan dokumen resmi FKK ITS. Seluruh butir §10 harus diselesaikan sebelum materi ini dipakai dalam LED atau dokumen akreditasi.</div>
+  <div class="note">{COVER_NOTE}</div>
 </section>
 <section class="toc"><h2>Isi</h2><ol>{''.join(toc_items)}</ol></section>
 {body}

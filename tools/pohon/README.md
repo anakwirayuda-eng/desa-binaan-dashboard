@@ -26,6 +26,8 @@ Jalankan dari akar repo.
 | 2 | Halaman galeri bentuk pohon (`.html`) | `python3 tools/pohon/build_galeri.py output/BENTUK_POHON_GALERI.html` |
 | 3 | Tujuh gambar (`output/figures/*.png`) | `node tools/pohon/galeri_figs.js output/BENTUK_POHON_GALERI.html output/figures` |
 | 4 | PDF dokumen | `python3 tools/pohon/build_pdf.py output/POHON_PENELITIAN_FKK_ITS.md doc.tmp.html "$PWD/output/figures"` lalu `node tools/pohon/html_to_pdf.js "$PWD/doc.tmp.html" output/POHON_PENELITIAN_FKK_ITS.pdf` |
+| 4c | PDF naskah edaran | sama seperti 4b dengan `output/NASKAH_EDARAN_POHON_PENELITIAN_FKK_ITS.md` dan label footer "Naskah edaran Pohon Penelitian FKK ITS · draf konsultasi, belum disahkan" |
+| 4b | PDF Peta Jalan PkM | `python3 tools/pohon/build_pdf.py output/PETA_JALAN_PKM_FKK_ITS.md pkm.tmp.html "$PWD/output/figures"` lalu `node tools/pohon/html_to_pdf.js "$PWD/pkm.tmp.html" output/PETA_JALAN_PKM_FKK_ITS.pdf "Rancangan Peta Jalan PkM FKK ITS · draf kerja, bukan dokumen resmi"` |
 | 5 | Paparan PPT | `node tools/pohon/build_ppt.js output/figures output/PAPARAN_POHON_PENELITIAN_FKK_ITS.pptx` |
 
 Catatan:
@@ -33,5 +35,5 @@ Catatan:
 - Isi PPT ditulis langsung di `build_ppt.js` (teks, tabel, angka). Bila angka di dokumen berubah, ubah juga di sana.
 - Huruf PDF: Inter dan JetBrains Mono bila terpasang; bila tidak, peramban memakai huruf pengganti.
 - Huruf PPT: Cambria (judul) dan Calibri (isi), tersedia di semua Office.
-- Instrumen kini punya tab REKAP PLATFORM dan kolom kebutuhan mitra (AB). Uji ulang dengan `--test` lalu hitung ulang di LibreOffice; target nol galat (2.060 rumus per 23 November 2026).
+- Instrumen kini punya tab REKAP PLATFORM dan kolom kebutuhan mitra (AB). Uji ulang dengan `--test` lalu hitung ulang di LibreOffice; target nol galat (2.386 rumus per 24 November 2026, setelah kolom ID proyek, jenis kegiatan, anak tangga PkM, tag sekunder, dan mata kuliah ditambahkan). Simpan ulang lewat LibreOffice headless (`soffice --headless --calc --convert-to xlsx:"Calc MS Excel 2007 XML"`) agar nilai rumus tersimpan; validasi data dan format bersyarat tetap terjaga.
 - Peta hibah FKK ITS 2027–2030 dibangun terpisah di folder kerja lokal (bukan repo ini), karena memuat data turunan pihak ketiga dan daftar dosen.

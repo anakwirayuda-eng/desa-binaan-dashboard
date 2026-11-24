@@ -151,7 +151,7 @@ WAHANA = [
 
 TKT = [1, 2, 3, 4, 5, 6, 7, 8, 9, "Tidak relevan"]
 TAHUN_MULAI = list(range(2022, 2031))
-TAHUN_SELESAI = list(range(2026, 2034))
+TAHUN_SELESAI = list(range(2023, 2034))
 STATUS = ["Rencana", "Proposal diajukan", "Berjalan", "Selesai"]
 YATIDAK = ["Ya", "Tidak"]
 LUARAN = [
@@ -228,6 +228,13 @@ ROSTER = [
     # Teknologi Kedokteran names on the public prodi roster / SINTA department list.
     "dr. Putri Alief Siswanto, M.T.",
     "Alfandino Rasyid, S.Tr.T., M.Tr.T.",
+    # Added 24 Nov 2026: permanent lecturers listed in PDDikti Gasal 2026 (public profile pages) but missing above.
+    "dr. Ahmad Ridhoi, M.Si.",
+    "dr. Noer Halimatus Syakdiyah, M.Imun.",
+    "dr. Jovian Philip Swatan, Sp.N",
+    "dr. Rumman Karimah, M.Biomed",
+    "dr. Iffa Halimah Hasna, M.Biomed",
+    "Rifa'atul Izza Asyari, S.T., M.Sc.",
 ]
 
 
@@ -412,6 +419,11 @@ ag_cols = [
     ("Catatan / dukungan fakultas yang dibutuhkan", 34, "opt"),           # Z
     ("Cek isian\n(otomatis)", 30, "auto"),                                 # AA
     ("Butuh mitra dari prodi lain? ▼\n(opsional)", 26, "opt"),              # AB
+    ("ID proyek\n(otomatis)", 12, "auto"),                                  # AC
+    ("Jenis kegiatan ▼", 14, "req"),                                         # AD
+    ("Anak tangga PkM ▼\n(khusus PkM)", 22, "opt"),                         # AE
+    ("Tag sekunder\n(pilar/platform lain, opsional)", 20, "opt"),           # AF
+    ("Mata kuliah / blok / rotasi terkait\n(opsional)", 28, "opt"),         # AG
 ]
 KIND_FILL = {"req": C_REQ, "opt": C_OPT, "auto": C_AUTO}
 header(ag, 4, [c[0] for c in ag_cols], height=60)
@@ -425,6 +437,7 @@ example = [
     "Puskesmas mitra Desa Binaan; Dinkes Kota Mojokerto", WAHANA[1][1], WAHANA[4][1], 4, 6, 2026, 2028,
     "Rencana", "Ya", 4, LUARAN[0], DANA[0], KESIAPAN[0], 1,
     "Butuh izin akses data penderita DM di puskesmas", "OK", "Butuh validasi klinis",
+    "CONTOH", "Penelitian", "", "T3 (analisis citra napas)", "Blok Endokrin–Metabolik (contoh)",
 ]
 for i, v in enumerate(example, start=1):
     c = ag.cell(row=5, column=i, value=v)
@@ -444,15 +457,22 @@ for r in range(A_FIRST, A_LAST + 1):
     ag.cell(row=r, column=6, value=(
         f'=IF(E{r}="","",IF(LEFT(E{r},1)="0","Lintas pilar",IF(LEFT(E{r},1)="9","Di luar pohon","P"&LEFT(E{r},1))))'))
     cross = ",".join(f'AND({hb(f"{c}{r}")}<>"",{hb(f"{c}{r}")}<>C{r})' for c in "HIJ")
+    blank_m = ",".join(f'AND({c}{r}<>"",{hb(f"{c}{r}")}="")' for c in "HIJ")
     ag.cell(row=r, column=11, value=(
-        f'=IF(B{r}="","",IF(AND(H{r}="",I{r}="",J{r}=""),"Tidak",IF(LEFT(C{r},1)="(","(homebase belum ada)",'
-        f'IF(OR({cross}),"Ya","Tidak"))))'))
+        f'=IF(B{r}="","",IF(AND(H{r}="",I{r}="",J{r}=""),"Tidak",IF(LEFT(C{r},1)="(","Belum dapat dinilai",'
+        f'IF(OR({cross}),"Ya",IF(OR({blank_m}),"Belum dapat dinilai","Tidak")))))'))
+    ag.cell(row=r, column=29, value=f'=IF(B{r}="","","FKK-"&TEXT(A{r},"000"))')
+    dup = (f'OR(AND(H{r}<>"",OR(H{r}=B{r},H{r}=I{r},H{r}=J{r})),AND(I{r}<>"",OR(I{r}=B{r},I{r}=J{r})),AND(J{r}<>"",J{r}=B{r}))')
     ag.cell(row=r, column=27, value=(
-        f'=IF(B{r}="","",IF(OR(D{r}="",E{r}="",G{r}="",M{r}="",N{r}="",Q{r}="",R{r}="",S{r}="",T{r}="",V{r}=""),'
+        f'=IF(B{r}="","",IF(OR(D{r}="",E{r}="",G{r}="",M{r}="",N{r}="",Q{r}="",R{r}="",S{r}="",T{r}="",V{r}="",AD{r}=""),'
         f'"Lengkapi kolom wajib (kuning)",IF(R{r}<Q{r},"Tahun selesai sebelum tahun mulai",'
+        f'IF(AND(ISNUMBER(O{r}),ISNUMBER(P{r}),P{r}<O{r}),"TKT target lebih rendah dari saat ini — jelaskan (produk/versi baru?) di Catatan",'
+        f'IF(AND(T{r}="Tidak",N(U{r})>0),"Mahasiswa: jawaban Tidak tetapi jumlah diisi",'
+        f'IF(AND(T{r}="Ya",U{r}=""),"Mahasiswa: isi jumlah mahasiswa",'
+        f'IF({dup},"Nama anggota berulang atau sama dengan ketua",'
+        f'IF(AND(AD{r}="PkM",AE{r}=""),"PkM: pilih anak tangga PkM",'
         f'IF(VALUE(MID(N{r},2,1))<VALUE(MID(M{r},2,1)),"OK — catatan: wahana target lebih rendah (sah bila kembali ke lab)",'
-        f'IF(AND(ISNUMBER(O{r}),ISNUMBER(P{r}),P{r}<O{r}),"TKT target lebih rendah dari saat ini",'
-        f'IF(F{r}="Di luar pohon","OK — di luar pohon (bahan revisi pohon)","OK"))))))'))
+        f'IF(F{r}="Di luar pohon","OK — di luar pohon (bahan revisi pohon)","OK"))))))))))'))
     for ci, (_, _, kind) in enumerate(ag_cols, start=1):
         c = ag.cell(row=r, column=ci)
         c.fill, c.border, c.alignment = fill(KIND_FILL[kind]), BOX, WRAP
@@ -466,6 +486,16 @@ for i_, v_ in enumerate(MITRA, start=2):
     ref.cell(row=i_, column=16, value=v_)
 ref.cell(row=1, column=16, value="Kebutuhan mitra")
 dv_list(ag, f"=REF!$P$2:$P${len(MITRA) + 1}", rng("AB"), "Opsional: tandai bila topik ini butuh mitra dari prodi lain.")
+JENIS_K = ["Penelitian", "PkM"]
+TANGGA_PKM = ["1 Pengenalan", "2 Pelatihan", "3 Penerapan", "4 Penggunaan mandiri oleh mitra", "5 Dampak dan replikasi"]
+for i_, v_ in enumerate(JENIS_K, start=2):
+    ref.cell(row=i_, column=17, value=v_)
+for i_, v_ in enumerate(TANGGA_PKM, start=2):
+    ref.cell(row=i_, column=18, value=v_)
+ref.cell(row=1, column=17, value="Jenis kegiatan")
+ref.cell(row=1, column=18, value="Anak tangga PkM")
+dv_list(ag, f"=REF!$Q$2:$Q${len(JENIS_K) + 1}", rng("AD"), "Penelitian atau PkM. PkM memakai pilar, platform, dan wahana yang sama (Peta Jalan PkM).")
+dv_list(ag, f"=REF!$R$2:$R${len(TANGGA_PKM) + 1}", rng("AE"), "Khusus PkM: tahap kedalaman saat ini (Peta Jalan PkM §6).")
 names = f"={DD}!$B${D_FIRST}:$B${D_LAST}"
 dv_list(ag, names, rng("B"), "Pilih nama Anda dari daftar.",
         "Pilih nama dari daftar. Bila belum ada, tambahkan dulu di tab DAFTAR DOSEN (baris kosong paling bawah).")
@@ -512,12 +542,14 @@ kpi = [
      f'=COUNTIFS({DD}!$B${D_FIRST}:$B${D_LAST},"?*",{DD}!$K${D_FIRST}:$K${D_LAST},"<>Belum mengisi")', "0"),
     ("Tingkat respons", "=IF(C4=0,0,C5/C4)", "0%"),
     ("Jumlah topik terisi", f'=COUNTIF({AG}!$B${A_FIRST}:$B${A_LAST},"?*")', "0"),
-    ("Topik yang masuk pohon (dari topik yang cabangnya terisi)", f'=IF(COUNTIF({AG}!$E${A_FIRST}:$E${A_LAST},"?*")=0,0,1-COUNTIF({AG}!$F${A_FIRST}:$F${A_LAST},"Di luar pohon")/COUNTIF({AG}!$E${A_FIRST}:$E${A_LAST},"?*"))', "0%"),
-    ("Topik lintas prodi", f'=IF(C7=0,0,COUNTIF({AG}!$K${A_FIRST}:$K${A_LAST},"Ya")/C7)', "0%"),
+    ("Topik yang masuk pohon (dari topik berketua yang cabangnya terisi)", f'=IF(COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$E${A_FIRST}:$E${A_LAST},"?*")=0,"tanpa data",1-COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$F${A_FIRST}:$F${A_LAST},"Di luar pohon")/COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$E${A_FIRST}:$E${A_LAST},"?*"))', "0%"),
+    ("Topik lintas prodi (rencana; 'Belum dapat dinilai' tidak dihitung)", f'=IF(C7=0,"tanpa data",COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$K${A_FIRST}:$K${A_LAST},"Ya")/C7)', "0%"),
     ("Topik melibatkan mahasiswa (proksi rencana PPDM)",
-     f'=IF(C7=0,0,COUNTIF({AG}!$T${A_FIRST}:$T${A_LAST},"Ya")/C7)', "0%"),
-    ("Sel inti P1–P5 × T1–T5 yang masih kosong (peta rekrutmen/kolaborasi)", "=COUNTIF(C17:G21,0)", "0"),
-    ("Topik tanpa cabang pohon (belum dapat dinilai — dilaporkan terpisah)", f'=C7-COUNTIF({AG}!$E${A_FIRST}:$E${A_LAST},"?*")', "0"),
+     f'=IF(C7=0,"tanpa data",COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$T${A_FIRST}:$T${A_LAST},"Ya")/C7)', "0%"),
+    ("Sel inti P1–P5 × T1–T5 yang masih kosong (peta rekrutmen/kolaborasi)", "=COUNTIF(C19:G23,0)", "0"),
+    ("Topik berketua tanpa cabang pohon (belum dapat dinilai — dilaporkan terpisah)", f'=COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$E${A_FIRST}:$E${A_LAST},"")', "0"),
+    ("Baris tanpa ketua tetapi berisi (tidak dihitung — perlu dilengkapi)", f'=SUMPRODUCT(({AG}!$B${A_FIRST}:$B${A_LAST}="")*(({AG}!$D${A_FIRST}:$D${A_LAST}<>"")+({AG}!$E${A_FIRST}:$E${A_LAST}<>"")>0))', "0"),
+    ("Kegiatan PkM (dari topik berketua)", f'=COUNTIFS({AG}!$B${A_FIRST}:$B${A_LAST},"?*",{AG}!$AD${A_FIRST}:$AD${A_LAST},"PkM")', "0"),
 ]
 rm["A3"] = "Indikator kunci"
 rm["A3"].font = F_BOLD
@@ -570,11 +602,11 @@ def matrix(ws, top, label, extra=""):
     return first, last
 
 
-m1_first, _ = matrix(rm, 15, "A. Jumlah topik per sel (semua topik)")
-assert m1_first == 17  # KPI row 11 depends on this
-rm["A26"] = "Sel kosong di baris P1–P5 bukan kegagalan: itu peta rekrutmen atau kolaborasi yang belum terjadi."
-rm["A26"].font = F_SUB
-matrix(rm, 29, "B. Topik lintas prodi per sel (anggota dari prodi lain)",
+m1_first, _ = matrix(rm, 17, "A. Jumlah topik per sel (semua topik)")
+assert m1_first == 19  # KPI row 11 depends on this
+rm["A28"] = "Sel kosong di baris P1–P5 bukan kegagalan: itu peta rekrutmen atau kolaborasi yang belum terjadi."
+rm["A28"].font = F_SUB
+matrix(rm, 31, "B. Topik lintas prodi per sel (anggota dari prodi lain)",
        extra=f',{AG}!$K${A_FIRST}:$K${A_LAST},"Ya"')
 
 # ---------------------------------------------------------------- REKAP PRODI
@@ -604,7 +636,7 @@ for i, p in enumerate(rp_rows):
         vals.append(f'=COUNTIFS({CR},$A{r},{AG}!$F${A_FIRST}:$F${A_LAST},"{code}")')
     vals += [f'=COUNTIFS({CR},$A{r},{AG}!$K${A_FIRST}:$K${A_LAST},"Ya")',
              f'=COUNTIFS({CR},$A{r},{AG}!$T${A_FIRST}:$T${A_LAST},"Ya")',
-             f"=SUMIFS({AG}!$U${A_FIRST}:$U${A_LAST},{CR},$A{r})"]
+             f'=SUMIFS({AG}!$U${A_FIRST}:$U${A_LAST},{CR},$A{r},{AG}!$T${A_FIRST}:$T${A_LAST},"Ya")']
     for j, v in enumerate(vals, start=2):
         c = rp.cell(row=r, column=j, value=v)
         c.border, c.alignment, c.font = BOX, CENTER, F_BASE
@@ -644,10 +676,10 @@ rpl = wb.create_sheet("REKAP PLATFORM", 4)
 title(rpl, "REKAP — per platform T1–T5 (terisi otomatis)",
       "Peta jalan Prodi Teknologi Kedokteran dibaca dari kolom platform. TKT dihitung per topik (tidak dirata-rata). Jangan diubah.")
 GR = f"{AG}!$G${A_FIRST}:$G${A_LAST}"
-hdr_pl = (["Platform", "Topik", "Ketua dari Teknologi Kedokteran", "Lintas prodi", "Melibatkan mahasiswa",
-           "TKT target 1–3", "TKT target 4–6", "TKT target 7–9"]
+hdr_pl = (["Platform", "Topik", "Ketua dari Teknologi Kedokteran", "Lintas prodi (rencana)", "Melibatkan mahasiswa (rencana)",
+           "TKT awal 1–3", "TKT awal 4–6", "TKT awal 7–9", "TKT target 1–3", "TKT target 4–6", "TKT target 7–9"]
           + [f"{w[0]} target" for w in WAHANA]
-          + ["Luaran purwarupa/produk", "Luaran HKI/paten", "Berjalan/selesai"])
+          + ["Rencana luaran purwarupa", "Rencana luaran HKI", "Berjalan/selesai", "Kegiatan PkM"])
 header(rpl, 4, hdr_pl)
 rpl.column_dimensions["A"].width = 44
 for j in range(2, len(hdr_pl) + 1):
@@ -662,13 +694,17 @@ for i, pl in enumerate(PLATFORM):
             f'=COUNTIFS({GR},{key},{CR},"{PRODI[2]}")',
             f'=COUNTIFS({GR},{key},{AG}!$K${A_FIRST}:$K${A_LAST},"Ya")',
             f'=COUNTIFS({GR},{key},{AG}!$T${A_FIRST}:$T${A_LAST},"Ya")',
+            f'=COUNTIFS({GR},{key},{AG}!$O${A_FIRST}:$O${A_LAST},">=1",{AG}!$O${A_FIRST}:$O${A_LAST},"<=3")',
+            f'=COUNTIFS({GR},{key},{AG}!$O${A_FIRST}:$O${A_LAST},">=4",{AG}!$O${A_FIRST}:$O${A_LAST},"<=6")',
+            f'=COUNTIFS({GR},{key},{AG}!$O${A_FIRST}:$O${A_LAST},">=7",{AG}!$O${A_FIRST}:$O${A_LAST},"<=9")',
             f'=COUNTIFS({GR},{key},{PTK},">=1",{PTK},"<=3")',
             f'=COUNTIFS({GR},{key},{PTK},">=4",{PTK},"<=6")',
             f'=COUNTIFS({GR},{key},{PTK},">=7",{PTK},"<=9")']
     vals += [f'=COUNTIFS({GR},{key},{AG}!$N${A_FIRST}:$N${A_LAST},"{w[0]}*")' for w in WAHANA]
     vals += [f'=COUNTIFS({GR},{key},{AG}!$V${A_FIRST}:$V${A_LAST},"Purwarupa*")',
              f'=COUNTIFS({GR},{key},{AG}!$V${A_FIRST}:$V${A_LAST},"HKI*")',
-             f'=COUNTIFS({GR},{key},{AG}!$S${A_FIRST}:$S${A_LAST},"Berjalan")+COUNTIFS({GR},{key},{AG}!$S${A_FIRST}:$S${A_LAST},"Selesai")']
+             f'=COUNTIFS({GR},{key},{AG}!$S${A_FIRST}:$S${A_LAST},"Berjalan")+COUNTIFS({GR},{key},{AG}!$S${A_FIRST}:$S${A_LAST},"Selesai")',
+             f'=COUNTIFS({GR},{key},{AG}!$AD${A_FIRST}:$AD${A_LAST},"PkM")']
     for j, v in enumerate(vals, start=2):
         c = rpl.cell(row=r, column=j, value=v)
         c.border, c.alignment, c.font = BOX, CENTER, F_BASE
@@ -686,7 +722,7 @@ for i, mtr in enumerate(MITRA[:-1]):
         c = rpl.cell(row=r, column=2 + j, value=f'=COUNTIFS({GR},"{pl[0]}*",{AG}!$AB${A_FIRST}:$AB${A_LAST},$A{r})')
         c.border, c.alignment, c.font = BOX, CENTER, F_BASE
 rpl.cell(row=top3 + len(MITRA) + 1, column=1,
-         value=("Cara baca: kolom TKT dan wahana memperlihatkan kematangan per topik, bukan rata-rata platform. "
+         value=("Cara baca: semua kolom adalah RENCANA dari isian, bukan capaian. TKT dihitung per topik, bukan rata-rata platform. "
                 "Isi tulang ikan atau lajur bergerbang Prodi Teknologi Kedokteran (§5.6) dari tab ini.")).font = F_SUB
 
 # ---------------------------------------------------------------- PETA JALAN
@@ -948,6 +984,19 @@ if TEST:
         ag.cell(row=rr, column=20, value=mh)
         ag.cell(row=rr, column=21, value=3 if mh == "Ya" else None)
         ag.cell(row=rr, column=22, value=LUARAN[lu])
+        ag.cell(row=rr, column=30, value="PkM" if i == 2 else "Penelitian")
+        if i == 2:
+            ag.cell(row=rr, column=31, value="3 Penerapan")
+    # edge cases from the 24 Nov audit
+    e0 = A_FIRST + len(samples)
+    ag.cell(row=e0, column=5, value=TOPIK[1]); ag.cell(row=e0, column=7, value=PLATFORM[0][1])      # no ketua
+    ag.cell(row=e0 + 1, column=2, value=ROSTER[0]); ag.cell(row=e0 + 1, column=4, value="uji tepi")
+    ag.cell(row=e0 + 1, column=5, value=TOPIK[1]); ag.cell(row=e0 + 1, column=7, value=PLATFORM[1][1])
+    ag.cell(row=e0 + 1, column=8, value=ROSTER[5])                                                  # member without homebase
+    ag.cell(row=e0 + 1, column=9, value=ROSTER[5])                                                  # duplicated member
+    for col, v in ((13, WAHANA[3][1]), (14, WAHANA[1][1]), (15, 6), (16, 4), (17, 2026), (18, 2027), (19, "Rencana"),
+                   (20, "Tidak"), (21, 3), (22, LUARAN[0]), (30, "Penelitian")):
+        ag.cell(row=e0 + 1, column=col, value=v)
 
 # sheet order: PETUNJUK, DAFTAR DOSEN, AGENDA, REKAP MATRIKS, REKAP PRODI, PETA JALAN, USULAN DRAF, REF
 order = ["PETUNJUK", "DAFTAR DOSEN", AG, "REKAP MATRIKS", "REKAP PRODI", "REKAP PLATFORM", "PETA JALAN", "USULAN DRAF", "REF"]
