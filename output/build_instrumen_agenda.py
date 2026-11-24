@@ -97,7 +97,8 @@ TOPIK = [
     "1.2 Stratifikasi risiko kardiometabolik berbasis AI",
     "1.3 Deteksi dini komplikasi PTM",
     "1.4 Perubahan perilaku terdigitalisasi",
-    "1.9 Pilar 1 — topik baru, mis. onkologi (jelaskan di Catatan)",
+    "1.5 Skrining & deteksi dini kanker",
+    "1.9 Pilar 1 — topik baru (jelaskan di Catatan)",
     "2.1 Teknologi pemantauan pertumbuhan",
     "2.2 Keselamatan maternal & neonatal",
     "2.3 Skrining tumbuh kembang & neurodevelopmental",
@@ -886,7 +887,7 @@ line("Baris CONTOH", "Baris 5 di tab DAFTAR DOSEN dan AGENDA menunjukkan contoh 
 
 sec("Lima Pilar (sumbu hasil kesehatan) dan cabangnya")
 pilar_topik = {
-    "P1": TOPIK[1:6], "P2": TOPIK[6:11], "P3": TOPIK[11:16], "P4": TOPIK[16:21], "P5": TOPIK[21:26],
+    **{f"P{k}": [t for t in TOPIK if t.startswith(f"{k}.")] for k in range(1, 6)},
 }
 for code, name in PILAR[:5]:
     line(f"{code} — {name}", " · ".join(pilar_topik[code]))
@@ -894,10 +895,10 @@ line("0.0 Lintas pilar", "Platform Surveilans Desa Binaan dan riset yang melayan
 line("9.9 Di luar pohon", "Topik yang belum tertampung — ditinjau saat revisi pohon.")
 
 sec("Padanan dengan tujuh topik RIP Prodi Kedokteran & Profesi Dokter")
-line("Penyakit Tidak Menular", "→ Pilar 1. Onkologi & skrining kanker: pilih '1.9 topik baru' sampai rantingnya ditetapkan.")
+line("Penyakit Tidak Menular", "→ Pilar 1. Onkologi & skrining kanker: pilih '1.5 Skrining & deteksi dini kanker'.")
 line("Penyakit Menular", "→ Pilar 3.")
 line("Kesehatan Remaja, Neonatus & Anak", "→ Pilar 2.")
-line("Kesehatan Seksual & Reproduksi", "→ Pilar 2. Kanker serviks dan payudara boleh dicatat di Pilar 1.")
+line("Kesehatan Seksual & Reproduksi", "→ Pilar 2. Kanker serviks dan payudara: pilih ranting 1.5 di Pilar 1.")
 line("Ked. Pencegahan, Med. Education & Social Science", "→ Pilar 5. Forensik, disabilitas, dan trauma: Pilar 4.")
 line("Basic Science", "→ Pilih pilar tempat temuan itu akan dipakai (penyakit sasarannya); Platform boleh T0.")
 line("Digital Health", "→ Pilih pilar sesuai penyakit sasarannya, lalu Platform T3 (AI & citra) atau T5 (telematika).")
@@ -963,7 +964,7 @@ if TEST:
         # ketua, topik idx, platform idx, anggota, Wnow, Wtgt, start, end, mhs, luaran, tktnow, tkttgt
         (ROSTER[0], 1, 1, [ROSTER[1]], 1, 4, 2026, 2028, "Ya", 0, 4, 6),
         (ROSTER[1], 17, 3, [], 1, 3, 2025, 2027, "Tidak", 4, 3, 5),
-        (ROSTER[2], 26, 5, [ROSTER[0], ROSTER[3]], 0, 0, 2026, 2026, "Ya", 1, "Tidak relevan", "Tidak relevan"),
+        (ROSTER[2], len(TOPIK) - 1, 5, [ROSTER[0], ROSTER[3]], 0, 0, 2026, 2026, "Ya", 1, "Tidak relevan", "Tidak relevan"),
         (ROSTER[4], 12, 2, [ROSTER[1]], 3, 1, 2027, 2026, "Ya", 0, 5, 4),   # homebase blank + two errors
     ]
     for i, (k, ti, pi, mem, wn, wt, s, e, mh, lu, tn, tt) in enumerate(samples):

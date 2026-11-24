@@ -50,17 +50,17 @@ Daftar dosen di instrumen berasal dari penelusuran publik dan pencocokan dengan 
 
 ## 4. Pohon dan peta jalan
 
-### 4.1 Lima pilar (cabang) — 20 topik
+### 4.1 Lima pilar (cabang) — 21 topik
 
 | Pilar | Topik |
 |---|---|
-| **P1 Deteksi Dini & Pengendalian Penyakit Tidak Menular** | 1.1 Skrining PTM non-invasif berbasis sensor · 1.2 Stratifikasi risiko kardiometabolik berbasis AI · 1.3 Deteksi dini komplikasi · 1.4 Perubahan perilaku terdigitalisasi |
+| **P1 Deteksi Dini & Pengendalian Penyakit Tidak Menular** | 1.1 Skrining PTM non-invasif berbasis sensor · 1.2 Stratifikasi risiko kardiometabolik berbasis AI · 1.3 Deteksi dini komplikasi · 1.4 Perubahan perilaku terdigitalisasi · **1.5 Skrining & deteksi dini kanker** |
 | **P2 Kesehatan Ibu, Anak & 1000 HPK** | 2.1 Teknologi pemantauan pertumbuhan · 2.2 Keselamatan maternal & neonatal · 2.3 Skrining tumbuh kembang & neurodevelopmental · 2.4 Gizi & keamanan pangan lokal |
 | **P3 Penyakit Infeksi, Resistensi Antimikroba & Ketahanan Kesehatan** | 3.1 Surveilans AMR & penggunaan antibiotik komunitas · 3.2 Diagnostik cepat penyakit infeksi · 3.3 Surveilans sindromik digital & kesiapsiagaan · 3.4 Kesehatan lingkungan & vektor |
 | **P4 Trauma, Disabilitas & Restorasi Fungsi** | 4.1 Implan ortopedi & fiksasi fraktur · 4.2 Prostesis & ortosis terjangkau · 4.3 Rehabilitasi & teknologi asistif · 4.4 Manajemen nyeri & perioperatif |
 | **P5 Sistem Kesehatan Primer, Pendidikan Kedokteran & Tata Kelola Teknologi Kesehatan** | 5.1 Riset implementasi layanan primer · 5.2 Pendidikan kedokteran berbasis teknologi · 5.3 Etika, hukum & tata kelola AI kesehatan · 5.4 Ekonomi kesehatan & HTA teknologi frugal |
 
-Ilmu kedokteran dasar menjadi **akar tunggang** (kode 0.0). Setiap pilar punya topik **x.9 "lainnya"**, dan tersedia **9.9 "di luar kelima pilar"**. Persentase topik di luar pohon adalah angka evaluasi kesesuaian sekaligus bahan revisi pohon, bukan kesalahan pengisi.
+Ranting 1.5 ditambahkan karena onkologi dan skrining kanker adalah klaster terbesar di data prodi. Ilmu kedokteran dasar menjadi **akar tunggang** (kode 0.0). Setiap pilar punya topik **x.9 "lainnya"**, dan tersedia **9.9 "di luar kelima pilar"**. Persentase topik di luar pohon adalah angka evaluasi kesesuaian sekaligus bahan revisi pohon, bukan kesalahan pengisi.
 
 ### 4.2 Lima platform (akar samping) — peta jalan Teknologi Kedokteran
 

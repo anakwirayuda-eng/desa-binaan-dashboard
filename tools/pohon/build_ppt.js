@@ -103,7 +103,7 @@ async function icon(Comp, hex, size = 256) {
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Inti" });
   s.addText("Satu pohon, tiga prodi, diisi dari bawah", { placeholder: "title" });
   const trio = [
-    [icTree, "Pohon", "Apa yang diteliti", "Visi, lima pilar, dua puluh topik. Identitas fakultas dalam satu gambar."],
+    [icTree, "Pohon", "Apa yang diteliti", "Visi, lima pilar, dua puluh satu topik. Identitas fakultas dalam satu gambar."],
     [icGrid, "Matriks", "Siapa bekerja dengan siapa", "Lima pilar × lima platform, dibaca dua arah: baris untuk prodi kedokteran, kolom untuk Teknologi Kedokteran."],
     [icStream, "Lajur", "Kapan hasilnya keluar", "Tiga periode yang sama dengan RIP prodi: 2023–2025, 2026–2028, 2029–2030."],
   ];
@@ -307,7 +307,7 @@ async function icon(Comp, hex, size = 256) {
     ["Penyakit Tidak Menular", "61", "18", "P1 Deteksi Dini & Pengendalian PTM"],
     ["Penyakit Menular", "36", "8", "P3 Infeksi, AMR & Ketahanan"],
     ["Kesehatan Remaja, Neonatus & Anak", "19", "3", "P2 Ibu, Anak & 1000 HPK"],
-    ["Kesehatan Seksual & Reproduksi", "16", "7", "P2; kanker serviks dan payudara juga terbaca di P1"],
+    ["Kesehatan Seksual & Reproduksi", "16", "7", "P2; kanker serviks dan payudara → ranting 1.5 (P1)"],
     ["Ked. Pencegahan, Med. Ed. & Social Science", "31", "6", "P5; forensik dan disabilitas juga terbaca di P4"],
     ["Digital Health", "per tahun & TKT", "", "Platform T3 + T5, melintasi semua pilar"],
     [{ text: "(tidak ada)", options: { italic: true } }, "—", "—", "P4 Trauma & Restorasi, dipimpin Teknologi Kedokteran (T4)"],
@@ -388,7 +388,7 @@ async function icon(Comp, hex, size = 256) {
 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Lampiran" });
   s.addText("Empat temuan dari data prodi", { placeholder: "title" });
-  const finds = [["23 + 13", "Onkologi belum punya ranting", "Subtopik terbesar (23 luaran di PTM, 13 kanker serviks & payudara di KSR). Usul: ranting P1 paling sedikit timnya diganti \"Skrining & deteksi dini kanker\" setelah rekap."], ["0", "P4 tanpa topik prodi", "Isinya tersebar di Basic Science dan topik ke-7. P4 tetap dipertahankan: di sinilah Teknologi Kedokteran memimpin (T4)."], ["50", "Periode 2026–2028 masih tipis", "50 penempatan, semua dari 2026; satu subtopik (kesiapsiagaan bencana) masih nol. Instrumen adalah cara tercepat mengisinya."], ["7", "PIC menjadi bahan koordinator", "Tujuh PIC topik prodi menjadi bahan awal koordinator pilar; Tekdok mengoordinasi platform dan P4. Mulai dari sel percontohan."]];
+  const finds = [["23 + 13", "Onkologi kini punya ranting", "Subtopik terbesar (23 luaran di PTM, 13 kanker serviks & payudara di KSR). Ditambahkan ranting 1.5 \"Skrining & deteksi dini kanker\" sebelum instrumen beredar."], ["0", "P4 tanpa topik prodi", "Isinya tersebar di Basic Science dan topik ke-7. P4 tetap dipertahankan: di sinilah Teknologi Kedokteran memimpin (T4)."], ["50", "Periode 2026–2028 masih tipis", "50 penempatan, semua dari 2026; satu subtopik (kesiapsiagaan bencana) masih nol. Instrumen adalah cara tercepat mengisinya."], ["7", "PIC menjadi bahan koordinator", "Tujuh PIC topik prodi menjadi bahan awal koordinator pilar; Tekdok mengoordinasi platform dan P4. Mulai dari sel percontohan."]];
   finds.forEach(([n, h, d], i) => {
     const x = 0.6 + (i % 2) * 6.15, y = 1.45 + Math.floor(i / 2) * 2.65;
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y, w: 5.95, h: 2.45, rectRadius: 0.1, fill: { color: C.background2 }, line: { color: C.background2 }, objectName: `find-card-${i + 1}` });

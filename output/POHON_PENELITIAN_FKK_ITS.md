@@ -347,6 +347,7 @@ Jumlah pilar sengaja lima. Benchmark menunjukkan jumlah tema berkorelasi dengan 
 | 1.2 Stratifikasi risiko kardiometabolik berbasis AI | Model risiko dari data rutin puskesmas/ILP; kalibrasi pada populasi Jawa Timur | T3, T5 |
 | 1.3 Deteksi dini komplikasi | Kaki diabetik berbasis citra; skrining nefropati; retinopati diabetik hanya bila ada mitra pakar retina (belum ada jejak riset di FKK, lihat Koreksi 1 §4) | T3, T2 |
 | 1.4 Perubahan perilaku terdigitalisasi | Intervensi berbasis COM-B & MINDSPACE; kepatuhan terapi hipertensi | T5 |
+| 1.5 Skrining & deteksi dini kanker | Skrining kanker serviks dan payudara di layanan primer; AI citra radiologi dan patologi; stratifikasi risiko kanker; jalur rujukan dari puskesmas | T3, T2 |
 
 ---
 
@@ -538,7 +539,7 @@ Tiga keputusan desain yang disengaja: (a) **satu topik diisi sekali oleh ketuany
 | Penyakit Tidak Menular | 61 | 18 | **P1** |
 | Penyakit Menular | 36 | 8 | **P3** |
 | Kesehatan Remaja, Neonatus & Anak | 19 | 3 | **P2** |
-| Kesehatan Seksual & Reproduksi | 16 | 7 | **P2**; subtopik kanker serviks dan payudara–ovarium dibaca juga di P1 |
+| Kesehatan Seksual & Reproduksi | 16 | 7 | **P2**; subtopik kanker serviks dan payudara–ovarium masuk ranting **1.5** |
 | Kedokteran Pencegahan, Medical Education & Social Science | 31 | 6 | **P5**; subtopik forensik, disabilitas & okupasi dibaca juga di P4 |
 | Digital Health | *dipetakan per tahun & TKT* | | **Platform T3 + T5** — sumbu teknologi yang melintasi semua pilar |
 | *(tidak ada)* | — | — | **P4 Trauma, Disabilitas & Restorasi** — dipimpin Prodi Teknologi Kedokteran lewat T4 |
@@ -551,7 +552,7 @@ Tiga keputusan desain yang disengaja: (a) **satu topik diisi sekali oleh ketuany
 3. **Dua topik prodi dibaca sebagai sumbu.** Basic Science menjadi akar ilmu dan Digital Health menjadi platform. Prodi **tidak perlu mengubah** tujuh topiknya: Digital Health adalah tema penciri prodi (RIP prodi §3.3), dan tabel padanan di atas sudah cukup sebagai bukti turunan.
 
 **Empat temuan dari data prodi:**
-- **Klaster terbesar belum punya ranting.** *Onkologi & skrining kanker* adalah subtopik terbesar (23 luaran di PTM), ditambah 13 luaran kanker serviks dan payudara–ovarium di KSR. Tak satu pun dari 20 ranting §5.1 menampungnya. Usul: setelah rekap instrumen, ranting P1 yang paling sedikit timnya diganti dengan **"Skrining & deteksi dini kanker"**, sehingga P1 tetap empat ranting. Sampai saat itu dosen memilih "1.9 topik baru" (labelnya di instrumen sudah diberi contoh onkologi).
+- **Klaster terbesar kini punya ranting — 1.5 (diputuskan 24 November 2026).** *Onkologi & skrining kanker* adalah subtopik terbesar (23 luaran di PTM), ditambah 13 luaran kanker serviks dan payudara–ovarium di KSR, tetapi tidak satu pun dari 20 ranting awal menampungnya. Usul lama menunggu rekap Januari lalu mengganti ranting P1 yang paling sedikit timnya. Diputuskan lebih cepat: **ranting 1.5 "Skrining & deteksi dini kanker" ditambahkan sekarang**, sebelum instrumen beredar, agar dosen onkologi tidak perlu memilih "topik baru" lalu dipetakan ulang. Akibatnya P1 untuk sementara punya lima ranting (pohon 21 ranting). Pada rekap Januari, ranting P1 yang tidak berisi tim dapat digabung, sehingga P1 kembali empat ranting bila perlu. Platform utamanya T3 (citra radiologi dan patologi) dan T2; wahananya W3 (RSUD) dan W4 (skrining di puskesmas).
 - **P4 tidak punya padanan topik prodi.** Isinya kini tersebar di Basic Science (biomaterial & alat kesehatan) dan topik ketujuh (forensik, disabilitas; bencana & trauma). P4 tetap dipertahankan: di sinilah Prodi Teknologi Kedokteran memimpin (T4), dan rekam jejak internasional terkuat berada di sini (§5.1).
 - **Periode 2026–2028 baru berisi 50 penempatan judul**, semuanya dari 2026, dan satu subtopik (*kesiapsiagaan bencana & manajemen trauma-psikososial*) masih nol. Instrumen isian (§5.4 Prinsip 4) adalah cara tercepat mengisi rencana periode ini.
 - **Struktur pelaksana sudah ada.** Tujuh PIC beserta anggotanya menjadi bahan awal koordinator pilar fakultas; Teknologi Kedokteran mengoordinasi platform dan P4 (§8.1). Tidak perlu membentuk struktur baru.
@@ -566,7 +567,7 @@ Tiga keputusan desain yang disengaja: (a) **satu topik diisi sekali oleh ketuany
 
 **Yang belum terlihat:** peta jalan Prodi Teknologi Kedokteran dan Roadmap FKK 2023–2025. *Pembaruan 23 November 2026:* Roadmap FKK 2023–2025 sudah ditemukan dan dievaluasi di §5.4a. Kerangka peta jalan Teknologi Kedokteran ada di §5.6; isinya menunggu data dari Kaprodi (§10 butir 1e).
 
-**Agar kedua dokumen tidak terbaca "dijahit belakangan".** Tiga langkah sebelum pengesahan: (1) putuskan ranting onkologi pada rekap Januari 2027, agar klaster terbesar prodi punya tempat; (2) muat tabel padanan tujuh topik ↔ lima pilar dan lima platform di **kedua** dokumen, bukan hanya di dokumen fakultas; (3) sahkan RIP Prodi Kedokteran & Profesi pada siklus yang sama dengan SK fakultas, dengan dasar penyusunan yang merujuk dokumen fakultas 2026–2030 (§12).
+**Agar kedua dokumen tidak terbaca "dijahit belakangan".** Tiga langkah sebelum pengesahan: (1) ranting onkologi **1.5 Skrining & deteksi dini kanker** sudah ditambahkan 24 November 2026, sebelum instrumen beredar, sehingga klaster terbesar prodi punya tempat; (2) muat tabel padanan tujuh topik ↔ lima pilar dan lima platform di **kedua** dokumen, bukan hanya di dokumen fakultas; (3) sahkan RIP Prodi Kedokteran & Profesi pada siklus yang sama dengan SK fakultas, dengan dasar penyusunan yang merujuk dokumen fakultas 2026–2030 (§12).
 
 ### 5.6 Matriks dibaca dua arah — peta jalan Teknologi Kedokteran yang setara
 
@@ -1115,7 +1116,7 @@ Target tetap **bukan** "terakreditasi", melainkan dokumen yang siap diputuskan p
 | **≤ 18 Des** | Undangan uji publik terkirim | Undangan resmi ke Dinkes Kota Mojokerto, 2 RSUD, perwakilan dosen dan mahasiswa, dengan ringkasan manfaat langsung bagi Pemda/RSUD (profil kesehatan desa tahunan, deteksi dini, evaluasi rujukan). Dikirim sebelum libur karena jadwal pihak luar paling rentan molor | Dekanat (surat) |
 | **≤ 8 Jan** | **Batas semua data administratif** | Roster resmi, data Teknologi Kedokteran (§10 butir 1e), draf rekap SINTA, dan tabel evaluasi edisi 1 (§5.4a) masuk paling lambat bersamaan dengan penutupan instrumen, sehingga 11–15 Jan murni untuk penyatuan | Kepegawaian · Kaprodi · Unit Penelitian |
 | **6–8 Jan** | Konfirmasi uji publik | Konfirmasi aktif kehadiran Dinkes dan 2 RSUD; draf Berita Acara disiapkan sebelum rapat | Dekanat |
-| **11–15 Jan** | Rekap & revisi v3 | Matriks dan lajur terisi data nyata · ranting tanpa tim menjadi tunas · keputusan ranting onkologi (§5.5) · target angka periode 2026–2028 disusun Unit Penelitian dari data SINTA (§10 Prioritas 2) · register awal proyek dan keputusan portofolio edisi 1 | Asisten + Unit Penelitian |
+| **11–15 Jan** | Rekap & revisi v3 | Matriks dan lajur terisi data nyata · ranting tanpa tim menjadi tunas · tinjau ranting P1 (kini lima; gabungkan ranting tanpa tim bila perlu, §5.5) · target angka periode 2026–2028 disusun Unit Penelitian dari data SINTA (§10 Prioritas 2) · register awal proyek dan keputusan portofolio edisi 1 | Asisten + Unit Penelitian |
 | **18–22 Jan** | Review lembar pandang prodi | Tiap Kaprodi memeriksa lembar pandang prodinya · Prodi Kedokteran & Profesi mencocokkan dengan RIP prodi · Prodi Teknologi Kedokteran memeriksa draf pra-isi kolom T1–T5 dan mengisi kolom TKT (§5.6) · draf Peta Jalan PkM dibahas · koordinator dan sel percontohan diusulkan (§8.1) | 3 Kaprodi |
 | **25–29 Jan** | Uji publik stakeholders | Peta jalan penelitian **dan PkM** diuji bersama; Berita Acara menjadi bukti butir penelitian dan PkM sekaligus. Wilayah pembanding disajikan sebagai giliran bertahap (K6) | Pihak luar |
 | **★ ±3–4 Feb** | **Draf final ke Dekanat** | RIP & Peta Jalan Penelitian FKK 2026–2030 (edisi 2) + Peta Jalan PkM terpisah (K4) + tiga lembar pandang prodi + paket operasional hari pertama | Anda mempresentasikan |

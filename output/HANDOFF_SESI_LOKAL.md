@@ -43,7 +43,7 @@ Menyusun **Pohon Penelitian dan Peta Jalan Penelitian FKK ITS 2026–2030** untu
 5. **Daftar dosen:** enam dosen tetap dari PDDikti sudah ditambahkan (48 nama). Kaprodi memastikan status tiga nama yang tidak ber-homebase di prodi FKK dan memutuskan apakah dosen tidak tetap Profesi ikut mengisi (§10 butir 1d).
 6. **Peta hibah:** unggah ke Google Sheets dan bagikan ke dosen; dosen memperbarui jabatan (jabatan Kedokteran/Profesi diisi awal "Tenaga Pengajar" per surat formasi Sep 2024).
 7. **Halaman galeri terbit** diperbarui dari `output/BENTUK_POHON_GALERI.html` bila pengguna setuju.
-8. **Keputusan ranting onkologi**: sekarang (sebelum instrumen beredar, saran Gemini) atau setelah rekap Januari 2027 (§5.5) — menunggu pengguna.
+8. ~~Keputusan ranting onkologi~~ — **selesai 24 Nov 2026:** ranting **1.5 Skrining & deteksi dini kanker** ditambahkan sebelum instrumen beredar (pohon kini 21 ranting; P1 lima ranting, boleh digabung lagi saat rekap Januari).
 10. **Draf Renstra Prodi Kedokteran** (berkas di Downloads pengguna, bukan Renstra fakultas): sudah dipetakan ke §3 dokumen; enam koreksi untuk tim penyusun Renstra (antara lain baseline akreditasi "Cukup" vs SK Baik) perlu disampaikan pengguna. Renstra FKK 2026–2030 sendiri belum ditemukan di komputer.
 11. **Register PkM per program** (format di Peta Jalan PkM §11) diisi penanggung jawab PkM per pilar, rekap 11–15 Jan 2027.
 9. **Tindakan pengguna:** unggah instrumen ke Google Sheets, isi tiga sel kuning PETUNJUK, bagikan; jadwalkan bilateral 23–27 Nov dan review tim kecil 30 Nov–4 Des.

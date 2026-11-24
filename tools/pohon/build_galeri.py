@@ -4,7 +4,7 @@ E = html.escape
 
 # ---------------------------------------------------------------- tree data (from POHON_PENELITIAN_FKK_ITS.md §5.1–5.3)
 PILAR = [
-  ("p1", "P1 · Deteksi Dini PTM", ["Skrining PTM berbasis sensor", "Risiko kardiometabolik AI", "Deteksi dini komplikasi", "Perubahan perilaku digital"]),
+  ("p1", "P1 · Deteksi Dini PTM", ["Skrining PTM berbasis sensor", "Risiko kardiometabolik AI", "Deteksi dini komplikasi", "Perubahan perilaku digital", "Skrining & deteksi dini kanker"]),
   ("p2", "P2 · Ibu, Anak & 1000 HPK", ["Pemantauan pertumbuhan", "Keselamatan maternal-neonatal", "Skrining tumbuh kembang", "Gizi & pangan lokal"]),
   ("p3", "P3 · Infeksi, AMR & Ketahanan", ["Surveilans AMR komunitas", "Diagnostik cepat infeksi", "Surveilans sindromik digital", "Lingkungan & vektor"]),
   ("p4", "P4 · Trauma & Restorasi Fungsi", ["Implan ortopedi", "Prostesis & ortosis", "Rehabilitasi & asistif", "Nyeri & perioperatif"]),
@@ -49,7 +49,7 @@ def tree_svg():
     # canopy blobs
     for i, (key, title, topics) in enumerate(PILAR):
         x, y = BL[i]
-        o.append(f'<rect x="{x}" y="{y}" width="{BW}" height="{BH}" rx="24" class="{key}-blob"/>')
+        o.append(f'<rect x="{x}" y="{y}" width="{BW}" height="{BH + 19 * max(0, len(topics) - 4)}" rx="24" class="{key}-blob"/>')
         o.append(f'<text x="{x+18}" y="{y+27}" class="blob-title {key}-text">{E(title)}</text>')
         o.append(f'<text x="{x+18}" y="{y+45}" class="blob-tag mono">{E(TAGS[i])}</text>')
         for j, name in enumerate(topics):
@@ -211,7 +211,7 @@ CROSS_L = [("Basic Science", "34", "8"), ("Penyakit Tidak Menular", "61", "18"),
            ("Kesehatan Remaja, Neonatus & Anak", "19", "3"), ("Penyakit Menular", "36", "8"),
            ("Ked. Pencegahan, Med. Ed. & Sosial", "31", "6"), ("Digital Health", None, None)]
 CROSS_R = [("ilmu", "Akar ilmu · Kedokteran Dasar", "Basic Science menjadi akar tunggang"),
-           ("p1", "P1 · Deteksi Dini & Pengendalian PTM", "+ kanker serviks & payudara dari KSR"),
+           ("p1", "P1 · Deteksi Dini & Pengendalian PTM", "+ kanker serviks & payudara → 1.5"),
            ("p2", "P2 · Ibu, Anak & 1000 HPK", "RNA dan KSR bergabung"),
            ("p3", "P3 · Infeksi, AMR & Ketahanan", ""),
            ("p4", "P4 · Trauma & Restorasi Fungsi", "+ forensik & disabilitas dari topik ke-7 · dipimpin T4"),
@@ -720,7 +720,7 @@ PAGE = f"""<title>Bentuk Pohon Penelitian FKK ITS</title>
   <h1>Bentuk Pohon Penelitian FKK ITS</h1>
   <p class="lead">Asesor menelusuri tiga hal: apa yang diteliti, siapa bekerja dengan siapa, dan kapan hasilnya keluar. Satu gambar tidak sanggup menjawab ketiganya dengan rapi. Usulannya tiga bentuk di tingkat fakultas yang saling merujuk dan memakai kode yang sama. Tulang ikan yang sudah dipakai prodi tetap dipertahankan di tingkat prodi.</p>
   <div class="trio">
-    <div><span class="q">Apa</span><strong>Pohon</strong><span>Identitas fakultas dalam satu gambar: visi, lima pilar, dua puluh topik.</span></div>
+    <div><span class="q">Apa</span><strong>Pohon</strong><span>Identitas fakultas dalam satu gambar: visi, lima pilar, dua puluh satu topik.</span></div>
     <div><span class="q">Siapa dengan siapa</span><strong>Matriks</strong><span>Lima pilar × lima platform, dibaca dua arah: baris untuk prodi kedokteran, kolom untuk Teknologi Kedokteran.</span></div>
     <div><span class="q">Kapan</span><strong>Lajur</strong><span>Tiga periode 2023–2030, sama dengan RIP prodi, dengan tonggak bersama ketiga prodi.</span></div>
   </div>
@@ -739,7 +739,7 @@ PAGE = f"""<title>Bentuk Pohon Penelitian FKK ITS</title>
   <p class="sec-intro">RIP Prodi Kedokteran &amp; Profesi Dokter 2026–2030 sudah memetakan seluruh judul dosen ke tujuh topik. Pohon fakultas tidak menggantinya. Lima topik penyakit dan kebijakan menjadi lima pilar, Basic Science menjadi akar ilmu, dan Digital Health menjadi platform.</p>
   <figure>
     <div class="scroll">{cross_svg()}</div>
-    <figcaption>Angka luaran dari Tabel 3–14 RIP prodi (draf); totalnya sama dengan Tabel 17: 197 luaran pada 2023–2025 dan 50 pada 2026. Satu judul bisa tercatat di dua topik. Onkologi &amp; skrining kanker adalah subtopik terbesar (23 luaran di PTM, ditambah 13 kanker serviks dan payudara–ovarium di KSR), tetapi belum punya ranting di draf fakultas. Usulnya: setelah rekap isian dosen, ranting P1 yang paling sedikit timnya diganti dengan ranting onkologi, sehingga P1 tetap empat ranting.</figcaption>
+    <figcaption>Angka luaran dari Tabel 3–14 RIP prodi (draf); totalnya sama dengan Tabel 17: 197 luaran pada 2023–2025 dan 50 pada 2026. Satu judul bisa tercatat di dua topik. Onkologi &amp; skrining kanker adalah subtopik terbesar (23 luaran di PTM, ditambah 13 kanker serviks dan payudara–ovarium di KSR), karena itu ditambahkan ranting 1.5 Skrining &amp; deteksi dini kanker (24 November 2026), sebelum instrumen beredar.</figcaption>
   </figure>
 </section>
 
